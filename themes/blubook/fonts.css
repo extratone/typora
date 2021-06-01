@@ -1,0 +1,86 @@
+/* noto-sans-sc-300 - latin */
+@font-face {
+  font-family: 'Glow Sans SC';
+  font-style: normal;
+  font-weight: 100;
+  src: local('GlowSansSC Thin'), local('GlowSansSC-Thin'),
+       url('./GlowSansSC-Normal-Thin.otf') format('woff2'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-family: 'Glow Sans SC';
+  font-style: normal;
+  font-weight: 200;
+  src: local('GlowSansSC Extralight'), local('GlowSansSC-ExtraLight'),
+       url('./GlowSansSC-Normal-ExtraLight.otf') format('opentype'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+     
+}
+
+/* noto-sans-sc-300 - latin */
+@font-face {
+    font-family: 'Glow Sans SC';
+    font-style: normal;
+    font-weight: 300;
+    src: local('GlowSansSC Light'), local('GlowSansSC-Light'),
+         url('./GlowSansSC-Normal-Light.otf') format('opentype'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* noto-sans-sc-regular - latin */
+  @font-face {
+    font-family: 'Glow Sans SC';
+    font-style: normal;
+    font-weight: 400;
+    src: local('GlowSansSC Regular'), local('GlowSansSC-Regular'),
+         url('./GlowSansSC-Normal-Regular.otf') format('opentype'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+
+  /* noto-sans-sc-500 - latin */
+  @font-face {
+    font-family: 'Glow Sans SC';
+    font-style: normal;
+    font-weight: 500;
+    src: local('GlowSansSC Book'), local('GlowSansSC-Book'),
+         url('./GlowSansSC-Normal-Book.otf') format('opentype'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* noto-sans-sc-700 - latin */
+  @font-face {
+    font-family: 'Glow Sans SC';
+    font-style: normal;
+    font-weight: 600;
+    src: local('GlowSansSC Medium'), local('GlowSansSC-Medium'),
+         url('./GlowSansSC-Normal-Medium.otf') format('opentype'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  
+  /* noto-sans-sc-900 - latin */
+  @font-face {
+    font-family: 'Glow Sans SC';
+    font-style: normal;
+    font-weight: 700;
+    src: local('GlowSansSC Bold'), local('GlowSansSC-Bold'),
+         url('./GlowSansSC-Normal-Bold.otf') format('opentype'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+
+@font-face {
+    font-family: 'Glow Sans SC';
+    font-style: normal;
+    font-weight: 800;
+    src: local('GlowSansSC ExtraBold'), local('GlowSansSC-ExtraBold'),
+         url('./GlowSansSC-Normal-ExtraBold.otf') format('opentype'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+       
+}
+
+@font-face {
+  font-family: 'Glow Sans SC';
+  font-style: normal;
+  font-weight: 900;
+  src: local('GlowSansSC Heavy'), local('GlowSansSC-Heavy'),
+       url('./GlowSansSC-Normal-Heavy.otf') format('opentype'); /* Chrome 26+, Opera 23+, Firefox 39+ */    
+}
+  
+  @font-face {
+    font-family: 'Cascadia Code';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Cascadia Code'), local('Cascadia-Code'),
+         url('./CascadiaCode.woff2') format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+  }
+  
