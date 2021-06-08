@@ -1,0 +1,24 @@
+/*ver 0.2.0 mlike-dark*/
+/*Need `mlike.css`*/
+@import "mlike.css";
+
+:root {
+    /*Background color*/
+    --bg-color: #000000;
+    --side-bar-bg-color: #000000;
+    /*Text color*/
+    --text-color: #f5f5f5;
+    --main-text-color: #ffffff;
+    /*Code block bg color*/
+    --code-block-bg-color: #282c34;
+    --code-bg-color: rgba(255, 255, 255, 0.2);
+}
+
+/*DarkTheme mlike@653*/
+#megamenu-menu-sidebar {
+    background: var(--code-block-bg-color);
+}
+
+.megamenu-menu-list li a.active, .megamenu-menu-list:not(.saved) li a:hover {
+    background: var(--bg-color) !important;
+}

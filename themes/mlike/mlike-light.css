@@ -1,0 +1,15 @@
+/*ver 0.2.0 mlike-light*/
+/*Need `mlike.css`*/
+@import "mlike.css";
+
+:root {
+    /*Background color*/
+    --bg-color: #ffffff;
+    --side-bar-bg-color: #ffffff;
+    /*Text color*/
+    --text-color: #282c34;
+    --main-text-color: #000000;
+    /*Code block bg color*/
+    --code-block-bg-color: #f5f5f5;
+    --code-bg-color: rgba(0, 0, 0, 0.05);
+}
