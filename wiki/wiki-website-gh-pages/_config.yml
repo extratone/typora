@@ -1,0 +1,41 @@
+name: Typora Support
+url: https://support.typora.io
+description: Docs, How-Tos, and FAQs for typora
+
+permalink: /:title/
+
+highlighter: null
+
+plugins:
+  - jekyll-redirect-from
+whitelist:
+  - jekyll-redirect-from
+jekyll-redirect-from: true
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  #
+  # https://github.com/jekyll/jekyll/pull/4090
+  # syntax_highlighter: rouge
+
+  # Rouge Highlighter in Kramdown › http://kramdown.gettalong.org/syntax_highlighter/rouge.html
+  # span, block element options fall back to global
+  syntax_highlighter_opts:
+    # Rouge Options › https://github.com/jneen/rouge#full-options
+    #line_numbers: true # bad idea, spans don't need linenos and would inherit this option
+    span:
+      line_numbers: false
+    block:
+      line_numbers: false
+      start_line: 1
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      cover_img: "http://typora.io/img/twitter-sum.png"
+      twitter_card: "summary"
+
+exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile', 'vendor']
