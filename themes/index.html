@@ -1,0 +1,1454 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>demo</title><style type='text/css'>html {overflow-x: initial !important;}:root { --node-fill: #ECECFF; --node-border: #CCCCFF; --cluster-fill: #ffffde; --cluster-border: #aaaa33; --note-fill: #fff5ad; --note-border: #aaaa33; --mermaid-color: var(--text-color); }
+
+
+:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-require-zoom-fix foreignobject { font-size: var(--mermaid-font-zoom); }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 30px; z-index: 3; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+@font-face{font-family:"iconfont";src:url('./source/dy/iconfont.woff2') format('woff2'),url('./source/dy/iconfont.woff') format('woff'),url('./source/dy/iconfont.ttf') format('truetype');}.iconfont{font-family:"iconfont" !important;font-size:16px;font-style:normal;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}.icon-info2:before{content:"\e746";}.icon-093info:before{content:"\e664";}.icon-institueinfo:before{content:"\e613";}.icon-fengshan:before{content:"\e600";}.icon-fengshan1:before{content:"\e6cc";}.icon-a-28tongfengfengshan:before{content:"\e604";}.icon-a-28atongfengfengshan:before{content:"\e605";}.icon-weibiaoti-:before{content:"\e689";}.icon-fengche2:before{content:"\e625";}
+/* cyrillic-ext */
+/* cyrillic */
+/* greek-ext */
+/* greek */
+/* vietnamese */
+/* latin-ext */
+/* latin */
+/* cyrillic-ext */
+/* cyrillic */
+/* greek-ext */
+/* greek */
+/* vietnamese */
+/* latin-ext */
+/* latin */
+/* cyrillic-ext */
+/* cyrillic */
+/* greek-ext */
+/* greek */
+/* vietnamese */
+/* latin-ext */
+/* latin */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Source Sans Pro SemiBold'), local('SourceSansPro-SemiBold'),
+    url('./source/zj/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwlxdu.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
+    U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}@import '';
+@import '';
+:root {
+    /* dy color */
+    --select-text-bg-color: #ffafa3; /* 文本选中背景色（粉红） */
+    /*--primary-color: red;*/
+    --focus-color: #ff5d52; /* 点击某些元素（如标题）显示的颜色（偏红） */
+    --codeblockbg-color: #eee; /* 代码块背景色（灰色） */
+    --codeblockfont-color: #555; /* 代码块默认字体颜色（黑色） */
+    --titlebefore-color: #00c4b6; /* 各级标题点缀颜色（绿色） */
+    --codeblocknum-color: rgba(128, 128, 255, 0.8); /* 代码块行编号颜色（蓝色） */
+    --blockquoteicon-color: #5fa7e4; /* blockquote提示图标色（蓝色） */
+    --blockquotebg-color: #f4fcff; /* blockquote背景色（淡蓝） */
+    --ulol-color: #81accf; /* 有序无序列表前缀颜色（灰色） */
+    --tableevenrow-color: #eee; /* 表格偶数行颜色（淡灰） */
+    --tablefocusrow-color: rgba(100, 221, 221, 0.2); /* 表格鼠标悬停行颜色（淡蓝） */
+    --tableborder-color: #c5c5c5; /* 表格边框色（黑色） */
+    --tablethbg-color: #f4fcff; /* 表格表头背景色（淡蓝） */
+    --toc-color: #00a0a0; /* 目录颜色（绿色） */
+    --atext-color: black; /* 超链接文本颜色（黑色） */
+    --abottom-color: #81d8cf; /* 超链接下划线颜色（青色） */
+    --code-color: #ff3502; /* 行内代码前景色（红色） */
+    --codebg-color: #f8f5ec; /* 行内代码背景色（淡红） */
+    --footnote-color: #e96900; /* 脚注上标前景色（红色） */
+    --footnotebg-color: #f8f8f8; /* 脚注上标背景色（淡灰） */
+    --highlight-color: red; /* 高亮文本前景色（红色） */
+    --highlightbg-color: yellow; /* 高亮文本背景色（黄色） */
+    --split-color: #00c4b6; /* 分割线颜色（绿色） */
+    --taskborder-color: red; /* 任务列表边框色（红色） */
+    --taskfocus-color: #00c4b6; /* 任务列表选中填充色（绿色） */
+    --spannote-color: #e91e64; /* 小标签背景色（红色） */
+    --emptext-color: #fe5f58; /* 几款强调型文本的颜色（红色） */
+    --hidetextcover-color: #a1a1a1; /* 隐藏文本遮罩颜色（灰色） */
+    --hidetext-color: #444; /* 隐藏文本颜色（黑色） */
+    --spanbtn-color: #44d7b6; /* 文本按钮颜色（绿色） */
+    --detailstxt-color: rgba(68,68,68,.7); /* 折叠框summary文字颜色（灰色） */
+    --detailsbg-color: #ebf9ed; /* 折叠框summary背景色（青绿色） */
+    --detailsborder-color: #00c4b6; /* 折叠框边框色（绿色） */
+    --body-color: #000000; /* 文本颜色 */
+    --para-color: #000000; /* 段落文本颜色（黑色） */
+    /* dy font */
+    --body-font: 'Source Sans Pro', '等距更纱黑体 SC', 'Helvetica Neue', Arial, sans-serif; /* 全局字体 */
+    --code-font: 'JetBrains Mono'; /* 代码块以及行内代码字体 */
+}
+
+
+
+html {
+    font-size: 17px;
+}
+
+body {
+    font-family: var(--body-font);
+    color: var(--body-color);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.8rem;
+    letter-spacing: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+#write {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 20px 30px 160px;
+}
+
+/*
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+*/
+
+#write p {
+    line-height: 1.8rem;
+    word-spacing: .05rem;
+    color: var(--para-color);
+}
+
+#write>ul:first-child,
+#write>ol:first-child {
+    margin-top: 30px;
+}
+
+body>*:first-child {
+    margin-top: 0 !important;
+}
+
+body>*:last-child {
+    margin-bottom: 0 !important;
+}
+
+
+
+/** 超链接 **/
+
+
+#write a {
+    border-bottom:2px solid var(--abottom-color);
+    padding: 0 4px;
+    /*padding-top: 2px;*/
+    transition: .3s;
+    color: var(--atext-color);
+    text-decoration: none;
+}
+#write a:hover {
+    border-radius:6px;
+    border-bottom:2px solid transparent;
+    background-color:var(--abottom-color);
+    color:#ffffffe6;
+    cursor:pointer;
+}
+#write a[href*="muggledy"] {
+    border-bottom:2px solid red;
+}
+#write a[href*="muggledy"]:hover {
+    background-color:red;
+}
+#write h2 a, #write h4 a, #write a[alt="null"]{
+    border-bottom: none !important;
+    /*color: var(--code-color);*/
+}
+h2 a:hover:before, h4 a:hover:before, #write a[alt="null"]:hover:before{
+    content: none !important;
+}
+
+/* 修复空链接（标题锚点）显示底部下划线的问题（padding宽度引起的问题），但是自定义锚点怎么处理？因为自定义的锚点链接里有一个空格，非空，所以自定义锚点时请额外加上alt="none"，这将会使得链接“消失” */
+#write a:empty, #write a[alt="none"] {
+    padding-left:0px; /*直接上display:none消除超链接会导致锚点失效，visibility:hidden又占位*/
+    padding-right:0px;
+}
+#write a[alt="none"] span {
+    display: none; /*消除空格或其他内容*/
+}
+
+/* 无样式超链接 */
+#write a[alt="null"]:hover{
+    background-color: inherit;
+    border-radius: 0px;
+    color: var(--atext-color);
+}
+
+
+/** 目录 **/
+
+
+#write a.md-toc-inner {
+    line-height: 1.6;
+    white-space: pre-line;
+    border-bottom: none;
+    color: var(--toc-color);
+}
+.md-toc {
+    margin-top: 50px;
+    padding-bottom: 20px;
+}
+#write a.md-toc-inner:hover{
+    text-decoration: underline;
+    /* border-bottom: 2px solid var(--toc-color);text-decoration: none; */
+    color: var(--toc-color);
+    background-color: inherit;
+    border-radius: 0px;
+}
+#write a.md-toc-inner code{
+    color: var(--toc-color);
+    background-color: #f3f4f4;
+}
+#write a.md-toc-inner:hover:before {
+    content: none !important;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+
+h1 code {
+    font-size: inherit !important;
+}
+h2 code {
+    font-size: inherit !important;
+}
+h3 code {
+    font-size: inherit !important;
+}
+h4 code {
+    font-size: inherit !important;
+}
+h5 code {
+    font-size: inherit !important;
+}
+h6 code {
+    font-size: inherit !important;
+}
+
+
+
+/** 不同级别标题样式 **/
+
+
+h1 {
+    text-align: center;
+    padding-bottom: 0.3em;
+    font-size: 2.2em;
+    line-height: 1.2;
+    margin: 2.4em auto 1.2em;
+    color: black;
+}
+/*
+h1:after { //一级大标题下划线（为固定长度）
+    content: '';
+    display: block;
+    margin: 0.2em auto 0;
+    width: 100px;
+    height: 2px;
+    border-bottom: 2px solid var(--titlebefore-color);
+}
+*/
+h2 {
+    margin: 1.8em auto 1.2em;
+    font-size: 1.8em;
+    border-bottom: 2px solid var(--titlebefore-color);
+}
+h2::before {
+    content: '\e689' !important; /* 风车图标 */
+    color: var(--titlebefore-color);
+    font-family: "iconfont";
+}
+
+/* h2标题前缀旋转动画 */
+@-moz-keyframes avatar_turn_around{from{-webkit-transform:rotate(0);-moz-transform:rotate(0);-o-transform:rotate(0);-ms-transform:rotate(0);transform:rotate(0)}to{-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);-o-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg)}}@-webkit-keyframes avatar_turn_around{from{-webkit-transform:rotate(0);-moz-transform:rotate(0);-o-transform:rotate(0);-ms-transform:rotate(0);transform:rotate(0)}to{-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);-o-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg)}}@-o-keyframes avatar_turn_around{from{-webkit-transform:rotate(0);-moz-transform:rotate(0);-o-transform:rotate(0);-ms-transform:rotate(0);transform:rotate(0)}to{-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);-o-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes avatar_turn_around{from{-webkit-transform:rotate(0);-moz-transform:rotate(0);-o-transform:rotate(0);-ms-transform:rotate(0);transform:rotate(0)}to{-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);-o-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg)}}
+h2:before {
+    display: inline-block;
+    -webkit-animation: avatar_turn_around 1s linear infinite;
+    -moz-animation: avatar_turn_around 1s linear infinite;
+    -o-animation: avatar_turn_around 1s linear infinite;
+    -ms-animation: avatar_turn_around 1s linear infinite;
+    animation: avatar_turn_around 1s linear infinite;
+    font-size: 34px;
+    margin-left: -29px;
+}
+
+/* h2标题内容稍稍偏右一点 */
+h2 * {
+    margin-left: .18rem;
+}
+#write>h2.md-focus:before {
+    color: var(--focus-color);
+}
+#write>h2.md-focus {
+    border-bottom-color: var(--focus-color);
+}
+
+h3 {
+    font-size: 1.4em;
+    line-height: 1.43;
+    margin: 1.6em auto 1.2em;
+    padding-left: 9px;
+    border-left: 5px solid var(--titlebefore-color);
+}
+h4 {
+    margin-top: 1.3em;
+    font-size: 1.2em;
+    padding-left: 6px;
+    padding-right: 6px;
+    display: inline-block;
+    border: 1px solid var(--titlebefore-color);
+    border-top: 4px solid var(--titlebefore-color);
+}
+
+/* 三级四级标题点击后的前缀提示图标 */
+#write>h3.md-focus:before,
+#write>h4.md-focus:before {
+    width: auto;
+    height: auto;
+    background-color: var(--focus-color);
+    color: #ffffff;
+}
+#write>h3.md-focus,
+#write>h4.md-focus {
+    border-color: var(--focus-color);
+}
+
+#write h5::before,
+#write h6::before {
+    position: absolute;
+    right: calc(100% + .75em);
+    top: 0;
+    color: var(--titlebefore-color); /* #5b5b5b */
+    font-size: 0.8rem;
+    font-weight: bold;
+    font-variant: 'small-caps';
+    white-space: nowrap;
+    /* 文本强制不换行 */
+    border: 0;
+}
+#write h5.md-focus:before, #write h6.md-focus:before{
+    color: var(--focus-color);
+}
+#write h5, #write h6 {
+    /* margin-left: 2em; */
+    font-size: 1rem;
+}
+#write h5::before {
+    content: 'H5';
+    top: 0.18rem;
+}
+#write h6::before {
+    content: 'H6';
+    top: 0.18rem;
+}
+
+
+
+p,
+blockquote,
+ul,
+ol,
+dl,
+table {
+    margin: 0.8em 0;
+}
+
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+
+body>h2:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+body>h1:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+body>h1:first-child+h2 {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+body>h3:first-child,
+body>h4:first-child,
+body>h5:first-child,
+body>h6:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+a:first-child h1,
+a:first-child h2,
+a:first-child h3,
+a:first-child h4,
+a:first-child h5,
+a:first-child h6 {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+h1 p,
+h2 p,
+h3 p,
+h4 p,
+h5 p,
+h6 p {
+    margin-top: 0;
+}
+
+#write ol,
+#write ul {
+    padding-left: 35px;
+    margin: .5rem 0;
+}
+
+#write ol>li>*,
+#write ul>li>* {
+    color: #333;
+    font-weight: normal;
+}
+
+#write ol>li>*:not(ol):not(ul),
+#write ul>li>*:not(ol):not(ul) {
+    padding-left: .25rem;
+}
+
+
+
+/** 引用块（提示型） **/
+
+
+blockquote {
+    /* border: 1px solid #d1f3ff; */
+    border-left: 5px solid var(--blockquoteicon-color);
+    padding: 10px 15px;
+    color: #3f3f3f;
+    background-color: var(--blockquotebg-color); /* white */
+    border-radius: 3px;
+    position:relative;
+}
+
+/* 给提示块加info图标 */
+blockquote>* {
+    margin-left: 2rem !important;
+}
+blockquote::before {
+    content: '\e613';
+    font-family: "iconfont";
+    color: var(--blockquoteicon-color);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: large;
+    font-weight: 600;
+}
+/*
+blockquote:hover {
+    border-left: 5px solid var(--focus-color);
+}
+blockquote:hover:before {
+    color: var(--focus-color);
+}
+*/
+
+
+/** 表格样式 **/
+
+
+table {
+    padding: 0;
+    word-break: initial;
+}
+/*
+table tr {
+    border-top: 1px solid var(--main-6);
+    margin: 0;
+    padding: 0;
+}
+*/
+table tr:nth-child(2n) {
+    background-color: var(--tableevenrow-color);
+}
+table tr th {
+    font-weight: bold;
+    border: 1px solid var(--tableborder-color);
+    background-color: var(--tablethbg-color);
+    border-bottom: 0;
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid var(--tableborder-color);
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+table tr:hover {
+  background-color: var(--tablefocusrow-color);
+}
+
+
+/** 代码块 **/
+
+
+#write .CodeMirror pre {
+    font-family: var(--code-font);
+    font-size: 0.95em;
+    padding-left: 12px;
+}
+.md-fences {
+    background: var(--codeblockbg-color);
+    border-radius: 3px;
+    color: var(--codeblockfont-color);
+    padding: 0 4px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    line-height: 1.6em;
+}
+
+/* 行号左框线 */
+/*
+#write .CodeMirror-gutters {
+    border-right: 1px solid rgba(204, 51, 0);
+}
+*/
+
+/* 代码块行号颜色 */
+.cm-s-inner .CodeMirror-linenumber {
+    /* width: 2ch !important; */
+    color: var(--codeblocknum-color);
+}
+
+/* 代码块光标线条宽度、颜色 */
+#write .CodeMirror-cursors .CodeMirror-cursor {
+    border-left: 2px solid var(--focus-color);
+}
+
+/* 蓝色行内数学公式 */
+/*
+[md-inline='inline_math'] {
+    color: blue;
+    font-size: 100%;
+}
+*/
+
+/* 修复行间公式在手机端屏幕宽度较小时公式极端缩小的问题，但是打印为pdf时仍要设为100%，否则有滚动条 */
+@media only screen and (max-width: 800px) {
+    .MathJax_SVG_Display svg{
+        max-width: inherit !important;
+    }
+}
+
+
+/** 行内代码 **/
+
+
+#write code {
+    padding: 2px 4px;
+    border-radius: 2px;
+    font-family: var(--code-font); /*font-family: '微软雅黑';*/
+    font-size: 0.9rem;
+    color: var(--code-color);
+    background-color: var(--codebg-color);
+}
+
+
+/** 脚注（上标） **/
+
+
+#write .md-footnote {
+    background-color: var(--footnotebg-color);
+    color: var(--footnote-color);
+}
+
+/* 脚注上标链接禁止显示下划线样式 */
+#write sup.md-footnote a{
+    color: inherit !important; /* 鼠标hover时禁止颜色发生变化 */
+    border-bottom: none;
+    padding: 1px;
+    background-color: inherit;
+}
+
+
+/** 文本高亮 **/
+
+
+#write span[md-inline="highlight"] mark {
+    background-color: var(--highlightbg-color);
+    border-radius: 2px;
+    padding: 2px 4px;
+    margin: 0 2px;
+    color: var(--highlight-color);
+    font-weight: 500;
+}
+
+
+/** 分割线 **/
+
+
+/*
+hr {
+    height: 1px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: var(--split-color);
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+*/
+hr { /* 来自next主题样式 */
+    background-image: repeating-linear-gradient(-45deg, var(--split-color), var(--split-color) 4px, transparent 4px, transparent 8px);
+    border: 0;
+    height: 3px;
+    margin: 40px 0
+}
+
+
+
+#write del {
+    padding: 1px 2px;
+}
+
+.cm-s-inner .cm-link,
+.cm-s-inner.cm-link {
+    color: #22a2c9;
+}
+
+.cm-s-inner .cm-string {
+    color: #22a2c9;
+}
+
+
+
+/** 任务列表小方框 **/
+
+
+.md-task-list-item>input {
+    margin-left: -1.3em;
+    margin-top: 0.4rem;
+    -webkit-appearance: none;
+}
+.md-task-list-item>input:before {
+    content: '';
+    display: inline-block;
+    width: 0.875rem;
+    height: 0.875rem;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 0.8rem;
+    color: white;
+    border-radius: 2px;
+    /*background-color: white;*/
+    border: 1px solid var(--taskborder-color);
+    margin-top: -0.4rem;
+    transition: all 0.2s linear;
+}
+.md-task-list-item>input:checked:before,
+.md-task-list-item>input[checked]:before {
+    content: '\2714';
+    font-size: 0.625rem;
+    color: white;
+    border: 1px solid var(--taskfocus-color);
+    background-color: var(--taskfocus-color);
+    line-height: .8rem;
+}
+.md-task-list-item:before{
+    content: none !important;
+}
+
+#write input[type=checkbox] {
+    position: absolute;
+    top: 60%;
+    transform: translateY(-60%);
+    left: -6px;
+    background-color: inherit;
+}
+
+
+/** 导出html文件，修复流程图在手机端高度太大的问题 **/
+
+
+.md-diagram-panel svg{
+    max-width: inherit !important;
+    height: inherit !important;
+}
+
+
+
+/* @media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+} */
+
+/* .md-fences {
+    background-color: #f8f8f8;
+} */
+
+#write pre.md-meta-block {
+    /* padding: 1rem; */
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+    bottom: .375rem;
+    /* bottom: .575rem; */
+}
+
+#write>h3.md-focus:before {
+    left: -1.5625rem;
+    top: .375rem;
+}
+
+#write>h4.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+
+#write>h5.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+
+#write>h6.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+
+
+
+/** 图片 **/
+
+
+.md-image {
+    margin: 24px auto; /* 图片上下边距24像素 */
+}
+.md-image img {
+    border-radius: 4px;
+}
+
+/* 当按`![shadow-随便写]()`格式写时（或`<img src="" alt="shadow-随便写">`），会有阴影 */
+.md-image img[alt|='shadow'] {
+    box-shadow: #84A1A8 0px 10px 15px;
+    background-size: 100% 100%;
+    cursor: default;
+    border-left: 0;
+    border-right: 0;
+}
+
+/* 模糊特效 */
+.md-image img[alt|='blur'] {
+    filter:blur(6px);
+    -webkit-filter:blur(6px);
+    -moz-filter:blur(6px);
+    -ms-filter:blur(6px);
+    -o-filter:blur(6px);
+    transition: all 0.2s linear;
+}
+.md-image img[alt|='blur']:hover {
+    filter:none;
+    -webkit-filter:none;
+    -moz-filter:none;
+    -ms-filter:none;
+    -o-filter:none;
+}
+
+.md-image>.md-meta {
+    border-radius: 3px;
+    font-family: var(--body-font);
+    padding: 2px 0 0 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+
+
+.md-tag {
+    color: inherit;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#md-notification:before {
+    top: 10px;
+}
+
+/* focus mode */
+
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header,
+.context-menu,
+.megamenu-content,
+footer {
+    font-family: var(--body-font);
+}
+
+.file-node-content:hover .file-node-icon {
+    color: var(--titlebefore-color);
+}
+.file-node-content:hover {
+    cursor: pointer;
+    color: var(--titlebefore-color) !important;
+}
+.outline-item:hover {
+    color: var(--titlebefore-color) !important;
+}
+/*
+.mac-seamless-mode #typora-sidebar {
+    background-color: var(--side-bar-bg-color);
+}
+*/
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #e6f0fe;
+}
+
+/* 侧边栏 */
+/*
+.file-list-item.active {
+    background: var(--active-file-bg-color);
+    color: var(--active-file-text-color);
+    border-left: 4px solid var(--main-6);
+}
+.file-tree-node.active>.file-node-background {
+    background-color: var(--active-file-bg-color);
+    border-left: 4px solid var(--main-6);
+    border-color: var(--active-file-border-color);
+}
+*/
+
+@media print {
+    .typora-export * {
+        -webkit-print-color-adjust: exact;
+    }
+    html {
+        font-size: 16px!important;
+    }
+    body {
+        font-family: Times, 'SimSun', serif!important;
+        color: #000000!important;
+    }
+    p {
+        color: #000000!important;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+    .MathJax_SVG_Display svg{
+        max-width: 100% !important;
+    }
+}
+
+
+
+/** 有序、无序列表，来自Butterfly主题 **/
+
+
+#write ul li, #write ol li, #write .ul .li, #write .ol .li {
+    list-style-type: none;
+}
+#write ul>li:not(.tab):before, #write .ul>.li:not(.tab):before {
+    margin-left: -22px;
+    margin-top: 10px;
+    width: .62em;
+    height: .62em;
+    border: .1em solid var(--ulol-color); /* #81d8cf */
+    border-radius: .31em;
+    background: 0 0;
+    content: '';
+    line-height: .42em;
+}
+#write ol li:before, #write ul li:before, #write .ol .li:before, #write .ul .li:before {
+    position: absolute;
+    background: var(--ulol-color); /* #81d8cf */
+    color: #fff;
+    cursor: pointer;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    -ms-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+}
+#write ol li:first-child, #write .ol .li:first-child { /* https://www.w3school.com.cn/cssref/pr_gen_counter-increment.asp */
+    counter-reset: li;
+}
+#write ol li:hover:before, #write ul li:hover:before, #write .ol .li:hover:before, #write .ul .li:hover:before {
+    -webkit-transform:rotate(360deg);
+    -moz-transform:rotate(360deg);
+    -o-transform:rotate(360deg);
+    -ms-transform:rotate(360deg);
+    transform:rotate(360deg);
+}
+#write ul>li:not(.tab):hover:before, #write .ul>.li:not(.tab):hover:before{
+    border-color: var(--focus-color);
+}
+#write ol>li:before, #write .ol>.li:before {
+    margin-top: 6px;
+    margin-left: -25px;
+    width: 1.65em;
+    height: 1.65em;
+    border-radius: 0.825em;
+    content: counter(li);
+    counter-increment: li;
+    text-align: center;
+    font-size: .65em;
+    line-height: 1.7em;
+}
+
+/* 列表子项上下间隔调整 */
+#write ul li *, #write ol li *, #write .ul .li *, #write .ol .li * {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+/* 列表上下间隔调整 */
+#write ul li, #write ol li, #write .ul .li, #write .ol .li {
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+
+/** 小标签 **/
+
+
+font {
+    display: inline;
+    padding: .2em .6em;
+    font-size: 90%;
+    font-weight: 400;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .1rem;
+    border-radius: 6px;
+    background-color: var(--spannote-color);
+}
+font[title="red"] {
+    background-color:#e91e64;
+}
+font[title="blue"] {
+    background-color:#02aaf4;
+}
+font[title="yellow"] {
+    background-color:#ffc50a;
+}
+font[title="green"] {
+    background-color:#8bc34a;
+}
+font[title="gray"] {
+    background-color:#4c4c4c;
+}
+
+
+/** 强调型文本 **/
+
+
+span[alt='emp'] {
+    border-bottom: 4px dotted var(--emptext-color);
+}
+span[alt='underline'] {
+    border-bottom: 2px solid var(--emptext-color);
+}
+span[alt='wavy'] {
+    text-decoration-style: wavy;
+    text-decoration-line: underline;
+    text-decoration-color: var(--emptext-color);
+}
+
+
+/** 折叠标签 **/
+
+
+details {
+    display: block;
+    padding: 16px;
+    margin: 1em 0;
+    border-radius: 4px;
+    background: #fff;
+    font-size: 14px;
+    -webkit-transition: all .28s ease;
+    -moz-transition: all .28s ease;
+    -o-transition: all .28s ease;
+    -ms-transition: all .28s ease;
+    transition: all .28s ease;
+    -moz-transition: all .28s ease;
+    -webkit-transition: all .28s ease;
+    -o-transition: all .28s ease;
+    border: 1px solid #f6f6f6;
+}
+summary {
+    display: list-item;
+}
+details summary {
+    cursor: pointer;
+    padding: 16px;
+    margin: -16px;
+    border-radius: 4px;
+    color: var(--detailstxt-color);
+    font-size: .875rem!important;
+    font-weight: 700;
+    position: relative;
+    line-height: normal;
+}
+details>summary {
+    background: var(--detailsbg-color);
+}
+details[open] {
+    border-color: var(--detailsborder-color);
+}
+details[open]>summary {
+    color: #444;
+    margin-bottom: 0;
+}
+details[open]>summary {
+    border-bottom: 1px solid var(--detailsborder-color);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+/* 折叠框、视频、音频标签点击时候会出现黑色边框，极不美观，去除 */
+summary:focus {
+    outline: none !important;
+}
+video:focus{
+    outline: none !important;
+}
+audio:focus{
+    outline: none !important;
+}
+
+
+/** 隐藏型文本 **/
+
+
+span[alt="hide"] {
+    color: transparent;
+    background: var(--hidetextcover-color);
+    border-radius: 2px;
+    -webkit-transition: all .28s ease;
+    -moz-transition: all .28s ease;
+    -o-transition: all .28s ease;
+    -ms-transition: all .28s ease;
+    transition: all .28s ease;
+    -moz-transition: all .28s ease;
+    -webkit-transition: all .28s ease;
+    -o-transition: all .28s ease;
+}
+span[alt="hide"]:hover {
+    color:var(--hidetext-color);
+    background:0 0
+}
+
+
+/** 彩虹变换字体特效（来自黑石博客） **/
+
+
+@-webkit-keyframes rainbowan {
+    to {
+        background-position: -2000vw;
+    }
+}
+@keyframes rainbowan {
+    to {
+        background-position: -2000vw;
+    }
+}
+span[alt="rainbow"], span[alt="rainbow"] * {
+    padding-top: 3px;
+    background-image: linear-gradient( to left, orangered, orange, gold, lightgreen, cyan, dodgerblue, mediumpurple, hotpink, orangered);
+    background-size: 110vw;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-animation: rainbowan 60s linear infinite;
+    animation: rainbowan 60s linear infinite;
+}
+
+
+/** 一款时尚的span字体，来自QinXS **/
+
+
+span[alt="modern"] {
+    display: inline;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-family: var(--body-font);
+    font-size: 1em;
+    letter-spacing: .2em;
+    color: red;
+    text-shadow: 0 8px 9px #c4b59d, 0 -2px 1px #fff;
+    font-weight: 700;
+    background: linear-gradient(to bottom,#ece4d9 0,#e9dfd1 100%);
+}
+
+
+/** volantis文本按钮样式 **/
+
+
+span[alt="btn"] {
+    color: var(--spanbtn-color);
+    border: 1px solid var(--spanbtn-color);
+    padding: 3px 4px 2px;
+    margin: 4px;
+    line-height: 1.1;
+    border-radius: 2px;
+}
+#write span[alt="btn"] a{
+    color: var(--spanbtn-color);
+    border-bottom:none;
+    background-color:inherit;
+    transition: none;
+}
+span[alt="btn"]:hover {
+    color: var(--focus-color);
+    border: 1px solid var(--focus-color);
+}
+#write span[alt="btn"]:hover a{
+    color: var(--focus-color);
+}
+
+
+/** 抖音字效 **/
+
+
+@-webkit-keyframes uk-text-shadow-glitch{0%{text-shadow:none}25%{text-shadow:-1px -1px 0 #ff0048,1px 1px 0 #3234ff}50%{text-shadow:1px -1px 0 #ff0048,-1px 1px 0 #3234ff}75%{text-shadow:-1px 1px 0 #ff0048,1px -1px 0 #3234ff}to{text-shadow:1px 1px 0 #ff0048,-1px -1px 0 #3234ff}}@keyframes uk-text-shadow-glitch{0%{text-shadow:none}25%{text-shadow:-1px -1px 0 #ff0048,1px 1px 0 #3234ff}50%{text-shadow:1px -1px 0 #ff0048,-1px 1px 0 #3234ff}75%{text-shadow:-1px 1px 0 #ff0048,1px -1px 0 #3234ff}to{text-shadow:1px 1px 0 #ff0048,-1px -1px 0 #3234ff}}
+
+span[alt="shake"] {
+    -webkit-animation: uk-text-shadow-glitch .95s cubic-bezier(1,-1.91,0,2.79) 0s infinite normal both running;
+    animation: uk-text-shadow-glitch .95s cubic-bezier(1,-1.91,0,2.79) 0s infinite normal both running;
+}
+
+
+</style>
+</head>
+<body class='typora-export os-windows'>
+<div id='write'  class=''><h1><a name="一级标题" class="md-header-anchor"></a><span>一级标题</span></h1><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n0"><a class="md-toc-inner" href="#一级标题">一级标题</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n3"><a class="md-toc-inner" href="#二级标题">二级标题</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n4"><a class="md-toc-inner" href="#三级标题">三级标题</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n5"><a class="md-toc-inner" href="#四级标题">四级标题</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n6"><a class="md-toc-inner" href="#五级标题">五级标题</a></span><span role="listitem" class="md-toc-item md-toc-h6" data-ref="n7"><a class="md-toc-inner" href="#六级标题">六级标题</a></span></p></div><h2><a name="二级标题" class="md-header-anchor"></a><span>二级标题</span></h2><h3><a name="三级标题" class="md-header-anchor"></a><span>三级标题</span></h3><h4><a name="四级标题" class="md-header-anchor"></a><span>四级标题</span></h4><h5><a name="五级标题" class="md-header-anchor"></a><span>五级标题</span></h5><h6><a name="六级标题" class="md-header-anchor"></a><span>六级标题</span></h6><p><span>标题样式来自</span><a href='https://github.com/Theigrams/My-Typora-Themes' target='_blank' title='本样式修改自zj主题（这是一个链接引用）'><span>zj主题</span></a><sup><span>[1]</span></sup><span>（这是一个参考链接，按住</span><kbd><span>ctrl</span></kbd><span>键并点击将自动打开浏览器并跳转至相关链接，其中上标</span><code>[1]</code><span>只是一个额外的标注）</span></p><p><span>注：部分样式需要在偏好设置中开启，如上下标、行内公式、图表等</span></p><p><span>行内公式：</span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="17.361ex" height="3.759ex" viewBox="0 -835.3 7474.9 1618.6" role="img" focusable="false" style="vertical-align: -1.819ex;"><defs><path stroke-width="0" id="E6-MJMAIN-6C" d="M42 46H56Q95 46 103 60V68Q103 77 103 91T103 124T104 167T104 217T104 272T104 329Q104 366 104 407T104 482T104 542T103 586T103 603Q100 622 89 628T44 637H26V660Q26 683 28 683L38 684Q48 685 67 686T104 688Q121 689 141 690T171 693T182 694H185V379Q185 62 186 60Q190 52 198 49Q219 46 247 46H263V0H255L232 1Q209 2 183 2T145 3T107 3T57 1L34 0H26V46H42Z"></path><path stroke-width="0" id="E6-MJMAIN-69" d="M69 609Q69 637 87 653T131 669Q154 667 171 652T188 609Q188 579 171 564T129 549Q104 549 87 564T69 609ZM247 0Q232 3 143 3Q132 3 106 3T56 1L34 0H26V46H42Q70 46 91 49Q100 53 102 60T104 102V205V293Q104 345 102 359T88 378Q74 385 41 385H30V408Q30 431 32 431L42 432Q52 433 70 434T106 436Q123 437 142 438T171 441T182 442H185V62Q190 52 197 50T232 46H255V0H247Z"></path><path stroke-width="0" id="E6-MJMAIN-6D" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q351 442 364 440T387 434T406 426T421 417T432 406T441 395T448 384T452 374T455 366L457 361L460 365Q463 369 466 373T475 384T488 397T503 410T523 422T546 432T572 439T603 442Q729 442 740 329Q741 322 741 190V104Q741 66 743 59T754 49Q775 46 803 46H819V0H811L788 1Q764 2 737 2T699 3Q596 3 587 0H579V46H595Q656 46 656 62Q657 64 657 200Q656 335 655 343Q649 371 635 385T611 402T585 404Q540 404 506 370Q479 343 472 315T464 232V168V108Q464 78 465 68T468 55T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z"></path><path stroke-width="0" id="E6-MJMATHI-78" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path><path stroke-width="0" id="E6-MJMAIN-2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path><path stroke-width="0" id="E6-MJMAIN-221E" d="M55 217Q55 305 111 373T254 442Q342 442 419 381Q457 350 493 303L507 284L514 294Q618 442 747 442Q833 442 888 374T944 214Q944 128 889 59T743 -11Q657 -11 580 50Q542 81 506 128L492 147L485 137Q381 -11 252 -11Q166 -11 111 57T55 217ZM907 217Q907 285 869 341T761 397Q740 397 720 392T682 378T648 359T619 335T594 310T574 285T559 263T548 246L543 238L574 198Q605 158 622 138T664 94T714 61T765 51Q827 51 867 100T907 217ZM92 214Q92 145 131 89T239 33Q357 33 456 193L425 233Q364 312 334 337Q285 380 233 380Q171 380 132 331T92 214Z"></path><path stroke-width="0" id="E6-MJMAIN-65" d="M28 218Q28 273 48 318T98 391T163 433T229 448Q282 448 320 430T378 380T406 316T415 245Q415 238 408 231H126V216Q126 68 226 36Q246 30 270 30Q312 30 342 62Q359 79 369 104L379 128Q382 131 395 131H398Q415 131 415 121Q415 117 412 108Q393 53 349 21T250 -11Q155 -11 92 58T28 218ZM333 275Q322 403 238 411H236Q228 411 220 410T195 402T166 381T143 340T127 274V267H333V275Z"></path><path stroke-width="0" id="E6-MJMAIN-78" d="M201 0Q189 3 102 3Q26 3 17 0H11V46H25Q48 47 67 52T96 61T121 78T139 96T160 122T180 150L226 210L168 288Q159 301 149 315T133 336T122 351T113 363T107 370T100 376T94 379T88 381T80 383Q74 383 44 385H16V431H23Q59 429 126 429Q219 429 229 431H237V385Q201 381 201 369Q201 367 211 353T239 315T268 274L272 270L297 304Q329 345 329 358Q329 364 327 369T322 376T317 380T310 384L307 385H302V431H309Q324 428 408 428Q487 428 493 431H499V385H492Q443 385 411 368Q394 360 377 341T312 257L296 236L358 151Q424 61 429 57T446 50Q464 46 499 46H516V0H510H502Q494 1 482 1T457 2T432 2T414 3Q403 3 377 3T327 1L304 0H295V46H298Q309 46 320 51T331 63Q331 65 291 120L250 175Q249 174 219 133T185 88Q181 83 181 74Q181 63 188 55T206 46Q208 46 208 23V0H201Z"></path><path stroke-width="0" id="E6-MJMAIN-70" d="M36 -148H50Q89 -148 97 -134V-126Q97 -119 97 -107T97 -77T98 -38T98 6T98 55T98 106Q98 140 98 177T98 243T98 296T97 335T97 351Q94 370 83 376T38 385H20V408Q20 431 22 431L32 432Q42 433 61 434T98 436Q115 437 135 438T165 441T176 442H179V416L180 390L188 397Q247 441 326 441Q407 441 464 377T522 216Q522 115 457 52T310 -11Q242 -11 190 33L182 40V-45V-101Q182 -128 184 -134T195 -145Q216 -148 244 -148H260V-194H252L228 -193Q205 -192 178 -192T140 -191Q37 -191 28 -194H20V-148H36ZM424 218Q424 292 390 347T305 402Q234 402 182 337V98Q222 26 294 26Q345 26 384 80T424 218Z"></path><path stroke-width="0" id="E6-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E6-MJMAIN-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path><path stroke-width="0" id="E6-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path><path stroke-width="0" id="E6-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path><path stroke-width="0" id="E6-MJMAIN-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g transform="translate(214,0)"><use xlink:href="#E6-MJMAIN-6C"></use><use xlink:href="#E6-MJMAIN-69" x="278" y="0"></use><use xlink:href="#E6-MJMAIN-6D" x="556" y="0"></use></g><g transform="translate(0,-600)"><use transform="scale(0.707)" xlink:href="#E6-MJMATHI-78" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E6-MJMAIN-2192" x="572" y="0"></use><use transform="scale(0.707)" xlink:href="#E6-MJMAIN-221E" x="1572" y="0"></use></g><g transform="translate(1985,0)"><use xlink:href="#E6-MJMAIN-65"></use><use xlink:href="#E6-MJMAIN-78" x="444" y="0"></use><use xlink:href="#E6-MJMAIN-70" x="972" y="0"></use></g><use xlink:href="#E6-MJMAIN-28" x="3513" y="0"></use><use xlink:href="#E6-MJMAIN-2212" x="3902" y="0"></use><use xlink:href="#E6-MJMATHI-78" x="4680" y="0"></use><use xlink:href="#E6-MJMAIN-29" x="5252" y="0"></use><use xlink:href="#E6-MJMAIN-3D" x="5919" y="0"></use><use xlink:href="#E6-MJMAIN-30" x="6974" y="0"></use></g></svg></span><script type="math/tex">\lim\limits_{x \to \infty} \exp(-x)=0</script><span>，行间公式：</span></p><div contenteditable="false" spellcheck="false" class="mathjax-block md-end-block md-math-block md-rawblock" id="mathjax-n11" cid="n11" mdtype="math_block"><div class="md-rawblock-container md-math-container" tabindex="-1"><div class="MathJax_SVG_Display"><span class="MathJax_SVG" id="MathJax-Element-4-Frame" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="96.653ex" height="5.453ex" viewBox="0 -1408.2 41614.4 2347.7" role="img" focusable="false" style="vertical-align: -2.182ex; max-width: 100%;"><defs><path stroke-width="0" id="E7-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E7-MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path stroke-width="0" id="E7-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path><path stroke-width="0" id="E7-MJMATHI-45" d="M492 213Q472 213 472 226Q472 230 477 250T482 285Q482 316 461 323T364 330H312Q311 328 277 192T243 52Q243 48 254 48T334 46Q428 46 458 48T518 61Q567 77 599 117T670 248Q680 270 683 272Q690 274 698 274Q718 274 718 261Q613 7 608 2Q605 0 322 0H133Q31 0 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q146 66 215 342T285 622Q285 629 281 629Q273 632 228 634H197Q191 640 191 642T193 659Q197 676 203 680H757Q764 676 764 669Q764 664 751 557T737 447Q735 440 717 440H705Q698 445 698 453L701 476Q704 500 704 528Q704 558 697 578T678 609T643 625T596 632T532 634H485Q397 633 392 631Q388 629 386 622Q385 619 355 499T324 377Q347 376 372 376H398Q464 376 489 391T534 472Q538 488 540 490T557 493Q562 493 565 493T570 492T572 491T574 487T577 483L544 351Q511 218 508 216Q505 213 492 213Z"></path><path stroke-width="0" id="E7-MJMAIN-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path stroke-width="0" id="E7-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path><path stroke-width="0" id="E7-MJMATHI-6D" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path><path stroke-width="0" id="E7-MJMATHI-63" d="M34 159Q34 268 120 355T306 442Q362 442 394 418T427 355Q427 326 408 306T360 285Q341 285 330 295T319 325T330 359T352 380T366 386H367Q367 388 361 392T340 400T306 404Q276 404 249 390Q228 381 206 359Q162 315 142 235T121 119Q121 73 147 50Q169 26 205 26H209Q321 26 394 111Q403 121 406 121Q410 121 419 112T429 98T420 83T391 55T346 25T282 0T202 -11Q127 -11 81 37T34 159Z"></path><path stroke-width="0" id="E7-MJMAIN-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path stroke-width="0" id="E7-MJMAIN-2014" d="M0 248V285H999V248H0Z"></path><path stroke-width="0" id="E7-MJMAIN-41" d="M255 0Q240 3 140 3Q48 3 39 0H32V46H47Q119 49 139 88Q140 91 192 245T295 553T348 708Q351 716 366 716H376Q396 715 400 709Q402 707 508 390L617 67Q624 54 636 51T687 46H717V0H708Q699 3 581 3Q458 3 437 0H427V46H440Q510 46 510 64Q510 66 486 138L462 209H229L209 150Q189 91 189 85Q189 72 209 59T259 46H264V0H255ZM447 255L345 557L244 256Q244 255 345 255H447Z"></path><path stroke-width="0" id="E7-MJMAIN-6C" d="M42 46H56Q95 46 103 60V68Q103 77 103 91T103 124T104 167T104 217T104 272T104 329Q104 366 104 407T104 482T104 542T103 586T103 603Q100 622 89 628T44 637H26V660Q26 683 28 683L38 684Q48 685 67 686T104 688Q121 689 141 690T171 693T182 694H185V379Q185 62 186 60Q190 52 198 49Q219 46 247 46H263V0H255L232 1Q209 2 183 2T145 3T107 3T57 1L34 0H26V46H42Z"></path><path stroke-width="0" id="E7-MJMAIN-62" d="M307 -11Q234 -11 168 55L158 37Q156 34 153 28T147 17T143 10L138 1L118 0H98V298Q98 599 97 603Q94 622 83 628T38 637H20V660Q20 683 22 683L32 684Q42 685 61 686T98 688Q115 689 135 690T165 693T176 694H179V543Q179 391 180 391L183 394Q186 397 192 401T207 411T228 421T254 431T286 439T323 442Q401 442 461 379T522 216Q522 115 458 52T307 -11ZM182 98Q182 97 187 90T196 79T206 67T218 55T233 44T250 35T271 29T295 26Q330 26 363 46T412 113Q424 148 424 212Q424 287 412 323Q385 405 300 405Q270 405 239 390T188 347L182 339V98Z"></path><path stroke-width="0" id="E7-MJMAIN-65" d="M28 218Q28 273 48 318T98 391T163 433T229 448Q282 448 320 430T378 380T406 316T415 245Q415 238 408 231H126V216Q126 68 226 36Q246 30 270 30Q312 30 342 62Q359 79 369 104L379 128Q382 131 395 131H398Q415 131 415 121Q415 117 412 108Q393 53 349 21T250 -11Q155 -11 92 58T28 218ZM333 275Q322 403 238 411H236Q228 411 220 410T195 402T166 381T143 340T127 274V267H333V275Z"></path><path stroke-width="0" id="E7-MJMAIN-72" d="M36 46H50Q89 46 97 60V68Q97 77 97 91T98 122T98 161T98 203Q98 234 98 269T98 328L97 351Q94 370 83 376T38 385H20V408Q20 431 22 431L32 432Q42 433 60 434T96 436Q112 437 131 438T160 441T171 442H174V373Q213 441 271 441H277Q322 441 343 419T364 373Q364 352 351 337T313 322Q288 322 276 338T263 372Q263 381 265 388T270 400T273 405Q271 407 250 401Q234 393 226 386Q179 341 179 207V154Q179 141 179 127T179 101T180 81T180 66V61Q181 59 183 57T188 54T193 51T200 49T207 48T216 47T225 47T235 46T245 46H276V0H267Q249 3 140 3Q37 3 28 0H20V46H36Z"></path><path stroke-width="0" id="E7-MJMAIN-74" d="M27 422Q80 426 109 478T141 600V615H181V431H316V385H181V241Q182 116 182 100T189 68Q203 29 238 29Q282 29 292 100Q293 108 293 146V181H333V146V134Q333 57 291 17Q264 -10 221 -10Q187 -10 162 2T124 33T105 68T98 100Q97 107 97 248V385H18V422H27Z"></path><path stroke-width="0" id="E7-MJMAIN-45" d="M128 619Q121 626 117 628T101 631T58 634H25V680H597V676Q599 670 611 560T625 444V440H585V444Q584 447 582 465Q578 500 570 526T553 571T528 601T498 619T457 629T411 633T353 634Q266 634 251 633T233 622Q233 622 233 621Q232 619 232 497V376H286Q359 378 377 385Q413 401 416 469Q416 471 416 473V493H456V213H416V233Q415 268 408 288T383 317T349 328T297 330Q290 330 286 330H232V196V114Q232 57 237 52Q243 47 289 47H340H391Q428 47 452 50T505 62T552 92T584 146Q594 172 599 200T607 247T612 270V273H652V270Q651 267 632 137T610 3V0H25V46H58Q100 47 109 49T128 61V619Z"></path><path stroke-width="0" id="E7-MJMAIN-69" d="M69 609Q69 637 87 653T131 669Q154 667 171 652T188 609Q188 579 171 564T129 549Q104 549 87 564T69 609ZM247 0Q232 3 143 3Q132 3 106 3T56 1L34 0H26V46H42Q70 46 91 49Q100 53 102 60T104 102V205V293Q104 345 102 359T88 378Q74 385 41 385H30V408Q30 431 32 431L42 432Q52 433 70 434T106 436Q123 437 142 438T171 441T182 442H185V62Q190 52 197 50T232 46H255V0H247Z"></path><path stroke-width="0" id="E7-MJMAIN-6E" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q450 438 463 329Q464 322 464 190V104Q464 66 466 59T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z"></path><path stroke-width="0" id="E7-MJMAIN-73" d="M295 316Q295 356 268 385T190 414Q154 414 128 401Q98 382 98 349Q97 344 98 336T114 312T157 287Q175 282 201 278T245 269T277 256Q294 248 310 236T342 195T359 133Q359 71 321 31T198 -10H190Q138 -10 94 26L86 19L77 10Q71 4 65 -1L54 -11H46H42Q39 -11 33 -5V74V132Q33 153 35 157T45 162H54Q66 162 70 158T75 146T82 119T101 77Q136 26 198 26Q295 26 295 104Q295 133 277 151Q257 175 194 187T111 210Q75 227 54 256T33 318Q33 357 50 384T93 424T143 442T187 447H198Q238 447 268 432L283 424L292 431Q302 440 314 448H322H326Q329 448 335 442V310L329 304H301Q295 310 295 316Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g transform="translate(40336,0)"><g id="mjx-eqn-1_1" transform="translate(0,469)"><use xlink:href="#E7-MJMAIN-28"></use><use xlink:href="#E7-MJMAIN-31" x="389" y="0"></use><use xlink:href="#E7-MJMAIN-29" x="889" y="0"></use></g></g><g transform="translate(16038,0)"><g transform="translate(-15,0)"><g transform="translate(0,469)"><use xlink:href="#E7-MJMATHI-45" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E7-MJMAIN-30" x="1043" y="-213"></use><use xlink:href="#E7-MJMAIN-3D" x="1469" y="0"></use><use xlink:href="#E7-MJMATHI-6D" x="2525" y="0"></use><g transform="translate(3403,0)"><use xlink:href="#E7-MJMATHI-63" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E7-MJMAIN-32" x="612" y="583"></use></g><g transform="translate(0,-1313)"><g transform="translate(1000,0)"><use xlink:href="#E7-MJMAIN-2014"></use><use xlink:href="#E7-MJMAIN-2014" x="1000" y="0"></use><use xlink:href="#E7-MJMAIN-41" x="2250" y="0"></use><use xlink:href="#E7-MJMAIN-6C" x="3000" y="0"></use><use xlink:href="#E7-MJMAIN-62" x="3278" y="0"></use><use xlink:href="#E7-MJMAIN-65" x="3834" y="0"></use><use xlink:href="#E7-MJMAIN-72" x="4278" y="0"></use><use xlink:href="#E7-MJMAIN-74" x="4670" y="0"></use><use xlink:href="#E7-MJMAIN-45" x="5309" y="0"></use><use xlink:href="#E7-MJMAIN-69" x="5990" y="0"></use><use xlink:href="#E7-MJMAIN-6E" x="6268" y="0"></use><use xlink:href="#E7-MJMAIN-73" x="6824" y="0"></use><use xlink:href="#E7-MJMAIN-74" x="7218" y="0"></use><use xlink:href="#E7-MJMAIN-65" x="7607" y="0"></use><use xlink:href="#E7-MJMAIN-69" x="8051" y="0"></use><use xlink:href="#E7-MJMAIN-6E" x="8329" y="0"></use></g></g></g></g></g></g></svg></span></div><script type="math/tex; mode=display" id="MathJax-Element-4">E_0 = mc^2 \\
+\quad\text{—— Albert Einstein}</script></div></div><p><span>推荐：</span><a href='http://draw.mathpix.com/'><span>latex手写公式识别</span></a><span>、</span><a href='https://www.latexlive.com/'><span>latex公式编辑器</span></a></p><p><span>可以直接用尖括号包裹URL链接或邮箱：</span><a href='https://emojixd.com/' target='_blank' class='url'>https://emojixd.com/</a></p><blockquote><p><span>提示块标签</span></p><blockquote><p><span>嵌套提示块</span></p></blockquote></blockquote><ul><li><span>无序列表1</span></li><li><span>无序列表2</span></li></ul><ol start='' ><li><span>有序列表1</span><sup class='md-footnote'><a href='#dfref-footnote-1' name='ref-footnote-1'>1</a></sup></li><li><span>有序列表2</span></li></ol><p><mark><span>文本高亮</span></mark><span>，</span><strong><span>加粗</span></strong><span>，</span><em><span>斜体</span></em><span>，</span><mark><strong><em><span>斜体高亮加粗</span></em></strong></mark><span>，</span><del><span>删除线</span></del><span>，</span><u><span>下划线</span></u><span>。</span><code>&lt;font&gt;</code><span>标签被我用于一款小标签样式（小康）：</span><font><span>红色小标签</span></font><span>，可以通过设置</span><code>background-color</code><span>属性控制背景色，如：</span><font style="background-color:#8bc34a"><span>绿色小标签</span></font><span>，为了方便，我提供了五种预定义的颜色（包括前面的红色、绿色）：</span><font title="blue"><span>蓝色小标签</span></font><span>、</span><font title="yellow"><span>黄色小标签</span></font><span>、</span><font title="gray"><span>灰色小标签</span></font><span>。一些强调型格式：</span><span alt="underline"><span>下划线</span></span><span>、</span><span alt="emp"><span>着重号</span></span><span>、</span><span alt="wavy"><span>波浪线</span></span><span>。</span><span alt="hide"><span>隐藏文本</span></span></p><p><span alt="rainbow"><span>彩虹变换字体特效</span></span><span>（嫖自</span><a href='https://www.heson10.com/posts/21347.html'><span>黑石大佬</span></a><span>🙇‍♀️），</span><span alt="modern"><span>欢迎光临</span></span><span>（嫖自</span><a href='https://7bxing.com/friends/'><span>QinXS</span></a><span>🙇‍♀️），</span><span alt="shake"><span>抖音字效</span></span><span>（嫖自</span><a href='https://www.nykee.cn/'><span>NyKee</span></a><span>🙇‍♀️）</span></p><pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang="python"><div class="CodeMirror cm-s-inner" lang="python"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 40px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 28px; margin-bottom: 0px; border-right-width: 0px; min-width: 328.703px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -28px; width: 28px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -28px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 19px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">def</span> <span class="cm-def">decorator</span>(<span class="cm-variable">func</span>):</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -28px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 19px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-keyword">def</span> <span class="cm-def">wrapper</span>(<span class="cm-operator">*</span><span class="cm-variable">args</span>, <span class="cm-operator">**</span><span class="cm-variable">kwargs</span>):</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -28px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 19px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">        ...</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -28px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 19px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">        <span class="cm-property">return</span> <span class="cm-variable">func</span>(<span class="cm-operator">*</span><span class="cm-variable">args</span>, <span class="cm-operator">**</span><span class="cm-variable">kwargs</span>)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -28px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 19px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-keyword">return</span> <span class="cm-variable">wrapper</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 120px;"></div><div class="CodeMirror-gutters" style="height: 120px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 27px;"></div></div></div></div></pre><pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang="diff"><div class="CodeMirror cm-s-inner" lang="diff"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 40px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 28px; margin-bottom: 0px; border-right-width: 0px; min-width: 76px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>3</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -28px; width: 28px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -28px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 19px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-positive">+ 新增行</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -28px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 19px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-negative">- 删除行</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -28px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 19px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">其他行</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 72px;"></div><div class="CodeMirror-gutters" style="height: 72px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 27px;"></div></div></div></div></pre><figure><table><thead><tr><th style='text-align:left;' ><span>表头1</span></th><th style='text-align:center;' ><span>表头2</span></th><th style='text-align:right;' ><span>表头3</span></th></tr></thead><tbody><tr><td style='text-align:left;' ><span>muggledy</span></td><td style='text-align:center;' ><span>celestezj</span></td><td style='text-align:right;' ><span>2021.9.25</span></td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:center;' >&nbsp;</td><td style='text-align:right;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:center;' >&nbsp;</td><td style='text-align:right;' >&nbsp;</td></tr><tr><td style='text-align:left;' >&nbsp;</td><td style='text-align:center;' >&nbsp;</td><td style='text-align:right;' >&nbsp;</td></tr></tbody></table></figure><p><a href='#二级标题'><span>跳转</span></a><span>至指定标题（锚点），也可以在任意位置通过</span><code>&lt;a name=&quot;锚点名&quot; alt=&quot;none&quot;&gt; &lt;/a&gt;</code><span>（为了方便编辑，typora会显示空标签或</span><code>style=&quot;display:none&quot;</code><span>的标签，但填充一个空格就可以被隐藏，在导出为HTML文件时，由于该款超链接样式有一个padding宽度，所以空链接还是会显示下划线，</span><code>alt=&quot;none&quot;</code><span>用于避免该问题，如果自定义的锚点有文字说明，则不要使用</span><code>alt=&quot;none&quot;</code><span>）设定锚点，示例：</span><a href='#star'><span>求点个赞呗</span></a></p><p><span>上下标：X</span><sup><span>2</span></sup><span>, H</span><sub><span>2</span></sub><span>o，下标如果是多个单词或字符并以空格分隔，需要对空格进行转义，即在空格前面加</span><code>\</code><span>，譬如</span><code>X~下标1\ 下标2~</code><span>（X</span><sub><span>下标1</span><span> </span><span>下标2</span></sub><span>）。要显示</span><span>*</span><span>特殊字符等，也是通过反斜杠转义</span></p><p><ruby><span>Base</span><rp><span> (</span></rp><rt><span>top</span></rt><rp><span>) </span></rp></ruby><span>、</span><ruby><span>佐天泪子</span><rp><span> (</span></rp><rt><span>xiān qún kuáng mó</span></rt><rp><span>) </span></rp></ruby><span>、</span><ruby><span>超電磁砲</span><rp><span> (</span></rp><rt><span>レールガン</span></rt><rp><span>) </span></rp></ruby></p><p><img src="./temp/demo.jpg" style="zoom: 67%;" alt="shadow-可惜不能显示图释" /></p><p><span>注：按</span><code>![shadow-随便写]()</code><span>（或</span><code>&lt;img src=&quot;...&quot; alt=&quot;shadow-随便写&quot;&gt;</code><span>）插入图片时会显示阴影，否则没有，类似的，设为</span><code>alt=&quot;blur-随便写&quot;</code><span>时会有模糊效果。右键图片可以进行指定比例的缩放，任意比例可以通过</span><code>style=&quot;zoom:0.x&quot;</code><span>属性实现</span></p><audio controls="controls">
+  <source src="./temp/The Sound Of Silence.mp3" type="audio/mp3">
+</audio><blockquote><p><span>可以将</span><code>&lt;audio&gt;</code><span>音频包裹在</span><code>&lt;center&gt;&lt;/center&gt;</code><span>中居中显示</span></p></blockquote><p><span>插入网易云的外链播放器（</span><code>&lt;iframe&gt;</code><span>，可嵌入油管等平台视频）：</span></p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" src="https://music.163.com/outchain/player?type=2&amp;id=1342183925&amp;auto=0"></iframe><video src="./temp/难破船.mp4"></video><details>
+    <summary>折叠标签</summary>
+    青青子衿，悠悠我心
+</details><blockquote><p><span>关于Typora对HTML的支持说明：</span><a href='https://support.typora.io/HTML/' target='_blank' class='url'>https://support.typora.io/HTML/</a></p></blockquote><p><a href='https://www.webfx.com/tools/emoji-cheat-sheet/'><span>Emoji表情符号</span></a><span>：</span>😄<span>（</span><code>:smile:</code><span>），Decimal NCRs或Hexadecimal NCRs</span><sup><span>[2]</span></sup><span>编码也是受支持的，譬如“笑哭”：</span>&#128514;<span>（</span><code>&amp;#128514;</code><span>）或</span>&#x1F602;<span>（</span><code>&amp;#x1F602;</code><span>）</span></p><div class="md-diagram-panel"><svg id="mermaidChart0" width="100%" xmlns="http://www.w3.org/2000/svg" height="450" style="max-width: 800px; height: 490px;" viewBox="0 0 800 450" class="md-require-zoom-fix"><style>#mermaidChart0{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333333;}#mermaidChart0 .error-icon{fill:hsl(60,100%,100%);}#mermaidChart0 .error-text{fill:rgb(0,0,0);stroke:rgb(0,0,0);}#mermaidChart0 .edge-thickness-normal{stroke-width:2px;}#mermaidChart0 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart0 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart0 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart0 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart0 .marker{fill:#000000;}#mermaidChart0 .marker.cross{stroke:#000000;}#mermaidChart0 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaidChart0 .pieTitleText{text-anchor:middle;font-size:25px;fill:#333333;font-family:"trebuchet ms",verdana,arial,sans-serif;}#mermaidChart0 .slice{font-family:"trebuchet ms",verdana,arial,sans-serif;fill:#333333;}#mermaidChart0 .legend text{fill:#333333;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:17px;}#mermaidChart0:root{--mermaid-font-family:sans-serif;}#mermaidChart0:root{--mermaid-alt-font-family:sans-serif;}#mermaidChart0 pie{fill:apa;}</style><g></g><g transform="translate(400,225)"><path d="M1.1327982892113017e-14,-185A185,185,0,1,1,-127.97216275520904,133.59687705838894L0,0Z" fill="#66c2a5" stroke="black" style="stroke-width: 2px; opacity: 0.7;"></path><path d="M-140.20296375877766,-120.6985043538439A185,185,0,0,1,-3.398394867633905e-14,-185L0,0Z" fill="#fc8d62" stroke="black" style="stroke-width: 2px; opacity: 0.7;"></path><path d="M-127.97216275520904,133.59687705838894A185,185,0,0,1,-140.20296375877766,-120.6985043538439L0,0Z" fill="#8da0cb" stroke="black" style="stroke-width: 2px; opacity: 0.7;"></path><text transform="translate(85.83444985537709,34.47748856898884)" class="slice" style="text-anchor: middle; font-size: 17px;">62%</text><text transform="translate(-38.56127703820713,-84.07899805053958)" class="slice" style="text-anchor: middle; font-size: 17px;">14%</text><text transform="translate(-92.39319492270039,4.443819525575998)" class="slice" style="text-anchor: middle; font-size: 17px;">24%</text><text x="0" y="-200" class="pieTitleText">Pie Chart</text><g class="legend" transform="translate(216,-33)"><rect width="18" height="18" style="fill: rgb(102, 194, 165); stroke: rgb(102, 194, 165);"></rect><text x="22" y="14">Dogs</text></g><g class="legend" transform="translate(216,-11)"><rect width="18" height="18" style="fill: rgb(252, 141, 98); stroke: rgb(252, 141, 98);"></rect><text x="22" y="14">Cats</text></g><g class="legend" transform="translate(216,11)"><rect width="18" height="18" style="fill: rgb(141, 160, 203); stroke: rgb(141, 160, 203);"></rect><text x="22" y="14">Rats</text></g></g></svg></div><blockquote><p><span>更多绘图参考</span><a href='https://support.typora.io/Draw-Diagrams-With-Markdown/' target='_blank'><span>官方文档</span></a><span>（这是另一种参考链接写法）</span></p></blockquote><p><span>任务列表：</span></p><ul><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' /><p><span>未完成任务1</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' /><p><span>未完成任务2</span></p></li><li class='md-task-list-item task-list-item task-list-done' ><input type='checkbox' checked/><p><span>已完成任务1</span></p></li><li class='md-task-list-item task-list-item task-list-done' ><input type='checkbox' checked/><p><span>已完成任务2</span></p></li></ul><blockquote><p><span>本主题（typora-dyzj-theme）的很多样式来自Hexo的</span><span alt="btn"><a href="https://butterfly.js.org"><span>butterfly</span></a></span><span>主题，再次表达感谢🙇‍♀️</span></p></blockquote><hr /><p><a name="star" alt="none"><span> </span></a><span>都看到这里了，如果您喜欢的话，点个赞</span>👍<span>再走吧：</span></p><iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="100px" height="20px" src="https://ghbtns.com/github-btn.html?user=muggledy&amp;repo=typora-dyzj-theme&amp;type=star&amp;count=true"> </iframe><div class='footnotes-area'  ><hr/>
+<div class='footnote-line'><span class='md-fn-count'>1</span> <span>该样式来自</span><a href='https://butterfly.js.org'><span>Butterfly主题</span></a><span>（这是一个脚注）</span> <a name='dfref-footnote-1' href='#ref-footnote-1' title='回到文档' class='reversefootnote' >↩</a></div></div></div>
+</body>
+</html>
