@@ -4,7 +4,7 @@
 
 # My Darling, Typora (David Blue's Typora Configuration)
 
-### This repo is my personal collection of themes/tricks/snippets/configuration files for Typora on Windows 10. It is *not* associated with Typora's ongoing development in any way.
+### This repo is my personal collection of themes/tricks/snippets/configuration files for Typora on Windows 10/11. It is *not* associated with Typora's ongoing development in any way.
 
 I have found my perfect word processing solution. I have much to say about it, eventually, but for now, I want to share instructions you can follow that should result in you having *precisely* the same experience:
 
@@ -21,32 +21,20 @@ I have found my perfect word processing solution. I have much to say about it, e
     "PrintDialog:": "Alt+P"
     "Always on Top": "Ctrl+Shift+P"
     "Task List": "Ctrl+Shift+T"
+    "Strike": "Alt+S"
 },
 ```
-
-
-
-
 
 ### My Custom Keybinds
 
 | Action                                                  |      Input       |
 | ------------------------------------------------------- | :--------------: |
-| Highlight selected text                                 | Ctrl + Shift + H |
+| Highlight selected text `====`                          | Ctrl + Shift + H |
 | Transform selected text into Markdown pullquote `>`     |     Alt + Q      |
 | Show/hide legacy menu items                             |     Alt + P      |
 | ~~Always on Top~~                                       | Ctrl + Shift + P |
 | Transform selected text into Markdown task list `- [ ]` | Ctrl + Shift + T |
-
-
-
-```json
-
-```
-
-
-
-
+| Transform selected text into Strikethrough text `~~~~`  |     Alt + S      |
 
 
 
