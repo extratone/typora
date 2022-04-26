@@ -22,6 +22,15 @@
     "Always on Top": "Ctrl+Shift+P"
     "Task List": "Ctrl+Shift+T"
     "Strike": "Alt+S"
+    "Comment": "Alt+/"
+    "Open Link": "Alt+O"
+    "Insert Local Images...": "Ctrl+Shift+U"
+    "Footnotes": "Ctrl+Alt+F"
+    "Copy Image Content": "Ctrl+Shift+Alt+I"
+    "Copy as HTML Code": "Ctrl+Shift+Alt+C"
+    "Copy as Plain Text": "Alt+C"
+    "Code": "Shift+Alt+."
+    //"Export": "Ctrl+Shift+E"
     //"PrintDialog": ""
     // for example: 
   },
