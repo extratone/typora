@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Page Breaks - Typora Support</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@typora" />
+<meta name="twitter:title" content="Page Breaks" />
+<meta name="twitter:url" content="/Page-Breaks/" />
+<meta name="twitter:description" content="Automatic Page Breaks Sometimes you may want to export to a PDF, and have page breaks before all top-level headings, perhaps always putting the header on a right-hand page. Top-level headings are created with a single-hash prefix # (and optional suffix) or an equals-sign underline ====; both yield &lt;h1&gt; elements in HTML output. Second-level headings are created with a double-hash prefix ## or an hyphen-minus underline ----; both yield &lt;h2&gt; elements. Headings from the third ### to sixth ###### level have no alternate underline syntax and yield HTML elements &lt;h3&gt; through &lt;h6&gt;, respectively. To add automatic pagination before headings, open..." />
+<meta name="twitter:image:src" content="http://typora.io/img/twitter-sum.png" />
+<meta name="twitter:image" content="http://typora.io/img/twitter-sum.png" />
+<meta property="og:url" content="/Page-Breaks/" />
+<meta property="og:title" content="Page Breaks" />
+<meta property="og:description" content="Automatic Page Breaks Sometimes you may want to export to a PDF, and have page breaks before all top-level headings, perhaps always putting the header on a right-hand page. Top-level headings are created with a single-hash prefix # (and optional suffix) or an equals-sign underline ====; both yield &lt;h1&gt; elements in HTML output. Second-level headings are created with a double-hash prefix ## or an hyphen-minus underline ----; both yield &lt;h2&gt; elements. Headings from the third ### to sixth ###### level have no alternate underline syntax and yield HTML elements &lt;h3&gt; through &lt;h6&gt;, respectively. To add automatic pagination before headings, open..." />
+<meta name="og:image" content="http://typora.io/img/twitter-sum.png" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+
+<link href="../assets/css/pure-min.css" rel="stylesheet" />
+
+<link href="../assets/css/syntax.css" rel="stylesheet" />
+<link href="../assets/css/typora-wiki.css" rel="stylesheet" />
+<link rel="icon" href="../assets/img/favicon-16.png" sizes="16x16" />
+<link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32" />
+<link rel="icon" href="https://support.typora.io/assets/img/favicon-64.png" sizes="64x64" />
+<link rel="icon" href="../assets/img/favicon-128.png" sizes="128x128" />
+<script>
+      if (
+        window.location.host.indexOf("typora.io") > -1 &&
+        window.location.protocol != "https:"
+      ) {
+        window.location.protocol = "https";
+      }
+      if (location.host == "support.typora.com.cn") {
+        location = `https://support.typoraio.cn${location.pathname}${location.hash}`;
+      }
+    </script>
+</head>
+<body>
+<style type="text/css">
+      body {
+        
+          font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman",
+          "STSong", Serif;
+		    
+        font-weight: 300;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #2e2e2e;
+        line-height: 1.15em;
+        font-family: "Open Sans", "Hiragino Sans GB", "Microsoft YaHei",
+          "WenQuanYi Micro Hei", sans-serif;
+        text-rendering: geometricPrecision;
+      }
+
+      #pagecontainer {
+        background-color: #fff;
+        min-height: calc(100vh - 510px);
+        flex: 2;
+      }
+
+      #post-content {
+        padding-top: 36px;
+        border-top: 1px dashed #999999;
+        line-height: 1.6rem;
+        padding-bottom: 100px;
+      }
+
+      #post-content > blockquote:first-child {
+        padding-top: 0.4em;
+        padding-bottom: 0.4em;
+        margin-bottom: 2em;
+        margin-left: 0;
+      }
+
+      .nav {
+        border-bottom: none;
+        height: auto;
+      }
+
+      .inner-page {
+        width: 90%;
+        max-width: 800px;
+        margin: auto;
+      }
+
+      h1 {
+        border-bottom: 0;
+      }
+
+      #header {
+        padding-bottom: 32px;
+      }
+
+      #header h1 {
+        text-align: center;
+        white-space: pre-wrap;
+        width: 90%;
+        margin: 81px auto 48px auto;
+      }
+
+      h1 {
+        font-size: 3.6rem;
+        letter-spacing: -2px;
+        text-indent: -3px;
+      }
+
+      h2 {
+        margin-top: 2em;
+      }
+
+      .pure-menu-active > .pure-menu-link,
+      .pure-menu-link:hover,
+      .pure-menu-link:focus {
+        background-color: initial;
+        border: #777 solid 1px;
+      }
+
+      .post-meta {
+        font-style: italic;
+        text-align: center;
+        color: #7a7a7a;
+      }
+
+      div.highlighter-rouge {
+        padding: 8px;
+        border: 1px #777 solid;
+        line-height: 1.2rem;
+        font-family: Menlo, Monaco, "Courier New", monospace;
+      }
+
+      div.highlighter-rouge pre {
+        font-size: 0.95em;
+        overflow: hidden;
+        word-break: break-word;
+        white-space: pre-wrap;
+      }
+
+      a {
+        color: #463f5c;
+        text-decoration: underline;
+      }
+    </style>
+<header class="pure-menu pure-menu-horizontal nav post-title" id="header">
+<div class="gallery">
+<ul class="pure-menu-list" style="float: left; margin-left: 1em; position: absolute">
+<li class="pure-menu-item pure-menu-active">
+<a href="../index.html" class="pure-menu-link" id="title-bar-feature-btn">Back</a
+            >
+</li>
+</ul>
+</div>
+<h1>Page Breaks</h1>
+<section class="post-meta">
+<time>September 20, 2017</time>
+by
+<span>jonathan.isCrissov</span>
+</section>
+</header>
+<div id="pagecontainer" class="container">
+<div id="post-content" class="inner-page"><h2 id="automatic-page-breaks">Automatic Page Breaks</h2>
+<p>Sometimes you may want to export to a PDF,
+and have page breaks before all <a href="https://support.typora.io/Page-Breaks/Markdown-Reference/#headers">top-level headings</a>,
+perhaps always putting the header on a right-hand page.</p>
+<p>Top-level headings are created with a single-hash prefix <code class="language-plaintext highlighter-rouge">#</code> (and optional suffix)
+or an equals-sign underline <code class="language-plaintext highlighter-rouge">====</code>;
+both yield <code class="language-plaintext highlighter-rouge">&lt;h1&gt;</code> elements in HTML output.
+Second-level headings are created with a double-hash prefix <code class="language-plaintext highlighter-rouge">##</code>
+or an hyphen-minus underline <code class="language-plaintext highlighter-rouge">----</code>;
+both yield <code class="language-plaintext highlighter-rouge">&lt;h2&gt;</code> elements.
+Headings from the third <code class="language-plaintext highlighter-rouge">###</code> to sixth <code class="language-plaintext highlighter-rouge">######</code> level have no alternate underline syntax
+and yield HTML elements <code class="language-plaintext highlighter-rouge">&lt;h3&gt;</code> through <code class="language-plaintext highlighter-rouge">&lt;h6&gt;</code>, respectively.</p>
+<p>To add automatic pagination before headings,
+open the <a href="../About-Themes.html">themes folder</a>,
+and edit the <a href="../Add-Custom-CSS/index.html">respective CSS file</a>.</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@media</span> <span class="n">print</span><span class="p">,</span> <span class="p">(</span><span class="n">overflow-block</span><span class="p">:</span> <span class="n">paged</span><span class="p">)</span> <span class="n">or</span> <span class="p">(</span><span class="n">overflow-block</span><span class="p">:</span> <span class="n">optional-paged</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="c">/* Move top-level headings to a new page on the right-hand side: */</span>
+  <span class="nt">h1</span>
+  <span class="p">{</span>
+    <span class="nl">page-break-before</span><span class="p">:</span> <span class="nb">right</span><span class="p">;</span> <span class="c">/* CSS 2 */</span>
+    <span class="nl">break-before</span><span class="p">:</span> <span class="n">recto</span><span class="p">;</span>      <span class="c">/* CSS 3+, 
+      also works for languages written and paginated right-to-left */</span>
+  <span class="p">}</span>
+  <span class="c">/* Override the previous ruleset for the very first heading: */</span>
+  <span class="nt">h1</span><span class="nd">:first-of-type</span><span class="o">,</span>
+  <span class="nt">section</span> <span class="o">&gt;</span> <span class="nt">h1</span><span class="nd">:first-child</span>
+  <span class="p">{</span>
+    <span class="nl">page-break-before</span><span class="p">:</span> <span class="nb">avoid</span><span class="p">;</span> <span class="c">/* CSS 2 */</span>
+    <span class="nl">break-before</span><span class="p">:</span> <span class="nb">avoid</span><span class="p">;</span>      <span class="c">/* CSS 3+ */</span>
+  <span class="p">}</span>
+  <span class="c">/* Force second-level headings to begin in a new column or
+     possiblyon a new page if it was in the last of multiple columns otherwise: */</span>
+  <span class="nt">h2</span>
+  <span class="p">{</span>
+    <span class="nl">break-before</span><span class="p">:</span> <span class="n">column</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="c">/* Headings should not be the last paragraph on a page: */</span>
+  <span class="nt">h1</span><span class="o">,</span> <span class="nt">h2</span><span class="o">,</span> <span class="nt">h3</span><span class="o">,</span> <span class="nt">h4</span><span class="o">,</span> <span class="nt">h5</span><span class="o">,</span> <span class="nt">h6</span>
+  <span class="p">{</span>
+    <span class="nl">page-break-after</span><span class="p">:</span> <span class="nb">avoid</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="c">/* Consecutive headings with deepening level should not be split across pages: */</span>
+  <span class="nt">h1</span><span class="o">+</span><span class="nt">h2</span><span class="o">,</span> <span class="nt">h2</span><span class="o">+</span><span class="nt">h3</span><span class="o">,</span> <span class="nt">h3</span><span class="o">+</span><span class="nt">h4</span><span class="o">,</span> <span class="nt">h4</span><span class="o">+</span><span class="nt">h5</span><span class="o">,</span> <span class="nt">h5</span><span class="o">+</span><span class="nt">h6</span>
+  <span class="p">{</span>
+    <span class="nl">page-break-before</span><span class="p">:</span> <span class="nb">avoid</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Now when exporting,
+at least one new page will be created before each top-level heading,
+except the first one.</p>
+<p>This usually requires, however, that the Markdown file is first converted to HTML and then to PDF or print.
+It will probably not work as intended if converting from intermediate LaTeX to PDF,
+as Pandoc does by default.</p>
+<h2 id="forced-page-break">Forced Page Break</h2>
+<p>There are several ways to insert a manual page break in a document using custom CSS.</p>
+<h3 id="html-and-inline-css">HTML and Inline CSS</h3>
+<p>If only needed once,
+the style rule can be embedded in place:</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Markdown with embedded HTML:
+
+<span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"page-break-after: always; break-after: page;"</span><span class="nt">&gt;&lt;/div&gt;</span>
+
+Markdown continues.
+</code></pre></div></div>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;p&gt;</span>Markdown with embedded HTML:<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"page-break-after: always; break-after: page;"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;p&gt;</span>Markdown continues.<span class="nt">&lt;/p&gt;</span>
+</code></pre></div></div>
+<h3 id="html-and-central-css">HTML and Central CSS</h3>
+<p>If manual page breaks are needed frequently,
+it makes more sense to use an <a href="../Add-Custom-CSS/index.html">external stylesheet</a>
+for better maintenance and less clutter.</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Markdown with embedded HTML:
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-break"</span><span class="nt">&gt;&lt;/div&gt;</span>
+
+Markdown continues.
+</code></pre></div></div>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;p&gt;</span>Markdown with embedded HTML:<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-break"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;p&gt;</span>Markdown continues.<span class="nt">&lt;/p&gt;</span>
+</code></pre></div></div>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* completely hide the element where it is not needed */</span>
+<span class="nc">.page-break</span>
+<span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span> 
+<span class="p">}</span>
+<span class="k">@media</span> <span class="n">print</span><span class="p">,</span> <span class="p">(</span><span class="n">overflow-block</span><span class="p">:</span> <span class="n">paged</span><span class="p">)</span> <span class="n">or</span> <span class="p">(</span><span class="n">overflow-block</span><span class="p">:</span> <span class="n">optional-paged</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="nc">.page-break</span>
+  <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
+    <span class="nl">page-break-after</span><span class="p">:</span> <span class="nb">always</span><span class="p">;</span> <span class="c">/* CSS 2 */</span>
+         <span class="nl">break-after</span><span class="p">:</span> <span class="n">page</span><span class="p">;</span>   <span class="c">/* CSS 3+ */</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h3 id="thematic-breaks">Thematic Breaks</h3>
+<p>Alternatively, existing Markdown structure can be repurposed.
+This way, neither HTML nor CSS is necessary within the Markdown file at all.</p>
+<p>There are three ways to insert a <a href="https://spec.commonmark.org/current/#thematic-breaks">thematic break in Markdown</a>,
+using three or more asterisks <code class="language-plaintext highlighter-rouge">*</code>, hyphens <code class="language-plaintext highlighter-rouge">-</code> or underscores <code class="language-plaintext highlighter-rouge">_</code>,
+possibly with whitespace in between them.
+They all result in the same HTML (or PDF) output,
+which can then be used to create page breaks.
+Basically all Markdown presentation packages follow this convention as well,
+inserting a slide transition for every thematic break.</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Break incoming
+<span class="p">
+  * * *
+</span>
+in between breaks
+<span class="p">
+----
+</span>
+still one more to come
+
+<span class="gs">________</span><span class="ge">__</span>_
+
+after the final break.
+</code></pre></div></div>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;p&gt;</span>Break incoming<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;hr&gt;</span>
+<span class="nt">&lt;p&gt;</span>in between breaks<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;hr&gt;</span>
+<span class="nt">&lt;p&gt;</span>still one more to come<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;hr&gt;</span>
+<span class="nt">&lt;p&gt;</span>after the final break.<span class="nt">&lt;/p&gt;</span>
+</code></pre></div></div>
+<p>The only thing required is <a href="../Add-Custom-CSS/index.html">some custom CSS</a>.</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@media</span> <span class="n">print</span><span class="p">,</span> <span class="p">(</span><span class="n">overflow-block</span><span class="p">:</span> <span class="n">paged</span><span class="p">)</span> <span class="n">or</span> <span class="p">(</span><span class="n">overflow-block</span><span class="p">:</span> <span class="n">optional-paged</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="nt">hr</span>
+  <span class="p">{</span>
+    <span class="nl">page-break-after</span><span class="p">:</span> <span class="nb">always</span><span class="p">;</span> <span class="c">/* CSS 2 */</span>
+         <span class="nl">break-after</span><span class="p">:</span> <span class="n">region</span><span class="p">;</span> <span class="c">/* CSS 3+ */</span>
+    <span class="c">/* minimal layout disruption: */</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">0.1mm</span><span class="p">;</span> <span class="nl">visibility</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h2 id="css-details">CSS Details</h2>
+<p><a href="https://drafts.csswg.org/css-break-3/#breaking-controls">CSS Level 3</a> and
+<a href="https://drafts.csswg.org/css-break/#breaking-controls">later</a>
+use a more generic approach to breaking content into pages etc. than
+<a href="https://drafts.csswg.org/css2/page.html#page-breaks">CSS Level 2</a>.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>break-after|before: auto           &gt; page-break-after|before: auto
+                  | avoid 
+                  | avoid-page     = page-break-after|before: avoid
+                  | avoid-column 
+                  | avoid-region 
+                  | page           = page-break-after|before: always
+                  | left           = page-break-after|before: left
+                  | right          = page-break-after|before: right
+                  | recto | verso 
+                  | column 
+                  | region
+break-inside:       auto           &gt; page-break-inside: auto
+                  | avoid 
+                  | avoid-page     = page-break-inside: avoid
+                  | avoid-column 
+                  | avoid-region
+</code></pre></div></div>
+</div>
+</div>
+<footer id="post-footer" style="
+        background-color: rgb(51, 51, 51);
+        padding-top: 50px;
+        padding-bottom: 50px;
+        text-align: center;
+        font-size: 13px;
+      ">
+<a data-has-mirror href="https://store.typora.io">Get Typora</a> /
+<a href="https://github.com/typora/wiki-website">Help Improve our documents</a
+      >
+</footer>
+<script>
+      var backBtn = document.querySelector("#title-bar-feature-btn");
+      if (backBtn) {
+        backBtn.onclick = function (event) {
+          if (
+            window.history.length > 1 &&
+            document.referrer.indexOf(window.location.host) !== -1
+          ) {
+            console.log(" window.history.back");
+            event.preventDefault();
+            window.history.back();
+          }
+        };
+      }
+      if (location.host == "support.typoraio.cn" || location.host == "support.typora.com.cn") {
+        document.querySelectorAll("[data-has-mirror]").forEach((a) => {
+          var href = a.href;
+          if (href.indexOf("store.typora.io") > 0)
+            href = "https://typoraio.cn/";
+          else if (href.indexOf("https://typora.io") > -1)
+            href = "https://typoraio.cn/";
+          else href = href.replace("typora.io", "typoraio.cn");
+          a.href = href;
+        });
+      }
+    </script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-56771470-2", "auto");
+      ga("set", "page", "/support");
+      ga("send", "pageview");
+    </script>
+
+<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ed23a5bcf8c017f"></script>
+
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Links - Typora Support</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@typora" />
+<meta name="twitter:title" content="Links" />
+<meta name="twitter:url" content="/Links/" />
+<meta name="twitter:description" content="Basic Syntax Hyperlink Reference Link Autolink Auto URL HTML &lt;a&gt; tag Link to Local Files Internal Links Open Links in Typora FAQ Error “Cannot open location /abc.com, do you mean http://abc.com ?” shows when I trying to open the link Cannot open location file.md, would you want to create file at folder/file.md and continue? Basic Syntax Hyperlink [Link Text](link-address) [Link Text](link-address " optional title") Protocols like http: cannot be omitted for this type of syntax. Reference Link [Link Text][Ref] [Ref]: link-address "optional title" or, it can be shorten as [Ref][] [Ref]: link-address Protocols like http: cannot be omitted for this type..." />
+<meta name="twitter:image:src" content="http://typora.io/img/twitter-sum.png" />
+<meta name="twitter:image" content="http://typora.io/img/twitter-sum.png" />
+<meta property="og:url" content="/Links/" />
+<meta property="og:title" content="Links" />
+<meta property="og:description" content="Basic Syntax Hyperlink Reference Link Autolink Auto URL HTML &lt;a&gt; tag Link to Local Files Internal Links Open Links in Typora FAQ Error “Cannot open location /abc.com, do you mean http://abc.com ?” shows when I trying to open the link Cannot open location file.md, would you want to create file at folder/file.md and continue? Basic Syntax Hyperlink [Link Text](link-address) [Link Text](link-address " optional title") Protocols like http: cannot be omitted for this type of syntax. Reference Link [Link Text][Ref] [Ref]: link-address "optional title" or, it can be shorten as [Ref][] [Ref]: link-address Protocols like http: cannot be omitted for this type..." />
+<meta name="og:image" content="http://typora.io/img/twitter-sum.png" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+
+<link href="../assets/css/pure-min.css" rel="stylesheet" />
+
+<link href="../assets/css/syntax.css" rel="stylesheet" />
+<link href="../assets/css/typora-wiki.css" rel="stylesheet" />
+<link rel="icon" href="../assets/img/favicon-16.png" sizes="16x16" />
+<link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32" />
+<link rel="icon" href="https://support.typora.io/assets/img/favicon-64.png" sizes="64x64" />
+<link rel="icon" href="../assets/img/favicon-128.png" sizes="128x128" />
+<script>
+      if (
+        window.location.host.indexOf("typora.io") > -1 &&
+        window.location.protocol != "https:"
+      ) {
+        window.location.protocol = "https";
+      }
+      if (location.host == "support.typora.com.cn") {
+        location = `https://support.typoraio.cn${location.pathname}${location.hash}`;
+      }
+    </script>
+</head>
+<body>
+<style type="text/css">
+      body {
+        
+          font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman",
+          "STSong", Serif;
+		    
+        font-weight: 300;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #2e2e2e;
+        line-height: 1.15em;
+        font-family: "Open Sans", "Hiragino Sans GB", "Microsoft YaHei",
+          "WenQuanYi Micro Hei", sans-serif;
+        text-rendering: geometricPrecision;
+      }
+
+      #pagecontainer {
+        background-color: #fff;
+        min-height: calc(100vh - 510px);
+        flex: 2;
+      }
+
+      #post-content {
+        padding-top: 36px;
+        border-top: 1px dashed #999999;
+        line-height: 1.6rem;
+        padding-bottom: 100px;
+      }
+
+      #post-content > blockquote:first-child {
+        padding-top: 0.4em;
+        padding-bottom: 0.4em;
+        margin-bottom: 2em;
+        margin-left: 0;
+      }
+
+      .nav {
+        border-bottom: none;
+        height: auto;
+      }
+
+      .inner-page {
+        width: 90%;
+        max-width: 800px;
+        margin: auto;
+      }
+
+      h1 {
+        border-bottom: 0;
+      }
+
+      #header {
+        padding-bottom: 32px;
+      }
+
+      #header h1 {
+        text-align: center;
+        white-space: pre-wrap;
+        width: 90%;
+        margin: 81px auto 48px auto;
+      }
+
+      h1 {
+        font-size: 3.6rem;
+        letter-spacing: -2px;
+        text-indent: -3px;
+      }
+
+      h2 {
+        margin-top: 2em;
+      }
+
+      .pure-menu-active > .pure-menu-link,
+      .pure-menu-link:hover,
+      .pure-menu-link:focus {
+        background-color: initial;
+        border: #777 solid 1px;
+      }
+
+      .post-meta {
+        font-style: italic;
+        text-align: center;
+        color: #7a7a7a;
+      }
+
+      div.highlighter-rouge {
+        padding: 8px;
+        border: 1px #777 solid;
+        line-height: 1.2rem;
+        font-family: Menlo, Monaco, "Courier New", monospace;
+      }
+
+      div.highlighter-rouge pre {
+        font-size: 0.95em;
+        overflow: hidden;
+        word-break: break-word;
+        white-space: pre-wrap;
+      }
+
+      a {
+        color: #463f5c;
+        text-decoration: underline;
+      }
+    </style>
+<header class="pure-menu pure-menu-horizontal nav post-title" id="header">
+<div class="gallery">
+<ul class="pure-menu-list" style="float: left; margin-left: 1em; position: absolute">
+<li class="pure-menu-item pure-menu-active">
+<a href="../index.html" class="pure-menu-link" id="title-bar-feature-btn">Back</a
+            >
+</li>
+</ul>
+</div>
+<h1>Links</h1>
+<section class="post-meta">
+<time>March 18, 2018</time>
+by
+<span>typora.io</span>
+</section>
+</header>
+<div id="pagecontainer" class="container">
+<div id="post-content" class="inner-page"><ul id="markdown-toc">
+<li><a href="index.html#basic-syntax" id="markdown-toc-basic-syntax">Basic Syntax</a> <ul>
+<li><a href="index.html#hyperlink" id="markdown-toc-hyperlink">Hyperlink</a></li>
+<li><a href="index.html#reference-link" id="markdown-toc-reference-link">Reference Link</a></li>
+<li><a href="index.html#autolink" id="markdown-toc-autolink">Autolink</a></li>
+<li><a href="index.html#auto-url" id="markdown-toc-auto-url">Auto URL</a></li>
+<li><a href="index.html#html-a-tag" id="markdown-toc-html-a-tag">HTML <code class="language-plaintext highlighter-rouge">&lt;a&gt;</code> tag</a></li>
+</ul>
+</li>
+<li><a href="index.html#link-to-local-files" id="markdown-toc-link-to-local-files">Link to Local Files</a></li>
+<li><a href="index.html#internal-links" id="markdown-toc-internal-links">Internal Links</a></li>
+<li><a href="index.html#open-links-in-typora" id="markdown-toc-open-links-in-typora">Open Links in Typora</a></li>
+<li><a href="index.html#faq" id="markdown-toc-faq">FAQ</a> <ul>
+<li><a href="index.html#error-cannot-open-location-abccom-do-you-mean-httpabccom--shows-when-i-trying-to-open-the-link" id="markdown-toc-error-cannot-open-location-abccom-do-you-mean-httpabccom--shows-when-i-trying-to-open-the-link">Error “Cannot open location <code class="language-plaintext highlighter-rouge">/abc.com</code>, do you mean http://abc.com ?” shows when I trying to open the link</a></li>
+<li><a href="index.html#cannot-open-location-filemd-would-you-want-to-create-file-at-folderfilemd-and-continue" id="markdown-toc-cannot-open-location-filemd-would-you-want-to-create-file-at-folderfilemd-and-continue">Cannot open location <code class="language-plaintext highlighter-rouge">file.md</code>, would you want to create file at <code class="language-plaintext highlighter-rouge">folder/file.md</code> and continue?</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="basic-syntax">Basic Syntax</h2>
+<h4 id="hyperlink">Hyperlink</h4>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nv">Link Text</span><span class="p">](</span><span class="sx">link-address</span><span class="p">)</span>
+
+<span class="p">[</span><span class="nv">Link Text</span><span class="p">](</span><span class="sx">link-address</span> <span class="nn">"optional title"</span><span class="p">)</span>
+</code></pre></div></div>
+<p>Protocols like <code class="language-plaintext highlighter-rouge">http://</code> cannot be omitted for this type of syntax.</p>
+<h4 id="reference-link">Reference Link</h4>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nv">Link Text</span><span class="p">][</span><span class="ss">Ref</span><span class="p">]</span>
+
+<span class="p">[</span><span class="ss">Ref</span><span class="p">]:</span> <span class="sx">link-address</span> <span class="nn">"optional title"</span>
+</code></pre></div></div>
+<p>or, it can be shorten as</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nv">Ref</span><span class="p">][]</span>
+
+<span class="p">[</span><span class="ss">Ref</span><span class="p">]:</span> <span class="sx">link-address</span>
+</code></pre></div></div>
+<p>Protocols like <code class="language-plaintext highlighter-rouge">http://</code> cannot be omitted for this type of syntax.</p>
+<h4 id="autolink">Autolink</h4>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">&lt;http://typora.io&gt;</span>
+</code></pre></div></div>
+<h4 id="auto-url">Auto URL</h4>
+<p>Typora can automatically detect url link in markdown, and render them as URL link, but please note that other markdown engines may not support this.</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>This is a link: http://typora.io
+</code></pre></div></div>
+<h4 id="html-a-tag">HTML <code class="language-plaintext highlighter-rouge">&lt;a&gt;</code> tag</h4>
+<p>You could also use raw HTML to add links, for example</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://www.google.com"</span> <span class="na">target=</span><span class="s">"__blank"</span><span class="nt">&gt;</span>Link to Google<span class="nt">&lt;/a&gt;</span>
+
+<span class="nt">&lt;a</span> <span class="na">name=</span><span class="s">"anchor"</span><span class="nt">&gt;&lt;/a&gt;</span> Anchor
+
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#anchor"</span><span class="nt">&gt;</span>Link to Anchor<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div>
+<hr />
+<p>For link towards a website, we suggest you <strong>DO NOT omit URL protocols</strong> like <code class="language-plaintext highlighter-rouge">https://</code> or <code class="language-plaintext highlighter-rouge">http://</code>, or it may be interpreted as relative link by Typora or other Markdown engines, or after export/publish.</p>
+<h2 id="link-to-local-files">Link to Local Files</h2>
+<p>You could use write relative or absolute path as link address towards a local file, the extension like (<em>.md</em>) can be omitted, for example:</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nv">Readme1</span><span class="p">](</span><span class="sx">Readme1.md</span><span class="p">)</span>
+
+<span class="p">[</span><span class="nv">Readme2</span><span class="p">](</span><span class="sx">../Docs/Readme2.markdown</span><span class="p">)</span>
+
+<span class="p">[</span><span class="nv">Readme3</span><span class="p">](</span><span class="sx">Readme3</span><span class="p">)</span>
+
+<span class="p">[</span><span class="nv">Readme4</span><span class="p">](</span><span class="sx">/User/root/Docs/Readme1.md</span><span class="p">)</span>
+
+<span class="p">[</span><span class="nv">Readme4</span><span class="p">](</span><span class="sx">C:/Develop/Docs/Readme1.md</span><span class="p">)</span>
+
+<span class="p">[</span><span class="nv">Readme4</span><span class="p">](</span><span class="sx">file:///User/root/Docs/Readme1.md</span><span class="p">)</span>
+</code></pre></div></div>
+<p>Please note that, for relative link address, it will not be converted into real absolute file path when export as HTML based on Markdown’s spec.</p>
+<h2 id="internal-links">Internal Links</h2>
+<p>You can use <code class="language-plaintext highlighter-rouge">#</code> to create links towards any headings in your markdown file, for example:</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh"># This is a title</span>
+
+...
+...
+...<span class="sb">
+
+
+</span>A <span class="p">[</span><span class="nv">link</span><span class="p">](</span><span class="sx">#this-is-a-title</span><span class="p">)</span> to jump towards target header
+</code></pre></div></div>
+<p>If there are <span id="duplicated-headings">duplicated headings</span>, add numbered suffix starting from <code class="language-plaintext highlighter-rouge">-1</code>, e.g:</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh"># Hello</span>
+
+...
+
+<span class="gh"># Hello</span>
+
+...
+
+A <span class="p">[</span><span class="nv">link</span><span class="p">](</span><span class="sx">#hello-1</span><span class="p">)</span> to first header, a <span class="p">[</span><span class="nv">link</span><span class="p">](</span><span class="sx">#hello-2</span><span class="p">)</span> to second one.
+</code></pre></div></div>
+<p>You could also write <strong>named</strong> anchors using raw HTML:</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">id=</span><span class="s">"anchor"</span><span class="nt">&gt;&lt;/a&gt;</span> Anchor
+
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#anchor"</span><span class="nt">&gt;</span>Link to Anchor<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div>
+<p>To, hide the empty <code class="language-plaintext highlighter-rouge">&lt;a&gt;</code>, you could add following in custom CSS (<a href="https://github.com/typora/typora-issues/issues/2921">#2921</a>):</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* hide the anchor HTML */</span>
+<span class="nt">a</span><span class="o">[</span><span class="nt">name</span><span class="o">]</span><span class="nd">:empty</span> <span class="o">+</span> <span class="nc">.md-raw-inline</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span><span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">a</span><span class="o">[</span><span class="nt">name</span><span class="o">]</span><span class="nd">:empty</span> <span class="p">{</span>
+  <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">a</span><span class="o">[</span><span class="nt">name</span><span class="o">]</span><span class="nd">:empty:before</span> <span class="p">{</span>
+ <span class="nl">content</span><span class="p">:</span><span class="s1">"⚓"</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c">/* show the anchor HTML when cursor is inside */</span>
+<span class="nc">.md-expand</span> <span class="nc">.md-raw-inline</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">inline</span> <span class="cp">!important</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h2 id="open-links-in-typora">Open Links in Typora</h2>
+<p>You can use <code class="language-plaintext highlighter-rouge">command+click</code> (macOS), or <code class="language-plaintext highlighter-rouge">ctrl+click</code> (Linux/Windows) on links in Typora to jump to target headings, or open them in Typora, or open in related apps.</p>
+<h2 id="faq">FAQ</h2>
+<h5 id="error-cannot-open-location-abccom-do-you-mean-httpabccom--shows-when-i-trying-to-open-the-link">Error “Cannot open location <code class="language-plaintext highlighter-rouge">/abc.com</code>, do you mean <a href="index.html#">http://abc.com</a> ?” shows when I trying to open the link</h5>
+<p>If you want to make a link to local file <code class="language-plaintext highlighter-rouge">abd.com</code>, please make ensure the path is correct.</p>
+<p>If you want to create a link towards website “abc.com”, you need to put the URL scheme or protocol, for example use <code class="language-plaintext highlighter-rouge">[link](http://abc.com)</code>.</p>
+<p>Sometimes, protocol can be omitted if you use autolink (<code class="language-plaintext highlighter-rouge">&lt;www.google.com&gt;</code>) or auto URL (<code class="language-plaintext highlighter-rouge">www.google.com</code>), but this rules variables across different Markdown editors/engines, so we will recommend you NOT omit protocols in any case for less compatibility issue.</p>
+<h5 id="cannot-open-location-filemd-would-you-want-to-create-file-at-folderfilemd-and-continue">Cannot open location <code class="language-plaintext highlighter-rouge">file.md</code>, would you want to create file at <code class="language-plaintext highlighter-rouge">folder/file.md</code> and continue?</h5>
+<p>If you add link to local file, but target file does not exists, this tooltip will shows and guide you to create a file at target location.</p>
+</div>
+</div>
+<footer id="post-footer" style="
+        background-color: rgb(51, 51, 51);
+        padding-top: 50px;
+        padding-bottom: 50px;
+        text-align: center;
+        font-size: 13px;
+      ">
+<a data-has-mirror href="https://store.typora.io">Get Typora</a> /
+<a href="https://github.com/typora/wiki-website">Help Improve our documents</a
+      >
+</footer>
+<script>
+      var backBtn = document.querySelector("#title-bar-feature-btn");
+      if (backBtn) {
+        backBtn.onclick = function (event) {
+          if (
+            window.history.length > 1 &&
+            document.referrer.indexOf(window.location.host) !== -1
+          ) {
+            console.log(" window.history.back");
+            event.preventDefault();
+            window.history.back();
+          }
+        };
+      }
+      if (location.host == "support.typoraio.cn" || location.host == "support.typora.com.cn") {
+        document.querySelectorAll("[data-has-mirror]").forEach((a) => {
+          var href = a.href;
+          if (href.indexOf("store.typora.io") > 0)
+            href = "https://typoraio.cn/";
+          else if (href.indexOf("https://typora.io") > -1)
+            href = "https://typoraio.cn/";
+          else href = href.replace("typora.io", "typoraio.cn");
+          a.href = href;
+        });
+      }
+    </script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-56771470-2", "auto");
+      ga("set", "page", "/support");
+      ga("send", "pageview");
+    </script>
+
+<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ed23a5bcf8c017f"></script>
+
+</body>
+</html>

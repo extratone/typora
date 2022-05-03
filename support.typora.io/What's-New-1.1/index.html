@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Typora 1.1 - Typora Support</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@typora" />
+<meta name="twitter:title" content="Typora 1.1" />
+<meta name="twitter:url" content="/What's-New-1.1/" />
+<meta name="twitter:description" content="New / Improvement File Link Math Editing UI / I18N Security Images Image Export Command Line License / Activation Others Fix One More Thing 中文说明 New / Improvement File Link Typora already supports link to local file or folder, like [text](./filename.md), in this update: If file link target (like filename.md) does not exists, Typora allows you to create that file or folder with simple click. If you add anchor after the target file path (like filename.md#header-1), you can open that file and directly jump to the anchor position by open that link. About how to get the # anchor, you..." />
+<meta name="twitter:image:src" content="http://typora.io/img/twitter-sum.png" />
+<meta name="twitter:image" content="http://typora.io/img/twitter-sum.png" />
+<meta property="og:url" content="/What's-New-1.1/" />
+<meta property="og:title" content="Typora 1.1" />
+<meta property="og:description" content="New / Improvement File Link Math Editing UI / I18N Security Images Image Export Command Line License / Activation Others Fix One More Thing 中文说明 New / Improvement File Link Typora already supports link to local file or folder, like [text](./filename.md), in this update: If file link target (like filename.md) does not exists, Typora allows you to create that file or folder with simple click. If you add anchor after the target file path (like filename.md#header-1), you can open that file and directly jump to the anchor position by open that link. About how to get the # anchor, you..." />
+<meta name="og:image" content="http://typora.io/img/twitter-sum.png" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+
+<link href="../assets/css/pure-min.css" rel="stylesheet" />
+
+<link href="../assets/css/syntax.css" rel="stylesheet" />
+<link href="../assets/css/typora-wiki.css" rel="stylesheet" />
+<link rel="icon" href="../assets/img/favicon-16.png" sizes="16x16" />
+<link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32" />
+<link rel="icon" href="https://support.typora.io/assets/img/favicon-64.png" sizes="64x64" />
+<link rel="icon" href="../assets/img/favicon-128.png" sizes="128x128" />
+<script>
+      if (
+        window.location.host.indexOf("typora.io") > -1 &&
+        window.location.protocol != "https:"
+      ) {
+        window.location.protocol = "https";
+      }
+      if (location.host == "support.typora.com.cn") {
+        location = `https://support.typoraio.cn${location.pathname}${location.hash}`;
+      }
+    </script>
+</head>
+<body>
+<style type="text/css">
+      body {
+        
+          font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman",
+          "STSong", Serif;
+		    
+        font-weight: 300;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #2e2e2e;
+        line-height: 1.15em;
+        font-family: "Open Sans", "Hiragino Sans GB", "Microsoft YaHei",
+          "WenQuanYi Micro Hei", sans-serif;
+        text-rendering: geometricPrecision;
+      }
+
+      #pagecontainer {
+        background-color: #fff;
+        min-height: calc(100vh - 510px);
+        flex: 2;
+      }
+
+      #post-content {
+        padding-top: 36px;
+        border-top: 1px dashed #999999;
+        line-height: 1.6rem;
+        padding-bottom: 100px;
+      }
+
+      #post-content > blockquote:first-child {
+        padding-top: 0.4em;
+        padding-bottom: 0.4em;
+        margin-bottom: 2em;
+        margin-left: 0;
+      }
+
+      .nav {
+        border-bottom: none;
+        height: auto;
+      }
+
+      .inner-page {
+        width: 90%;
+        max-width: 800px;
+        margin: auto;
+      }
+
+      h1 {
+        border-bottom: 0;
+      }
+
+      #header {
+        padding-bottom: 32px;
+      }
+
+      #header h1 {
+        text-align: center;
+        white-space: pre-wrap;
+        width: 90%;
+        margin: 81px auto 48px auto;
+      }
+
+      h1 {
+        font-size: 3.6rem;
+        letter-spacing: -2px;
+        text-indent: -3px;
+      }
+
+      h2 {
+        margin-top: 2em;
+      }
+
+      .pure-menu-active > .pure-menu-link,
+      .pure-menu-link:hover,
+      .pure-menu-link:focus {
+        background-color: initial;
+        border: #777 solid 1px;
+      }
+
+      .post-meta {
+        font-style: italic;
+        text-align: center;
+        color: #7a7a7a;
+      }
+
+      div.highlighter-rouge {
+        padding: 8px;
+        border: 1px #777 solid;
+        line-height: 1.2rem;
+        font-family: Menlo, Monaco, "Courier New", monospace;
+      }
+
+      div.highlighter-rouge pre {
+        font-size: 0.95em;
+        overflow: hidden;
+        word-break: break-word;
+        white-space: pre-wrap;
+      }
+
+      a {
+        color: #463f5c;
+        text-decoration: underline;
+      }
+    </style>
+<header class="pure-menu pure-menu-horizontal nav post-title" id="header">
+<div class="gallery">
+<ul class="pure-menu-list" style="float: left; margin-left: 1em; position: absolute">
+<li class="pure-menu-item pure-menu-active">
+<a href="../index.html" class="pure-menu-link" id="title-bar-feature-btn">Back</a
+            >
+</li>
+</ul>
+</div>
+<h1>Typora 1.1</h1>
+<section class="post-meta">
+<time>February 16, 2022</time>
+by
+<span>typora.io</span>
+</section>
+</header>
+<div id="pagecontainer" class="container">
+<div id="post-content" class="inner-page"><ul id="markdown-toc">
+<li><a href="index.html#new--improvement" id="markdown-toc-new--improvement">New / Improvement</a> <ul>
+<li><a href="index.html#file-link" id="markdown-toc-file-link">File Link</a></li>
+<li><a href="index.html#math" id="markdown-toc-math">Math</a></li>
+<li><a href="index.html#editing" id="markdown-toc-editing">Editing</a></li>
+<li><a href="index.html#ui--i18n" id="markdown-toc-ui--i18n">UI / I18N</a></li>
+<li><a href="index.html#security" id="markdown-toc-security">Security</a></li>
+<li><a href="index.html#images" id="markdown-toc-images">Images</a></li>
+<li><a href="index.html#image-export" id="markdown-toc-image-export">Image Export</a></li>
+<li><a href="index.html#command-line" id="markdown-toc-command-line">Command Line</a></li>
+<li><a href="index.html#license--activation" id="markdown-toc-license--activation">License / Activation</a></li>
+<li><a href="index.html#others" id="markdown-toc-others">Others</a></li>
+</ul>
+</li>
+<li><a href="index.html#fix" id="markdown-toc-fix">Fix</a></li>
+<li><a href="index.html#one-more-thing" id="markdown-toc-one-more-thing">One More Thing</a></li>
+</ul>
+<p><a href="../zh/What's-New-1.1/index.html">中文说明</a></p>
+<h1 id="new--improvement">New / Improvement</h1>
+<h3 id="file-link">File Link</h3>
+<p>Typora already supports link to local file or folder, like <code class="language-plaintext highlighter-rouge">[text](./filename.md)</code>, in this update:</p>
+<ul>
+<li>
+<p>If file link target (like <code class="language-plaintext highlighter-rouge">filename.md</code>) does not exists, Typora allows you to create that file or folder with simple click.</p>
+<p><img src="https://support.typora.io/media/new-1.1/Screen&#32;Shot&#32;2022-02-04&#32;at&#32;21.25.12.png" alt="Screen Shot 2022-02-04 at 21.25.12" style="zoom:50%;" /></p>
+</li>
+<li>
+<p>If you add anchor after the target file path (like <code class="language-plaintext highlighter-rouge">filename.md#header-1</code>), you can open that file and directly jump to the anchor position by open that link. About how to get the <code class="language-plaintext highlighter-rouge">#</code> anchor, you can follow <a href="../Links/index.html#internal-links">internal links</a> about how to write an anchor.</p>
+</li>
+</ul>
+<h3 id="math">Math</h3>
+<ul>
+<li>
+<p>We added an option to enable or disable <a href="https://www.ctan.org/pkg/physics"><code class="language-plaintext highlighter-rouge">physics</code></a> package, which will replace the old “<em>When enabled, commands like \div, \Re will be redefined by physics package</em>” option. Following are example:</p>
+<table>
+<thead>
+<tr>
+<th><code class="language-plaintext highlighter-rouge">physics</code> package enabled</th>
+<th><code class="language-plaintext highlighter-rouge">physics</code> package disabled</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://support.typora.io/media/new-1.1/Screen&#32;Shot&#32;2022-02-04&#32;at&#32;22.00.03.png" alt="Screen Shot 2022-02-04 at 22.00.03" style="zoom:50%;" /></td>
+<td><img src="https://support.typora.io/media/new-1.1/Screen&#32;Shot&#32;2022-02-04&#32;at&#32;22.00.21.png" alt="Screen Shot 2022-02-04 at 22.00.21" style="zoom:50%;" /></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Fix an issue that math numbering will get wrong when opening file in some cases.</p>
+</li>
+<li>
+<p>Fix <code class="language-plaintext highlighter-rouge">Copy as MathML</code> for math block not working properly. One tip is that you can select <code class="language-plaintext highlighter-rouge">Copy as MathML</code> in Typora’s math block, and then select <code class="language-plaintext highlighter-rouge">Paste</code> → <code class="language-plaintext highlighter-rouge">Keep Text Only</code> in Word to paste math contents.</p>
+<p><img src="https://support.typora.io/media/new-1.1/Screen&#32;Shot&#32;2022-02-04&#32;at&#32;21.35.47.png" alt="Screen Shot 2022-02-04 at 21.35.47" style="zoom:50%;" /></p>
+</li>
+</ul>
+<h3 id="editing">Editing</h3>
+<ul>
+<li>
+<p><code class="language-plaintext highlighter-rouge">Copy</code> will do nothing when no text is selected (previously, it will put empty string to clipboard).</p>
+</li>
+<li>
+<p>We also add options to <code class="language-plaintext highlighter-rouge">copy</code> / <code class="language-plaintext highlighter-rouge">cut</code> the whole line which that have cursors on them, if there is no selection, which you can find similar behavior in most code editors or IDEs, like VS Code, etc.</p>
+<p><img src="https://support.typora.io/media/new-1.1/Screen&#32;Shot&#32;2022-02-04&#32;at&#32;22.06.00.png" alt="Screen Shot 2022-02-04 at 22.06.00" style="zoom:50%;" /></p>
+</li>
+<li>
+<p>On macOS, you can now also use Command-Option-Shift-V to paste as Markdown source (same behavior with Command-Shift-V), just like other editors’ <em>Paste and Match Style</em> behavior.</p>
+</li>
+<li>
+<p>Assigned default shortcuts for select range and delete range actions.</p>
+</li>
+<li>
+<p>Improve the function for <em>delete block / paragraph</em> and <em>delete line / sentence</em>, see our <a href="../Delete-Range/index.html">spec</a> here.</p>
+<p><img src="https://support.typora.io/media/delete-range/CleanShot&#32;2022-02-13&#32;at&#32;17.31.27.gif" alt="CleanShot 2022-02-13 at 17.31.27" style="zoom:50%;" /></p>
+</li>
+</ul>
+<h3 id="ui--i18n">UI / I18N</h3>
+<ul>
+<li>Fix some typos.</li>
+<li>Update translations in many languages, including Korean, Catalan, Turkish, Polish, Hungarian, Japanese, Indonesian, Dutch, etc.</li>
+<li>Add Malay language support (Thanks to <a href="https://github.com/MLukman">MLukman</a>).</li>
+<li>Add Slovenian language support (Thanks to <a href="https://github.com/sponka9">sponka9</a>).</li>
+<li>Update some UI icons and use more compact context menu for Windows / Linux.</li>
+</ul>
+<h3 id="security">Security</h3>
+<ul>
+<li>Windows executables and installers are now signed.</li>
+<li>Fix an XSS security issue.</li>
+</ul>
+<h3 id="images">Images</h3>
+<ul>
+<li>
+<p>Typora now will ensure proper file extensions be added when download and save web images to local.</p>
+</li>
+<li>
+<p>You could now append hash tag after local image path, for example: <code class="language-plaintext highlighter-rouge">![img](image.png#center)</code>. Typora is now able to load them ignoring trailing hashes.</p>
+<p>One tip is that hashes on image URLs are a very convenient way of providing a CSS styling styling hook, like:</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">img</span><span class="o">[</span><span class="nt">href</span><span class="o">&amp;=</span><span class="err">'</span><span class="nf">#center</span><span class="err">`</span><span class="o">]</span> <span class="p">{</span>
+	<span class="nl">margin</span><span class="p">:</span> <span class="nb">auto</span>
+<span class="p">}</span>
+</code></pre></div> </div>
+</li>
+<li>
+<p>Fix a bug that <a href="https://support.typora.io/Images/#relative-path-to-certain-folder">typora root url</a> not applied to some image path.</p>
+</li>
+</ul>
+<h3 id="image-export">Image Export</h3>
+<ul>
+<li>Fix custom font size not working for image export.</li>
+<li>Add option to use default / theme font size when export as image.</li>
+<li>Fix image corrupted if your Typora is zoomed.</li>
+</ul>
+<h3 id="command-line">Command Line</h3>
+<ul>
+<li>
+<p>On macOS, if you add</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">alias </span><span class="nv">typora</span><span class="o">=</span><span class="s2">"/Applications/Typora.app/Contents/MacOS/Typora"</span>
+</code></pre></div> </div>
+<p>in your <code class="language-plaintext highlighter-rouge">.bash_profile</code> or other configuration file, Typora will pop up dialog to let you create file or folder when target file (in passed parameters) does not exists.</p>
+</li>
+<li>
+<p>On Windows / Linux, if you run <code class="language-plaintext highlighter-rouge">typora test.md</code> and <code class="language-plaintext highlighter-rouge">test.md</code> does not exist, then Typora will not popup error dialog. The file will be created when save without extra confirmation, just like other editors.</p>
+</li>
+</ul>
+<h3 id="license--activation">License / Activation</h3>
+<ul>
+<li>
+<p>You could now manage your activated license and deactivate devices via web page <a href="https://store.typora.io/my">https://store.typora.io/my</a>. You could find more details at <a href="../My-License/index.html">here</a>.</p>
+<p><img src="https://support.typora.io/media/activation/Screen&#32;Shot&#32;2022-02-02&#32;at&#32;10.58.27.png" alt="Screen Shot 2022-02-02 at 10.58.27" style="zoom:50%;" /></p>
+</li>
+<li>
+<p>Offline activation is now supported. You could find more details at <a href="../Offline-Activation.html">here</a>.</p>
+<p><img src="https://support.typora.io/media/activation/Screen&#32;Shot&#32;2022-02-02&#32;at&#32;20.43.53.png" alt="Screen Shot 2022-02-02 at 20.43.53" style="zoom:50%;" /></p>
+</li>
+</ul>
+<h3 id="others">Others</h3>
+<ul>
+<li>Add RTF from supported import file format (requires newer pandoc version).</li>
+<li>Improve logic to detect pandoc path automatically.</li>
+<li>Reopen closed file on updates.</li>
+</ul>
+<h1 id="fix">Fix</h1>
+<ul>
+<li>Fix open some link may close Typora unexpectedly.</li>
+<li>Fix file tree UI under smaller customer font size.</li>
+<li>Fix multiple BOM be added when saving files with BOM header.</li>
+<li>Fix always on top cannot be turned off under macOS.</li>
+<li>Fix UI issue when toggling tab if Typora is same height as current screen.</li>
+<li>Fix print always show “in process” when it is canceled.</li>
+</ul>
+<h1 id="one-more-thing">One More Thing</h1>
+<p>Github now supports <a href="https://github.blog/2022-02-14-include-diagrams-markdown-files-mermaid/">embedding mermaid diagrams</a> directly into your Markdown file, which is also supported by Typora. You can turn it on in <code class="language-plaintext highlighter-rouge">Preferences Panel</code> → <code class="language-plaintext highlighter-rouge">Markdown</code>, and for more detail, please check <a href="../Draw-Diagrams-With-Markdown/index.html">Draw Diagrams With Markdown</a>.</p>
+</div>
+</div>
+<footer id="post-footer" style="
+        background-color: rgb(51, 51, 51);
+        padding-top: 50px;
+        padding-bottom: 50px;
+        text-align: center;
+        font-size: 13px;
+      ">
+<a data-has-mirror href="https://store.typora.io">Get Typora</a> /
+<a href="https://github.com/typora/wiki-website">Help Improve our documents</a
+      >
+</footer>
+<script>
+      var backBtn = document.querySelector("#title-bar-feature-btn");
+      if (backBtn) {
+        backBtn.onclick = function (event) {
+          if (
+            window.history.length > 1 &&
+            document.referrer.indexOf(window.location.host) !== -1
+          ) {
+            console.log(" window.history.back");
+            event.preventDefault();
+            window.history.back();
+          }
+        };
+      }
+      if (location.host == "support.typoraio.cn" || location.host == "support.typora.com.cn") {
+        document.querySelectorAll("[data-has-mirror]").forEach((a) => {
+          var href = a.href;
+          if (href.indexOf("store.typora.io") > 0)
+            href = "https://typoraio.cn/";
+          else if (href.indexOf("https://typora.io") > -1)
+            href = "https://typoraio.cn/";
+          else href = href.replace("typora.io", "typoraio.cn");
+          a.href = href;
+        });
+      }
+    </script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-56771470-2", "auto");
+      ga("set", "page", "/support");
+      ga("send", "pageview");
+    </script>
+
+<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ed23a5bcf8c017f"></script>
+
+</body>
+</html>

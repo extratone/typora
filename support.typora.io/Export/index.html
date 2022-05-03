@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Export - Typora Support</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@typora" />
+<meta name="twitter:title" content="Export" />
+<meta name="twitter:url" content="/Export/" />
+<meta name="twitter:description" content="General Quick Usage of Export Export with Previous Settings Open Export Settings Export Location Export Using Pandoc Config “After Export” Options Per-file Configurations Config Export Items Reorder Export Items Rename Export Item Remove Export Item Add New Export Item File Format HTML Outline Add Custom Contents Export YAML meta Append Contents per Document. Change Theme Example: Export using VLOOK More HTML Options HTML (without styles) Image Width and Font Size Theme PDF Paper Size Theme Page Break Header / Footer PDF Metadata Add Custom Content (PDF) Example: Add Cover Page PDF (LaTeX / Pandoc) PDF Engine Template Meta Data (Other..." />
+<meta name="twitter:image:src" content="http://typora.io/img/twitter-sum.png" />
+<meta name="twitter:image" content="http://typora.io/img/twitter-sum.png" />
+<meta property="og:url" content="/Export/" />
+<meta property="og:title" content="Export" />
+<meta property="og:description" content="General Quick Usage of Export Export with Previous Settings Open Export Settings Export Location Export Using Pandoc Config “After Export” Options Per-file Configurations Config Export Items Reorder Export Items Rename Export Item Remove Export Item Add New Export Item File Format HTML Outline Add Custom Contents Export YAML meta Append Contents per Document. Change Theme Example: Export using VLOOK More HTML Options HTML (without styles) Image Width and Font Size Theme PDF Paper Size Theme Page Break Header / Footer PDF Metadata Add Custom Content (PDF) Example: Add Cover Page PDF (LaTeX / Pandoc) PDF Engine Template Meta Data (Other..." />
+<meta name="og:image" content="http://typora.io/img/twitter-sum.png" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+
+<link href="../assets/css/pure-min.css" rel="stylesheet" />
+
+<link href="../assets/css/syntax.css" rel="stylesheet" />
+<link href="../assets/css/typora-wiki.css" rel="stylesheet" />
+<link rel="icon" href="../assets/img/favicon-16.png" sizes="16x16" />
+<link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32" />
+<link rel="icon" href="https://support.typora.io/assets/img/favicon-64.png" sizes="64x64" />
+<link rel="icon" href="../assets/img/favicon-128.png" sizes="128x128" />
+<script>
+      if (
+        window.location.host.indexOf("typora.io") > -1 &&
+        window.location.protocol != "https:"
+      ) {
+        window.location.protocol = "https";
+      }
+      if (location.host == "support.typora.com.cn") {
+        location = `https://support.typoraio.cn${location.pathname}${location.hash}`;
+      }
+    </script>
+</head>
+<body>
+<style type="text/css">
+      body {
+        
+          font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman",
+          "STSong", Serif;
+		    
+        font-weight: 300;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #2e2e2e;
+        line-height: 1.15em;
+        font-family: "Open Sans", "Hiragino Sans GB", "Microsoft YaHei",
+          "WenQuanYi Micro Hei", sans-serif;
+        text-rendering: geometricPrecision;
+      }
+
+      #pagecontainer {
+        background-color: #fff;
+        min-height: calc(100vh - 510px);
+        flex: 2;
+      }
+
+      #post-content {
+        padding-top: 36px;
+        border-top: 1px dashed #999999;
+        line-height: 1.6rem;
+        padding-bottom: 100px;
+      }
+
+      #post-content > blockquote:first-child {
+        padding-top: 0.4em;
+        padding-bottom: 0.4em;
+        margin-bottom: 2em;
+        margin-left: 0;
+      }
+
+      .nav {
+        border-bottom: none;
+        height: auto;
+      }
+
+      .inner-page {
+        width: 90%;
+        max-width: 800px;
+        margin: auto;
+      }
+
+      h1 {
+        border-bottom: 0;
+      }
+
+      #header {
+        padding-bottom: 32px;
+      }
+
+      #header h1 {
+        text-align: center;
+        white-space: pre-wrap;
+        width: 90%;
+        margin: 81px auto 48px auto;
+      }
+
+      h1 {
+        font-size: 3.6rem;
+        letter-spacing: -2px;
+        text-indent: -3px;
+      }
+
+      h2 {
+        margin-top: 2em;
+      }
+
+      .pure-menu-active > .pure-menu-link,
+      .pure-menu-link:hover,
+      .pure-menu-link:focus {
+        background-color: initial;
+        border: #777 solid 1px;
+      }
+
+      .post-meta {
+        font-style: italic;
+        text-align: center;
+        color: #7a7a7a;
+      }
+
+      div.highlighter-rouge {
+        padding: 8px;
+        border: 1px #777 solid;
+        line-height: 1.2rem;
+        font-family: Menlo, Monaco, "Courier New", monospace;
+      }
+
+      div.highlighter-rouge pre {
+        font-size: 0.95em;
+        overflow: hidden;
+        word-break: break-word;
+        white-space: pre-wrap;
+      }
+
+      a {
+        color: #463f5c;
+        text-decoration: underline;
+      }
+    </style>
+<header class="pure-menu pure-menu-horizontal nav post-title" id="header">
+<div class="gallery">
+<ul class="pure-menu-list" style="float: left; margin-left: 1em; position: absolute">
+<li class="pure-menu-item pure-menu-active">
+<a href="../index.html" class="pure-menu-link" id="title-bar-feature-btn">Back</a
+            >
+</li>
+</ul>
+</div>
+<h1>Export</h1>
+<section class="post-meta">
+<time>April 20, 2021</time>
+by
+<span>typora.io</span>
+</section>
+</header>
+<div id="pagecontainer" class="container">
+<div id="post-content" class="inner-page"><ul id="markdown-toc">
+<li><a href="index.html#general" id="markdown-toc-general">General</a> <ul>
+<li><a href="index.html#quick-usage-of-export" id="markdown-toc-quick-usage-of-export">Quick Usage of Export</a></li>
+<li><a href="index.html#export-with-previous-settings" id="markdown-toc-export-with-previous-settings">Export with Previous Settings</a></li>
+<li><a href="index.html#open-export-settings" id="markdown-toc-open-export-settings">Open Export Settings</a></li>
+<li><a href="index.html#export-location" id="markdown-toc-export-location">Export Location</a></li>
+<li><a href="index.html#export-using-pandoc" id="markdown-toc-export-using-pandoc">Export Using Pandoc</a></li>
+<li><a href="index.html#config-after-export-options" id="markdown-toc-config-after-export-options">Config “After Export” Options</a></li>
+<li><a href="index.html#per-file-configurations" id="markdown-toc-per-file-configurations">Per-file Configurations</a></li>
+<li><a href="index.html#config-export-items" id="markdown-toc-config-export-items">Config Export Items</a> <ul>
+<li><a href="index.html#reorder-export-items" id="markdown-toc-reorder-export-items">Reorder Export Items</a></li>
+<li><a href="index.html#rename-export-item" id="markdown-toc-rename-export-item">Rename Export Item</a></li>
+<li><a href="index.html#remove-export-item" id="markdown-toc-remove-export-item">Remove Export Item</a></li>
+<li><a href="index.html#add-new-export-item" id="markdown-toc-add-new-export-item">Add New Export Item</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="index.html#file-format" id="markdown-toc-file-format">File Format</a> <ul>
+ <li><a href="index.html#html" id="markdown-toc-html">HTML</a> <ul>
+<li><a href="index.html#outline" id="markdown-toc-outline">Outline</a></li>
+<li><a href="index.html#add-custom-contents" id="markdown-toc-add-custom-contents">Add Custom Contents</a> <ul>
+<li><a href="index.html#export-yaml-meta" id="markdown-toc-export-yaml-meta">Export YAML meta</a></li>
+<li><a href="index.html#append-contents-per-document" id="markdown-toc-append-contents-per-document">Append Contents per Document.</a></li>
+</ul>
+</li>
+<li><a href="index.html#change-theme" id="markdown-toc-change-theme">Change Theme</a></li>
+<li><a href="index.html#example-export-using-vlook" id="markdown-toc-example-export-using-vlook">Example: Export using VLOOK</a></li>
+<li><a href="index.html#more-html-options" id="markdown-toc-more-html-options">More HTML Options</a></li>
+</ul>
+</li>
+<li><a href="index.html#html-without-styles" id="markdown-toc-html-without-styles">HTML (without styles)</a></li>
+<li><a href="index.html#image" id="markdown-toc-image">Image</a> <ul>
+<li><a href="index.html#width-and-font-size" id="markdown-toc-width-and-font-size">Width and Font Size</a></li>
+<li><a href="index.html#theme" id="markdown-toc-theme">Theme</a></li>
+</ul>
+</li>
+<li><a href="index.html#pdf" id="markdown-toc-pdf">PDF</a> <ul>
+<li><a href="index.html#paper-size" id="markdown-toc-paper-size">Paper Size</a></li>
+<li><a href="index.html#theme-1" id="markdown-toc-theme-1">Theme</a></li>
+<li><a href="index.html#page-break" id="markdown-toc-page-break">Page Break</a></li>
+<li><a href="index.html#header--footer" id="markdown-toc-header--footer">Header / Footer</a></li>
+<li><a href="index.html#pdf-metadata" id="markdown-toc-pdf-metadata">PDF Metadata</a></li>
+<li><a href="index.html#add-custom-content-pdf" id="markdown-toc-add-custom-content-pdf">Add Custom Content (PDF)</a> <ul>
+<li><a href="index.html#example-add-cover-page" id="markdown-toc-example-add-cover-page">Example: Add Cover Page</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="index.html#pdf-latex--pandoc" id="markdown-toc-pdf-latex--pandoc">PDF (LaTeX / Pandoc)</a> <ul>
+<li><a href="index.html#pdf-engine" id="markdown-toc-pdf-engine">PDF Engine</a></li>
+<li><a href="index.html#template" id="markdown-toc-template">Template</a></li>
+<li><a href="index.html#meta-data-other-options" id="markdown-toc-meta-data-other-options">Meta Data (Other Options)<span id="latex-pdf-meta"></span></a></li>
+<li><a href="index.html#extra-arguments" id="markdown-toc-extra-arguments">Extra Arguments</a></li>
+</ul>
+</li>
+<li><a href="index.html#word-docx" id="markdown-toc-word-docx">Word (.docx)</a> <ul>
+<li><a href="index.html#style-reference" id="markdown-toc-style-reference">Style Reference</a></li>
+</ul>
+</li>
+<li><a href="index.html#openoffice-odt" id="markdown-toc-openoffice-odt">OpenOffice (.odt)</a> <ul>
+<li><a href="index.html#template-1" id="markdown-toc-template-1">Template</a></li>
+</ul>
+</li>
+<li><a href="index.html#rtf" id="markdown-toc-rtf">RTF</a></li>
+<li><a href="index.html#epub" id="markdown-toc-epub">Epub</a> <ul>
+<li><a href="index.html#custom-css" id="markdown-toc-custom-css">Custom CSS</a></li>
+<li><a href="index.html#chapter-level" id="markdown-toc-chapter-level">Chapter Level</a></li>
+<li><a href="index.html#cover-image" id="markdown-toc-cover-image">Cover Image</a></li>
+<li><a href="index.html#meta-data" id="markdown-toc-meta-data">Meta Data</a></li>
+</ul>
+</li>
+<li><a href="index.html#latex" id="markdown-toc-latex">LaTeX</a> <ul>
+<li><a href="index.html#meta-data-other-options-1" id="markdown-toc-meta-data-other-options-1">Meta Data (Other Options)</a> <ul>
+<li><a href="index.html#add-extra-content-in-latex-header" id="markdown-toc-add-extra-content-in-latex-header">Add Extra Content in LaTeX Header</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="index.html#wiki" id="markdown-toc-wiki">Wiki</a> <ul>
+<li><a href="index.html#media-wiki" id="markdown-toc-media-wiki">Media Wiki</a></li>
+<li><a href="index.html#other-wiki-format" id="markdown-toc-other-wiki-format">Other Wiki Format</a></li>
+</ul>
+</li>
+<li><a href="index.html#restructuredtext-rst-rest-or-rest" id="markdown-toc-restructuredtext-rst-rest-or-rest">reStructuredText (RST, ReST, or reST)</a></li>
+<li><a href="index.html#textile" id="markdown-toc-textile">Textile</a></li>
+<li><a href="index.html#opml" id="markdown-toc-opml">OPML</a></li>
+<li><a href="index.html#other-markdown-spec" id="markdown-toc-other-markdown-spec">Other Markdown Spec</a></li>
+<li><a href="index.html#other-formats-using-pandoc" id="markdown-toc-other-formats-using-pandoc">Other Formats Using Pandoc</a> <ul>
+<li><a href="index.html#target-format" id="markdown-toc-target-format">Target Format</a></li>
+<li><a href="index.html#target-file-extension" id="markdown-toc-target-file-extension">Target File Extension</a></li>
+<li><a href="index.html#raw-type" id="markdown-toc-raw-type">Raw Type</a></li>
+<li><a href="index.html#extra-arguments-1" id="markdown-toc-extra-arguments-1">Extra Arguments</a></li>
+<li><a href="index.html#get-exported-ast-for-pandoc" id="markdown-toc-get-exported-ast-for-pandoc">Get Exported AST for Pandoc</a></li>
+</ul>
+</li>
+<li><a href="index.html#other-formats-using-custom-commands" id="markdown-toc-other-formats-using-custom-commands">Other Formats Using Custom Commands</a> <ul>
+<li><a href="index.html#command" id="markdown-toc-command">Command</a></li>
+<li><a href="index.html#show-save-file-dialog" id="markdown-toc-show-save-file-dialog">Show Save File Dialog</a></li>
+<li><a href="index.html#target-file-extensions" id="markdown-toc-target-file-extensions">Target File Extensions</a></li>
+<li><a href="index.html#show-command-output-after-export" id="markdown-toc-show-command-output-after-export">Show Command Output after Export</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="index.html#other-pandoc-options" id="markdown-toc-other-pandoc-options">Other Pandoc Options</a> <ul>
+<li><a href="index.html#append-extra-arguments" id="markdown-toc-append-extra-arguments">Append Extra Arguments</a></li>
+</ul>
+</li>
+<li><a href="index.html#appendix" id="markdown-toc-appendix">Appendix</a> <ul>
+<li><a href="index.html#install-pandoc" id="markdown-toc-install-pandoc">Install Pandoc</a></li>
+<li><a href="index.html#variables" id="markdown-toc-variables">Variables</a> <ul>
+<li><a href="index.html#unset-variables" id="markdown-toc-unset-variables">Unset Variables</a></li>
+<li><a href="index.html#use-variables-in-export-config" id="markdown-toc-use-variables-in-export-config">Use Variables in Export Config</a></li>
+</ul>
+</li>
+<li><a href="index.html#trouble-shooting" id="markdown-toc-trouble-shooting">Trouble Shooting</a> <ul>
+<li><a href="index.html#require-pandoc-to-continue" id="markdown-toc-require-pandoc-to-continue">Require Pandoc to Continue…</a></li>
+<li><a href="index.html#export-pdf-not-working-on-windows" id="markdown-toc-export-pdf-not-working-on-windows">Export PDF not working on Windows</a></li>
+<li><a href="index.html#cannot-read-native-when-export-using-pandoc" id="markdown-toc-cannot-read-native-when-export-using-pandoc">“Cannot Read Native” when export using pandoc</a></li>
+<li><a href="index.html#other-pandoc-errors" id="markdown-toc-other-pandoc-errors">Other Pandoc Errors</a></li>
+<li><a href="index.html#continues-whitespace-or-line-break-are-gone-in-exported-pdf" id="markdown-toc-continues-whitespace-or-line-break-are-gone-in-exported-pdf">Continues whitespace or line break are gone in exported PDF</a></li>
+<li><a href="index.html#env-node-no-such-file-or-directory" id="markdown-toc-env-node-no-such-file-or-directory">Env: node: No such file or directory</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Note following documents are for Typora ≥ 0.10.0</p>
+</blockquote>
+<h2 id="general">General</h2>
+<h3 id="quick-usage-of-export">Quick Usage of Export</h3>
+<p>Typora supports you to export current document into PDF, HTML, HTML (without styles) and Image format.</p>
+<p>More formats (like Word, RTF, etc) are supported via <a href="https://pandoc.org/">pandoc</a>, after you <a href="../Install-and-Use-Pandoc/index.html">install pandoc</a>, those format are supported out-of-box.</p>
+<p>You could access export command from <code class="language-plaintext highlighter-rouge">File</code> → <code class="language-plaintext highlighter-rouge">Export</code> command from menubar:</p>
+<p><img src="../media/export/Screen&#32;Shot&#32;2021-01-18&#32;at&#32;22.49.03.png" alt="Screen Shot 2021-01-18 at 22.49.03" style="zoom:50%;" /></p>
+<h3 id="export-with-previous-settings">Export with Previous Settings</h3>
+<p>You can export current file again using previous successful export command by clicking <code class="language-plaintext highlighter-rouge">File</code> → <code class="language-plaintext highlighter-rouge">Export</code> → <code class="language-plaintext highlighter-rouge">Export with Previous</code> menu item.</p>
+<p>If you want to export and overwrite previous exported file using previous command and newer file content, you can click <code class="language-plaintext highlighter-rouge">File</code> → <code class="language-plaintext highlighter-rouge">Export</code> → <code class="language-plaintext highlighter-rouge">Export and Overwrite with Previous</code>. One use case is that, you may export current markdown file into PDF file, but then you find some content is missing or some words are misspelled, after you correct the markdown file, instead of click <code class="language-plaintext highlighter-rouge">PDF</code> export and choose exported path again, you can just click <code class="language-plaintext highlighter-rouge">Export and Overwrite with Previous</code> so the newer content will be written to your previous exported PDF file. <strong>Please be careful since it will overwrite your previous exported file</strong>.</p>
+<p>All “previous settings” prefer to previous export executed in current window and current document.</p>
+<h3 id="open-export-settings">Open Export Settings</h3>
+<p>You could config export options in preferences panel:</p>
+<p><img src="../media/export/Screen&#32;Shot&#32;2021-01-18&#32;at&#32;22.51.30.png" alt="Screen Shot 2021-01-18 at 22.51.30" style="zoom:50%;" /></p>
+<h3 id="export-location">Export Location</h3>
+<p>You could change Typora’s default export location in <code class="language-plaintext highlighter-rouge">Export</code> → <code class="language-plaintext highlighter-rouge">General</code> → <code class="language-plaintext highlighter-rouge">Default Folder for Exported File</code>. Possible options are “auto”, “same folder with current folder” and “custom location”. This setting changes the default value, and when export, you can still change export file path in the save file dialog.</p>
+<h3 id="export-using-pandoc">Export Using Pandoc</h3>
+<p>For formats other than HTML, PDF and Images, typora use <a href="https://pandoc.org/">pandoc</a> for export. Pandoc is also used for importing non-markdown files, like word, rtf, etc.</p>
+<p>So, it make them work, please <a href="../Install-and-Use-Pandoc/index.html">install pandoc</a> first. Quickest way is to follow their official instructions https://pandoc.org/installing.html.</p>
+<p>After installed, please restart Typora. And if typora still says “Require Pandoc to Continue…”, please open <code class="language-plaintext highlighter-rouge">Export</code> → <code class="language-plaintext highlighter-rouge">General</code> from preferences panel, and manually config pandoc path.</p>
+<h3 id="config-after-export-options">Config “After Export” Options</h3>
+<p>By default, when export succeed, typora will show a notification inside typora window. When fail, an error dialog with error message would pop up.</p>
+<p>If you want to open folder location of exported file after export, you can check “<strong>Open exported file location</strong>” in preferences panel. Settings in specific export commands will override setting in “General” section for export.</p>
+<p>If you want to open exported file automatically, you can check “<strong>Open exported file</strong>” for specific export commands in preferences panel.</p>
+<h3 id="per-file-configurations">Per-file Configurations</h3>
+<p>For supported configurations, you can define them in YAML front matters, please see <a href="../YAML/index.html">YAML front matters</a> for details.</p>
+<p>Since the markdown file may be created by others, for security reasons, native supported formats (PDF / HTML) requires “Read and overwrite export settings from YAML front matters” to be enabled in export preferences panels, then settings in YAML front matters can be used and overwrite global export settings.</p>
+<h3 id="config-export-items">Config Export Items</h3>
+<p>Under <code class="language-plaintext highlighter-rouge">Export</code> tab in preferences panel, typora allows you to customize your export items, including re-order, re-name export items, add and remove export items based on your needs. The changes will be applied to menu items under <code class="language-plaintext highlighter-rouge">File</code> → <code class="language-plaintext highlighter-rouge">Export</code> menu.</p>
+<p>The built-in options (PDF, HTML, HTML (without Styles), Image) are not allowed to reorder, rename or remove, for other options, you can do:</p>
+<h4 id="reorder-export-items">Reorder Export Items</h4>
+<p>You can select one item In list panel of Preferences panel → <code class="language-plaintext highlighter-rouge">Export</code>, then click on the ⬆︎ or ⬇︎ button to change orders.</p>
+<h4 id="rename-export-item">Rename Export Item</h4>
+<p>You can select one item In list panel of Preferences panel → <code class="language-plaintext highlighter-rouge">Export</code>, then click on the “Edit” button to rename one export item.</p>
+<h4 id="remove-export-item">Remove Export Item</h4>
+<p>You can select one item In list panel of Preferences panel → <code class="language-plaintext highlighter-rouge">Export</code>, then click on the “delete (-)” button to remove it from <code class="language-plaintext highlighter-rouge">File</code> → <code class="language-plaintext highlighter-rouge">Export</code> menu.</p>
+<h4 id="add-new-export-item">Add New Export Item</h4>
+<p>You could add export items based on Typora’s own exporter, pandoc, or custom command to extend Typora’s export function or just add preset export commands into <code class="language-plaintext highlighter-rouge">export</code> menu. You could do this by:</p>
+<ol>
+<li>
+<p>Click the “add (+)” button in the list panel</p>
+</li>
+<li>
+<p>Select a template from the dialog:</p>
+<p><img src="../media/export/Screen&#32;Shot&#32;2021-02-13&#32;at&#32;17.35.27.png" alt="Screen Shot 2021-02-13 at 17.35.27" style="zoom:50%;" /></p>
+</li>
+<li>
+<p>Set a name and config its details.</p>
+</li>
+</ol>
+<p>Then you can use this from <code class="language-plaintext highlighter-rouge">File</code> → <code class="language-plaintext highlighter-rouge">Export</code> menu.</p>
+<p>You could also assign it a shortcut key, following https://support.typora.io/Shortcut-Keys/#change-shortcut-keys.</p>
+<h2 id="file-format">File Format</h2>
+<h3 id="html">HTML</h3>
+<p>You can select <code class="language-plaintext highlighter-rouge">Export</code> → <code class="language-plaintext highlighter-rouge">HTML</code> from the preferences panel to config export options for HTML file.</p>
+<p><img src="../media/export/Screen&#32;Shot&#32;2021-01-31&#32;at&#32;15.41.09.png" alt="Screen Shot 2021-01-31 at 15.41.09" /></p>
+<p>If you want to export a HTML without styles, you should choose <code class="language-plaintext highlighter-rouge">Export </code>→ <code class="language-plaintext highlighter-rouge">HTML (without styles)</code>, you will get a clean HTML file so you can add your own styles.</p>
+<h4 id="outline">Outline</h4>
+<p>You can include outline in exported HTML by enable this option in <code class="language-plaintext highlighter-rouge">Export</code> → <code class="language-plaintext highlighter-rouge">HTML</code> from preferences panel.
+Whether it is collapsible outline or flat outline depends on your current setting. You can switch them under <code class="language-plaintext highlighter-rouge">View</code> menu or under <code class="language-plaintext highlighter-rouge">appearance</code> section in preferences panel.
+The css theme you use may affect the outline behavior in exported file, so please disable this option if the outline in exported file do not work well in some 3rd party themes.</p>
+<h4 id="add-custom-contents">Add Custom Contents</h4>
+<p>You can add custom contents in <code class="language-plaintext highlighter-rouge">Append in &lt;head /&gt;</code> and <code class="language-plaintext highlighter-rouge">Append in &lt;body /&gt;</code>, which will be inserted into <code class="language-plaintext highlighter-rouge">&lt;head /&gt;</code> part and <code class="language-plaintext highlighter-rouge">&lt;body /&gt;</code> part in the exported html. For contents that cannot be added into <code class="language-plaintext highlighter-rouge">&lt;head /&gt;</code>, even when it is added in <code class="language-plaintext highlighter-rouge">Append in &lt;head /&gt;</code>, it will be prepend into <code class="language-plaintext highlighter-rouge">&lt;body /&gt;</code> instead. Same for <code class="language-plaintext highlighter-rouge">Append in &lt;body /&gt;</code>.</p>
+<h5 id="export-yaml-meta">Export YAML meta</h5>
+<p>Variables like <code class="language-plaintext highlighter-rouge">${title}</code> or <code class="language-plaintext highlighter-rouge">${author}</code> in <code class="language-plaintext highlighter-rouge">&lt;title&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;meta&gt;</code> tag will be replaced by corresponding <a href="index.html#variables">variables</a> defined in <a href="https://jekyllrb.com/docs/front-matter/">YAML Front Matter</a>.</p>
+<p>For example, you can insert additional <code class="language-plaintext highlighter-rouge">&lt;meta&gt;</code> data or custom <code class="language-plaintext highlighter-rouge">&lt;style&gt;</code> into exported html using those options, e.g:</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"author"</span> <span class="na">content=</span><span class="s">"${author}"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">content=</span><span class="s">"${description}"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+<p>To use those variables in somewhere else, you can add some javascript in <code class="language-plaintext highlighter-rouge">Append in &lt;body /&gt;</code>, to read target meta tag, and modified export content as you want.</p>
+<h5 id="append-contents-per-document">Append Contents per Document.</h5>
+<p>You could use <code class="language-plaintext highlighter-rouge">append-head</code> and <code class="language-plaintext highlighter-rouge">append-body</code> in <a href="https://jekyllrb.com/docs/front-matter/">YAML Front Matter</a> to overwrite global settings, and / or add <code class="language-plaintext highlighter-rouge">append-head-extra</code> and <code class="language-plaintext highlighter-rouge">append-body-extra</code> to append <em>extra</em> content besides contents configured in the preferences panel. Those settings requires “Read and overwrite export settings from YAML front matters” option to be enabled for current HTML export item.</p>
+<h4 id="change-theme">Change Theme</h4>
+<p>You can apply another theme in HTML export in the preferences panel. By default, current theme will be used.</p>
+<h4 id="example-export-using-vlook">Example: Export using <a href="https://github.com/MadMaxChow/VLOOK">VLOOK</a></h4>
+<p><a href="https://github.com/MadMaxChow/VLOOK">VLOOK™</a> is a <strong>Theme Pack</strong> and provide much enhancement for HTML export of Typora.</p>
+<p>By using it, you could be able to export more fancy HTML file. Followings are setup process based on current export functionalities:</p>
+<ol>
+<li>Adding a new export command for HTML format, named as “vlook”.</li>
+<li>Install VLook themes under <a href="https://github.com/MadMaxChow/VLOOK/tree/master/released/theme">https://github.com/MadMaxChow/VLOOK/tree/master/released/theme</a>.</li>
+<li>Select a VLook theme in Export → vlook → Theme.</li>
+<li>Copy content from <a href="https://github.com/MadMaxChow/VLOOK/blob/master/released/plugin/plugin.txt">https://github.com/MadMaxChow/VLOOK/blob/master/released/plugin/plugin.txt</a> to <code class="language-plaintext highlighter-rouge">Append in &lt;body /&gt;</code> part.</li>
+<li>Make file based on template (<a href="https://github.com/MadMaxChow/VLOOK/blob/master/released/VLOOK-Document-Template.md">https://github.com/MadMaxChow/VLOOK/blob/master/released/VLOOK-Document-Template.md</a>)</li>
+<li>Click Export → vlook from menu bar to export the content.</li>
+</ol>
+<p>Similarly, you could config your own export styles by changing all those configs.</p>
+<h4 id="more-html-options">More HTML Options</h4>
+<p>You could use more options, like setting up html templates, export to slides, etc by adding <a href="index.html#other-formats-using-pandoc">new export command based on Pandoc</a>.</p>
+<h3 id="html-without-styles">HTML (without styles)</h3>
+<p>You could export plain HTML (without styles) using export command <code class="language-plaintext highlighter-rouge">Export</code> → <code class="language-plaintext highlighter-rouge">HTML (without styles)</code> from menu bar.</p>
+<p>You could add your own css styles, contents, or javascript by configuring <code class="language-plaintext highlighter-rouge">Append in &lt;head /&gt;</code> and <code class="language-plaintext highlighter-rouge">Append in &lt;body /&gt;</code> in preference panel. The settings are same with <a href="index.html#add-custom-contents">add custom contents in HTML</a>.</p>
+<h3 id="image">Image</h3>
+<h4 id="width-and-font-size">Width and Font Size</h4>
+<p>Typora provides image export option for feeds in social media, so by default is 640px width with 24px font size. But you can change this in preferences panel.</p>
+<p>Also, based on the purpose of this feature, overall performance and the final size of output images, if the output article is too long, the image export would fail.</p>
+<h4 id="theme">Theme</h4>
+<p>You could choose another theme applied for exported images in preferences panel → Export → Image. By default, current theme will be used.</p>
+<h3 id="pdf">PDF</h3>
+<p>You can select <code class="language-plaintext highlighter-rouge">Export</code> → <code class="language-plaintext highlighter-rouge">PDF</code> from the preferences panel to config export options for PDF file, it provide options like:</p>
+<h4 id="paper-size">Paper Size</h4>
+<p>Set <strong>paper size</strong> (A4, A5, etc) or <strong>custom size</strong>, and <strong>page margins</strong>.</p>
+<p>Note: on Windows/Linux</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@media</span> <span class="n">print</span> <span class="p">{</span>
+  <span class="k">@page</span> <span class="p">{</span>
+  	<span class="nl">margin</span><span class="p">:</span> <span class="m">27mm</span> <span class="m">16mm</span> <span class="m">27mm</span> <span class="m">16mm</span><span class="p">;</span> 
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Will be respected when “<em>Margin</em>” is set to default (But please unset margin for <code class="language-plaintext highlighter-rouge">#write</code> or <code class="language-plaintext highlighter-rouge">body</code> which may also affect the final output), on macOS, they are ignored.</p>
+<h4 id="theme-1">Theme</h4>
+<p>You could choose another theme applied for exported PDF in preferences panel → Export → PDF. By default, current theme will be used.</p>
+<p>Please note that on Windows / Linux version, <strong>only light themes are supported</strong> for PDF Export, as well as for print.</p>
+<p>If you only want to make small changes, <strong>there’s no need to specify new themes for PDF export</strong>, you can simply add <code class="language-plaintext highlighter-rouge">@media print { /* your css code */}</code> in <a href="../Add-Custom-CSS/index.html">Custom CSS</a>.</p>
+<h4 id="page-break">Page Break</h4>
+<p>When “<strong><em>Page Break Between Top Headings</em></strong>” is enabled, page break will be inserted between sections divided by top level headings (<code class="language-plaintext highlighter-rouge">h1</code>), also, page break will be inserted before footnote definitions.</p>
+<p><strong>Note:</strong> You can input <code class="language-plaintext highlighter-rouge">&lt;div style="page-break-after:always" /&gt;</code> in your document to <strong>manually add a page break</strong> at that position.</p>
+<h4 id="header--footer">Header / Footer</h4>
+<p>You can add custom header and footer exported PDF. For example, you can set <code class="language-plaintext highlighter-rouge">${title} - ${author}</code> as header and <code class="language-plaintext highlighter-rouge">No. ${pageNo} / ${pageCount}</code> as footer, the exported PDF is like:</p>
+<p><img src="../media/export/Screen&#32;Shot&#32;2021-01-20&#32;at&#32;00.07.01.png" alt="Screen Shot 2021-01-20 at 00.07.01" style="zoom:50%;" /></p>
+<p>You can <a href="../media/export/Markdown-Reference.pdf">download the sample PDF here</a>.</p>
+<p><strong>Note:</strong> Please leave enough margin when you want to append page header or footer.</p>
+<p><strong>Note:</strong> You can also set per-document headers / footers using <a href="https://jekyllrb.com/docs/front-matter/">YAML Front Matter</a>, after enabled “Read and overwrite export settings from YAML front matters” option in preferences panel. Sample YAML front matters is like:</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">header</span><span class="pi">:</span> 
+<span class="na">footer</span><span class="pi">:</span> <span class="s">Written in Typora</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+<p>For md file contains above YAML Font Matter, header will be empty and footer will be “Written in Typora” in exported PDF file.</p>
+<h4 id="pdf-metadata">PDF Metadata</h4>
+<p>You can add metadata to exported PDF file via <a href="https://jekyllrb.com/docs/front-matter/">YAML Front Matter</a>, followings are supported PDF metadata:</p>
+<pre><code class="language-gfm">---
+title: Export in Typora
+author: John Snow
+creator: Typora inc.
+subject: Tutorial
+keywords: [Pandoc, Tutorial, Export]
+---
+</code></pre>
+<p><strong>Note:</strong> when “keywords” is absent, typora will also use “tags”, and you can use list with same space indent in YAML to represent an array, for instance:</p>
+<pre><code class="language-gfm">---
+tags:
+    - Pandoc
+    - Tutorial
+    - Export
+---
+</code></pre>
+<p>Output is</p>
+<p><img src="../media/export/Screen&#32;Shot&#32;2021-03-28&#32;at&#32;23.48.59.png" alt="Screen Shot 2021-03-28 at 23.48.59" style="zoom:50%;" /></p>
+<h4 id="add-custom-content-pdf">Add Custom Content (PDF)</h4>
+<p>The PDF version is rendered from the HTML output, you could add HTML content (including scripts) in preferences panel → PDF → Append Extra Content, which will be appended in <code class="language-plaintext highlighter-rouge">&lt;body&gt;</code> tag when rendering generated HTML into PDF.</p>
+<h5 id="example-add-cover-page">Example: Add Cover Page</h5>
+<p>It can be done by adding custom html contents into the <code class="language-plaintext highlighter-rouge">Append Extra Content</code> field, a simple case may be using the following content:</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"title"</span> <span class="na">content=</span><span class="s">"${title}"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">'_export_cover'</span> <span class="na">style=</span><span class="s">"height:100vh;"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">'_export_title'</span> <span class="na">style=</span><span class="s">"margin-top: 25%;text-align: center;font-size: 3rem;"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="kd">var</span> <span class="nx">$cover</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#_export_cover</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">title</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">meta[name='title']</span><span class="dl">"</span><span class="p">).</span><span class="nx">getAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">content</span><span class="dl">"</span><span class="p">);</span>
+<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">title</span> <span class="o">||</span> <span class="nx">title</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">${title}</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// no title</span>
+  <span class="nx">$cover</span><span class="p">.</span><span class="nx">remove</span><span class="p">();</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">$cover</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">childNodes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+  <span class="nx">$cover</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#_export_title</span><span class="dl">"</span><span class="p">).</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">title</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+<p>Another option is to use LaTex / Pandoc to generate PDF, you can see details below.</p>
+<h3 id="pdf-latex--pandoc">PDF (LaTeX / Pandoc)</h3>
+<p>Typora also supports you to generate PDF file using Pandoc and LaTeX (or other engines). By default, there is no such option in export menu, but you can add this by</p>
+<ol>
+<li>Open <code class="language-plaintext highlighter-rouge">Export</code> section in preferences panel.</li>
+<li>Click “Add” button on the export item list, select “PDF (LaTeX / Pandoc)” from template selector, and click “OK”.</li>
+</ol>
+<h4 id="pdf-engine">PDF Engine</h4>
+<p>Pandoc provides serval engines for producing PDF file, including pdflatex, lualatex, xelatex, latexmk, tectonic, wkhtmltopdf, weasyprint, prince, context, and pdfroff. You will need to install one of those engines, and add it to your PATH, or specify the full path of the engine. You can config this in preferences panel.</p>
+<p>Please refer to https://pandoc.org/MANUAL.html#option–pdf-engine for detail.</p>
+<p><strong>Note:</strong> On macOS, you could install <a href="http://www.tug.org/mactex/">MacTeX</a>, open <code class="language-plaintext highlighter-rouge">/Applications/TeX/Docs and Spell Utilities/Documents/What Is Installed.pdf</code> to check where binaries are installed to. On Intel macOS, the path for <code class="language-plaintext highlighter-rouge">pdflatex</code> after installing MacTeX-2020 might be <code class="language-plaintext highlighter-rouge">/usr/local/texlive/2020/bin/x86_64-darwin/pdftex</code>.</p>
+<h4 id="template">Template</h4>
+<p>You could also specify template option in preferences panel, for detailed explanations, please refer to <a href="https://pandoc.org/MANUAL.html#templates">pandoc manual</a>.</p>
+<h4 id="meta-data-other-options">Meta Data (Other Options)<span id="latex-pdf-meta"></span></h4>
+<p>You could add meta data or extra options in <a href="https://jekyllrb.com/docs/front-matter/">YAML Front Matter</a>, please check <a href="https://pandoc.org/MANUAL.html#variables-for-latex">https://pandoc.org/MANUAL.html#variables-for-latex</a> for details, it support extra options including margins, paper size, font family, etc.</p>
+<p>For example, if your select LaTeX as PDF engine, you can add footer and header via</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">header-includes</span><span class="pi">:</span> <span class="pi">|</span>
+    <span class="s">\usepackage{fancyhdr}</span>
+    <span class="s">\pagestyle{fancy}</span>
+    <span class="s">\fancyhead[CO,CE]{This is fancy}</span>
+    <span class="s">\fancyfoot[CO,CE]{So is this}</span>
+    <span class="s">\fancyfoot[LE,RO]{\thepage}</span>
+<span class="s">---</span>
+</code></pre></div></div>
+<h4 id="extra-arguments">Extra Arguments</h4>
+<p>You could append extra command line arguments for pandoc, for which arguments you could use, please refer https://pandoc.org/MANUAL.html.</p>
+<h3 id="word-docx">Word (.docx)</h3>
+<p>You can export to word file via <code class="language-plaintext highlighter-rouge">Export</code> → <code class="language-plaintext highlighter-rouge">Word (.docx)</code> from menu bar. You can config it from <code class="language-plaintext highlighter-rouge">Export</code> → <code class="language-plaintext highlighter-rouge">Word (.docx)</code> in preferences panel.</p>
+<h4 id="style-reference">Style Reference</h4>
+<p>For example, you can download <a href="../media/export/twocolumns.docx">this sample reference doc file</a>, then select this file in preferences panel for option “Style Reference”.</p>
+<p>To create your down style template for docx output, you can generate one from command line. (<a href="https://pandoc.org/MANUAL.html#option--reference-doc">https://pandoc.org/MANUAL.html#option--reference-doc</a>)</p>
+<pre><code class="language-cmd">pandoc -o custom-reference.docx --print-default-data-file reference.docx.
+</code></pre>
+<p>Then open custom-reference.docx in Word, modify the styles as you wish, and save the file. For best results, do not make changes to this file other than modifying the styles used by pandoc.</p>
+<p>You can read more details <a href="https://pandoc.org/MANUAL.html#option--reference-doc">here</a>.</p>
+<h3 id="openoffice-odt">OpenOffice (.odt)</h3>
+<p>You can export to OpenOffice file via <code class="language-plaintext highlighter-rouge">Export</code> → <code class="language-plaintext highlighter-rouge">OpenOffice</code> from menu bar. You can config it from <code class="language-plaintext highlighter-rouge">Export</code> → <code class="language-plaintext highlighter-rouge">OpenOffice</code> in preferences panel.</p>
+<h4 id="template-1">Template</h4>
+<p>You could find details on <a href="https://pandoc.org/MANUAL.html#templates">pandoc manual</a>, you could download the sample template <a href="https://github.com/jgm/pandoc-templates/blob/master/default.opendocument">default.opendocument</a> from https://github.com/jgm/pandoc-templates.</p>
+<h3 id="rtf">RTF</h3>
+<p>RTF (Rich Text Format) is the format saved by TextEdit.app or WordPad.exe. You can export to RTF file via <code class="language-plaintext highlighter-rouge">Export</code> → <code class="language-plaintext highlighter-rouge">RTF</code> from menu bar. You can config it from <code class="language-plaintext highlighter-rouge">Export</code> → <code class="language-plaintext highlighter-rouge">RTF</code> in preferences panel.</p>
+<h3 id="epub">Epub</h3>
+<p>You can export to RTF file via <code class="language-plaintext highlighter-rouge">Export</code> → <code class="language-plaintext highlighter-rouge">Epub</code> from menu bar. You can config it from <code class="language-plaintext highlighter-rouge">Export</code> → <code class="language-plaintext highlighter-rouge">Epub</code> in preferences panel.</p>
+<h4 id="custom-css">Custom CSS</h4>
+<p>You can set custom css from preferences panel, if you don’t know how to start with, you could check https://github.com/mattharrison/epub-css-starter-kit to make your own css style.</p>
+<h4 id="chapter-level">Chapter Level</h4>
+<p>Specify the heading level at which to split the EPUB into separate “chapter” files. The default is to split into chapters at level-1 headings. This option only affects the internal composition of the EPUB, not the way chapters and sections are displayed to users. Some readers may be slow if the chapter files are too large, so for large documents with few level-1 headings, one might want to use a chapter level of 2 or 3.</p>
+<h4 id="cover-image">Cover Image</h4>
+<p>If you want to define a cover image fore pub output, please add a <code class="language-plaintext highlighter-rouge">cover-image: ${path}</code> in <a href="https://jekyllrb.com/docs/front-matter/">YAML Front Matter</a>. If it starts with <code class="language-plaintext highlighter-rouge">./</code> typora will convert to absolute path relative to current md file, or else, it should be absolute path, or pandoc will try to find one in its <a href="https://pandoc.org/MANUAL.html#option--data-dir">data-dir</a>.</p>
+<h4 id="meta-data">Meta Data</h4>
+<p>You can use <a href="https://jekyllrb.com/docs/front-matter/">YAML Front Matter</a> to set meat data on the output epub file, for example:</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">My Book</span>
+<span class="na">subtitle</span><span class="pi">:</span> <span class="s">An investigation of metadata</span>
+<span class="na">creator</span><span class="pi">:</span> <span class="s">Sarah Jones</span>
+<span class="na">identifier</span><span class="pi">:</span> <span class="s">doi:10.234234.234/33</span>
+<span class="na">publisher</span><span class="pi">:</span>  <span class="s">My Press</span>
+<span class="na">rights</span><span class="pi">:</span> <span class="s">© 2007 John Smith, CC BY-NC</span>
+<span class="na">ibooks</span><span class="pi">:</span>
+  <span class="na">version</span><span class="pi">:</span> <span class="s">1.3.4</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+<p>You could find <a href="https://pandoc.org/MANUAL.html#epub-metadata">more detail here</a>.</p>
+<h3 id="latex">LaTeX</h3>
+<h4 id="meta-data-other-options-1">Meta Data (Other Options)</h4>
+<p>Same as<a href="index.html#latex-pdf-meta"> Meta Data for PDF (LaTeX / Pandoc)</a>, you could add meta data or extra options in <a href="https://jekyllrb.com/docs/front-matter/">YAML Front Matter</a>. Please check https://pandoc.org/MANUAL.html#variables-for-latex.</p>
+<h5 id="add-extra-content-in-latex-header">Add Extra Content in LaTeX Header</h5>
+<p>You can use <code class="language-plaintext highlighter-rouge">header-includes</code> or <code class="language-plaintext highlighter-rouge">latex_header</code> or <code class="language-plaintext highlighter-rouge">latex_header_extra</code> in <a href="https://support.typora.io/Export/yaml">YAML Front Matter</a>.</p>
+<p>For example:</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">latex_header</span><span class="pi">:</span> <span class="pi">|</span>
+    <span class="s">\usepackage[utf8]{inputenc} </span>
+    <span class="s">\usepackage[italian]{babel}</span>
+    <span class="s">\author{The Author}</span>
+    <span class="s">\date{2016}</span>
+    <span class="s">\title{The Title}</span>
+    <span class="s">\editor{The Editor}</span>
+<span class="na">classoption</span><span class="pi">:</span>
+<span class="pi">-</span> <span class="s">twocolumn</span>
+<span class="pi">-</span> <span class="s">landscape</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+<h3 id="wiki">Wiki</h3>
+<h4 id="media-wiki">Media Wiki</h4>
+<p>You can export to OpenOffice file via <code class="language-plaintext highlighter-rouge">Export</code> → <code class="language-plaintext highlighter-rouge">Media Wiki</code> from menu bar. You can config it from <code class="language-plaintext highlighter-rouge">Export</code> → <code class="language-plaintext highlighter-rouge">Media Wiki</code> in preferences panel.</p>
+<h4 id="other-wiki-format">Other Wiki Format</h4>
+<p>Please refer to <a href="index.html#other-formats-using-pandoc">Other Formats Using Pandoc</a>, you can use pandoc to convert markdown files into other wiki formats.</p>
+<h3 id="restructuredtext-rst-rest-or-rest">reStructuredText (RST, ReST, or reST)</h3>
+<p>You can export to OpenOffice file via <code class="language-plaintext highlighter-rouge">Export</code> → <code class="language-plaintext highlighter-rouge">reStructuredText</code> from menu bar. You can config it from <code class="language-plaintext highlighter-rouge">Export</code> → <code class="language-plaintext highlighter-rouge">reStructuredText</code> in preferences panel.</p>
+<h3 id="textile">Textile</h3>
+<p>You can export to OpenOffice file via <code class="language-plaintext highlighter-rouge">Export</code> → <code class="language-plaintext highlighter-rouge">Textile</code> from menu bar. You can config it from <code class="language-plaintext highlighter-rouge">Export</code> → <code class="language-plaintext highlighter-rouge">Textile</code> in preferences panel.</p>
+<h3 id="opml">OPML</h3>
+<p>You can export to OpenOffice file via <code class="language-plaintext highlighter-rouge">Export</code> → <code class="language-plaintext highlighter-rouge">OPML</code> from menu bar. You can config it from <code class="language-plaintext highlighter-rouge">Export</code> → <code class="language-plaintext highlighter-rouge">OPML</code> in preferences panel.</p>
+<h3 id="other-markdown-spec">Other Markdown Spec</h3>
+<p>You could follow <a href="index.html#other-formats-using-pandoc">Other Formats Using Pandoc</a> to add new export target using template “Markdown (Other Spec)”. For details you and <a href="../Markdown-Export.html">check here</a>.</p>
+<p><img src="../media/export/CleanShot&#32;2021-03-29&#32;at&#32;00.15.49@2x.png" alt="CleanShot 2021-03-29 at 00.15.49@2x" style="zoom:50%;" /></p>
+<p>You could also change options for the exported markdown file, including line wrap, line width, indent, unicode, etc.</p>
+<p>Please note that “export” is not “reformat”, it will “represent” the same stuff, but its literal content may changed. For example:</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nv">linke</span><span class="p">][</span><span class="ss">typora</span><span class="p">]</span>
+
+<span class="p">[</span><span class="ss">typora</span><span class="p">]:</span> <span class="sx">http://www.typora.io</span>
+</code></pre></div></div>
+<p>May become following content after export.</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nv">linke</span><span class="p">](</span><span class="sx">http://www.typora.io</span><span class="p">)</span>
+</code></pre></div></div>
+<p>You can set <a href="../Markdown-Export.html#line-wrap">line width</a>, <a href="../Markdown-Export.html#end-of-line">end of line</a>, <a href="../Markdown-Export.html#Indent">indent</a>, <a href="../Markdown-Export.html#only-allow-ascii-characters">only allow unicode characters</a>, and <a href="../Markdown-Export.html#other-options">other options</a> as export configs.</p>
+<h3 id="other-formats-using-pandoc">Other Formats Using Pandoc</h3>
+<p>If you want to export current document to a format that pandoc supports but not included in Typora’s export menu, you could config one such option in preferences panel.</p>
+<p>Following is an example of providing reveals export option based on customized pandoc export option:</p>
+<p><img src="../media/export/Screen&#32;Shot&#32;2021-02-01&#32;at&#32;22.29.43.png" alt="pandoc-example" style="zoom:50%;" /></p>
+<p>To start with, please add one export command choosing the “Pandoc” template, then add configurations based on your demand.</p>
+<h4 id="target-format">Target Format</h4>
+<p>You can leave this field empty, then pandoc will convert your document based on the exported filename. For example, if you export to <code class="language-plaintext highlighter-rouge">MyName.docx</code>, when pandoc will export the document to Word format automatically.</p>
+<p>You could also specify a format, for possible options, please refer <a href="https://pandoc.org/MANUAL.html#option--to">https://pandoc.org/MANUAL.html#option--to</a>.</p>
+<h4 id="target-file-extension">Target File Extension</h4>
+<p>When export, typora will pop up a save panel asking where to save the exported file. So please use this setting to set preferred file extensions, and please leave it empty when no preferred file extensions is required. You can set whitespace as separator, for example:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.latex .tex
+</code></pre></div></div>
+<h4 id="raw-type">Raw Type</h4>
+<p>For syntax that pandoc does not support natively, typora may use raw type as workaround.</p>
+<p>For example, the native data model in pandoc cannot represent <code class="language-plaintext highlighter-rouge">[toc]</code>, since there’s no block type TOC in pandoc. In this case, if you set raw type as media wiki, typora will use <code class="language-plaintext highlighter-rouge">__TOC__</code> syntax when export, if set raw type as latex, typora will use <code class="language-plaintext highlighter-rouge">\\tableofcontents</code>, etc.</p>
+<p>Usually the raw type and target format should be same, and for html-based formats, like markdown, revealjs, etc.</p>
+<p>And please note that the “Export” function cannot export all styles even when raw type is set.</p>
+<h4 id="extra-arguments-1">Extra Arguments</h4>
+<p>See <a href="https://support.typora.io/Export/append-extra-arguments">Append-extra Arguments</a>.</p>
+<h4 id="get-exported-ast-for-pandoc">Get Exported AST for Pandoc</h4>
+<p>To ensure the parse rule is same in Typora’s markdown and the output by pandoc. Typora will first convert into pandoc AST (Abstract Syntax Tree) saving in <code class="language-plaintext highlighter-rouge">native</code> format (see native under <a href="https://pandoc.org/MANUAL.html#option--from">https://pandoc.org/MANUAL.html#option--from</a>), then export to target format. You can get the native file by selecting “native” as target format in one custom pandoc export option.</p>
+<h3 id="other-formats-using-custom-commands">Other Formats Using Custom Commands</h3>
+<p><img src="../media/export/Screen&#32;Shot&#32;2021-02-03&#32;at&#32;23.48.52.png" alt="Screen Shot 2021-02-03 at 23.48.52" style="zoom:50%;" /></p>
+<p>You can also add export options based on command line commands. You will need to config:</p>
+<h4 id="command">Command</h4>
+<p>The command you want to trigger for this export option. For example, to submit current file to git server, you can use <code class="language-plaintext highlighter-rouge">git add "${currentPath}" &amp;&amp; git commit -m "save" &amp;&amp; git push</code>. The <code class="language-plaintext highlighter-rouge">${variable}</code> in this option will be replaced by <a href="index.html#variables">variables</a> defined in YAML front matter.</p>
+<p>The command will be exported at the location of the folder of current file.</p>
+<h4 id="show-save-file-dialog">Show Save File Dialog</h4>
+<p>You can change this setting to tell typora if it needs to pop up a save file dialog, or pop up a folder select dialog, or no output path is required.</p>
+<h4 id="target-file-extensions">Target File Extensions</h4>
+<p>When <code class="language-plaintext highlighter-rouge">Select file path to save</code> is selected in “Show Save File Dialog”, you can use this filed to identify which file extensions are allowed for exported file target.</p>
+<h4 id="show-command-output-after-export">Show Command Output after Export</h4>
+<p>Besides the <code class="language-plaintext highlighter-rouge">Open exported file location</code> and <code class="language-plaintext highlighter-rouge">Open exported file location</code>, for export option based on custom commands, typora also provides a <code class="language-plaintext highlighter-rouge">Show command output</code> option. When enabled, typora will display dialog contains the command output (from <code class="language-plaintext highlighter-rouge">stdout</code>). Even it is not enabled, when export failed, the error message from command line will always be shown.</p>
+<h2 id="other-pandoc-options">Other Pandoc Options</h2>
+<h3 id="append-extra-arguments">Append Extra Arguments</h3>
+<p>For pandoc-based export items, besides the options we put in the preferences panel, you can also use all available command line arguments in <a href="https://pandoc.org/MANUAL.html">https://pandoc.org/MANUAL.html</a> by appending them in the “Extra Arguments” field. For words like <code class="language-plaintext highlighter-rouge">${value}</code>, they will be replaced to <a href="index.html#variables">variables</a> defined in YAML front matter.</p>
+<p><img src="../media/export/Screen&#32;Shot&#32;2021-03-03&#32;at&#32;22.36.04.png" alt="Screen Shot 2021-03-03 at 22.36.04" style="zoom:50%;" /></p>
+<h2 id="appendix">Appendix</h2>
+<h3 id="install-pandoc">Install Pandoc</h3>
+<p>Please refer <a href="../Install-and-Use-Pandoc/index.html">install pandoc</a>.</p>
+<h3 id="variables">Variables</h3>
+<p>You can use <code class="language-plaintext highlighter-rouge">${variables}</code> in custom header / footer text and custom export command, their values are:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="language-plaintext highlighter-rouge">${outputPath}</code></td>
+<td>Output file path after export. For example, if you export to location <code class="language-plaintext highlighter-rouge">/User/aaa/Documents/test.pdf</code>, then <code class="language-plaintext highlighter-rouge">${outputPath}</code> will be replaced to that path.</td>
+</tr>
+<tr>
+<td><code class="language-plaintext highlighter-rouge">${outputFileName}</code></td>
+<td>File name (without extension) of the saved exported file. It will be <code class="language-plaintext highlighter-rouge">test</code> in above case.</td>
+</tr>
+<tr>
+<td><code class="language-plaintext highlighter-rouge">${outputFileFullName}</code></td>
+<td>File name (with extension) of the saved exported file. It will be <code class="language-plaintext highlighter-rouge">test.md</code> in above case.</td>
+</tr>
+<tr>
+<td><code class="language-plaintext highlighter-rouge">${currentPath}</code></td>
+<td>Path of currently edited file. For example, if you are editing <code class="language-plaintext highlighter-rouge">/User/aaa/Document/readme.md</code>, then the value will be <code class="language-plaintext highlighter-rouge">/User/aaa/Document/readme.md</code>.</td>
+</tr>
+<tr>
+<td><code class="language-plaintext highlighter-rouge">${currentFileName}</code></td>
+<td>Filename without extension of currently edited file. It will be <code class="language-plaintext highlighter-rouge">readme</code> in above case.</td>
+</tr>
+<tr>
+<td><code class="language-plaintext highlighter-rouge">${currentFileFullName}</code></td>
+<td>Filename with extension of currently edited file. It will be <code class="language-plaintext highlighter-rouge">readme.md</code> in above case.</td>
+</tr>
+<tr>
+<td><code class="language-plaintext highlighter-rouge">${today}</code></td>
+<td>Current date, for example: <code class="language-plaintext highlighter-rouge">2020-01-19</code></td>
+</tr>
+<tr>
+<td><code class="language-plaintext highlighter-rouge">${pageNo}</code></td>
+<td>Current page number. Only available for PDF format.</td>
+</tr>
+<tr>
+<td><code class="language-plaintext highlighter-rouge">${pageCount}</code> / <code class="language-plaintext highlighter-rouge">${totalPages}</code></td>
+<td>Total page counts. Only available for PDF format.</td>
+</tr>
+<tr>
+<td><code class="language-plaintext highlighter-rouge">${title}</code></td>
+<td>Article title, should be defined in <a href="https://jekyllrb.com/docs/front-matter/">YAML Front Matter</a>.</td>
+</tr>
+<tr>
+<td><code class="language-plaintext highlighter-rouge">${author}</code></td>
+<td>Article author, defined in export options for PDF format, can be overwritten in <a href="https://jekyllrb.com/docs/front-matter/">YAML Front Matter</a>.</td>
+</tr>
+<tr>
+<td><code class="language-plaintext highlighter-rouge">${a.b}</code></td>
+<td>If <code class="language-plaintext highlighter-rouge">a</code> is an object defined in <a href="https://jekyllrb.com/docs/front-matter/">YAML Front Matter</a> which contains <code class="language-plaintext highlighter-rouge">b</code>, then you can use <code class="language-plaintext highlighter-rouge">a.b</code> to access value for <code class="language-plaintext highlighter-rouge">b</code>.</td>
+</tr>
+<tr>
+<td>Other variables</td>
+<td>You can use <code class="language-plaintext highlighter-rouge">keyword: value</code> in <a href="https://jekyllrb.com/docs/front-matter/">YAML Front Matter</a>, then uses <code class="language-plaintext highlighter-rouge">${keyword}</code> variables in export configs.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="unset-variables">Unset Variables</h4>
+<p>For example, if in preferences panel, “Author” is configured, you can “unset” this by <code class="language-plaintext highlighter-rouge">author: '’</code> in yaml.</p>
+<h4 id="use-variables-in-export-config">Use Variables in Export Config</h4>
+<p>You can use <code class="language-plaintext highlighter-rouge">${variables}</code> in custom header / footer text and custom export command.</p>
+<p>Please note that if you use <code class="language-plaintext highlighter-rouge">${variables}</code> in custom command line, typora may remove quotes (<code class="language-plaintext highlighter-rouge">'"</code>) inside it and wrap it with quotes to avoid insecure commands.</p>
+<p>You can also use them in <a href="index.html#add-custom-contents">custom contents</a> (<code class="language-plaintext highlighter-rouge">append-head</code>, <code class="language-plaintext highlighter-rouge">append-body</code>, etc), to avoid XSS, only variables in <code class="language-plaintext highlighter-rouge">&lt;meta&gt;</code> tag will be replaced, but you can put your javascript to read them from <code class="language-plaintext highlighter-rouge">&lt;meta&gt;</code> tag, and append to where you want it.</p>
+<h3 id="trouble-shooting">Trouble Shooting</h3>
+<h4 id="require-pandoc-to-continue">Require Pandoc to Continue…</h4>
+<p>This usually happened when Pandoc is not installed or typora cannot detect the pandoc path, please try following:</p>
+<ol>
+<li><a href="../Install-and-Use-Pandoc/index.html">Install pandoc</a></li>
+<li>Restart Typora after pandoc is newly installed.</li>
+<li>If still not working, manually set pandoc path in <code class="language-plaintext highlighter-rouge">Export</code> → <code class="language-plaintext highlighter-rouge">General</code> from preferences panel.</li>
+</ol>
+<h4 id="export-pdf-not-working-on-windows">Export PDF not working on Windows</h4>
+<ol>
+<li>Open Start.</li>
+<li>Search for Services and click the top result to open the console.</li>
+<li>Search for “Print Spooler” and start it, then click Apply and OK</li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/48396880/89485245-f151df00-d7d2-11ea-9ef4-d9927a690a09.png" alt="Enable Print Spooler" /></p>
+<p>See <a href="https://github.com/typora/typora-issues/issues/3766">https://github.com/typora/typora-issues/issues/3766</a>.</p>
+<h4 id="cannot-read-native-when-export-using-pandoc">“Cannot Read Native” when export using pandoc</h4>
+<p>This is usually bug in typora side, please report it to us <a href="../cdn-cgi/l/email-protection.html#ff9796bf8b868f908d9ed19690"><span class="__cf_email__" data-cfemail="f19998b18588819e8390df989e">[email&#160;protected]</span></a> with sample <code class="language-plaintext highlighter-rouge">.md</code> file, informations like which pandoc version you are using, target export format, and other necessary export configs.</p>
+<h4 id="other-pandoc-errors">Other Pandoc Errors</h4>
+<p>When export failed, the error dialog will show the pandoc command line parameters and error message. You can copy the parameters, replace “-f native” with the markdown file path, and then input them in CMD (command line) or Terminal to test without Typora.</p>
+<h4 id="continues-whitespace-or-line-break-are-gone-in-exported-pdf">Continues whitespace or line break are gone in exported PDF</h4>
+<p>This relates to Markdown’s spec for whitespace and line break. You can change in preferences in <code class="language-plaintext highlighter-rouge">Markdown</code> → <code class="language-plaintext highlighter-rouge">Whitespace / Line Break</code> → <code class="language-plaintext highlighter-rouge">Export / Print</code> to enable “Preserve whitespace and single line break” when export. For details, please check <a href="../Line-Break/index.html">Whitespace and Line Breaks</a> in typora.</p>
+<h4 id="env-node-no-such-file-or-directory">Env: node: No such file or directory</h4>
+<p>If you use custom command like <code class="language-plaintext highlighter-rouge">node xxx</code>, please make sure <code class="language-plaintext highlighter-rouge">node</code> is in your system <code class="language-plaintext highlighter-rouge">PATH</code>. Or you can specify the node command with its full path. You can find your node path by input <code class="language-plaintext highlighter-rouge">which node</code> or <code class="language-plaintext highlighter-rouge">where node</code> in your shell to locate the node bin location.</p>
+</div>
+</div>
+<footer id="post-footer" style="
+        background-color: rgb(51, 51, 51);
+        padding-top: 50px;
+        padding-bottom: 50px;
+        text-align: center;
+        font-size: 13px;
+      ">
+<a data-has-mirror href="https://store.typora.io">Get Typora</a> /
+<a href="https://github.com/typora/wiki-website">Help Improve our documents</a
+      >
+</footer>
+<script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+      var backBtn = document.querySelector("#title-bar-feature-btn");
+      if (backBtn) {
+        backBtn.onclick = function (event) {
+          if (
+            window.history.length > 1 &&
+            document.referrer.indexOf(window.location.host) !== -1
+          ) {
+            console.log(" window.history.back");
+            event.preventDefault();
+            window.history.back();
+          }
+        };
+      }
+      if (location.host == "support.typoraio.cn" || location.host == "support.typora.com.cn") {
+        document.querySelectorAll("[data-has-mirror]").forEach((a) => {
+          var href = a.href;
+          if (href.indexOf("store.typora.io") > 0)
+            href = "https://typoraio.cn/";
+          else if (href.indexOf("https://typora.io") > -1)
+            href = "https://typoraio.cn/";
+          else href = href.replace("typora.io", "typoraio.cn");
+          a.href = href;
+        });
+      }
+    </script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-56771470-2", "auto");
+      ga("set", "page", "/support");
+      ga("send", "pageview");
+    </script>
+
+<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ed23a5bcf8c017f"></script>
+
+</body>
+</html>

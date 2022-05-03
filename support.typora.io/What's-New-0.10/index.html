@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Typora 0.10 beta - Typora Support</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@typora" />
+<meta name="twitter:title" content="Typora 0.10 beta" />
+<meta name="twitter:url" content="/What's-New-0.10/" />
+<meta name="twitter:description" content="New / Improvement From this version, typora will use same version number for macOS and Windows / Linux versions. UI Improvement Icon Redesign Also, markdown file icon is updated, but the system may have cache even after you upgraded to this version. Other UI Changes Context Menu (Windows / Github theme) Code Fences Language Auto Complete Export Please check Export for details. General Operations User can quickly “re-export” by using previous export commands. detail User can pre-set some export items to do export for different purposes. Export Config Add export config panel, allow users to add / rename / remove..." />
+<meta name="twitter:image:src" content="http://typora.io/img/twitter-sum.png" />
+<meta name="twitter:image" content="http://typora.io/img/twitter-sum.png" />
+<meta property="og:url" content="/What's-New-0.10/" />
+<meta property="og:title" content="Typora 0.10 beta" />
+<meta property="og:description" content="New / Improvement From this version, typora will use same version number for macOS and Windows / Linux versions. UI Improvement Icon Redesign Also, markdown file icon is updated, but the system may have cache even after you upgraded to this version. Other UI Changes Context Menu (Windows / Github theme) Code Fences Language Auto Complete Export Please check Export for details. General Operations User can quickly “re-export” by using previous export commands. detail User can pre-set some export items to do export for different purposes. Export Config Add export config panel, allow users to add / rename / remove..." />
+<meta name="og:image" content="http://typora.io/img/twitter-sum.png" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+
+<link href="../assets/css/pure-min.css" rel="stylesheet" />
+
+<link href="../assets/css/syntax.css" rel="stylesheet" />
+<link href="../assets/css/typora-wiki.css" rel="stylesheet" />
+<link rel="icon" href="../assets/img/favicon-16.png" sizes="16x16" />
+<link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32" />
+<link rel="icon" href="https://support.typora.io/assets/img/favicon-64.png" sizes="64x64" />
+<link rel="icon" href="../assets/img/favicon-128.png" sizes="128x128" />
+<script>
+      if (
+        window.location.host.indexOf("typora.io") > -1 &&
+        window.location.protocol != "https:"
+      ) {
+        window.location.protocol = "https";
+      }
+      if (location.host == "support.typora.com.cn") {
+        location = `https://support.typoraio.cn${location.pathname}${location.hash}`;
+      }
+    </script>
+</head>
+<body>
+<style type="text/css">
+      body {
+        
+          font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman",
+          "STSong", Serif;
+		    
+        font-weight: 300;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #2e2e2e;
+        line-height: 1.15em;
+        font-family: "Open Sans", "Hiragino Sans GB", "Microsoft YaHei",
+          "WenQuanYi Micro Hei", sans-serif;
+        text-rendering: geometricPrecision;
+      }
+
+      #pagecontainer {
+        background-color: #fff;
+        min-height: calc(100vh - 510px);
+        flex: 2;
+      }
+
+      #post-content {
+        padding-top: 36px;
+        border-top: 1px dashed #999999;
+        line-height: 1.6rem;
+        padding-bottom: 100px;
+      }
+
+      #post-content > blockquote:first-child {
+        padding-top: 0.4em;
+        padding-bottom: 0.4em;
+        margin-bottom: 2em;
+        margin-left: 0;
+      }
+
+      .nav {
+        border-bottom: none;
+        height: auto;
+      }
+
+      .inner-page {
+        width: 90%;
+        max-width: 800px;
+        margin: auto;
+      }
+
+      h1 {
+        border-bottom: 0;
+      }
+
+      #header {
+        padding-bottom: 32px;
+      }
+
+      #header h1 {
+        text-align: center;
+        white-space: pre-wrap;
+        width: 90%;
+        margin: 81px auto 48px auto;
+      }
+
+      h1 {
+        font-size: 3.6rem;
+        letter-spacing: -2px;
+        text-indent: -3px;
+      }
+
+      h2 {
+        margin-top: 2em;
+      }
+
+      .pure-menu-active > .pure-menu-link,
+      .pure-menu-link:hover,
+      .pure-menu-link:focus {
+        background-color: initial;
+        border: #777 solid 1px;
+      }
+
+      .post-meta {
+        font-style: italic;
+        text-align: center;
+        color: #7a7a7a;
+      }
+
+      div.highlighter-rouge {
+        padding: 8px;
+        border: 1px #777 solid;
+        line-height: 1.2rem;
+        font-family: Menlo, Monaco, "Courier New", monospace;
+      }
+
+      div.highlighter-rouge pre {
+        font-size: 0.95em;
+        overflow: hidden;
+        word-break: break-word;
+        white-space: pre-wrap;
+      }
+
+      a {
+        color: #463f5c;
+        text-decoration: underline;
+      }
+    </style>
+<header class="pure-menu pure-menu-horizontal nav post-title" id="header">
+<div class="gallery">
+<ul class="pure-menu-list" style="float: left; margin-left: 1em; position: absolute">
+<li class="pure-menu-item pure-menu-active">
+<a href="../index.html" class="pure-menu-link" id="title-bar-feature-btn">Back</a
+            >
+</li>
+</ul>
+</div>
+<h1>Typora 0.10 beta</h1>
+<section class="post-meta">
+<time>April 20, 2021</time>
+by
+<span>typora.io</span>
+</section>
+</header>
+<div id="pagecontainer" class="container">
+<div id="post-content" class="inner-page"><h2 id="new--improvement">New / Improvement</h2>
+<p>From this version, typora will use same version number for macOS and Windows / Linux versions.</p>
+<h3 id="ui-improvement">UI Improvement</h3>
+<ul>
+<li>
+<p>Icon Redesign</p>
+<p><img src="../media/new-10/Artboard.png" alt="Artboard" style="zoom:50%;" /></p>
+<p>Also, markdown file icon is updated, but the system may have cache even after you upgraded to this version.</p>
+</li>
+<li>
+<p>Other UI Changes</p>
+<table>
+<thead>
+<tr>
+<th>Context Menu (Windows / Github theme)</th>
+<th>Code Fences Language Auto Complete</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="../media/new-10/CleanShot&#32;2021-04-19&#32;at&#32;00.18.11@2x.png" alt="CleanShot 2021-04-19 at 00.18.11@2x" style="zoom:50%;" /></td>
+<td><img src="../media/new-10/CleanShot&#32;2021-04-19&#32;at&#32;00.17.32@2x.png" alt="CleanShot 2021-04-19 at 00.17.32@2x" style="zoom:50%;" /></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h3 id="export">Export</h3>
+<p><img src="../media/export/Screen&#32;Shot&#32;2021-01-18&#32;at&#32;22.51.30.png" alt="Screen Shot 2021-01-18 at 22.51.30" style="zoom:50%;" /></p>
+<p>Please check <a href="../export.html">Export</a> for details.</p>
+<h4 id="general-operations">General Operations</h4>
+<ul>
+<li>User can quickly “re-export” by using previous export commands. <a href="../Export/index.html#export-with-previous-settings">detail</a></li>
+<li>User can pre-set some export items to do export for different purposes.</li>
+</ul>
+<h4 id="export-config">Export Config</h4>
+<ul>
+<li>Add export config panel, allow users to add / rename / remove export items. <a href="../Export/index.html#config-export-items">detail</a></li>
+<li>Allow users to config default location to save exported file. <a href="../Export/index.html#export-location">detail</a></li>
+<li>Able to detect <a href="https://pandoc.org/MANUAL.html">pandoc</a> path more accurately. Allow users to set their pandoc path if it is not in their PATH. <a href="../Export/index.html#export-using-pandoc">detail</a></li>
+<li>Add “after export” config. User can choose to reveal the file in Finder / Explorer, open the file, run custom command, or do nothing. <a href="../Export/index.html#config-after-export-options">detail</a></li>
+</ul>
+<h4 id="pdf-export">PDF Export</h4>
+<ul>
+<li>Support page options, like page size, margin, etc. <a href="../Export/index.html#paper-size">detail</a></li>
+<li>Support separate theme for export. <a href="../Export/index.html#theme-1">detail</a></li>
+<li>Support page footer and header in PDF export. <a href="../Export/index.html#header--footer">detail</a>
+<img src="../media/export/Screen&#32;Shot&#32;2021-01-20&#32;at&#32;00.07.01.png" alt="Screen Shot 2021-01-20 at 00.07.01" style="zoom:50%;" /></li>
+<li>Metadata will be put into PDF file. <a href="../Export/index.html#pdf-metadata">detail</a></li>
+<li>Support export PDF using LaTeX / Pandoc. <a href="../Export/index.html#pdf-latex--pandoc">detail</a></li>
+</ul>
+<h4 id="html">HTML</h4>
+<ul>
+<li>Support export with outline sidebar. <a href="../Export/index.html#outline">detail</a></li>
+<li>Support separate theme for export. <a href="../Export/index.html#change-theme">detail</a></li>
+<li>Support export with YAML meta, custom scripts and contents. <a href="../Export/index.html#add-custom-contents">detail</a></li>
+</ul>
+<h4 id="image">Image</h4>
+<ul>
+<li>Support custom font size. <a href="../Export/index.html#width-and-font-size">detail</a></li>
+<li>Support custom image width. <a href="../Export/index.html#width-and-font-size">detail</a></li>
+</ul>
+<h4 id="word">Word</h4>
+<ul>
+<li>Support underline (requires newer version of Pandoc) and <code class="language-plaintext highlighter-rouge">&lt;br/&gt;</code> in word export.</li>
+<li>Fix word with underline (like <code class="language-plaintext highlighter-rouge">a_b_c</code>) in docx export.</li>
+<li>Support theme (style reference) for docx export. <a href="../Export/index.html#style-reference">detail</a></li>
+</ul>
+<h4 id="other-formats">Other Formats</h4>
+<ul>
+<li>Support other pandoc arguments when export using pandoc. <a href="../Export/index.html#file-format">detail</a></li>
+<li>Support custom target format and arguments based on pandoc. <a href="../Export/index.html#other-formats-using-pandoc">detail</a></li>
+<li>Support export using custom commands. <a href="../Export/index.html#other-formats-using-custom-commands">detail</a></li>
+<li>Support export to other markdown spec. <a href="../Markdown-Export.html">detail</a></li>
+</ul>
+<h3 id="table">Table</h3>
+<ul>
+<li>Support table with one row.</li>
+<li>Add new table row on Tab key.</li>
+<li>Fix bug that change table alignment may not be saved in source code.</li>
+<li>Fix bug that cannot paste table from some website (like Google Spreadsheet).</li>
+</ul>
+<p><img src="../media/new-10/CleanShot&#32;2021-04-05&#32;at&#32;23.43.07.gif" alt="CleanShot 2021-04-05 at 23.43.07" style="zoom:50%;" /></p>
+<h3 id="macos">MacOS</h3>
+<ul>
+<li>Re-enable class mode for Big Sur.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Classic</th>
+<th>Seamless (default)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="../media/new-10/Screen&#32;Shot&#32;2021-04-05&#32;at&#32;23.45.24.png" alt="classic mode" style="zoom:50%;" /></td>
+<td><img src="../media/new-10/Screen&#32;Shot&#32;2021-04-05&#32;at&#32;23.44.51.png" alt="seamless mode" style="zoom:50%;" /></td>
+</tr>
+</tbody>
+</table>
+<h3 id="windows">Windows</h3>
+<ul>
+<li>Installer now support user level installation, admin privilege is now optional (but recommended).</li>
+</ul>
+<p><img src="../media/new-10/Screen&#32;Shot&#32;2021-04-05&#32;at&#32;23.56.06.png" alt="Screen Shot 2021-04-05 at 23.56.06" style="zoom:50%;" /></p>
+<h3 id="i18n">I18N</h3>
+<ul>
+<li>Add Hebrew translation by <a href="https://github.com/RealA10N">Alon</a>.</li>
+</ul>
+<p><img src="../media/new-10/CleanShot&#32;2021-04-05&#32;at&#32;23.48.56@2x.png" alt="CleanShot 2021-04-05 at 23.48.56@2x" style="zoom:50%;" /></p>
+<h3 id="diagram">Diagram</h3>
+<p>You can use CSS Variables to config diagrams, default config is:</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">:root</span> <span class="p">{</span>
+  <span class="py">--mermaid-theme</span><span class="p">:</span> <span class="nb">default</span><span class="p">;</span>
+  <span class="py">--mermaid-sequence-numbers</span><span class="p">:</span> <span class="n">off</span><span class="p">;</span>
+  <span class="py">--mermaid-flowchart-curve</span><span class="p">:</span> <span class="n">linear</span><span class="p">;</span>
+  <span class="py">--mermaid--gantt-left-padding</span><span class="p">:</span> <span class="m">75</span><span class="p">;</span>
+  <span class="py">--sequence-theme</span><span class="p">:</span> <span class="n">simple</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>In detail:</p>
+<table>
+<thead>
+<tr>
+<th>–mermaid-sequence-numbers:off</th>
+<th>–mermaid-sequence-numbers:on</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="../media/new-10/Screen&#32;Shot&#32;2021-04-05&#32;at&#32;23.08.37.png" alt="Screen Shot 2021-04-05 at 23.08.37" style="zoom:50%;" /></td>
+<td><img src="../media/new-10/Screen&#32;Shot&#32;2021-04-05&#32;at&#32;23.20.31.png" alt="Screen Shot 2021-04-05 at 23.20.31" style="zoom:50%;" /></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>–mermaid-flowchart-curve: linear;</th>
+<th>–mermaid-flowchart-curve: basis</th>
+<th>–mermaid-flowchart-curve: natural;</th>
+<th>–mermaid-flowchart-curve: step;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="../media/new-10/Screen&#32;Shot&#32;2021-04-05&#32;at&#32;23.25.41.png" alt="Screen Shot 2021-04-05 at 23.25.41" style="zoom:50%;" /></td>
+<td><img src="../media/new-10/Screen&#32;Shot&#32;2021-04-05&#32;at&#32;23.30.11.png" alt="Screen Shot 2021-04-05 at 23.30.11" style="zoom:50%;" /></td>
+<td><img src="../media/new-10/Screen&#32;Shot&#32;2021-04-05&#32;at&#32;23.28.06.png" alt="Screen Shot 2021-04-05 at 23.28.06" style="zoom:50%;" /></td>
+<td><img src="../media/new-10/Screen&#32;Shot&#32;2021-04-05&#32;at&#32;23.28.52.png" alt="Screen Shot 2021-04-05 at 23.28.52" style="zoom:50%;" /></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>–sequence-theme: simple</th>
+<th>–sequence-theme: hand</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="../media/diagrams/Screen&#32;Shot&#32;2021-04-05&#32;at&#32;23.38.52.png" alt="Screen Shot 2021-04-05 at 23.38.52" style="zoom:50%;" /></td>
+<td><img src="../media/diagrams/js-sequence-hand.png" alt="Screen Shot 2021-03-13 at 23.56.07" style="zoom:50%;" /></td>
+</tr>
+</tbody>
+</table>
+<h3 id="other">Other</h3>
+<ul>
+<li>Support duplicated heading anchor. See <a href="../Links/index.html#duplicated-headings">detail</a>.</li>
+</ul>
+<h2 id="bug-fix">Bug Fix</h2>
+<ul>
+<li>Fix rendering issue for highlight.</li>
+<li>Fix bug that change line to code block may causes text duplication.</li>
+<li>Fix Shift+Delete key binding (which should work as cut) on Windows / Linux.</li>
+<li>Fix bugs relates to list indent and code fences.</li>
+<li>Support line break in image / link title.</li>
+<li>Fix delete math from context menu.</li>
+<li>Fix <code class="language-plaintext highlighter-rouge">&lt;samp&gt;</code> tag support.</li>
+<li>Fix open link with trim whitespace.</li>
+<li>Add <code class="language-plaintext highlighter-rouge">json5</code> as a <code class="language-plaintext highlighter-rouge">json</code> alias when highlighting code.</li>
+<li>Fix some issues about search.</li>
+<li>Fix bug that somethings math labels are duplicated.</li>
+<li>Fix dictation on macOS.</li>
+<li>Improve editing stability.</li>
+<li>Rename “Move to Trash” to “Delete” for easier understanding.</li>
+<li>Fix file sort on launching.</li>
+<li>Fix no response when clicking links on dialogs / panels on Windows.</li>
+</ul>
+<hr />
+<p><strong>One more thing</strong>: If you want to get notified once Typora ends its beta, you could subscribe to our newsletters at <a href="https://typora.io/#subscribe">https://typora.io/#subscribe</a>. No spam, promised.</p>
+</div>
+</div>
+<footer id="post-footer" style="
+        background-color: rgb(51, 51, 51);
+        padding-top: 50px;
+        padding-bottom: 50px;
+        text-align: center;
+        font-size: 13px;
+      ">
+<a data-has-mirror href="https://store.typora.io">Get Typora</a> /
+<a href="https://github.com/typora/wiki-website">Help Improve our documents</a
+      >
+</footer>
+<script>
+      var backBtn = document.querySelector("#title-bar-feature-btn");
+      if (backBtn) {
+        backBtn.onclick = function (event) {
+          if (
+            window.history.length > 1 &&
+            document.referrer.indexOf(window.location.host) !== -1
+          ) {
+            console.log(" window.history.back");
+            event.preventDefault();
+            window.history.back();
+          }
+        };
+      }
+      if (location.host == "support.typoraio.cn" || location.host == "support.typora.com.cn") {
+        document.querySelectorAll("[data-has-mirror]").forEach((a) => {
+          var href = a.href;
+          if (href.indexOf("store.typora.io") > 0)
+            href = "https://typoraio.cn/";
+          else if (href.indexOf("https://typora.io") > -1)
+            href = "https://typoraio.cn/";
+          else href = href.replace("typora.io", "typoraio.cn");
+          a.href = href;
+        });
+      }
+    </script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-56771470-2", "auto");
+      ga("set", "page", "/support");
+      ga("send", "pageview");
+    </script>
+
+<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ed23a5bcf8c017f"></script>
+
+</body>
+</html>

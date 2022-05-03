@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>YAML Front Matter - Typora Support</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@typora" />
+<meta name="twitter:title" content="YAML Front Matter" />
+<meta name="twitter:url" content="/YAML/" />
+<meta name="twitter:description" content="Using the Variables on Export Summary Using Custom Content in Exported HTML Using metadata in Exported PDF Using in Pandoc-based Export Using as Variables / Settings on 3rd Party Tools Use in per-document configuration Images Export YAML Basics List Multiple Lines Object The YAML front matter must be the first thing in the file and must be valid YAML, set between triple-dashed lines. For example, the following markdown file uses YAML front matter to define meta data like title, category, tags, etc. --- title: YAML Front Matter category: how-to author: typora.io tags: [YAML, metadata, tags] typora-root-url: ../../ --- Lorem ipsum..." />
+<meta name="twitter:image:src" content="http://typora.io/img/twitter-sum.png" />
+<meta name="twitter:image" content="http://typora.io/img/twitter-sum.png" />
+<meta property="og:url" content="/YAML/" />
+<meta property="og:title" content="YAML Front Matter" />
+<meta property="og:description" content="Using the Variables on Export Summary Using Custom Content in Exported HTML Using metadata in Exported PDF Using in Pandoc-based Export Using as Variables / Settings on 3rd Party Tools Use in per-document configuration Images Export YAML Basics List Multiple Lines Object The YAML front matter must be the first thing in the file and must be valid YAML, set between triple-dashed lines. For example, the following markdown file uses YAML front matter to define meta data like title, category, tags, etc. --- title: YAML Front Matter category: how-to author: typora.io tags: [YAML, metadata, tags] typora-root-url: ../../ --- Lorem ipsum..." />
+<meta name="og:image" content="http://typora.io/img/twitter-sum.png" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+
+<link href="../assets/css/pure-min.css" rel="stylesheet" />
+
+<link href="../assets/css/syntax.css" rel="stylesheet" />
+<link href="../assets/css/typora-wiki.css" rel="stylesheet" />
+<link rel="icon" href="../assets/img/favicon-16.png" sizes="16x16" />
+<link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32" />
+<link rel="icon" href="https://support.typora.io/assets/img/favicon-64.png" sizes="64x64" />
+<link rel="icon" href="../assets/img/favicon-128.png" sizes="128x128" />
+<script>
+      if (
+        window.location.host.indexOf("typora.io") > -1 &&
+        window.location.protocol != "https:"
+      ) {
+        window.location.protocol = "https";
+      }
+      if (location.host == "support.typora.com.cn") {
+        location = `https://support.typoraio.cn${location.pathname}${location.hash}`;
+      }
+    </script>
+</head>
+<body>
+<style type="text/css">
+      body {
+        
+          font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman",
+          "STSong", Serif;
+		    
+        font-weight: 300;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #2e2e2e;
+        line-height: 1.15em;
+        font-family: "Open Sans", "Hiragino Sans GB", "Microsoft YaHei",
+          "WenQuanYi Micro Hei", sans-serif;
+        text-rendering: geometricPrecision;
+      }
+
+      #pagecontainer {
+        background-color: #fff;
+        min-height: calc(100vh - 510px);
+        flex: 2;
+      }
+
+      #post-content {
+        padding-top: 36px;
+        border-top: 1px dashed #999999;
+        line-height: 1.6rem;
+        padding-bottom: 100px;
+      }
+
+      #post-content > blockquote:first-child {
+        padding-top: 0.4em;
+        padding-bottom: 0.4em;
+        margin-bottom: 2em;
+        margin-left: 0;
+      }
+
+      .nav {
+        border-bottom: none;
+        height: auto;
+      }
+
+      .inner-page {
+        width: 90%;
+        max-width: 800px;
+        margin: auto;
+      }
+
+      h1 {
+        border-bottom: 0;
+      }
+
+      #header {
+        padding-bottom: 32px;
+      }
+
+      #header h1 {
+        text-align: center;
+        white-space: pre-wrap;
+        width: 90%;
+        margin: 81px auto 48px auto;
+      }
+
+      h1 {
+        font-size: 3.6rem;
+        letter-spacing: -2px;
+        text-indent: -3px;
+      }
+
+      h2 {
+        margin-top: 2em;
+      }
+
+      .pure-menu-active > .pure-menu-link,
+      .pure-menu-link:hover,
+      .pure-menu-link:focus {
+        background-color: initial;
+        border: #777 solid 1px;
+      }
+
+      .post-meta {
+        font-style: italic;
+        text-align: center;
+        color: #7a7a7a;
+      }
+
+      div.highlighter-rouge {
+        padding: 8px;
+        border: 1px #777 solid;
+        line-height: 1.2rem;
+        font-family: Menlo, Monaco, "Courier New", monospace;
+      }
+
+      div.highlighter-rouge pre {
+        font-size: 0.95em;
+        overflow: hidden;
+        word-break: break-word;
+        white-space: pre-wrap;
+      }
+
+      a {
+        color: #463f5c;
+        text-decoration: underline;
+      }
+    </style>
+<header class="pure-menu pure-menu-horizontal nav post-title" id="header">
+<div class="gallery">
+<ul class="pure-menu-list" style="float: left; margin-left: 1em; position: absolute">
+<li class="pure-menu-item pure-menu-active">
+<a href="../index.html" class="pure-menu-link" id="title-bar-feature-btn">Back</a
+            >
+</li>
+</ul>
+</div>
+<h1>YAML Front Matter</h1>
+<section class="post-meta">
+<time>April 20, 2021</time>
+by
+<span>typora.io</span>
+</section>
+</header>
+<div id="pagecontainer" class="container">
+<div id="post-content" class="inner-page"><ul id="markdown-toc">
+<li><a href="index.html#using-the-variables-on-export" id="markdown-toc-using-the-variables-on-export">Using the Variables on Export</a> <ul>
+<li><a href="index.html#summary" id="markdown-toc-summary">Summary</a></li>
+<li><a href="index.html#using-custom-content-in-exported-html" id="markdown-toc-using-custom-content-in-exported-html">Using Custom Content in Exported HTML</a></li>
+<li><a href="index.html#using-metadata-in-exported-pdf" id="markdown-toc-using-metadata-in-exported-pdf">Using metadata in Exported PDF</a></li>
+<li><a href="index.html#using-in-pandoc-based-export" id="markdown-toc-using-in-pandoc-based-export">Using in Pandoc-based Export</a></li>
+</ul>
+</li>
+<li><a href="index.html#using-as-variables--settings-on-3rd-party-tools" id="markdown-toc-using-as-variables--settings-on-3rd-party-tools">Using as Variables / Settings on 3rd Party Tools</a></li>
+<li><a href="index.html#use-in-per-document-configuration" id="markdown-toc-use-in-per-document-configuration">Use in per-document configuration</a> <ul>
+<li><a href="index.html#images" id="markdown-toc-images">Images</a></li>
+<li><a href="index.html#export" id="markdown-toc-export">Export</a></li>
+</ul>
+</li>
+<li><a href="index.html#yaml-basics" id="markdown-toc-yaml-basics">YAML Basics</a> <ul>
+<li><a href="index.html#list" id="markdown-toc-list">List</a></li>
+<li><a href="index.html#multiple-lines" id="markdown-toc-multiple-lines">Multiple Lines</a></li>
+<li><a href="index.html#object" id="markdown-toc-object">Object</a></li>
+</ul>
+</li>
+</ul>
+<p>The <a href="https://yaml.org/">YAML</a> front matter must be the first thing in the file and must be valid YAML, set between triple-dashed lines. For example, the following markdown file uses YAML front matter to define meta data like title, category, tags, etc.</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">YAML Front Matter</span>
+<span class="na">category</span><span class="pi">:</span> <span class="s">how-to</span>
+<span class="na">author</span><span class="pi">:</span> <span class="s">typora.io</span>
+<span class="na">tags</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">YAML</span><span class="pi">,</span> <span class="nv">metadata</span><span class="pi">,</span> <span class="nv">tags</span><span class="pi">]</span>
+<span class="na">typora-root-url</span><span class="pi">:</span> <span class="s">../../</span>
+<span class="nn">---</span>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</code></pre></div></div>
+<h3 id="using-the-variables-on-export">Using the Variables on Export</h3>
+<h4 id="summary">Summary</h4>
+<p>The meta data will be used in export. For example, when exporting markdown file above into HTML format, typora will output <code class="language-plaintext highlighter-rouge">&lt;title&gt;YAML Front Matter&lt;/title&gt;</code> into HTML <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code> Element. And author will be added as meta data when exported to PDF or pub format.</p>
+<h4 id="using-custom-content-in-exported-html">Using Custom Content in Exported HTML</h4>
+<p>You can add custom contents in <code class="language-plaintext highlighter-rouge">Append in &lt;head /&gt;</code> and <code class="language-plaintext highlighter-rouge">Append in &lt;body /&gt;</code>, which will be inserted into <code class="language-plaintext highlighter-rouge">&lt;head /&gt;</code> part and <code class="language-plaintext highlighter-rouge">&lt;body /&gt;</code> part in the exported html.</p>
+<p>Variables like <code class="language-plaintext highlighter-rouge">${title}</code> or <code class="language-plaintext highlighter-rouge">${author}</code> in <code class="language-plaintext highlighter-rouge">&lt;title&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;meta&gt;</code> tag will be replaced by corresponding <a href="index.html#variables">variables</a> defined in [YAML Front Matter][yaml].</p>
+<p>For example, you can insert additional <code class="language-plaintext highlighter-rouge">&lt;meta&gt;</code> data or custom <code class="language-plaintext highlighter-rouge">&lt;style&gt;</code> into exported html using those options, e.g:</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"author"</span> <span class="na">content=</span><span class="s">"${author}"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">content=</span><span class="s">"${description}"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+<p>To use those variables somewhere else, you can add some javascript in <code class="language-plaintext highlighter-rouge">Append in &lt;body /&gt;</code>, to read target meta tag, and modify exported content as you want.</p>
+<h4 id="using-metadata-in-exported-pdf">Using metadata in Exported PDF</h4>
+<p>You can add metadata to exported PDF file via [YAML Front Matter][yaml]. The following are the supported PDF metadata:</p>
+<pre><code class="language-gfm">---
+title: Export in Typora
+author: John Snow
+creator: Typora inc.
+subject: Tutorial
+keywords: [Pandoc, Tutorial, Export]
+---
+</code></pre>
+<p><strong>Note:</strong> when “keywords” are absent, typora will also use “tags”, and you can use the YAML indentation to represent an array, for instance:</p>
+<pre><code class="language-gfm">---
+tags:
+    - Pandoc
+    - Tutorial
+    - Export
+---
+</code></pre>
+<p>You could also use custom meta tag by adding <code class="language-plaintext highlighter-rouge">&lt;meta&gt;</code> tags and custom scripts in <code class="language-plaintext highlighter-rouge">Append Extra Content</code> field using same approach as HTML export.</p>
+<p>You could also use custom meta tag in header and footer for exported PDF.</p>
+<h4 id="using-in-pandoc-based-export">Using in Pandoc-based Export</h4>
+<p>Pandoc also supports certain meta data options, similar to LaTeX export. The following will be added in the exported LaTeX file:</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">header-includes</span><span class="pi">:</span> <span class="pi">|</span>
+    <span class="s">\usepackage{fancyhdr}</span>
+    <span class="s">\pagestyle{fancy}</span>
+    <span class="s">\fancyhead[CO,CE]{This is fancy}</span>
+    <span class="s">\fancyfoot[CO,CE]{So is this}</span>
+    <span class="s">\fancyfoot[LE,RO]{\thepage}</span>
+<span class="s">---</span>
+</code></pre></div></div>
+<p>You could find more in <a href="https://pandoc.org/MANUAL.html#variables">https://pandoc.org/MANUAL.html#variables</a></p>
+<h3 id="using-as-variables--settings-on-3rd-party-tools">Using as Variables / Settings on 3rd Party Tools</h3>
+<p>More commonly, YAML front matter will be in 3rd party tools, like static website generators or blog systems based on markdown files. For example, <a href="https://jekyllrb.com/docs/front-matter/">Jekyll uses YAML Front Matter this way</a>.</p>
+<h3 id="use-in-per-document-configuration">Use in per-document configuration</h3>
+<h4 id="images">Images</h4>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>typora-root-url</td>
+<td>The base path for image resources, see <a href="https://support.typora.io/Images/">detail</a>.</td>
+</tr>
+<tr>
+<td>typora-copy-images-to</td>
+<td>Actions when user insert or drag &amp; drop images into Typora, see <a href="https://support.typora.io/Images/">detail</a>.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="export">Export</h4>
+<p>Since the markdown file may be created by others, for security reasons, native supported formats (PDF / HTML) require “Read and overwrite export settings from YAML front matter” to be enabled in export preferences panel, then settings in YAML front matter can be used and overwrite global export settings.</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>header<br />typora-header</td>
+<td>Header part of PDF export, see <a href="../Export/index.html#header--footer">detail</a>.</td>
+</tr>
+<tr>
+<td>footer<br />typora-footer</td>
+<td>Footer part of PDF export, see <a href="../Export/index.html#header--footer">detail</a>.</td>
+</tr>
+<tr>
+<td>sidebar<br />typora-sidebar</td>
+<td>true | false<br />Whether to include sidebar or not in exported HTML. (Not supported in HTML (without style))</td>
+</tr>
+<tr>
+<td>append-head<br />typora-append-head</td>
+<td>Data that will be inserted into <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code> tag, after HTML export, see <a href="../Export/index.html#append-contents-per-document">detail</a>.</td>
+</tr>
+<tr>
+<td>append-body<br />typora-append-body</td>
+<td>Data that will be inserted into <code class="language-plaintext highlighter-rouge">&lt;body&gt;</code> tag, after HTML export, see <a href="../Export/index.html#append-contents-per-document">detail</a>.</td>
+</tr>
+<tr>
+<td>append-head-extra<br />typora-append-head-extra</td>
+<td>Data that will be inserted into <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code> tag, in addition of the global append-head setting, after HTML / PDF export, see <a href="../Export/index.html#append-contents-per-document">detail</a>.</td>
+</tr>
+<tr>
+<td>append-body-extra<br />typora-append-body-extra</td>
+<td>Data that will be inserted into <code class="language-plaintext highlighter-rouge">&lt;body&gt;</code> tag, in addition of the global append-body setting, after HTML / PDF export, see <a href="../Export/index.html#append-contents-per-document">detail</a>.</td>
+</tr>
+<tr>
+<td>Others</td>
+<td>For pandoc export formats, some other settings will be parse from yaml meta data, like <code class="language-plaintext highlighter-rouge">header-includes:</code>, see <a href="https://pandoc.org/MANUAL.html#variables">pandoc manual</a> for details.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="yaml-basics">YAML Basics</h3>
+<p>Rules to notice in YAML:</p>
+<ul>
+<li>Only whitespace is supported for indentation, tab is not supported, and indentation is very important in YAML.</li>
+<li>Usually, keys in YAML are case-sensitive.</li>
+<li>Typora parses YAML front matter in very “flexible” or “fault-tolerant” way, to avoid large content change during YAML editing. And we don’t recommend to put too much stuff in YAML front matter.</li>
+</ul>
+<h4 id="list">List</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tags: [typora, basic, export]
+contacts:
+  - <a href="../cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="f29a9bb2868b829d8093dc9b9d">[email&#160;protected]</a>
+  - <a href="../cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="90f6f5f5f4f2f1f3fbd0e4e9e0ffe2f1bef9ff">[email&#160;protected]</a>
+</code></pre></div></div>
+<h4 id="multiple-lines">Multiple Lines</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>header-includes: |
+    \usepackage{fancyhdr}
+    \pagestyle{fancy}
+    \fancyhead[CO,CE]{This is fancy}
+    \fancyfoot[CO,CE]{So is this}
+    \fancyfoot[LE,RO]{\thepage}
+</code></pre></div></div>
+<h4 id="object">Object</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>creator:
+- role: author
+  text: John Smith
+- role: editor
+  text: Sarah Jones
+host: |
+  {ip: 1.1.1.1, port:90}
+</code></pre></div></div>
+</div>
+</div>
+<footer id="post-footer" style="
+        background-color: rgb(51, 51, 51);
+        padding-top: 50px;
+        padding-bottom: 50px;
+        text-align: center;
+        font-size: 13px;
+      ">
+<a data-has-mirror href="https://store.typora.io">Get Typora</a> /
+<a href="https://github.com/typora/wiki-website">Help Improve our documents</a
+      >
+</footer>
+<script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+      var backBtn = document.querySelector("#title-bar-feature-btn");
+      if (backBtn) {
+        backBtn.onclick = function (event) {
+          if (
+            window.history.length > 1 &&
+            document.referrer.indexOf(window.location.host) !== -1
+          ) {
+            console.log(" window.history.back");
+            event.preventDefault();
+            window.history.back();
+          }
+        };
+      }
+      if (location.host == "support.typoraio.cn" || location.host == "support.typora.com.cn") {
+        document.querySelectorAll("[data-has-mirror]").forEach((a) => {
+          var href = a.href;
+          if (href.indexOf("store.typora.io") > 0)
+            href = "https://typoraio.cn/";
+          else if (href.indexOf("https://typora.io") > -1)
+            href = "https://typoraio.cn/";
+          else href = href.replace("typora.io", "typoraio.cn");
+          a.href = href;
+        });
+      }
+    </script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-56771470-2", "auto");
+      ga("set", "page", "/support");
+      ga("send", "pageview");
+    </script>
+
+<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ed23a5bcf8c017f"></script>
+
+</body>
+</html>

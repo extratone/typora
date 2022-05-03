@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>カスタムフォント - Typora Support</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@typora" />
+<meta name="twitter:title" content="カスタムフォント" />
+<meta name="twitter:url" content="/ja/Custom-Font/" />
+<meta name="twitter:description" content="English Original Version Help Improve the Translation ヒント: これらの CSS スニペットをどこに置くかについては、カスタム CSS の追加 を参照してください。 フォントを変更する Typora のカスタムフォントは CSS で設定します。 たとえば、テーマフォルダ下の base.user.css に以下を追記します。 body { font-family: Courier; } 上記の設定により、現在のテーマのフォント設定を上書きし、システムフォント Courier を適用して、編集領域を次のようにします。 たとえば、次のような Web フォントを使用することもできます。 @import url(https://fonts.googleapis.com/css?family=Oxygen); body { font-family: 'Oxygen', sans-serif; } ヒント: フォントの読み込みを速くしたり、インターネットにアクセスできないときに使用するために、フォントをダウンロードして Typora のテーマフォルダーの下に置くことをお勧めします。 たとえば、Google フォントから woff2 ファイルをダウンロードし、それらを [typora-theme-folder]/fonts ディレクトリに置く場合は、それらのフォントを適用するために、以下のような CSS を使用します。 /* latin */ @font-face { font-family: 'Oxygen'; font-style: normal; font-weight: 400; src: local('Oxygen'), local('Oxygen-Regular'),url('./fonts/Oxygen400.woff2') format('woff2'); } /* latin */ @font-face { font-family: 'Oxygen'; font-style: normal; font-weight: 700; src: local('Oxygen Bold'), local('Oxygen-Bold'), url('./fonts/Oxygen700.woff2') format('woff2'); } body { font-family: 'Oxygen', sans-serif; } フォントサイズを変更する フォントサイズをすばやく変更する方法は、設定パネルの「フォントサイズ」を変更することです。 macOS では、「フォントサイズ」は設定パネルの「一般」セクションにあります。 Windows / Linux..." />
+<meta name="twitter:image:src" content="http://typora.io/img/twitter-sum.png" />
+<meta name="twitter:image" content="http://typora.io/img/twitter-sum.png" />
+<meta property="og:url" content="/ja/Custom-Font/" />
+<meta property="og:title" content="カスタムフォント" />
+<meta property="og:description" content="English Original Version Help Improve the Translation ヒント: これらの CSS スニペットをどこに置くかについては、カスタム CSS の追加 を参照してください。 フォントを変更する Typora のカスタムフォントは CSS で設定します。 たとえば、テーマフォルダ下の base.user.css に以下を追記します。 body { font-family: Courier; } 上記の設定により、現在のテーマのフォント設定を上書きし、システムフォント Courier を適用して、編集領域を次のようにします。 たとえば、次のような Web フォントを使用することもできます。 @import url(https://fonts.googleapis.com/css?family=Oxygen); body { font-family: 'Oxygen', sans-serif; } ヒント: フォントの読み込みを速くしたり、インターネットにアクセスできないときに使用するために、フォントをダウンロードして Typora のテーマフォルダーの下に置くことをお勧めします。 たとえば、Google フォントから woff2 ファイルをダウンロードし、それらを [typora-theme-folder]/fonts ディレクトリに置く場合は、それらのフォントを適用するために、以下のような CSS を使用します。 /* latin */ @font-face { font-family: 'Oxygen'; font-style: normal; font-weight: 400; src: local('Oxygen'), local('Oxygen-Regular'),url('./fonts/Oxygen400.woff2') format('woff2'); } /* latin */ @font-face { font-family: 'Oxygen'; font-style: normal; font-weight: 700; src: local('Oxygen Bold'), local('Oxygen-Bold'), url('./fonts/Oxygen700.woff2') format('woff2'); } body { font-family: 'Oxygen', sans-serif; } フォントサイズを変更する フォントサイズをすばやく変更する方法は、設定パネルの「フォントサイズ」を変更することです。 macOS では、「フォントサイズ」は設定パネルの「一般」セクションにあります。 Windows / Linux..." />
+<meta name="og:image" content="http://typora.io/img/twitter-sum.png" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+
+<link href="../../assets/css/pure-min.css" rel="stylesheet" />
+
+<link href="../../assets/css/syntax.css" rel="stylesheet" />
+<link href="../../assets/css/typora-wiki.css" rel="stylesheet" />
+<link rel="icon" href="../../assets/img/favicon-16.png" sizes="16x16" />
+<link rel="icon" href="../../assets/img/favicon-32.png" sizes="32x32" />
+<link rel="icon" href="https://support.typora.io/assets/img/favicon-64.png" sizes="64x64" />
+<link rel="icon" href="../../assets/img/favicon-128.png" sizes="128x128" />
+<script>
+      if (
+        window.location.host.indexOf("typora.io") > -1 &&
+        window.location.protocol != "https:"
+      ) {
+        window.location.protocol = "https";
+      }
+      if (location.host == "support.typora.com.cn") {
+        location = `https://support.typoraio.cn${location.pathname}${location.hash}`;
+      }
+    </script>
+</head>
+<body>
+<style type="text/css">
+      body {
+        
+          font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman",
+          "STSong", Serif;
+		    
+        font-weight: 300;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #2e2e2e;
+        line-height: 1.15em;
+        font-family: "Open Sans", "Hiragino Sans GB", "Microsoft YaHei",
+          "WenQuanYi Micro Hei", sans-serif;
+        text-rendering: geometricPrecision;
+      }
+
+      #pagecontainer {
+        background-color: #fff;
+        min-height: calc(100vh - 510px);
+        flex: 2;
+      }
+
+      #post-content {
+        padding-top: 36px;
+        border-top: 1px dashed #999999;
+        line-height: 1.6rem;
+        padding-bottom: 100px;
+      }
+
+      #post-content > blockquote:first-child {
+        padding-top: 0.4em;
+        padding-bottom: 0.4em;
+        margin-bottom: 2em;
+        margin-left: 0;
+      }
+
+      .nav {
+        border-bottom: none;
+        height: auto;
+      }
+
+      .inner-page {
+        width: 90%;
+        max-width: 800px;
+        margin: auto;
+      }
+
+      h1 {
+        border-bottom: 0;
+      }
+
+      #header {
+        padding-bottom: 32px;
+      }
+
+      #header h1 {
+        text-align: center;
+        white-space: pre-wrap;
+        width: 90%;
+        margin: 81px auto 48px auto;
+      }
+
+      h1 {
+        font-size: 3.6rem;
+        letter-spacing: -2px;
+        text-indent: -3px;
+      }
+
+      h2 {
+        margin-top: 2em;
+      }
+
+      .pure-menu-active > .pure-menu-link,
+      .pure-menu-link:hover,
+      .pure-menu-link:focus {
+        background-color: initial;
+        border: #777 solid 1px;
+      }
+
+      .post-meta {
+        font-style: italic;
+        text-align: center;
+        color: #7a7a7a;
+      }
+
+      div.highlighter-rouge {
+        padding: 8px;
+        border: 1px #777 solid;
+        line-height: 1.2rem;
+        font-family: Menlo, Monaco, "Courier New", monospace;
+      }
+
+      div.highlighter-rouge pre {
+        font-size: 0.95em;
+        overflow: hidden;
+        word-break: break-word;
+        white-space: pre-wrap;
+      }
+
+      a {
+        color: #463f5c;
+        text-decoration: underline;
+      }
+    </style>
+<header class="pure-menu pure-menu-horizontal nav post-title" id="header">
+<div class="gallery">
+<ul class="pure-menu-list" style="float: left; margin-left: 1em; position: absolute">
+<li class="pure-menu-item pure-menu-active">
+<a href="../../index.html" class="pure-menu-link" id="title-bar-feature-btn">Back</a
+            >
+</li>
+</ul>
+</div>
+<h1>カスタムフォント</h1>
+<section class="post-meta">
+<time>April 26, 2022</time>
+by
+<span>typora.io</span>
+</section>
+</header>
+<div id="pagecontainer" class="container">
+<div id="post-content" class="inner-page"><p><a href="../../Custom-Font/index.html">English Original Version</a> <a href="https://github.com/typora/wiki-website">Help Improve the Translation</a></p>
+<blockquote>
+<p>ヒント: これらの CSS スニペットをどこに置くかについては、<a href="../../Add-Custom-CSS/index.html">カスタム CSS の追加</a> を参照してください。</p>
+</blockquote>
+<h2 id="フォントを変更する">フォントを変更する</h2>
+<p>Typora のカスタムフォントは CSS で設定します。 たとえば、テーマフォルダ下の <code class="language-plaintext highlighter-rouge">base.user.css</code> に以下を追記します。</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">body</span> <span class="p">{</span>
+  <span class="nl">font-family</span><span class="p">:</span> <span class="n">Courier</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>上記の設定により、現在のテーマのフォント設定を上書きし、システムフォント <code class="language-plaintext highlighter-rouge">Courier</code> を適用して、編集領域を次のようにします。</p>
+<p><img src="../../media/custom-font/1.png" alt="1" /></p>
+<p>たとえば、次のような Web フォントを使用することもできます。</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@import</span> <span class="sx">url(https://fonts.googleapis.com/css?family=Oxygen)</span><span class="p">;</span>
+
+<span class="nt">body</span> <span class="p">{</span>
+ <span class="nl">font-family</span><span class="p">:</span> <span class="s2">'Oxygen'</span><span class="p">,</span> <span class="nb">sans-serif</span><span class="p">;</span> 
+<span class="p">}</span>
+</code></pre></div></div>
+<blockquote>
+<p>ヒント: フォントの読み込みを速くしたり、インターネットにアクセスできないときに使用するために、フォントをダウンロードして Typora のテーマフォルダーの下に置くことをお勧めします。</p>
+</blockquote>
+<p>たとえば、Google フォントから <code class="language-plaintext highlighter-rouge">woff2</code> ファイルをダウンロードし、それらを <code class="language-plaintext highlighter-rouge">[typora-theme-folder]/fonts</code> ディレクトリに置く場合は、それらのフォントを適用するために、以下のような CSS を使用します。</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* latin */</span>
+<span class="k">@font-face</span> <span class="p">{</span>
+  <span class="nl">font-family</span><span class="p">:</span> <span class="s2">'Oxygen'</span><span class="p">;</span>
+  <span class="nl">font-style</span><span class="p">:</span> <span class="nb">normal</span><span class="p">;</span>
+  <span class="nl">font-weight</span><span class="p">:</span> <span class="m">400</span><span class="p">;</span>
+  <span class="nl">src</span><span class="p">:</span> <span class="n">local</span><span class="p">(</span><span class="s2">'Oxygen'</span><span class="p">),</span> <span class="n">local</span><span class="p">(</span><span class="s2">'Oxygen-Regular'</span><span class="p">),</span><span class="sx">url('./fonts/Oxygen400.woff2')</span> <span class="n">format</span><span class="p">(</span><span class="s2">'woff2'</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c">/* latin */</span>
+<span class="k">@font-face</span> <span class="p">{</span>
+  <span class="nl">font-family</span><span class="p">:</span> <span class="s2">'Oxygen'</span><span class="p">;</span>
+  <span class="nl">font-style</span><span class="p">:</span> <span class="nb">normal</span><span class="p">;</span>
+  <span class="nl">font-weight</span><span class="p">:</span> <span class="m">700</span><span class="p">;</span>
+  <span class="nl">src</span><span class="p">:</span> <span class="n">local</span><span class="p">(</span><span class="s2">'Oxygen Bold'</span><span class="p">),</span> <span class="n">local</span><span class="p">(</span><span class="s2">'Oxygen-Bold'</span><span class="p">),</span> <span class="sx">url('./fonts/Oxygen700.woff2')</span> <span class="n">format</span><span class="p">(</span><span class="s2">'woff2'</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nt">body</span> <span class="p">{</span>
+ <span class="nl">font-family</span><span class="p">:</span> <span class="s2">'Oxygen'</span><span class="p">,</span> <span class="nb">sans-serif</span><span class="p">;</span> 
+<span class="p">}</span>
+</code></pre></div></div>
+<h2 id="フォントサイズを変更する">フォントサイズを変更する</h2>
+<p>フォントサイズをすばやく変更する方法は、設定パネルの「フォントサイズ」を変更することです。 macOS では、「フォントサイズ」は設定パネルの「一般」セクションにあります。 Windows / Linux では、「表示」セクションの下にあり、<kbd>Ctrl + F</kbd> を押して設定パネルで検索することもできます。</p>
+<p>このオプションを使用するには、使用するテーマからのサポートが必要です。 テーマの CSS を作成する場合、このオプションが動作するフォント単位として <code class="language-plaintext highlighter-rouge">rem</code> を使用します。</p>
+<p><img alt="2" src="../../media/custom-font/2.png" style="zoom:50%" /></p>
+<h2 id="ソースコードモードのフォントを変更する">ソースコードモードのフォントを変更する</h2>
+<p>以下のような CSS 設定を使用すると、ソースコードモードのフォントを変更できます。</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">#typora-source</span> <span class="p">{</span>
+  <span class="nl">font-family</span><span class="p">:</span> <span class="nb">monospace</span><span class="p">;</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="nb">inherit</span><span class="p">.</span>
+  <span class="n">--monospace</span><span class="p">:</span> <span class="nb">monospace</span><span class="p">;</span> <span class="c">/* ソースコードモード内のコードブロックとインラインコードに対する設定 */</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h2 id="コードブロックのフォントを変更する">コードブロックのフォントを変更する</h2>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">body</span> <span class="p">{</span>
+  <span class="py">--monospace</span><span class="p">:</span> <span class="nb">monospace</span> <span class="c">/* すべてのコードブロック、インラインコード、およびソースコードモードに対する設定 */</span>
+<span class="p">}</span>
+
+<span class="o">//</span> <span class="nt">または</span>
+
+<span class="nf">#md-fences</span> <span class="p">{</span>
+  <span class="c">/* コードブロックのみ変更する場合 */</span>
+<span class="p">}</span>
+</code></pre></div></div>
+</div>
+</div>
+<footer id="post-footer" style="
+        background-color: rgb(51, 51, 51);
+        padding-top: 50px;
+        padding-bottom: 50px;
+        text-align: center;
+        font-size: 13px;
+      ">
+<a data-has-mirror href="https://store.typora.io">Get Typora</a> /
+<a href="https://github.com/typora/wiki-website">Help Improve our documents</a
+      >
+</footer>
+<script>
+      var backBtn = document.querySelector("#title-bar-feature-btn");
+      if (backBtn) {
+        backBtn.onclick = function (event) {
+          if (
+            window.history.length > 1 &&
+            document.referrer.indexOf(window.location.host) !== -1
+          ) {
+            console.log(" window.history.back");
+            event.preventDefault();
+            window.history.back();
+          }
+        };
+      }
+      if (location.host == "support.typoraio.cn" || location.host == "support.typora.com.cn") {
+        document.querySelectorAll("[data-has-mirror]").forEach((a) => {
+          var href = a.href;
+          if (href.indexOf("store.typora.io") > 0)
+            href = "https://typoraio.cn/";
+          else if (href.indexOf("https://typora.io") > -1)
+            href = "https://typoraio.cn/";
+          else href = href.replace("typora.io", "typoraio.cn");
+          a.href = href;
+        });
+      }
+    </script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-56771470-2", "auto");
+      ga("set", "page", "/support");
+      ga("send", "pageview");
+    </script>
+
+<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ed23a5bcf8c017f"></script>
+
+</body>
+</html>

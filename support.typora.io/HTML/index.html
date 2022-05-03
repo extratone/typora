@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>HTML Support in Typora - Typora Support</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@typora" />
+<meta name="twitter:title" content="HTML Support in Typora" />
+<meta name="twitter:url" content="/HTML/" />
+<meta name="twitter:description" content="The latest version of Typora already supports normal HTML tags. Inline HTML tags, such as &lt;span&gt;, &lt;sup&gt; will be rendered right after you input their close tag, just as other Markdown syntax, like ** or __. Other supported tags are rendered in a separate block and can switch between the output and HTML source code easily, just like math blocks. For security convert, no scripts is supported, no matter you use &lt;script&gt; or onload attributes. class, id, and data-* are also not supported. For iframe, scripts are allowed inside &lt;iframe&gt;, but it will wrapped with sandbox attributes, and would have..." />
+<meta name="twitter:image:src" content="http://typora.io/img/twitter-sum.png" />
+<meta name="twitter:image" content="http://typora.io/img/twitter-sum.png" />
+<meta property="og:url" content="/HTML/" />
+<meta property="og:title" content="HTML Support in Typora" />
+<meta property="og:description" content="The latest version of Typora already supports normal HTML tags. Inline HTML tags, such as &lt;span&gt;, &lt;sup&gt; will be rendered right after you input their close tag, just as other Markdown syntax, like ** or __. Other supported tags are rendered in a separate block and can switch between the output and HTML source code easily, just like math blocks. For security convert, no scripts is supported, no matter you use &lt;script&gt; or onload attributes. class, id, and data-* are also not supported. For iframe, scripts are allowed inside &lt;iframe&gt;, but it will wrapped with sandbox attributes, and would have..." />
+<meta name="og:image" content="http://typora.io/img/twitter-sum.png" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+
+<link href="../assets/css/pure-min.css" rel="stylesheet" />
+
+<link href="../assets/css/syntax.css" rel="stylesheet" />
+<link href="../assets/css/typora-wiki.css" rel="stylesheet" />
+<link rel="icon" href="../assets/img/favicon-16.png" sizes="16x16" />
+<link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32" />
+<link rel="icon" href="https://support.typora.io/assets/img/favicon-64.png" sizes="64x64" />
+<link rel="icon" href="../assets/img/favicon-128.png" sizes="128x128" />
+<script>
+      if (
+        window.location.host.indexOf("typora.io") > -1 &&
+        window.location.protocol != "https:"
+      ) {
+        window.location.protocol = "https";
+      }
+      if (location.host == "support.typora.com.cn") {
+        location = `https://support.typoraio.cn${location.pathname}${location.hash}`;
+      }
+    </script>
+</head>
+<body>
+<style type="text/css">
+      body {
+        
+          font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman",
+          "STSong", Serif;
+		    
+        font-weight: 300;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #2e2e2e;
+        line-height: 1.15em;
+        font-family: "Open Sans", "Hiragino Sans GB", "Microsoft YaHei",
+          "WenQuanYi Micro Hei", sans-serif;
+        text-rendering: geometricPrecision;
+      }
+
+      #pagecontainer {
+        background-color: #fff;
+        min-height: calc(100vh - 510px);
+        flex: 2;
+      }
+
+      #post-content {
+        padding-top: 36px;
+        border-top: 1px dashed #999999;
+        line-height: 1.6rem;
+        padding-bottom: 100px;
+      }
+
+      #post-content > blockquote:first-child {
+        padding-top: 0.4em;
+        padding-bottom: 0.4em;
+        margin-bottom: 2em;
+        margin-left: 0;
+      }
+
+      .nav {
+        border-bottom: none;
+        height: auto;
+      }
+
+      .inner-page {
+        width: 90%;
+        max-width: 800px;
+        margin: auto;
+      }
+
+      h1 {
+        border-bottom: 0;
+      }
+
+      #header {
+        padding-bottom: 32px;
+      }
+
+      #header h1 {
+        text-align: center;
+        white-space: pre-wrap;
+        width: 90%;
+        margin: 81px auto 48px auto;
+      }
+
+      h1 {
+        font-size: 3.6rem;
+        letter-spacing: -2px;
+        text-indent: -3px;
+      }
+
+      h2 {
+        margin-top: 2em;
+      }
+
+      .pure-menu-active > .pure-menu-link,
+      .pure-menu-link:hover,
+      .pure-menu-link:focus {
+        background-color: initial;
+        border: #777 solid 1px;
+      }
+
+      .post-meta {
+        font-style: italic;
+        text-align: center;
+        color: #7a7a7a;
+      }
+
+      div.highlighter-rouge {
+        padding: 8px;
+        border: 1px #777 solid;
+        line-height: 1.2rem;
+        font-family: Menlo, Monaco, "Courier New", monospace;
+      }
+
+      div.highlighter-rouge pre {
+        font-size: 0.95em;
+        overflow: hidden;
+        word-break: break-word;
+        white-space: pre-wrap;
+      }
+
+      a {
+        color: #463f5c;
+        text-decoration: underline;
+      }
+    </style>
+<header class="pure-menu pure-menu-horizontal nav post-title" id="header">
+<div class="gallery">
+<ul class="pure-menu-list" style="float: left; margin-left: 1em; position: absolute">
+<li class="pure-menu-item pure-menu-active">
+<a href="../index.html" class="pure-menu-link" id="title-bar-feature-btn">Back</a
+            >
+</li>
+</ul>
+</div>
+<h1>HTML Support in Typora</h1>
+<section class="post-meta">
+<time>August 18, 2018</time>
+by
+<span>typora.io</span>
+</section>
+</header>
+<div id="pagecontainer" class="container">
+<div id="post-content" class="inner-page"><p>The latest version of Typora already supports normal HTML tags.</p>
+<p>Inline HTML tags, such as <code class="language-plaintext highlighter-rouge">&lt;span&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;sup&gt;</code> will be rendered right after you input their close tag, just as other Markdown syntax, like <code class="language-plaintext highlighter-rouge">**</code> or <code class="language-plaintext highlighter-rouge">__</code>. Other supported tags are rendered in a separate block and can switch between the output and HTML source code easily, just like math blocks.</p>
+<p>For security convert, no scripts is supported, no matter you use <code class="language-plaintext highlighter-rouge">&lt;script&gt;</code> or <code class="language-plaintext highlighter-rouge">onload</code> attributes. <code class="language-plaintext highlighter-rouge">class</code>, <code class="language-plaintext highlighter-rouge">id</code>, and <code class="language-plaintext highlighter-rouge">data-*</code> are also not supported. For iframe, scripts are allowed inside <code class="language-plaintext highlighter-rouge">&lt;iframe&gt;</code>, but it will wrapped with <code class="language-plaintext highlighter-rouge">sandbox</code> attributes, and would have no access to your writing content nor local files.</p>
+<p>You could find more details in following sections.</p>
+<p><strong>Table of Contents</strong></p>
+<ul id="markdown-toc">
+<li><a href="index.html#inline-html" id="markdown-toc-inline-html">Inline HTML</a></li>
+<li><a href="index.html#html-entities" id="markdown-toc-html-entities">HTML Entities</a></li>
+<li><a href="index.html#html-block" id="markdown-toc-html-block">HTML Block</a></li>
+<li><a href="index.html#media-and-embedded-contents" id="markdown-toc-media-and-embedded-contents">Media and Embedded Contents</a> <ul>
+<li><a href="index.html#video" id="markdown-toc-video">Video</a></li>
+<li><a href="index.html#audio" id="markdown-toc-audio">Audio</a></li>
+<li><a href="index.html#embed-web-contents" id="markdown-toc-embed-web-contents">Embed Web Contents</a></li>
+<li><a href="index.html#pdf" id="markdown-toc-pdf"><del>PDF</del></a></li>
+</ul>
+</li>
+<li><a href="index.html#comments" id="markdown-toc-comments">Comments</a></li>
+<li><a href="index.html#strong-or--" id="markdown-toc-strong-or--"><code class="language-plaintext highlighter-rouge">&lt;Strong&gt;</code> or <code class="language-plaintext highlighter-rouge">**</code> ?</a></li>
+<li><a href="index.html#limitations" id="markdown-toc-limitations">Limitations</a></li>
+</ul>
+<h2 id="inline-html">Inline HTML</h2>
+<p>Typora now can render inline HTML just as normal inline Markdown styles, for example:</p>
+<table>
+<thead>
+<tr>
+<th>Raw Markdown Source</th>
+<th>Output in Live Preview</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="language-plaintext highlighter-rouge">&lt;span style='color:red'&gt;This is red&lt;/span&gt;</code></td>
+<td><span style="color:red">This is red</span></td>
+</tr>
+<tr>
+<td><code class="language-plaintext highlighter-rouge">&lt;ruby&gt; 漢 &lt;rt&gt; ㄏㄢˋ &lt;/rt&gt; &lt;/ruby&gt;</code></td>
+<td><ruby> 漢 <rt> ㄏㄢˋ </rt> </ruby></td>
+</tr>
+<tr>
+<td><code class="language-plaintext highlighter-rouge">&lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;F9&lt;/kbd&gt;</code></td>
+<td><kbd>Ctrl</kbd>+<kbd>F9</kbd></td>
+</tr>
+<tr>
+<td><code class="language-plaintext highlighter-rouge">&lt;span style="font-size:2rem; background:yellow;"&gt;**Bigger**&lt;/span&gt;</code></td>
+<td><span style="font-size:2rem; background:yellow;"><strong>Bigger</strong></span></td>
+</tr>
+<tr>
+<td><code class="language-plaintext highlighter-rouge">HTML entities like &amp;reg; &amp;#182;</code></td>
+<td>HTML entities like ® ¶</td>
+</tr>
+</tbody>
+</table>
+<p>The writing experience is also same:</p>
+<video src="../media/html/inline&#32;HTML.mp4" style="width:100%;height:auto;" autoplay="" loop="" preload="" muted=""></video>
+<p>For easier editing purposes, Typora will show empty tags or HTML with <code class="language-plaintext highlighter-rouge">display:none</code> styles, for example, related contents in following Markdown will be visible in Typora, but invisible after export.</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gu">## &lt;a name="anchor"&gt;&lt;/a&gt; Header 2</span>
+
+<span class="nt">&lt;span</span> <span class="na">style=</span><span class="s">"display:none"</span><span class="nt">&gt;</span>I am hidden after export<span class="nt">&lt;/span&gt;</span>
+</code></pre></div></div>
+<h2 id="html-entities">HTML Entities</h2>
+<p>You could use <a href="https://www.w3schools.com/html/html_entities.asp">HTML entities</a> directly in Typora, for example:</p>
+<p><code class="language-plaintext highlighter-rouge">&amp;frac14;</code> → ¼, <code class="language-plaintext highlighter-rouge">&amp;#x1D517;</code> → 𝔗</p>
+<p>But we recommend to input their unicode directly, which is more readable and compatible.</p>
+<h2 id="html-block">HTML Block</h2>
+<p>Block level HTML tags, and “invisible” tags (such as <code class="language-plaintext highlighter-rouge">script</code>, <code class="language-plaintext highlighter-rouge">meta</code>, etc) in Markdown document will be rendered as HTML Block, for example:</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;details&gt;</span>
+    <span class="nt">&lt;summary&gt;</span>I have keys but no locks. I have space but no room. You can enter but can't leave. What am I?<span class="nt">&lt;/summary&gt;</span>
+    A keyboard.
+<span class="nt">&lt;/details&gt;</span>
+</code></pre></div></div>
+<p>Will be rendered as:</p>
+<details>
+<summary>I have keys but no locks. I have space but no room. You can enter but can't leave. What am I?</summary>
+A keyboard.
+</details>
+<p>HTML Block can enter edit mode by when move cursor inside it, or click it non-interactive parts, or use <code class="language-plaintext highlighter-rouge">command</code>/<code class="language-plaintext highlighter-rouge">ctrl</code> + click.</p>
+<p>Markdown syntax will not be parsed inside HTML blocks, which is the same for GFM/CommonMark.</p>
+<p>For easier editing purposes, some inline tags, such as <code class="language-plaintext highlighter-rouge">svg</code> may also use the same editing behavior of those block level HTML tags .</p>
+<p>Typora does not show preview for “invisible” tags, such as <code class="language-plaintext highlighter-rouge">&lt;script&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;meta&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;style&gt;</code>, but only shows their raw source.</p>
+<h2 id="media-and-embedded-contents">Media and Embedded Contents</h2>
+<h3 id="video">Video</h3>
+<p>You could embed a video like this:</p>
+<pre><code class="language-Markdown">&lt;video src="xxx.mp4" /&gt;
+</code></pre>
+<p>Or drag &amp; drop a video file into Typora, and Typora will insert the video automatically.</p>
+<p>The path of <code class="language-plaintext highlighter-rouge">Video</code> follows the same rule of images. So, the option “Use relative path as possible”, and “image root path” also applies to <code class="language-plaintext highlighter-rouge">&lt;video&gt;</code> content.</p>
+<h3 id="audio">Audio</h3>
+<p>Same with <code class="language-plaintext highlighter-rouge">&lt;video&gt;</code>, you could use <code class="language-plaintext highlighter-rouge">&lt;audio&gt;</code> tag to embed an audio:</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;audio</span> <span class="na">src=</span><span class="s">"xxx.mp3"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+<h3 id="embed-web-contents">Embed Web Contents</h3>
+<p>Some websites allow you to embed their contents into other webpages, most of them support <code class="language-plaintext highlighter-rouge">&lt;iframe&gt;</code>, which is also supported by Typora. You could just follow their “sharing” page/dialog, and paste their code into Typora, e.g:</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">&lt;iframe height='265' scrolling='no' title='Fancy Animated SVG Menu' src='//codepen.io/jeangontijo/embed/OxVywj/?height=265&amp;theme-id=0&amp;default-tab=css,result&amp;embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'&gt;See the Pen &lt;a href='https://codepen.io/jeangontijo/pen/OxVywj/'&gt;Fancy Animated SVG Menu&lt;/a&gt; by Jean Gontijo (&lt;a href='https://codepen.io/jeangontijo'&gt;@jeangontijo&lt;/a&gt;) on &lt;a href='https://codepen.io'&gt;CodePen&lt;/a&gt;</span>.
+<span class="nt">&lt;/iframe&gt;</span>
+</code></pre></div></div>
+<p>which will become</p>
+<iframe height="265" scrolling="no" title="Fancy Animated SVG Menu" src="https://codepen.io/jeangontijo/embed/OxVywj/?height=265&amp;theme-id=0&amp;default-tab=css,result&amp;embed-version=2" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="https://codepen.io/jeangontijo/pen/OxVywj/">Fancy Animated SVG Menu</a> by Jean Gontijo (<a href="https://codepen.io/jeangontijo">@jeangontijo</a>) on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+<p>Some websites only provide Javascript-based embed code, instead of an <code class="language-plaintext highlighter-rouge">&lt;iframe&gt;</code> snips, for example:</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">&lt;blockquote class="twitter-tweet"&gt;&lt;p lang="en" dir="ltr"&gt;Sunsets don&amp;#39;t get much better than this one over &lt;a href="https://twitter.com/GrandTetonNPS?ref_src=twsrc%5Etfw"&gt;@GrandTetonNPS&lt;/a&gt;. &lt;a href="https://twitter.com/hashtag/nature?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#nature&lt;/a&gt; &lt;a href="https://twitter.com/hashtag/sunset?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#sunset&lt;/a&gt; &lt;a href="http://t.co/YuKy2rcjyU"&gt;pic.twitter.com/YuKy2rcjyU&lt;/a&gt;&lt;/p&gt;&amp;mdash; US Department of the Interior (@Interior) &lt;a href="https://twitter.com/Interior/status/463440424141459456?ref_src=twsrc%5Etfw"&gt;May 5, 2014&lt;/a&gt;&lt;/blockquote&gt;</span>
+<span class="nt">&lt;script </span><span class="na">async</span> <span class="na">src=</span><span class="s">"https://platform.twitter.com/widgets.js"</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+<p>Typora only supports some script-based sharing code, and those contents/scripts will also be running in a sandbox iframe with no access to your local file and writing contents.</p>
+<p>We could consider allowing users to config the “<em>whitelist</em>” for this kind in future updates.</p>
+<h3 id="pdf"><del>PDF</del></h3>
+<p>No longer supported, you may try online file viewers instead, such as examples in https://gist.github.com/tzmartin/1cf85dc3d975f94cfddc04bc0dd399be.</p>
+<h2 id="comments">Comments</h2>
+<p>Typora supports HTML comments, using syntax <code class="language-plaintext highlighter-rouge">&lt;!-- comments --&gt; </code>, e.g:</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!-- I am some comments
+not end, not end...
+here the comment ends --&gt;
+</code></pre></div></div>
+<p>They are invisible when export/print.</p>
+<h2 id="strong-or--"><code class="language-plaintext highlighter-rouge">&lt;Strong&gt;</code> or <code class="language-plaintext highlighter-rouge">**</code> ?</h2>
+<p>Please use markdown syntax instead of original HTML tags, since the latter one are easier to input, and also better supported by Typora.</p>
+<h2 id="limitations">Limitations</h2>
+<ul>
+<li>In HTML Block, no empty line is not allowed, or it will be rendered as two HTML Blocks.</li>
+<li>Only common/normal HTML tags will be rendered as HTML contents in Typora, custom tags, like <code class="language-plaintext highlighter-rouge">&lt;application&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;my-custom-component&gt;</code> will be ignored (They will be included when export/print).</li>
+<li>Not all attributes are supported. <code class="language-plaintext highlighter-rouge">id</code>, <code class="language-plaintext highlighter-rouge">class</code>, <code class="language-plaintext highlighter-rouge">data-*</code> and unknown attributes in HTML will not be included when rendering (They will be included when export/print).</li>
+<li>Scripts are basically not allowed. <code class="language-plaintext highlighter-rouge">&lt;style&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;meta&gt;</code> won’t be applied either (They will be included when export/print).</li>
+<li>Not all HTML tags/styles can be exported to other formats. Export to PDF, HTML or HTML-compatible formats (such as EPub) would keep those HTML contents, but export to other formats, such as Word or LaTeX, those HTML contents may become plain text.</li>
+</ul>
+</div>
+</div>
+<footer id="post-footer" style="
+        background-color: rgb(51, 51, 51);
+        padding-top: 50px;
+        padding-bottom: 50px;
+        text-align: center;
+        font-size: 13px;
+      ">
+<a data-has-mirror href="https://store.typora.io">Get Typora</a> /
+<a href="https://github.com/typora/wiki-website">Help Improve our documents</a
+      >
+</footer>
+<script>
+      var backBtn = document.querySelector("#title-bar-feature-btn");
+      if (backBtn) {
+        backBtn.onclick = function (event) {
+          if (
+            window.history.length > 1 &&
+            document.referrer.indexOf(window.location.host) !== -1
+          ) {
+            console.log(" window.history.back");
+            event.preventDefault();
+            window.history.back();
+          }
+        };
+      }
+      if (location.host == "support.typoraio.cn" || location.host == "support.typora.com.cn") {
+        document.querySelectorAll("[data-has-mirror]").forEach((a) => {
+          var href = a.href;
+          if (href.indexOf("store.typora.io") > 0)
+            href = "https://typoraio.cn/";
+          else if (href.indexOf("https://typora.io") > -1)
+            href = "https://typoraio.cn/";
+          else href = href.replace("typora.io", "typoraio.cn");
+          a.href = href;
+        });
+      }
+    </script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-56771470-2", "auto");
+      ga("set", "page", "/support");
+      ga("send", "pageview");
+    </script>
+
+<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ed23a5bcf8c017f"></script>
+
+</body>
+</html>

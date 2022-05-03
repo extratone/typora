@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>コードブロックのスタイル/テーマ - Typora Support</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@typora" />
+<meta name="twitter:title" content="コードブロックのスタイル/テーマ" />
+<meta name="twitter:url" content="/ja/Code-Block-Styles/" />
+<meta name="twitter:description" content="English Original Version Help Improve the Translation ヒント: これらの CSS スニペットをどこに置くかについては、カスタム CSS の追加 を参照してください。 Typora はコードフェンスのシンタックスハイライトに CodeMirror を使用します。 Typora のコードフェンスはテーマクラスとして cm-s-inner を使用します。 CodeMirror のテーマを Typora に移植する場合、たとえば material.css テーマは、以下のようにします。 material.css ファイルをコピーして、テーマフォルダの下の base.user.css または [theme].user.css に貼り付け、CodeMirror のテーマクラス名を cm-s-inner に変更します。 たとえば、元の .cm-s-material は .cm-s-inner に変更します。 CodeMirror でレンダリングする前のコードフェンスは、&lt;pre class=" md-fences"&gt;&lt; pre&gt; のような構造になっています。 このため、font-family、color、background などの基本的なスタイルも .md-fences のセレクターに適用してください。 したがって、最終的な CSS ファイルは以下のようになります。 ** ported from https: codemirror.net theme material.css ** * Name: material Author: Michael Kaminsky (http: github.com mkaminsky11) Original material color scheme by Mattia Astorino (https: github.com equinusocio material-theme) * .cm-s-inner { background-color: #263238; color: rgba(233, 237, 237, 1); } .cm-s-inner .CodeMirror-gutters { background: #263238; color: rgb(83,127,126); border: none; } .cm-s-inner .CodeMirror-guttermarker, .cm-s-inner .CodeMirror-guttermarker-subtle, .cm-s-inner .CodeMirror-linenumber..." />
+<meta name="twitter:image:src" content="http://typora.io/img/twitter-sum.png" />
+<meta name="twitter:image" content="http://typora.io/img/twitter-sum.png" />
+<meta property="og:url" content="/ja/Code-Block-Styles/" />
+<meta property="og:title" content="コードブロックのスタイル/テーマ" />
+<meta property="og:description" content="English Original Version Help Improve the Translation ヒント: これらの CSS スニペットをどこに置くかについては、カスタム CSS の追加 を参照してください。 Typora はコードフェンスのシンタックスハイライトに CodeMirror を使用します。 Typora のコードフェンスはテーマクラスとして cm-s-inner を使用します。 CodeMirror のテーマを Typora に移植する場合、たとえば material.css テーマは、以下のようにします。 material.css ファイルをコピーして、テーマフォルダの下の base.user.css または [theme].user.css に貼り付け、CodeMirror のテーマクラス名を cm-s-inner に変更します。 たとえば、元の .cm-s-material は .cm-s-inner に変更します。 CodeMirror でレンダリングする前のコードフェンスは、&lt;pre class=" md-fences"&gt;&lt; pre&gt; のような構造になっています。 このため、font-family、color、background などの基本的なスタイルも .md-fences のセレクターに適用してください。 したがって、最終的な CSS ファイルは以下のようになります。 ** ported from https: codemirror.net theme material.css ** * Name: material Author: Michael Kaminsky (http: github.com mkaminsky11) Original material color scheme by Mattia Astorino (https: github.com equinusocio material-theme) * .cm-s-inner { background-color: #263238; color: rgba(233, 237, 237, 1); } .cm-s-inner .CodeMirror-gutters { background: #263238; color: rgb(83,127,126); border: none; } .cm-s-inner .CodeMirror-guttermarker, .cm-s-inner .CodeMirror-guttermarker-subtle, .cm-s-inner .CodeMirror-linenumber..." />
+<meta name="og:image" content="http://typora.io/img/twitter-sum.png" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+
+<link href="../../assets/css/pure-min.css" rel="stylesheet" />
+
+<link href="../../assets/css/syntax.css" rel="stylesheet" />
+<link href="../../assets/css/typora-wiki.css" rel="stylesheet" />
+<link rel="icon" href="../../assets/img/favicon-16.png" sizes="16x16" />
+<link rel="icon" href="../../assets/img/favicon-32.png" sizes="32x32" />
+<link rel="icon" href="https://support.typora.io/assets/img/favicon-64.png" sizes="64x64" />
+<link rel="icon" href="../../assets/img/favicon-128.png" sizes="128x128" />
+<script>
+      if (
+        window.location.host.indexOf("typora.io") > -1 &&
+        window.location.protocol != "https:"
+      ) {
+        window.location.protocol = "https";
+      }
+      if (location.host == "support.typora.com.cn") {
+        location = `https://support.typoraio.cn${location.pathname}${location.hash}`;
+      }
+    </script>
+</head>
+<body>
+<style type="text/css">
+      body {
+        
+          font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman",
+          "STSong", Serif;
+		    
+        font-weight: 300;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #2e2e2e;
+        line-height: 1.15em;
+        font-family: "Open Sans", "Hiragino Sans GB", "Microsoft YaHei",
+          "WenQuanYi Micro Hei", sans-serif;
+        text-rendering: geometricPrecision;
+      }
+
+      #pagecontainer {
+        background-color: #fff;
+        min-height: calc(100vh - 510px);
+        flex: 2;
+      }
+
+      #post-content {
+        padding-top: 36px;
+        border-top: 1px dashed #999999;
+        line-height: 1.6rem;
+        padding-bottom: 100px;
+      }
+
+      #post-content > blockquote:first-child {
+        padding-top: 0.4em;
+        padding-bottom: 0.4em;
+        margin-bottom: 2em;
+        margin-left: 0;
+      }
+
+      .nav {
+        border-bottom: none;
+        height: auto;
+      }
+
+      .inner-page {
+        width: 90%;
+        max-width: 800px;
+        margin: auto;
+      }
+
+      h1 {
+        border-bottom: 0;
+      }
+
+      #header {
+        padding-bottom: 32px;
+      }
+
+      #header h1 {
+        text-align: center;
+        white-space: pre-wrap;
+        width: 90%;
+        margin: 81px auto 48px auto;
+      }
+
+      h1 {
+        font-size: 3.6rem;
+        letter-spacing: -2px;
+        text-indent: -3px;
+      }
+
+      h2 {
+        margin-top: 2em;
+      }
+
+      .pure-menu-active > .pure-menu-link,
+      .pure-menu-link:hover,
+      .pure-menu-link:focus {
+        background-color: initial;
+        border: #777 solid 1px;
+      }
+
+      .post-meta {
+        font-style: italic;
+        text-align: center;
+        color: #7a7a7a;
+      }
+
+      div.highlighter-rouge {
+        padding: 8px;
+        border: 1px #777 solid;
+        line-height: 1.2rem;
+        font-family: Menlo, Monaco, "Courier New", monospace;
+      }
+
+      div.highlighter-rouge pre {
+        font-size: 0.95em;
+        overflow: hidden;
+        word-break: break-word;
+        white-space: pre-wrap;
+      }
+
+      a {
+        color: #463f5c;
+        text-decoration: underline;
+      }
+    </style>
+<header class="pure-menu pure-menu-horizontal nav post-title" id="header">
+<div class="gallery">
+<ul class="pure-menu-list" style="float: left; margin-left: 1em; position: absolute">
+<li class="pure-menu-item pure-menu-active">
+<a href="../../index.html" class="pure-menu-link" id="title-bar-feature-btn">Back</a
+            >
+</li>
+</ul>
+</div>
+<h1>コードブロックのスタイル/テーマ</h1>
+<section class="post-meta">
+<time>April 26, 2022</time>
+by
+<span>typora.io</span>
+</section>
+</header>
+<div id="pagecontainer" class="container">
+<div id="post-content" class="inner-page"><p><a href="../../Code-Block-Styles/index.html">English Original Version</a> <a href="https://github.com/typora/wiki-website">Help Improve the Translation</a></p>
+<blockquote>
+<p>ヒント: これらの CSS スニペットをどこに置くかについては、<a href="../../Add-Custom-CSS/index.html">カスタム CSS の追加</a> を参照してください。</p>
+</blockquote>
+<p>Typora はコードフェンスのシンタックスハイライトに <a href="http://codemirror.net">CodeMirror</a> を使用します。 Typora のコードフェンスはテーマクラスとして <code class="language-plaintext highlighter-rouge">cm-s-inner</code> を使用します。</p>
+<p>CodeMirror のテーマを Typora に移植する場合、たとえば <a href="https://codemirror.net/theme/material.css">material.css</a> テーマは、以下のようにします。</p>
+<ol>
+<li><a href="https://codemirror.net/theme/material.css">material.css</a> ファイルをコピーして、テーマフォルダの下の <code class="language-plaintext highlighter-rouge">base.user.css</code> または <code class="language-plaintext highlighter-rouge">[theme].user.css</code> に貼り付け、CodeMirror のテーマクラス名を <code class="language-plaintext highlighter-rouge">cm-s-inner</code> に変更します。 たとえば、元の <code class="language-plaintext highlighter-rouge">.cm-s-material</code> は <code class="language-plaintext highlighter-rouge">.cm-s-inner</code> に変更します。</li>
+<li>CodeMirror でレンダリングする前のコードフェンスは、<code class="language-plaintext highlighter-rouge">&lt;pre class="md-fences"&gt;&lt;/pre&gt;</code> のような構造になっています。 このため、font-family、color、background などの基本的なスタイルも <code class="language-plaintext highlighter-rouge">.md-fences</code> のセレクターに適用してください。</li>
+</ol>
+<p>したがって、最終的な CSS ファイルは以下のようになります。</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/** ported from https://codemirror.net/theme/material.css **/</span>
+<span class="c">/*
+
+    Name:       material
+    Author:     Michael Kaminsky (http://github.com/mkaminsky11)
+
+    Original material color scheme by Mattia Astorino (https://github.com/equinusocio/material-theme)
+
+*/</span>
+
+<span class="nc">.cm-s-inner</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="m">#263238</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">233</span><span class="p">,</span> <span class="m">237</span><span class="p">,</span> <span class="m">237</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nc">.cm-s-inner</span> <span class="nc">.CodeMirror-gutters</span> <span class="p">{</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="m">#263238</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="m">83</span><span class="p">,</span><span class="m">127</span><span class="p">,</span><span class="m">126</span><span class="p">);</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.cm-s-inner</span> <span class="nc">.CodeMirror-guttermarker</span><span class="o">,</span> <span class="nc">.cm-s-inner</span> <span class="nc">.CodeMirror-guttermarker-subtle</span><span class="o">,</span> <span class="nc">.cm-s-inner</span> <span class="nc">.CodeMirror-linenumber</span> <span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="m">83</span><span class="p">,</span><span class="m">127</span><span class="p">,</span><span class="m">126</span><span class="p">);</span> <span class="p">}</span>
+<span class="nc">.cm-s-inner</span> <span class="nc">.CodeMirror-cursor</span> <span class="p">{</span> <span class="nl">border-left</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#f8f8f0</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.cm-s-inner</span> <span class="nt">div</span><span class="nc">.CodeMirror-selected</span> <span class="p">{</span> <span class="nl">background</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">0.15</span><span class="p">);</span> <span class="p">}</span>
+<span class="nc">.cm-s-inner.CodeMirror-focused</span> <span class="nt">div</span><span class="nc">.CodeMirror-selected</span> <span class="p">{</span> <span class="nl">background</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">0.10</span><span class="p">);</span> <span class="p">}</span>
+<span class="nc">.cm-s-inner</span> <span class="nc">.CodeMirror-line</span><span class="nd">::selection</span><span class="o">,</span> <span class="nc">.cm-s-inner</span> <span class="nc">.CodeMirror-line</span> <span class="o">&gt;</span> <span class="nt">span</span><span class="nd">::selection</span><span class="o">,</span> <span class="nc">.cm-s-inner</span> <span class="nc">.CodeMirror-line</span> <span class="o">&gt;</span> <span class="nt">span</span> <span class="o">&gt;</span> <span class="nt">span</span><span class="nd">::selection</span> <span class="p">{</span> <span class="nl">background</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">0.10</span><span class="p">);</span> <span class="p">}</span>
+<span class="nc">.cm-s-inner</span> <span class="nc">.CodeMirror-line</span><span class="nd">::-moz-selection</span><span class="o">,</span> <span class="nc">.cm-s-inner</span> <span class="nc">.CodeMirror-line</span> <span class="o">&gt;</span> <span class="nt">span</span><span class="nd">::-moz-selection</span><span class="o">,</span> <span class="nc">.cm-s-inner</span> <span class="nc">.CodeMirror-line</span> <span class="o">&gt;</span> <span class="nt">span</span> <span class="o">&gt;</span> <span class="nt">span</span><span class="nd">::-moz-selection</span> <span class="p">{</span> <span class="nl">background</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">0.10</span><span class="p">);</span> <span class="p">}</span>
+
+<span class="nc">.cm-s-inner</span> <span class="nc">.CodeMirror-activeline-background</span> <span class="p">{</span> <span class="nl">background</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span> <span class="p">}</span>
+<span class="nc">.cm-s-inner</span> <span class="nc">.cm-keyword</span> <span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">199</span><span class="p">,</span> <span class="m">146</span><span class="p">,</span> <span class="m">234</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span> <span class="p">}</span>
+<span class="nc">.cm-s-inner</span> <span class="nc">.cm-operator</span> <span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">233</span><span class="p">,</span> <span class="m">237</span><span class="p">,</span> <span class="m">237</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span> <span class="p">}</span>
+<span class="nc">.cm-s-inner</span> <span class="nc">.cm-variable-2</span> <span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="m">#80CBC4</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.cm-s-inner</span> <span class="nc">.cm-variable-3</span> <span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="m">#82B1FF</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.cm-s-inner</span> <span class="nc">.cm-builtin</span> <span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="m">#DECB6B</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.cm-s-inner</span> <span class="nc">.cm-atom</span> <span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="m">#F77669</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.cm-s-inner</span> <span class="nc">.cm-number</span> <span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="m">#F77669</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.cm-s-inner</span> <span class="nc">.cm-def</span> <span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">233</span><span class="p">,</span> <span class="m">237</span><span class="p">,</span> <span class="m">237</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span> <span class="p">}</span>
+<span class="nc">.cm-s-inner</span> <span class="nc">.cm-string</span> <span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="m">#C3E88D</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.cm-s-inner</span> <span class="nc">.cm-string-2</span> <span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="m">#80CBC4</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.cm-s-inner</span> <span class="nc">.cm-comment</span> <span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="m">#546E7A</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.cm-s-inner</span> <span class="nc">.cm-variable</span> <span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="m">#82B1FF</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.cm-s-inner</span> <span class="nc">.cm-tag</span> <span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="m">#80CBC4</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.cm-s-inner</span> <span class="nc">.cm-meta</span> <span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="m">#80CBC4</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.cm-s-inner</span> <span class="nc">.cm-attribute</span> <span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="m">#FFCB6B</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.cm-s-inner</span> <span class="nc">.cm-property</span> <span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="m">#80CBAE</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.cm-s-inner</span> <span class="nc">.cm-qualifier</span> <span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="m">#DECB6B</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.cm-s-inner</span> <span class="nc">.cm-variable-3</span> <span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="m">#DECB6B</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.cm-s-inner</span> <span class="nc">.cm-tag</span> <span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">255</span><span class="p">,</span> <span class="m">83</span><span class="p">,</span> <span class="m">112</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span> <span class="p">}</span>
+<span class="nc">.cm-s-inner</span> <span class="nc">.cm-error</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">1.0</span><span class="p">);</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="m">#EC5F67</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.cm-s-inner</span> <span class="nc">.CodeMirror-matchingbracket</span> <span class="p">{</span>
+  <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">underline</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">white</span> <span class="cp">!important</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/**apply to code fences with plan text**/</span>
+<span class="nc">.md-fences</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="m">#263238</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">233</span><span class="p">,</span> <span class="m">237</span><span class="p">,</span> <span class="m">237</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.md-fences</span> <span class="nc">.code-tooltip</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="m">#263238</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>そして結果は、以下の図のようになります。</p>
+<p><img src="../../media/code-block-style/Snip20160623_11.png" alt="Snip20160623_11" /></p>
+<p>上記の例に従って、シンタックスハイライト用の独自の CSS スタイルを作成できます。</p>
+<p><code class="language-plaintext highlighter-rouge">cm-s-inner</code> はコードフェンスにのみ適用され、ソースコードモードでの Markdown シンタックスに影響を与えないことに注意してください。 また、すべての CSS プロパティがソースコードモードのコードフェンスに適用されるわけではありません。</p>
+</div>
+</div>
+<footer id="post-footer" style="
+        background-color: rgb(51, 51, 51);
+        padding-top: 50px;
+        padding-bottom: 50px;
+        text-align: center;
+        font-size: 13px;
+      ">
+<a data-has-mirror href="https://store.typora.io">Get Typora</a> /
+<a href="https://github.com/typora/wiki-website">Help Improve our documents</a
+      >
+</footer>
+<script>
+      var backBtn = document.querySelector("#title-bar-feature-btn");
+      if (backBtn) {
+        backBtn.onclick = function (event) {
+          if (
+            window.history.length > 1 &&
+            document.referrer.indexOf(window.location.host) !== -1
+          ) {
+            console.log(" window.history.back");
+            event.preventDefault();
+            window.history.back();
+          }
+        };
+      }
+      if (location.host == "support.typoraio.cn" || location.host == "support.typora.com.cn") {
+        document.querySelectorAll("[data-has-mirror]").forEach((a) => {
+          var href = a.href;
+          if (href.indexOf("store.typora.io") > 0)
+            href = "https://typoraio.cn/";
+          else if (href.indexOf("https://typora.io") > -1)
+            href = "https://typoraio.cn/";
+          else href = href.replace("typora.io", "typoraio.cn");
+          a.href = href;
+        });
+      }
+    </script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-56771470-2", "auto");
+      ga("set", "page", "/support");
+      ga("send", "pageview");
+    </script>
+
+<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ed23a5bcf8c017f"></script>
+
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Embed Video, Media or Web Contents - Typora Support</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@typora" />
+<meta name="twitter:title" content="Embed Video, Media or Web Contents" />
+<meta name="twitter:url" content="/Media/" />
+<meta name="twitter:description" content="You could use &lt;HTML&gt; code to embed video/audio or remote web contents in Typora. Table of Contents Video Audio Embed Web Contents PDF Video You could embed a video like this: &lt;video src=" xxx.mp4" &gt; Or drag &amp; drop a video file into Typora, and Typora will insert the video automatically. The path of Video follows the same rule of images. So, the option “Use relative path as possible”, and “image root path” also applies to &lt;video&gt; content. Audio Same with &lt;video&gt;, you could use &lt;audio&gt; tag to embed an audio: &lt;audio src="xxx.mp3" &gt; Embed Web Contents Some websites allow you..." />
+<meta name="twitter:image:src" content="http://typora.io/img/twitter-sum.png" />
+<meta name="twitter:image" content="http://typora.io/img/twitter-sum.png" />
+<meta property="og:url" content="/Media/" />
+<meta property="og:title" content="Embed Video, Media or Web Contents" />
+<meta property="og:description" content="You could use &lt;HTML&gt; code to embed video/audio or remote web contents in Typora. Table of Contents Video Audio Embed Web Contents PDF Video You could embed a video like this: &lt;video src=" xxx.mp4" &gt; Or drag &amp; drop a video file into Typora, and Typora will insert the video automatically. The path of Video follows the same rule of images. So, the option “Use relative path as possible”, and “image root path” also applies to &lt;video&gt; content. Audio Same with &lt;video&gt;, you could use &lt;audio&gt; tag to embed an audio: &lt;audio src="xxx.mp3" &gt; Embed Web Contents Some websites allow you..." />
+<meta name="og:image" content="http://typora.io/img/twitter-sum.png" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+
+<link href="../assets/css/pure-min.css" rel="stylesheet" />
+
+<link href="../assets/css/syntax.css" rel="stylesheet" />
+<link href="../assets/css/typora-wiki.css" rel="stylesheet" />
+<link rel="icon" href="../assets/img/favicon-16.png" sizes="16x16" />
+<link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32" />
+<link rel="icon" href="https://support.typora.io/assets/img/favicon-64.png" sizes="64x64" />
+<link rel="icon" href="../assets/img/favicon-128.png" sizes="128x128" />
+<script>
+      if (
+        window.location.host.indexOf("typora.io") > -1 &&
+        window.location.protocol != "https:"
+      ) {
+        window.location.protocol = "https";
+      }
+      if (location.host == "support.typora.com.cn") {
+        location = `https://support.typoraio.cn${location.pathname}${location.hash}`;
+      }
+    </script>
+</head>
+<body>
+<style type="text/css">
+      body {
+        
+          font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman",
+          "STSong", Serif;
+		    
+        font-weight: 300;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #2e2e2e;
+        line-height: 1.15em;
+        font-family: "Open Sans", "Hiragino Sans GB", "Microsoft YaHei",
+          "WenQuanYi Micro Hei", sans-serif;
+        text-rendering: geometricPrecision;
+      }
+
+      #pagecontainer {
+        background-color: #fff;
+        min-height: calc(100vh - 510px);
+        flex: 2;
+      }
+
+      #post-content {
+        padding-top: 36px;
+        border-top: 1px dashed #999999;
+        line-height: 1.6rem;
+        padding-bottom: 100px;
+      }
+
+      #post-content > blockquote:first-child {
+        padding-top: 0.4em;
+        padding-bottom: 0.4em;
+        margin-bottom: 2em;
+        margin-left: 0;
+      }
+
+      .nav {
+        border-bottom: none;
+        height: auto;
+      }
+
+      .inner-page {
+        width: 90%;
+        max-width: 800px;
+        margin: auto;
+      }
+
+      h1 {
+        border-bottom: 0;
+      }
+
+      #header {
+        padding-bottom: 32px;
+      }
+
+      #header h1 {
+        text-align: center;
+        white-space: pre-wrap;
+        width: 90%;
+        margin: 81px auto 48px auto;
+      }
+
+      h1 {
+        font-size: 3.6rem;
+        letter-spacing: -2px;
+        text-indent: -3px;
+      }
+
+      h2 {
+        margin-top: 2em;
+      }
+
+      .pure-menu-active > .pure-menu-link,
+      .pure-menu-link:hover,
+      .pure-menu-link:focus {
+        background-color: initial;
+        border: #777 solid 1px;
+      }
+
+      .post-meta {
+        font-style: italic;
+        text-align: center;
+        color: #7a7a7a;
+      }
+
+      div.highlighter-rouge {
+        padding: 8px;
+        border: 1px #777 solid;
+        line-height: 1.2rem;
+        font-family: Menlo, Monaco, "Courier New", monospace;
+      }
+
+      div.highlighter-rouge pre {
+        font-size: 0.95em;
+        overflow: hidden;
+        word-break: break-word;
+        white-space: pre-wrap;
+      }
+
+      a {
+        color: #463f5c;
+        text-decoration: underline;
+      }
+    </style>
+<header class="pure-menu pure-menu-horizontal nav post-title" id="header">
+<div class="gallery">
+<ul class="pure-menu-list" style="float: left; margin-left: 1em; position: absolute">
+<li class="pure-menu-item pure-menu-active">
+<a href="../index.html" class="pure-menu-link" id="title-bar-feature-btn">Back</a
+            >
+</li>
+</ul>
+</div>
+<h1>Embed Video, Media or Web Contents</h1>
+<section class="post-meta">
+<time>August 18, 2018</time>
+by
+<span>typora.io</span>
+</section>
+</header>
+<div id="pagecontainer" class="container">
+<div id="post-content" class="inner-page"><p>You could use <code class="language-plaintext highlighter-rouge">&lt;HTML&gt;</code> code to embed video/audio or remote web contents in Typora.</p>
+<p><strong>Table of Contents</strong></p>
+<ul id="markdown-toc">
+<li><a href="index.html#video" id="markdown-toc-video">Video</a></li>
+<li><a href="index.html#audio" id="markdown-toc-audio">Audio</a></li>
+<li><a href="index.html#embed-web-contents" id="markdown-toc-embed-web-contents">Embed Web Contents</a></li>
+<li><a href="index.html#pdf" id="markdown-toc-pdf"><del>PDF</del></a></li>
+</ul>
+<h2 id="video">Video</h2>
+<p>You could embed a video like this:</p>
+<pre><code class="language-Markdown">&lt;video src="xxx.mp4" /&gt;
+</code></pre>
+<p>Or drag &amp; drop a video file into Typora, and Typora will insert the video automatically.</p>
+<p>The path of <code class="language-plaintext highlighter-rouge">Video</code> follows the same rule of images. So, the option “Use relative path as possible”, and “image root path” also applies to <code class="language-plaintext highlighter-rouge">&lt;video&gt;</code> content.</p>
+<h2 id="audio">Audio</h2>
+<p>Same with <code class="language-plaintext highlighter-rouge">&lt;video&gt;</code>, you could use <code class="language-plaintext highlighter-rouge">&lt;audio&gt;</code> tag to embed an audio:</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;audio</span> <span class="na">src=</span><span class="s">"xxx.mp3"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+<h2 id="embed-web-contents">Embed Web Contents</h2>
+<p>Some websites allow you to embed their contents into other webpages, most of them supports <code class="language-plaintext highlighter-rouge">&lt;iframe&gt;</code>, which is also supported by Typora. Could you just follow their “sharing” page/dialog, and paste their code into Typora, e.g:</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">&lt;iframe height='265' scrolling='no' title='Fancy Animated SVG Menu' src='//codepen.io/jeangontijo/embed/OxVywj/?height=265&amp;theme-id=0&amp;default-tab=css,result&amp;embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'&gt;See the Pen &lt;a href='https://codepen.io/jeangontijo/pen/OxVywj/'&gt;Fancy Animated SVG Menu&lt;/a&gt; by Jean Gontijo (&lt;a href='https://codepen.io/jeangontijo'&gt;@jeangontijo&lt;/a&gt;) on &lt;a href='https://codepen.io'&gt;CodePen&lt;/a&gt;</span>.
+<span class="nt">&lt;/iframe&gt;</span>
+</code></pre></div></div>
+<p>which will become</p>
+<iframe height="265" scrolling="no" title="Fancy Animated SVG Menu" src="https://codepen.io/jeangontijo/embed/OxVywj/?height=265&amp;theme-id=0&amp;default-tab=css,result&amp;embed-version=2" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="https://codepen.io/jeangontijo/pen/OxVywj/">Fancy Animated SVG Menu</a> by Jean Gontijo (<a href="https://codepen.io/jeangontijo">@jeangontijo</a>) on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+<p>Some websites only provide Javascript-based embed code, instead of an <code class="language-plaintext highlighter-rouge">&lt;iframe&gt;</code> snips, for example:</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">&lt;blockquote class="twitter-tweet"&gt;&lt;p lang="en" dir="ltr"&gt;Sunsets don&amp;#39;t get much better than this one over &lt;a href="https://twitter.com/GrandTetonNPS?ref_src=twsrc%5Etfw"&gt;@GrandTetonNPS&lt;/a&gt;. &lt;a href="https://twitter.com/hashtag/nature?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#nature&lt;/a&gt; &lt;a href="https://twitter.com/hashtag/sunset?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#sunset&lt;/a&gt; &lt;a href="http://t.co/YuKy2rcjyU"&gt;pic.twitter.com/YuKy2rcjyU&lt;/a&gt;&lt;/p&gt;&amp;mdash; US Department of the Interior (@Interior) &lt;a href="https://twitter.com/Interior/status/463440424141459456?ref_src=twsrc%5Etfw"&gt;May 5, 2014&lt;/a&gt;&lt;/blockquote&gt;</span>
+<span class="nt">&lt;script </span><span class="na">async</span> <span class="na">src=</span><span class="s">"https://platform.twitter.com/widgets.js"</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+<p>Typora only supports some script-based sharing code, and those contents/scripts will also be running in a sandbox iframe with no access to your local file and writing contents.</p>
+<p>We could consider allow users to config the “<em>whitelist</em>” for this kind in future updates.</p>
+<h2 id="pdf"><del>PDF</del></h2>
+<p>Embed PDF documents in <code class="language-plaintext highlighter-rouge">&lt;iframe&gt;</code> is no longer supported in native.</p>
+<p>You may try online file viewers instead, such as examples in <a href="https://gist.github.com/tzmartin/1cf85dc3d975f94cfddc04bc0dd399be">https://gist.github.com/tzmartin/1cf85dc3d975f94cfddc04bc0dd399be</a>.</p>
+</div>
+</div>
+<footer id="post-footer" style="
+        background-color: rgb(51, 51, 51);
+        padding-top: 50px;
+        padding-bottom: 50px;
+        text-align: center;
+        font-size: 13px;
+      ">
+<a data-has-mirror href="https://store.typora.io">Get Typora</a> /
+<a href="https://github.com/typora/wiki-website">Help Improve our documents</a
+      >
+</footer>
+<script>
+      var backBtn = document.querySelector("#title-bar-feature-btn");
+      if (backBtn) {
+        backBtn.onclick = function (event) {
+          if (
+            window.history.length > 1 &&
+            document.referrer.indexOf(window.location.host) !== -1
+          ) {
+            console.log(" window.history.back");
+            event.preventDefault();
+            window.history.back();
+          }
+        };
+      }
+      if (location.host == "support.typoraio.cn" || location.host == "support.typora.com.cn") {
+        document.querySelectorAll("[data-has-mirror]").forEach((a) => {
+          var href = a.href;
+          if (href.indexOf("store.typora.io") > 0)
+            href = "https://typoraio.cn/";
+          else if (href.indexOf("https://typora.io") > -1)
+            href = "https://typoraio.cn/";
+          else href = href.replace("typora.io", "typoraio.cn");
+          a.href = href;
+        });
+      }
+    </script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-56771470-2", "auto");
+      ga("set", "page", "/support");
+      ga("send", "pageview");
+    </script>
+
+<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ed23a5bcf8c017f"></script>
+
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Typora 0.9.9.36 (0.9.98) beta - Typora Support</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@typora" />
+<meta name="twitter:title" content="Typora 0.9.9.36 (0.9.98) beta" />
+<meta name="twitter:url" content="/What's-New-0.9.98/" />
+<meta name="twitter:description" content="New / Improvement Apple Silicon / macOS Big Sur Typora now works under macOS Big Sur on arm-based M1 MacBooks natively. Code Fences Add following syntax highlight support: Q vlang forth I18n Add Arabic language interface by ahmedelq. (Windows / Linux) For some languages, em dashes (—) are widely used, so we add options to use — to insert an em dash directly instead of a shorter en dash. Themes Typora now allow users to change theme from preferences panel. Also, users are able to set separate themes for light mode and dark mode as well. CSS media query for..." />
+<meta name="twitter:image:src" content="http://typora.io/media/new-97/Screen Shot 2020-12-05 at 16.42.39.png" />
+<meta name="twitter:image" content="http://typora.io/media/new-97/Screen Shot 2020-12-05 at 16.42.39.png" />
+<meta property="og:url" content="/What's-New-0.9.98/" />
+<meta property="og:title" content="Typora 0.9.9.36 (0.9.98) beta" />
+<meta property="og:description" content="New / Improvement Apple Silicon / macOS Big Sur Typora now works under macOS Big Sur on arm-based M1 MacBooks natively. Code Fences Add following syntax highlight support: Q vlang forth I18n Add Arabic language interface by ahmedelq. (Windows / Linux) For some languages, em dashes (—) are widely used, so we add options to use — to insert an em dash directly instead of a shorter en dash. Themes Typora now allow users to change theme from preferences panel. Also, users are able to set separate themes for light mode and dark mode as well. CSS media query for..." />
+<meta name="og:image" content="http://typora.io/media/new-97/Screen Shot 2020-12-05 at 16.42.39.png" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+
+<link href="../assets/css/pure-min.css" rel="stylesheet" />
+
+<link href="../assets/css/syntax.css" rel="stylesheet" />
+<link href="../assets/css/typora-wiki.css" rel="stylesheet" />
+<link rel="icon" href="../assets/img/favicon-16.png" sizes="16x16" />
+<link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32" />
+<link rel="icon" href="https://support.typora.io/assets/img/favicon-64.png" sizes="64x64" />
+<link rel="icon" href="../assets/img/favicon-128.png" sizes="128x128" />
+<script>
+      if (
+        window.location.host.indexOf("typora.io") > -1 &&
+        window.location.protocol != "https:"
+      ) {
+        window.location.protocol = "https";
+      }
+      if (location.host == "support.typora.com.cn") {
+        location = `https://support.typoraio.cn${location.pathname}${location.hash}`;
+      }
+    </script>
+</head>
+<body>
+<style type="text/css">
+      body {
+        
+          font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman",
+          "STSong", Serif;
+		    
+        font-weight: 300;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #2e2e2e;
+        line-height: 1.15em;
+        font-family: "Open Sans", "Hiragino Sans GB", "Microsoft YaHei",
+          "WenQuanYi Micro Hei", sans-serif;
+        text-rendering: geometricPrecision;
+      }
+
+      #pagecontainer {
+        background-color: #fff;
+        min-height: calc(100vh - 510px);
+        flex: 2;
+      }
+
+      #post-content {
+        padding-top: 36px;
+        border-top: 1px dashed #999999;
+        line-height: 1.6rem;
+        padding-bottom: 100px;
+      }
+
+      #post-content > blockquote:first-child {
+        padding-top: 0.4em;
+        padding-bottom: 0.4em;
+        margin-bottom: 2em;
+        margin-left: 0;
+      }
+
+      .nav {
+        border-bottom: none;
+        height: auto;
+      }
+
+      .inner-page {
+        width: 90%;
+        max-width: 800px;
+        margin: auto;
+      }
+
+      h1 {
+        border-bottom: 0;
+      }
+
+      #header {
+        padding-bottom: 32px;
+      }
+
+      #header h1 {
+        text-align: center;
+        white-space: pre-wrap;
+        width: 90%;
+        margin: 81px auto 48px auto;
+      }
+
+      h1 {
+        font-size: 3.6rem;
+        letter-spacing: -2px;
+        text-indent: -3px;
+      }
+
+      h2 {
+        margin-top: 2em;
+      }
+
+      .pure-menu-active > .pure-menu-link,
+      .pure-menu-link:hover,
+      .pure-menu-link:focus {
+        background-color: initial;
+        border: #777 solid 1px;
+      }
+
+      .post-meta {
+        font-style: italic;
+        text-align: center;
+        color: #7a7a7a;
+      }
+
+      div.highlighter-rouge {
+        padding: 8px;
+        border: 1px #777 solid;
+        line-height: 1.2rem;
+        font-family: Menlo, Monaco, "Courier New", monospace;
+      }
+
+      div.highlighter-rouge pre {
+        font-size: 0.95em;
+        overflow: hidden;
+        word-break: break-word;
+        white-space: pre-wrap;
+      }
+
+      a {
+        color: #463f5c;
+        text-decoration: underline;
+      }
+    </style>
+<header class="pure-menu pure-menu-horizontal nav post-title" id="header">
+<div class="gallery">
+<ul class="pure-menu-list" style="float: left; margin-left: 1em; position: absolute">
+<li class="pure-menu-item pure-menu-active">
+<a href="../index.html" class="pure-menu-link" id="title-bar-feature-btn">Back</a
+            >
+</li>
+</ul>
+</div>
+<h1>Typora 0.9.9.36 (0.9.98) beta</h1>
+<section class="post-meta">
+<time>December 6, 2020</time>
+by
+<span>typora.io</span>
+</section>
+</header>
+<div id="pagecontainer" class="container">
+<div id="post-content" class="inner-page"><h2 id="new--improvement">New / Improvement</h2>
+<h4 id="apple-silicon--macos-big-sur">Apple Silicon / macOS Big Sur</h4>
+<p>Typora now works under macOS Big Sur on arm-based M1 MacBooks natively.</p>
+<p><img src="../media/new-97/Screen&#32;Shot&#32;2020-12-05&#32;at&#32;16.42.39.png" alt="Screen Shot 2020-12-05 at 16.42.39" style="zoom:50%;" /></p>
+<h4 id="code-fences">Code Fences</h4>
+<p>Add following syntax highlight support:</p>
+<ul>
+<li>Q</li>
+<li>vlang</li>
+<li>forth</li>
+</ul>
+<h4 id="i18n">I18n</h4>
+<p>Add Arabic language interface by <a href="https://github.com/ahmedelq">ahmedelq</a>.</p>
+<p><img src="../media/new-97/Screen&#32;Shot&#32;2020-12-05&#32;at&#32;17.00.37.png" alt="Screen Shot 2020-12-05 at 17.00.37" style="zoom:50%;" /></p>
+<p>(Windows / Linux) For some languages, em dashes (—) are widely used, so we add options to use <code class="language-plaintext highlighter-rouge">—</code> to insert an em dash directly instead of a shorter en dash.</p>
+<p><img src="../media/new-97/Screen&#32;Shot&#32;2020-12-05&#32;at&#32;16.58.26.png" alt="Screen Shot 2020-12-05 at 16.58.26" style="zoom:50%;" /></p>
+<h4 id="themes">Themes</h4>
+<p>Typora now allow users to change theme from preferences panel. Also, users are able to set separate themes for light mode and dark mode as well.</p>
+<p><img src="../media/new-97/Screen&#32;Shot&#32;2020-12-05&#32;at&#32;17.01.49.png" alt="Screen Shot 2020-12-05 at 17.01.49" style="zoom:50%;" /></p>
+<p>CSS media query for <a href="https://developer.mozilla.org/docs/Web/CSS/@media/prefers-color-scheme">prefers color scheme</a> is also supported in theme files.</p>
+<p>Also, there are <a href="https://theme.typora.io/">many new themes</a> since last update, including dark theme for built-in themes <a href="https://theme.typora.io/theme/Gothic#gothic-dark">Gothic</a> and <a href="https://theme.typora.io/theme/Whitey#whitey-dark">Whitey</a>.</p>
+<p><img src="../media/new-97/Screen&#32;Shot&#32;2020-12-05&#32;at&#32;22.09.28.png" alt="Screen Shot 2020-12-05 at 22.09.28" style="zoom:50%;" /></p>
+<h4 id="mermaid">Mermaid</h4>
+<p>Updated mermaid to version v8.8.3, with many bug fixes.</p>
+<p>Added <code class="language-plaintext highlighter-rouge">--mermaid-theme</code> css variable to quickly define a mermaid theme that fits your theme, the value can be <code class="language-plaintext highlighter-rouge">base</code>, <code class="language-plaintext highlighter-rouge">default</code>, <code class="language-plaintext highlighter-rouge">dark</code>, <code class="language-plaintext highlighter-rouge">forest</code>, <code class="language-plaintext highlighter-rouge">neutral</code>, or import CSS from <code class="language-plaintext highlighter-rouge">/night/mermaid.dark.css</code> to use the old theme for mermaid in dark mode, for example:</p>
+<table>
+<thead>
+<tr>
+<th>CSS</th>
+<th>Mermaid Demo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="language-plaintext highlighter-rouge">:root {--mermaid-theme:dark;}</code></td>
+<td><img src="../media/new-97/Screen&#32;Shot&#32;2020-12-05&#32;at&#32;17.08.46.png" alt="Screen Shot 2020-12-05 at 17.08.46" style="zoom:50%;" /></td>
+</tr>
+<tr>
+<td><code class="language-plaintext highlighter-rouge">:root {--mermaid-theme:forest;}</code></td>
+<td><img src="../media/new-97/Screen&#32;Shot&#32;2020-12-05&#32;at&#32;17.09.42.png" alt="Screen Shot 2020-12-05 at 17.09.42" style="zoom:50%;" /></td>
+</tr>
+<tr>
+<td><code class="language-plaintext highlighter-rouge">:root {--mermaid-theme:neutral;}</code></td>
+<td><img src="../media/new-97/Screen&#32;Shot&#32;2020-12-05&#32;at&#32;17.10.11.png" alt="Screen Shot 2020-12-05 at 17.10.11" style="zoom:50%;" /></td>
+</tr>
+</tbody>
+</table>
+<p>You can use in your custom theme, or following <a href="../Add-Custom-CSS/index.html">Add Custom CSS</a>.</p>
+<p>Also, please note that due to newer versions mermaid use javascript config variables for styling, the old new to stylize mermaid in CSS file may not work, and there may be style differences from previous versions.</p>
+<h4 id="editing">Editing</h4>
+<p>Support copy image content in editor.</p>
+<p>Improve compatibility with IMEs.</p>
+<h4 id="files">Files</h4>
+<p>Add “Get Info” on macOS (or “Properties” on Windows) in main menu and context menu for file.</p>
+<h2 id="bug-fix">Bug Fix</h2>
+<h4 id="security">Security</h4>
+<p>Fix XSS security issue on macOS.</p>
+<h4 id="editing-1">Editing</h4>
+<ul>
+<li>Improve compatibility with IMEs.</li>
+<li>Fix open link with escaped urls.</li>
+<li>Improve find and replace behavior.</li>
+<li>Fix issues in Open Quickly.</li>
+<li>Fix triple click in typewriter mode.</li>
+<li>Fix error caused by launching arguments.</li>
+<li>Improve markdown parse logic.</li>
+<li>Improve find and replace behavior.</li>
+</ul>
+<h4 id="export">Export</h4>
+<ul>
+<li>Fix print may popup no printer available error.</li>
+<li>Fix issues with PDF export on 3rd themes.</li>
+<li>Support newer version of Pandoc.</li>
+<li>Improve print functions.</li>
+</ul>
+</div>
+</div>
+<footer id="post-footer" style="
+        background-color: rgb(51, 51, 51);
+        padding-top: 50px;
+        padding-bottom: 50px;
+        text-align: center;
+        font-size: 13px;
+      ">
+<a data-has-mirror href="https://store.typora.io">Get Typora</a> /
+<a href="https://github.com/typora/wiki-website">Help Improve our documents</a
+      >
+</footer>
+<script>
+      var backBtn = document.querySelector("#title-bar-feature-btn");
+      if (backBtn) {
+        backBtn.onclick = function (event) {
+          if (
+            window.history.length > 1 &&
+            document.referrer.indexOf(window.location.host) !== -1
+          ) {
+            console.log(" window.history.back");
+            event.preventDefault();
+            window.history.back();
+          }
+        };
+      }
+      if (location.host == "support.typoraio.cn" || location.host == "support.typora.com.cn") {
+        document.querySelectorAll("[data-has-mirror]").forEach((a) => {
+          var href = a.href;
+          if (href.indexOf("store.typora.io") > 0)
+            href = "https://typoraio.cn/";
+          else if (href.indexOf("https://typora.io") > -1)
+            href = "https://typoraio.cn/";
+          else href = href.replace("typora.io", "typoraio.cn");
+          a.href = href;
+        });
+      }
+    </script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-56771470-2", "auto");
+      ga("set", "page", "/support");
+      ga("send", "pageview");
+    </script>
+
+<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ed23a5bcf8c017f"></script>
+
+</body>
+</html>

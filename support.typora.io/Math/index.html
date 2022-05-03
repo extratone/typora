@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Math and Academic Functions - Typora Support</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@typora" />
+<meta name="twitter:title" content="Math and Academic Functions" />
+<meta name="twitter:url" content="/Math/" />
+<meta name="twitter:description" content="Typora supports rendering normal mathematics using Tex/LaTeX syntax. The rendering process is processed by MathJax. Table of Contents Math Block (Display Math) Inline Math TeX Commands available in Typora Chemistry Expressions Cross Reference Auto Numbering Troubleshooting Force Refresh Line Breaking Limitations Math Block (Display Math) Math blocks are LaTeX expressions wrapped by $$ mark and line break, for example: $$ \begin{align*} y = y(x,t) &amp;= A e^{i\theta} \\ &amp;= A (\cos \theta + i \sin \theta) \\ &amp;= A (\cos(kx - \omega t) + i \sin(kx - \omega t)) \\ &amp;= A\cos(kx - \omega t) + i A\sin(kx - \omega..." />
+<meta name="twitter:image:src" content="http://typora.io/img/twitter-sum.png" />
+<meta name="twitter:image" content="http://typora.io/img/twitter-sum.png" />
+<meta property="og:url" content="/Math/" />
+<meta property="og:title" content="Math and Academic Functions" />
+<meta property="og:description" content="Typora supports rendering normal mathematics using Tex/LaTeX syntax. The rendering process is processed by MathJax. Table of Contents Math Block (Display Math) Inline Math TeX Commands available in Typora Chemistry Expressions Cross Reference Auto Numbering Troubleshooting Force Refresh Line Breaking Limitations Math Block (Display Math) Math blocks are LaTeX expressions wrapped by $$ mark and line break, for example: $$ \begin{align*} y = y(x,t) &amp;= A e^{i\theta} \\ &amp;= A (\cos \theta + i \sin \theta) \\ &amp;= A (\cos(kx - \omega t) + i \sin(kx - \omega t)) \\ &amp;= A\cos(kx - \omega t) + i A\sin(kx - \omega..." />
+<meta name="og:image" content="http://typora.io/img/twitter-sum.png" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+
+<link href="../assets/css/pure-min.css" rel="stylesheet" />
+
+<link href="../assets/css/syntax.css" rel="stylesheet" />
+<link href="../assets/css/typora-wiki.css" rel="stylesheet" />
+<link rel="icon" href="../assets/img/favicon-16.png" sizes="16x16" />
+<link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32" />
+<link rel="icon" href="https://support.typora.io/assets/img/favicon-64.png" sizes="64x64" />
+<link rel="icon" href="../assets/img/favicon-128.png" sizes="128x128" />
+<script>
+      if (
+        window.location.host.indexOf("typora.io") > -1 &&
+        window.location.protocol != "https:"
+      ) {
+        window.location.protocol = "https";
+      }
+      if (location.host == "support.typora.com.cn") {
+        location = `https://support.typoraio.cn${location.pathname}${location.hash}`;
+      }
+    </script>
+</head>
+<body>
+<style type="text/css">
+      body {
+        
+          font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman",
+          "STSong", Serif;
+		    
+        font-weight: 300;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #2e2e2e;
+        line-height: 1.15em;
+        font-family: "Open Sans", "Hiragino Sans GB", "Microsoft YaHei",
+          "WenQuanYi Micro Hei", sans-serif;
+        text-rendering: geometricPrecision;
+      }
+
+      #pagecontainer {
+        background-color: #fff;
+        min-height: calc(100vh - 510px);
+        flex: 2;
+      }
+
+      #post-content {
+        padding-top: 36px;
+        border-top: 1px dashed #999999;
+        line-height: 1.6rem;
+        padding-bottom: 100px;
+      }
+
+      #post-content > blockquote:first-child {
+        padding-top: 0.4em;
+        padding-bottom: 0.4em;
+        margin-bottom: 2em;
+        margin-left: 0;
+      }
+
+      .nav {
+        border-bottom: none;
+        height: auto;
+      }
+
+      .inner-page {
+        width: 90%;
+        max-width: 800px;
+        margin: auto;
+      }
+
+      h1 {
+        border-bottom: 0;
+      }
+
+      #header {
+        padding-bottom: 32px;
+      }
+
+      #header h1 {
+        text-align: center;
+        white-space: pre-wrap;
+        width: 90%;
+        margin: 81px auto 48px auto;
+      }
+
+      h1 {
+        font-size: 3.6rem;
+        letter-spacing: -2px;
+        text-indent: -3px;
+      }
+
+      h2 {
+        margin-top: 2em;
+      }
+
+      .pure-menu-active > .pure-menu-link,
+      .pure-menu-link:hover,
+      .pure-menu-link:focus {
+        background-color: initial;
+        border: #777 solid 1px;
+      }
+
+      .post-meta {
+        font-style: italic;
+        text-align: center;
+        color: #7a7a7a;
+      }
+
+      div.highlighter-rouge {
+        padding: 8px;
+        border: 1px #777 solid;
+        line-height: 1.2rem;
+        font-family: Menlo, Monaco, "Courier New", monospace;
+      }
+
+      div.highlighter-rouge pre {
+        font-size: 0.95em;
+        overflow: hidden;
+        word-break: break-word;
+        white-space: pre-wrap;
+      }
+
+      a {
+        color: #463f5c;
+        text-decoration: underline;
+      }
+    </style>
+<header class="pure-menu pure-menu-horizontal nav post-title" id="header">
+<div class="gallery">
+<ul class="pure-menu-list" style="float: left; margin-left: 1em; position: absolute">
+<li class="pure-menu-item pure-menu-active">
+<a href="../index.html" class="pure-menu-link" id="title-bar-feature-btn">Back</a
+            >
+</li>
+</ul>
+</div>
+<h1>Math and Academic Functions</h1>
+<section class="post-meta">
+<time>August 14, 2018</time>
+by
+<span>typora.io</span>
+</section>
+</header>
+<div id="pagecontainer" class="container">
+<div id="post-content" class="inner-page"><p>Typora supports rendering normal mathematics using Tex/LaTeX syntax. The rendering process is processed by <a href="https://www.mathjax.org/">MathJax</a>.</p>
+<p><strong>Table of Contents</strong></p>
+<ul id="markdown-toc">
+<li><a href="index.html#math-block-display-math" id="markdown-toc-math-block-display-math">Math Block (Display Math)</a></li>
+<li><a href="index.html#inline-math" id="markdown-toc-inline-math">Inline Math</a></li>
+<li><a href="index.html#tex-commands-available-in-typora" id="markdown-toc-tex-commands-available-in-typora">TeX Commands available in Typora</a></li>
+<li><a href="index.html#chemistry-expressions" id="markdown-toc-chemistry-expressions">Chemistry Expressions</a></li>
+<li><a href="index.html#cross-reference" id="markdown-toc-cross-reference">Cross Reference</a></li>
+<li><a href="index.html#auto-numbering" id="markdown-toc-auto-numbering">Auto Numbering</a></li>
+<li><a href="index.html#troubleshooting" id="markdown-toc-troubleshooting">Troubleshooting</a> <ul>
+<li><a href="index.html#force-refresh" id="markdown-toc-force-refresh">Force Refresh</a></li>
+<li><a href="index.html#line-breaking" id="markdown-toc-line-breaking">Line Breaking</a></li>
+</ul>
+</li>
+<li><a href="index.html#limitations" id="markdown-toc-limitations">Limitations</a></li>
+</ul>
+<h2 id="math-block-display-math">Math Block (Display Math)</h2>
+<p>Math blocks are LaTeX expressions wrapped by <code class="language-plaintext highlighter-rouge">$$</code> mark and line break, for example:</p>
+<pre><code class="language-Markdown">$$
+\begin{align*}
+y = y(x,t) &amp;= A e^{i\theta} \\
+&amp;= A (\cos \theta + i \sin \theta) \\
+&amp;= A (\cos(kx - \omega t) + i \sin(kx - \omega t)) \\
+&amp;= A\cos(kx - \omega t) + i A\sin(kx - \omega t)  \\
+&amp;= A\cos \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big) + i A\sin \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big)  \\
+&amp;= A\cos \frac{2\pi}{\lambda} (x - v t) + i A\sin \frac{2\pi}{\lambda} (x - v t)
+\end{align*}
+$$
+</code></pre>
+<p>will be rendered as</p>
+\[\begin{align*}
+y = y(x,t) &amp;= A e^{i\theta} \\
+&amp;= A (\cos \theta + i \sin \theta) \\
+&amp;= A (\cos(kx - \omega t) + i \sin(kx - \omega t)) \\
+&amp;= A\cos(kx - \omega t) + i A\sin(kx - \omega t) \\
+&amp;= A\cos \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big) + i A\sin \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big) \\
+&amp;= A\cos \frac{2\pi}{\lambda} (x - v t) + i A\sin \frac{2\pi}{\lambda} (x - v t)
+\end{align*}\]
+<p>In typora, you could just press <code class="language-plaintext highlighter-rouge">$$</code> and <code class="language-plaintext highlighter-rouge">Return</code> key to input a math block, in input mode, use Up/Down arrow key or <code class="language-plaintext highlighter-rouge">Command</code>/<code class="language-plaintext highlighter-rouge">Ctrl</code> + <code class="language-plaintext highlighter-rouge">Return</code> key to finish editing, or just click the ✓ button, or somewhere else.</p>
+<h2 id="inline-math">Inline Math</h2>
+<p>First of all, please enable <strong>inline math</strong> feature from preferences panels -&gt; <em>Markdown</em> section. Preferences panel can be opened From menu bar: <code class="language-plaintext highlighter-rouge">File</code> -&gt; <code class="language-plaintext highlighter-rouge">Preferences...</code>, or use shortcut key — <code class="language-plaintext highlighter-rouge">command</code>/<code class="language-plaintext highlighter-rouge">ctrl</code> + <code class="language-plaintext highlighter-rouge">,</code>. This setting will be applied after Typora restarts.</p>
+<p><img src="../media/math/Snip20180818_2.png" style="zoom:50%" /></p>
+<p>Inline math use syntax like this <code class="language-plaintext highlighter-rouge">$&lt;Math Expressions&gt;$</code>, e.g: <code class="language-plaintext highlighter-rouge">$f = \frac{2 \pi}{T}$</code>.</p>
+<video src="../media/math/inline&#32;math.mp4" style="zoom:50%;" autoplay="" loop="" mute=""></video>
+<h2 id="tex-commands-available-in-typora">TeX Commands available in Typora</h2>
+<p>You could find the all supported TeX commands in <a href="http://docs.mathjax.org/en/latest/input/tex/macros/index.html">http://docs.mathjax.org/en/latest/input/tex/macros/index.html</a>.</p>
+<p>You could add new commands using <code class="language-plaintext highlighter-rouge">\def</code> or<code class="language-plaintext highlighter-rouge">\newcommand</code>. For example:</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$$
+<span class="se">\d</span>ef<span class="se">\b</span>old#1
+
+<span class="se">\b</span>old{this<span class="se">\ </span>is<span class="se">\ </span>now<span class="se">\ </span>bold}
+$$
+</code></pre></div></div>
+<h2 id="chemistry-expressions">Chemistry Expressions</h2>
+<p>Typora has the built-in <a href="https://mhchem.github.io/MathJax-mhchem/">mhchem</a> extension, which can be used to render Chemistry Expressions, you could use like this:</p>
+<pre><code class="language-Markdown">$\ce{CH4 + 2 $\left( \ce{O2 + 79/21 N2} \right)$}$
+</code></pre>
+<p>Which will be rendered as <img src="../media/math/Snip20180815_1.png" style="zoom:50%;" /></p>
+<p>For more details, please refer <a href="https://mhchem.github.io/MathJax-mhchem/">https://mhchem.github.io/MathJax-mhchem/</a>.</p>
+<h2 id="cross-reference">Cross Reference</h2>
+<p>Typora supports TeX-style reference syntax, for example:</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Here is a labeled equation:
+
+$$
+x+1<span class="se">\o</span>ver<span class="se">\s</span>qrt{1-x^2}<span class="se">\l</span>abel{ref1}<span class="se">\t</span>ag{1}
+$$
+
+This is a reference : $<span class="se">\r</span>ef{ref1}$
+</code></pre></div></div>
+<h2 id="auto-numbering">Auto Numbering</h2>
+<p>Typora supports auto-numbering math blocks. To turn on this feature, please open preferences panel, and enable “Auto Numbering Math Equations” under the “Markdown” section.</p>
+<p><img src="../media/math/Snip20180818_4.png" style="zoom:50%" /></p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="force-refresh">Force Refresh</h3>
+<p>When Math rendering goes wrong, like output math too wild/narrow, or equation numbering becomes incorrect, you can trigger force refresh for all math from the <code class="language-plaintext highlighter-rouge">Edit</code> → <code class="language-plaintext highlighter-rouge">Math Tools</code> menu.</p>
+<h3 id="line-breaking">Line Breaking</h3>
+<p>Starting from v0.11.0, Typora upgraded to MathJax v3, which does not support line break using <code class="language-plaintext highlighter-rouge">\\</code> or <code class="language-plaintext highlighter-rouge">\newline</code> in MathJax v2, the behavior is same with LaTeX, unless you put them in a <code class="language-plaintext highlighter-rouge">\displaylines{}</code> environment, for example:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\displaylines{x+y\\y+z}
+</code></pre></div></div>
+<p>So you could use <code class="language-plaintext highlighter-rouge">\displaylines</code> as a workaround.</p>
+<p>From v0.11.1, Typora provides a new option “Apply Line Break at \\” under <code class="language-plaintext highlighter-rouge">Preferences Panel</code> → <code class="language-plaintext highlighter-rouge">Markdown</code> → <code class="language-plaintext highlighter-rouge">Math</code>. By enabling it, typora will auto wrap your math content with <code class="language-plaintext highlighter-rouge">\displaylines</code> if your content contains <code class="language-plaintext highlighter-rouge">\\</code> or <code class="language-plaintext highlighter-rouge">\newline</code> to achieve the same behavior as previous versions. But it may bring some unexpected issues, so if you met any math issues after enabled it, please try disable the option, and report to us, if it is the cause.</p>
+<p>Use <code class="language-plaintext highlighter-rouge">\displaylines</code> instead of enabling “Apply Line Break at \\” is recommended for adding line breaks in math.</p>
+<h2 id="limitations">Limitations</h2>
+<ul>
+<li>MathJax supports a limited subsets of all LaTeX commands (references: <a href="http://docs.mathjax.org/en/latest/input/tex/macros/index.html">http://docs.mathjax.org/en/latest/input/tex/macros/index.html</a>).</li>
+<li>Not all export formats support math, and some commands/features of math/LaTeX would become unavailable after export.</li>
+</ul>
+</div>
+</div>
+<footer id="post-footer" style="
+        background-color: rgb(51, 51, 51);
+        padding-top: 50px;
+        padding-bottom: 50px;
+        text-align: center;
+        font-size: 13px;
+      ">
+<a data-has-mirror href="https://store.typora.io">Get Typora</a> /
+<a href="https://github.com/typora/wiki-website">Help Improve our documents</a
+      >
+</footer>
+<script>
+      var backBtn = document.querySelector("#title-bar-feature-btn");
+      if (backBtn) {
+        backBtn.onclick = function (event) {
+          if (
+            window.history.length > 1 &&
+            document.referrer.indexOf(window.location.host) !== -1
+          ) {
+            console.log(" window.history.back");
+            event.preventDefault();
+            window.history.back();
+          }
+        };
+      }
+      if (location.host == "support.typoraio.cn" || location.host == "support.typora.com.cn") {
+        document.querySelectorAll("[data-has-mirror]").forEach((a) => {
+          var href = a.href;
+          if (href.indexOf("store.typora.io") > 0)
+            href = "https://typoraio.cn/";
+          else if (href.indexOf("https://typora.io") > -1)
+            href = "https://typoraio.cn/";
+          else href = href.replace("typora.io", "typoraio.cn");
+          a.href = href;
+        });
+      }
+    </script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-56771470-2", "auto");
+      ga("set", "page", "/support");
+      ga("send", "pageview");
+    </script>
+
+<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ed23a5bcf8c017f"></script>
+
+</body>
+</html>

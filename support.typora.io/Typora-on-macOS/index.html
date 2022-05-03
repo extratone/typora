@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Typora on macOS - Typora Support</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@typora" />
+<meta name="twitter:title" content="Typora on macOS" />
+<meta name="twitter:url" content="/Typora-on-macOS/" />
+<meta name="twitter:description" content="Typora is deeply integrated with the macOS desktop environment, like other native apps on macOS. The simplicity and extendable functions provided by macOS is also available on Typora. System Apple Silicon Open From Terminal Quick Look Older macOS Support File Document-Based App Version Control and Recovery Share Editing Grammar and Spelling Checker Substitutions Services Continuity Camera View Touch Bar Dictionary Look Up / Link Preview Dark Mode System Apple Silicon Typora (≥ 0.9.9.36) is now native on Apple Silicon Mac devices. Open From Terminal You can use open -a typora xxx.md to open the markdown file xxx.md in Typora from..." />
+<meta name="twitter:image:src" content="http://typora.io/img/twitter-sum.png" />
+<meta name="twitter:image" content="http://typora.io/img/twitter-sum.png" />
+<meta property="og:url" content="/Typora-on-macOS/" />
+<meta property="og:title" content="Typora on macOS" />
+<meta property="og:description" content="Typora is deeply integrated with the macOS desktop environment, like other native apps on macOS. The simplicity and extendable functions provided by macOS is also available on Typora. System Apple Silicon Open From Terminal Quick Look Older macOS Support File Document-Based App Version Control and Recovery Share Editing Grammar and Spelling Checker Substitutions Services Continuity Camera View Touch Bar Dictionary Look Up / Link Preview Dark Mode System Apple Silicon Typora (≥ 0.9.9.36) is now native on Apple Silicon Mac devices. Open From Terminal You can use open -a typora xxx.md to open the markdown file xxx.md in Typora from..." />
+<meta name="og:image" content="http://typora.io/img/twitter-sum.png" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+
+<link href="../assets/css/pure-min.css" rel="stylesheet" />
+
+<link href="../assets/css/syntax.css" rel="stylesheet" />
+<link href="../assets/css/typora-wiki.css" rel="stylesheet" />
+<link rel="icon" href="../assets/img/favicon-16.png" sizes="16x16" />
+<link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32" />
+<link rel="icon" href="https://support.typora.io/assets/img/favicon-64.png" sizes="64x64" />
+<link rel="icon" href="../assets/img/favicon-128.png" sizes="128x128" />
+<script>
+      if (
+        window.location.host.indexOf("typora.io") > -1 &&
+        window.location.protocol != "https:"
+      ) {
+        window.location.protocol = "https";
+      }
+      if (location.host == "support.typora.com.cn") {
+        location = `https://support.typoraio.cn${location.pathname}${location.hash}`;
+      }
+    </script>
+</head>
+<body>
+<style type="text/css">
+      body {
+        
+          font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman",
+          "STSong", Serif;
+		    
+        font-weight: 300;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #2e2e2e;
+        line-height: 1.15em;
+        font-family: "Open Sans", "Hiragino Sans GB", "Microsoft YaHei",
+          "WenQuanYi Micro Hei", sans-serif;
+        text-rendering: geometricPrecision;
+      }
+
+      #pagecontainer {
+        background-color: #fff;
+        min-height: calc(100vh - 510px);
+        flex: 2;
+      }
+
+      #post-content {
+        padding-top: 36px;
+        border-top: 1px dashed #999999;
+        line-height: 1.6rem;
+        padding-bottom: 100px;
+      }
+
+      #post-content > blockquote:first-child {
+        padding-top: 0.4em;
+        padding-bottom: 0.4em;
+        margin-bottom: 2em;
+        margin-left: 0;
+      }
+
+      .nav {
+        border-bottom: none;
+        height: auto;
+      }
+
+      .inner-page {
+        width: 90%;
+        max-width: 800px;
+        margin: auto;
+      }
+
+      h1 {
+        border-bottom: 0;
+      }
+
+      #header {
+        padding-bottom: 32px;
+      }
+
+      #header h1 {
+        text-align: center;
+        white-space: pre-wrap;
+        width: 90%;
+        margin: 81px auto 48px auto;
+      }
+
+      h1 {
+        font-size: 3.6rem;
+        letter-spacing: -2px;
+        text-indent: -3px;
+      }
+
+      h2 {
+        margin-top: 2em;
+      }
+
+      .pure-menu-active > .pure-menu-link,
+      .pure-menu-link:hover,
+      .pure-menu-link:focus {
+        background-color: initial;
+        border: #777 solid 1px;
+      }
+
+      .post-meta {
+        font-style: italic;
+        text-align: center;
+        color: #7a7a7a;
+      }
+
+      div.highlighter-rouge {
+        padding: 8px;
+        border: 1px #777 solid;
+        line-height: 1.2rem;
+        font-family: Menlo, Monaco, "Courier New", monospace;
+      }
+
+      div.highlighter-rouge pre {
+        font-size: 0.95em;
+        overflow: hidden;
+        word-break: break-word;
+        white-space: pre-wrap;
+      }
+
+      a {
+        color: #463f5c;
+        text-decoration: underline;
+      }
+    </style>
+<header class="pure-menu pure-menu-horizontal nav post-title" id="header">
+<div class="gallery">
+<ul class="pure-menu-list" style="float: left; margin-left: 1em; position: absolute">
+<li class="pure-menu-item pure-menu-active">
+<a href="../index.html" class="pure-menu-link" id="title-bar-feature-btn">Back</a
+            >
+</li>
+</ul>
+</div>
+<h1>Typora on macOS</h1>
+<section class="post-meta">
+<time>December 6, 2020</time>
+by
+<span>typora.io</span>
+</section>
+</header>
+<div id="pagecontainer" class="container">
+<div id="post-content" class="inner-page"><p>Typora is deeply integrated with the macOS desktop environment, like other native apps on macOS. The simplicity and extendable functions provided by macOS is also available on Typora.</p>
+<ul id="markdown-toc">
+<li><a href="index.html#system" id="markdown-toc-system">System</a> <ul>
+<li><a href="index.html#apple-silicon" id="markdown-toc-apple-silicon">Apple Silicon</a></li>
+<li><a href="index.html#open-from-terminal" id="markdown-toc-open-from-terminal">Open From Terminal</a></li>
+<li><a href="index.html#quick-look" id="markdown-toc-quick-look">Quick Look</a></li>
+<li><a href="index.html#older-macos-support" id="markdown-toc-older-macos-support">Older macOS Support</a></li>
+</ul>
+</li>
+<li><a href="index.html#file" id="markdown-toc-file">File</a> <ul>
+<li><a href="index.html#document-based-app" id="markdown-toc-document-based-app">Document-Based App</a></li>
+<li><a href="index.html#version-control-and-recovery" id="markdown-toc-version-control-and-recovery">Version Control and Recovery</a></li>
+<li><a href="index.html#share" id="markdown-toc-share">Share</a></li>
+</ul>
+</li>
+<li><a href="index.html#editing" id="markdown-toc-editing">Editing</a> <ul>
+<li><a href="index.html#grammar-and-spelling-checker" id="markdown-toc-grammar-and-spelling-checker">Grammar and Spelling Checker</a></li>
+<li><a href="index.html#substitutions" id="markdown-toc-substitutions">Substitutions</a></li>
+<li><a href="index.html#services" id="markdown-toc-services">Services</a></li>
+<li><a href="index.html#continuity-camera" id="markdown-toc-continuity-camera">Continuity Camera</a></li>
+</ul>
+</li>
+<li><a href="index.html#view" id="markdown-toc-view">View</a> <ul>
+<li><a href="index.html#touch-bar" id="markdown-toc-touch-bar">Touch Bar</a></li>
+<li><a href="index.html#dictionary-look-up--link-preview" id="markdown-toc-dictionary-look-up--link-preview">Dictionary Look Up / Link Preview</a></li>
+<li><a href="index.html#dark-mode" id="markdown-toc-dark-mode">Dark Mode</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="system">System</h2>
+<h3 id="apple-silicon">Apple Silicon</h3>
+<p>Typora (≥ 0.9.9.36) is now native on Apple Silicon Mac devices.</p>
+<h3 id="open-from-terminal">Open From Terminal</h3>
+<p>You can use <code class="language-plaintext highlighter-rouge">open -a typora xxx.md</code> to open the markdown file <code class="language-plaintext highlighter-rouge">xxx.md</code> in Typora from a command line. If Typora is your default editor for <code class="language-plaintext highlighter-rouge">.md</code> files, when <code class="language-plaintext highlighter-rouge">open xxx.md</code> would be enough.</p>
+<p>You can also add</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">alias </span><span class="nv">typora</span><span class="o">=</span><span class="s2">"open -a typora"</span>
+</code></pre></div></div>
+<p>in your <code class="language-plaintext highlighter-rouge">.bash_profile</code> or other configuration file, then you would be able to simply type <code class="language-plaintext highlighter-rouge">typora xxx.md</code> instead.</p>
+<p>For detail, you can <a href="../Use-Typora-From-Shell-or-cmd/index.html">click here</a>.</p>
+<h3 id="quick-look">Quick Look</h3>
+<p>Typora does not provide quick look plugin for now, but you can use <a href="https://github.com/toland/qlmarkdown">QLMarkdown</a> or <a href="https://github.com/samuelmeuli/glance">Glance</a> to achieve this.</p>
+<h3 id="older-macos-support">Older macOS Support</h3>
+<p>The latest version of Typora supports macOS ≥ 10.14, for older macOS support, please check https://support.typora.io/Older-macOS-Support/</p>
+<h2 id="file">File</h2>
+<h3 id="document-based-app">Document-Based App</h3>
+<p>Typora is a documented-base app, so for macOS, the system provides built-in functions like <strong><a href="../Auto-Save/index.html">auto-save</a>, <a href="../Version-Control/index.html">version control</a>, quickly renaming from title bar</strong>, etc.</p>
+<p>For example, you can use command + click on titlebar to quickly open parent folders of current file in Typora (and in other macOS app as well):</p>
+<video src="../media/macOS/titlebar.mp4" controls="" style="width:100%"> </video>
+<h3 id="version-control-and-recovery">Version Control and Recovery</h3>
+<p>On macOS, Typora integrates with the native version control function powered by the operation system.</p>
+<p>You could simply choose <code class="language-plaintext highlighter-rouge">File</code> &gt; <code class="language-plaintext highlighter-rouge">Revert To</code> &gt; <code class="language-plaintext highlighter-rouge">Browse All Versions</code> from main menu to browse and revert to certain version. More detail can be found <a href="https://support.apple.com/guide/mac-help/mh40710/mac">here</a>.</p>
+<p><img src="../media/macOS/Snip20170228_6.png" alt="Snip20170228_6" /></p>
+<p>For <strong>untitled</strong> drafts, they are located in <code class="language-plaintext highlighter-rouge">~/Library/Autosave Information</code>. But please save them just in case.</p>
+<h3 id="share">Share</h3>
+<p>You can share a file from <code class="language-plaintext highlighter-rouge">File</code> → <code class="language-plaintext highlighter-rouge">Share</code> menu.</p>
+<p><img src="../media/macOS/Screen&#32;Shot&#32;2020-12-07&#32;at&#32;00.11.46.png" alt="Screen Shot 2020-12-07 at 00.11.46" style="zoom:50%;" /></p>
+<h2 id="editing">Editing</h2>
+<h3 id="grammar-and-spelling-checker">Grammar and Spelling Checker</h3>
+<p>Typora uses macOS built-in grammar and spelling checker, you can enable / disable it in system preferences or from menu bar.</p>
+<p><img src="../media/macOS/Screen&#32;Shot&#32;2020-12-06&#32;at&#32;22.44.02.png" alt="Screen Shot 2020-12-06 at 22.44.02" style="zoom:50%;" /></p>
+<p>You can also learn spellings from context menu, and the learned new words will be shared among different macOS apps.</p>
+<h3 id="substitutions">Substitutions</h3>
+<p>Typora supports macOS built-in text functions like:</p>
+<ul>
+<li><strong>smart quote</strong></li>
+<li><strong>smart dashes</strong></li>
+<li><strong>text replacement</strong></li>
+<li><strong>capitalize words automatically</strong></li>
+<li><strong>add period with double space</strong></li>
+</ul>
+<p>You can config them under system preferences.</p>
+<p><img src="../media/macOS/Screen&#32;Shot&#32;2020-12-07&#32;at&#32;00.06.06.png" alt="Screen Shot 2020-12-07 at 00.06.06" style="zoom:50%;" /></p>
+<p>After config, text substitution will be working in Typora. For features like smart dashes, smart quote and text replacement, you can also enable / disable them from Typora’s <code class="language-plaintext highlighter-rouge">Edit</code> → <code class="language-plaintext highlighter-rouge">Substitutions</code> menu.</p>
+<video src="../media/macOS/Screen&#32;Recording&#32;2020-12-07&#32;at&#32;00.07.54.mov" style="width:100%" controls=""> </video>
+<h3 id="services">Services</h3>
+<p>You can use <a href="https://www.computerworld.com/article/2476298/os-x-a-quick-guide-to-services-on-your-mac.html">service</a> to extend Typora’s functionality before Typora have its own plugin system.</p>
+<p>For example, you can install <a href="https://apps.apple.com/us/app/wordservice/id899972312?mt=12">WordService</a> for common text operations, such as insert date and time, etc.</p>
+<p><img src="../media/macOS/Screen&#32;Shot&#32;2020-12-07&#32;at&#32;00.32.33.png" alt="Screen Shot 2020-12-07 at 00.32.33" style="zoom:50%;" /></p>
+<h3 id="continuity-camera">Continuity Camera</h3>
+<p>Use your iPhone, iPad, or iPod touch to scan documents, draw sketch, or take a picture of something nearby and insert into into Typora on macOS directly.</p>
+<p><img src="../media/macOS/Screen&#32;Shot&#32;2020-12-06&#32;at&#32;22.20.07.png" alt="Screen Shot 2020-12-06 at 22.20.07" style="zoom:50%;" /></p>
+<h2 id="view">View</h2>
+<h3 id="touch-bar">Touch Bar</h3>
+<p>You can use touch bar for context aware quick editing.</p>
+<p><img src="../media/macOS/Screen&#32;Shot&#32;2020-12-06&#32;at&#32;22.07.32.png@lastModify=1607354481" alt="Screen Shot 2020-12-06 at 22.07.32" /></p>
+<p><img src="../media/macOS/Screen&#32;Shot&#32;2020-12-06&#32;at&#32;22.08.21.png@lastModify=1607354481" alt="Screen Shot 2020-12-06 at 22.08.21" /></p>
+<p><img src="../media/macOS/Screen&#32;Shot&#32;2020-12-07&#32;at&#32;23.23.58.png" alt="Screen Shot 2020-12-07 at 23.23.58" /></p>
+<p>Including change block / inline styles, modify tables (add row, etc), change list indent, input predictions, etc.</p>
+<h3 id="dictionary-look-up--link-preview">Dictionary Look Up / Link Preview</h3>
+<p>You can tap with three fingers on the trackpad to look up words or preview links, just like in Safari. You can find detail <a href="https://support.apple.com/guide/mac-help/mchl3983326c/mac">here</a>.</p>
+<p><img src="../media/macOS/Screen&#32;Shot&#32;2020-12-07&#32;at&#32;23.26.27.png" alt="Screen Shot 2020-12-07 at 23.26.27" style="zoom:50%;box-shadow: 0 0 5px #333;" /></p>
+<h3 id="dark-mode">Dark Mode</h3>
+<p>Typora will use system dark mode color scheme when using dark themes. Or, if you want typora to auto apply themes based on current macOS light / dark mode, you can choose different themes for light mode and dark mode.</p>
+<p><img src="../media/new-97/Screen&#32;Shot&#32;2020-12-05&#32;at&#32;17.01.49.png" alt="Screen Shot 2020-12-05 at 17.01.49" style="zoom:50%;" /></p>
+</div>
+</div>
+<footer id="post-footer" style="
+        background-color: rgb(51, 51, 51);
+        padding-top: 50px;
+        padding-bottom: 50px;
+        text-align: center;
+        font-size: 13px;
+      ">
+<a data-has-mirror href="https://store.typora.io">Get Typora</a> /
+<a href="https://github.com/typora/wiki-website">Help Improve our documents</a
+      >
+</footer>
+<script>
+      var backBtn = document.querySelector("#title-bar-feature-btn");
+      if (backBtn) {
+        backBtn.onclick = function (event) {
+          if (
+            window.history.length > 1 &&
+            document.referrer.indexOf(window.location.host) !== -1
+          ) {
+            console.log(" window.history.back");
+            event.preventDefault();
+            window.history.back();
+          }
+        };
+      }
+      if (location.host == "support.typoraio.cn" || location.host == "support.typora.com.cn") {
+        document.querySelectorAll("[data-has-mirror]").forEach((a) => {
+          var href = a.href;
+          if (href.indexOf("store.typora.io") > 0)
+            href = "https://typoraio.cn/";
+          else if (href.indexOf("https://typora.io") > -1)
+            href = "https://typoraio.cn/";
+          else href = href.replace("typora.io", "typoraio.cn");
+          a.href = href;
+        });
+      }
+    </script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-56771470-2", "auto");
+      ga("set", "page", "/support");
+      ga("send", "pageview");
+    </script>
+
+<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ed23a5bcf8c017f"></script>
+
+</body>
+</html>

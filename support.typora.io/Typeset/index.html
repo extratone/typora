@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Typesetting with CSS - Typora Support</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@typora" />
+<meta name="twitter:title" content="Typesetting with CSS" />
+<meta name="twitter:url" content="/Typeset/" />
+<meta name="twitter:description" content="This article explains common style preferences for your typesetting based on Custom CSS. To use this, please read Custom CSS first. Outline Page Setting Change Background Change Width of Writing Area Text &amp; Font Change Font Uppercase Headers Small-cap Headers Ligature Paragraph &amp; Alignment Justify Alignment Center alignment Right to Left Writing Vertical Writing Center / Do not Center Image Components Auto Numbering for Headings / Outline / TOC Control TOC Levels Change Color Themes for Code Fences / Source Code Mode “Erase” Completed Tasks Styles for Diagrams Editing Change Styles for Focused / Unfocused Text in Focus Mode Do..." />
+<meta name="twitter:image:src" content="http://typora.io/img/twitter-sum.png" />
+<meta name="twitter:image" content="http://typora.io/img/twitter-sum.png" />
+<meta property="og:url" content="/Typeset/" />
+<meta property="og:title" content="Typesetting with CSS" />
+<meta property="og:description" content="This article explains common style preferences for your typesetting based on Custom CSS. To use this, please read Custom CSS first. Outline Page Setting Change Background Change Width of Writing Area Text &amp; Font Change Font Uppercase Headers Small-cap Headers Ligature Paragraph &amp; Alignment Justify Alignment Center alignment Right to Left Writing Vertical Writing Center / Do not Center Image Components Auto Numbering for Headings / Outline / TOC Control TOC Levels Change Color Themes for Code Fences / Source Code Mode “Erase” Completed Tasks Styles for Diagrams Editing Change Styles for Focused / Unfocused Text in Focus Mode Do..." />
+<meta name="og:image" content="http://typora.io/img/twitter-sum.png" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+
+<link href="../assets/css/pure-min.css" rel="stylesheet" />
+
+<link href="../assets/css/syntax.css" rel="stylesheet" />
+<link href="../assets/css/typora-wiki.css" rel="stylesheet" />
+<link rel="icon" href="../assets/img/favicon-16.png" sizes="16x16" />
+<link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32" />
+<link rel="icon" href="https://support.typora.io/assets/img/favicon-64.png" sizes="64x64" />
+<link rel="icon" href="../assets/img/favicon-128.png" sizes="128x128" />
+<script>
+      if (
+        window.location.host.indexOf("typora.io") > -1 &&
+        window.location.protocol != "https:"
+      ) {
+        window.location.protocol = "https";
+      }
+      if (location.host == "support.typora.com.cn") {
+        location = `https://support.typoraio.cn${location.pathname}${location.hash}`;
+      }
+    </script>
+</head>
+<body>
+<style type="text/css">
+      body {
+        
+          font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman",
+          "STSong", Serif;
+		    
+        font-weight: 300;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #2e2e2e;
+        line-height: 1.15em;
+        font-family: "Open Sans", "Hiragino Sans GB", "Microsoft YaHei",
+          "WenQuanYi Micro Hei", sans-serif;
+        text-rendering: geometricPrecision;
+      }
+
+      #pagecontainer {
+        background-color: #fff;
+        min-height: calc(100vh - 510px);
+        flex: 2;
+      }
+
+      #post-content {
+        padding-top: 36px;
+        border-top: 1px dashed #999999;
+        line-height: 1.6rem;
+        padding-bottom: 100px;
+      }
+
+      #post-content > blockquote:first-child {
+        padding-top: 0.4em;
+        padding-bottom: 0.4em;
+        margin-bottom: 2em;
+        margin-left: 0;
+      }
+
+      .nav {
+        border-bottom: none;
+        height: auto;
+      }
+
+      .inner-page {
+        width: 90%;
+        max-width: 800px;
+        margin: auto;
+      }
+
+      h1 {
+        border-bottom: 0;
+      }
+
+      #header {
+        padding-bottom: 32px;
+      }
+
+      #header h1 {
+        text-align: center;
+        white-space: pre-wrap;
+        width: 90%;
+        margin: 81px auto 48px auto;
+      }
+
+      h1 {
+        font-size: 3.6rem;
+        letter-spacing: -2px;
+        text-indent: -3px;
+      }
+
+      h2 {
+        margin-top: 2em;
+      }
+
+      .pure-menu-active > .pure-menu-link,
+      .pure-menu-link:hover,
+      .pure-menu-link:focus {
+        background-color: initial;
+        border: #777 solid 1px;
+      }
+
+      .post-meta {
+        font-style: italic;
+        text-align: center;
+        color: #7a7a7a;
+      }
+
+      div.highlighter-rouge {
+        padding: 8px;
+        border: 1px #777 solid;
+        line-height: 1.2rem;
+        font-family: Menlo, Monaco, "Courier New", monospace;
+      }
+
+      div.highlighter-rouge pre {
+        font-size: 0.95em;
+        overflow: hidden;
+        word-break: break-word;
+        white-space: pre-wrap;
+      }
+
+      a {
+        color: #463f5c;
+        text-decoration: underline;
+      }
+    </style>
+<header class="pure-menu pure-menu-horizontal nav post-title" id="header">
+<div class="gallery">
+<ul class="pure-menu-list" style="float: left; margin-left: 1em; position: absolute">
+<li class="pure-menu-item pure-menu-active">
+<a href="../index.html" class="pure-menu-link" id="title-bar-feature-btn">Back</a
+            >
+</li>
+</ul>
+</div>
+<h1>Typesetting with CSS</h1>
+<section class="post-meta">
+<time>March 20, 2021</time>
+by
+<span>typora.io</span>
+</section>
+</header>
+<div id="pagecontainer" class="container">
+<div id="post-content" class="inner-page"><p>This article explains common style preferences for your typesetting based on <a href="../Add-Custom-CSS/index.html">Custom CSS</a>.</p>
+<p>To use this, please read <a href="../Add-Custom-CSS/index.html">Custom CSS</a> first.</p>
+<p><strong>Outline</strong></p>
+<ul id="markdown-toc">
+<li><a href="index.html#page-setting" id="markdown-toc-page-setting">Page Setting</a> <ul>
+<li><a href="index.html#change-background" id="markdown-toc-change-background">Change Background</a></li>
+<li><a href="index.html#change-width-of-writing-area" id="markdown-toc-change-width-of-writing-area">Change Width of Writing Area</a></li>
+</ul>
+</li>
+<li><a href="index.html#text--font" id="markdown-toc-text--font">Text &amp; Font</a> <ul>
+<li><a href="index.html#change-font" id="markdown-toc-change-font">Change Font</a></li>
+<li><a href="index.html#uppercase-headers" id="markdown-toc-uppercase-headers">Uppercase Headers</a></li>
+<li><a href="index.html#small-cap-headers" id="markdown-toc-small-cap-headers">Small-cap Headers</a></li>
+<li><a href="index.html#ligature" id="markdown-toc-ligature">Ligature</a></li>
+</ul>
+</li>
+<li><a href="index.html#paragraph--alignment" id="markdown-toc-paragraph--alignment">Paragraph &amp; Alignment</a> <ul>
+<li><a href="index.html#justify-alignment" id="markdown-toc-justify-alignment">Justify Alignment</a></li>
+<li><a href="index.html#center-alignment" id="markdown-toc-center-alignment">Center alignment</a></li>
+<li><a href="index.html#right-to-left-writing" id="markdown-toc-right-to-left-writing">Right to Left Writing</a></li>
+<li><a href="index.html#vertical-writing" id="markdown-toc-vertical-writing">Vertical Writing</a></li>
+<li><a href="index.html#center--do-not-center-image" id="markdown-toc-center--do-not-center-image">Center / Do not Center Image</a></li>
+</ul>
+</li>
+<li><a href="index.html#components" id="markdown-toc-components">Components</a> <ul>
+<li><a href="index.html#auto-numbering-for-headings--outline--toc" id="markdown-toc-auto-numbering-for-headings--outline--toc">Auto Numbering for Headings / Outline / TOC</a></li>
+<li><a href="index.html#control-toc-levels" id="markdown-toc-control-toc-levels">Control TOC Levels</a></li>
+<li><a href="index.html#change-color-themes-for-code-fences--source-code-mode" id="markdown-toc-change-color-themes-for-code-fences--source-code-mode">Change Color Themes for Code Fences / Source Code Mode</a></li>
+<li><a href="index.html#erase-completed-tasks" id="markdown-toc-erase-completed-tasks">“Erase” Completed Tasks</a></li>
+<li><a href="index.html#styles-for-diagrams" id="markdown-toc-styles-for-diagrams">Styles for Diagrams</a></li>
+</ul>
+</li>
+<li><a href="index.html#editing" id="markdown-toc-editing">Editing</a> <ul>
+<li><a href="index.html#change-styles-for-focused--unfocused-text-in-focus-mode" id="markdown-toc-change-styles-for-focused--unfocused-text-in-focus-mode">Change Styles for Focused / Unfocused Text in Focus Mode</a></li>
+<li><a href="index.html#do-not-hide-markdown-syntax" id="markdown-toc-do-not-hide-markdown-syntax">Do not Hide Markdown Syntax</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="page-setting">Page Setting</h2>
+<h4 id="change-background">Change Background</h4>
+<p>To change the background of your writing area, see <a href="../Backgound/index.html">https://support.typora.io/Backgound/</a>.</p>
+<h4 id="change-width-of-writing-area">Change Width of Writing Area</h4>
+<p>To change the width of your writing area, see <a href="../Width-of-Writing-Area/index.html">https://support.typora.io/Width-of-Writing-Area/</a>.</p>
+<h2 id="text--font">Text &amp; Font</h2>
+<h4 id="change-font">Change Font</h4>
+<p>To change font color, font family and font size, see <a href="../Custom-Font/index.html">https://support.typora.io/Custom-Font/</a>.</p>
+<h4 id="uppercase-headers">Uppercase Headers</h4>
+<p>For example, to make Heading 1 uppercased, you can use:</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">h1</span> <span class="p">{</span>
+  <span class="nl">text-transform</span><span class="p">:</span> <span class="nb">uppercase</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>You can partially make some text uppercased by inputting HTML directly in Typora:</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;span</span> <span class="na">style=</span><span class="s">"text-transform: uppercase;"</span><span class="nt">&gt;</span>This text will be in uppercase<span class="nt">&lt;/span&gt;</span>
+</code></pre></div></div>
+<h4 id="small-cap-headers">Small-cap Headers</h4>
+<p>For example, to make Heading 4 small-caped, you can use:</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">h4</span> <span class="p">{</span>
+  <span class="nl">font-variant</span><span class="p">:</span> <span class="nb">small-caps</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>You can partially make some text in small-caps by inputting HTML directly in Typora:</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;span</span> <span class="na">style=</span><span class="s">"font-variant: small-caps;"</span><span class="nt">&gt;</span>This text will be in small-caps<span class="nt">&lt;/span&gt;</span>
+</code></pre></div></div>
+<h4 id="ligature">Ligature</h4>
+<p>You can change <a href="https://developer.mozilla.org/en-US/docs/Glossary/ligature">font ligatures</a> by</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">#write</span> <span class="p">{</span>
+  <span class="c">/* Keyword values */</span>
+  <span class="nl">font-variant-ligatures</span><span class="p">:</span> <span class="nb">normal</span><span class="p">;</span>
+  <span class="nl">font-variant-ligatures</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+  <span class="nl">font-variant-ligatures</span><span class="p">:</span> <span class="n">common-ligatures</span><span class="p">;</span>           <span class="c">/* &lt;common-lig-values&gt; */</span>
+  <span class="nl">font-variant-ligatures</span><span class="p">:</span> <span class="n">no-common-ligatures</span><span class="p">;</span>        <span class="c">/* &lt;common-lig-values&gt; */</span>
+  <span class="nl">font-variant-ligatures</span><span class="p">:</span> <span class="n">discretionary-ligatures</span><span class="p">;</span>    <span class="c">/* &lt;discretionary-lig-values&gt; */</span>
+  <span class="nl">font-variant-ligatures</span><span class="p">:</span> <span class="n">no-discretionary-ligatures</span><span class="p">;</span> <span class="c">/* &lt;discretionary-lig-values&gt; */</span>
+  <span class="nl">font-variant-ligatures</span><span class="p">:</span> <span class="n">historical-ligatures</span><span class="p">;</span>       <span class="c">/* &lt;historical-lig-values&gt; */</span>
+  <span class="nl">font-variant-ligatures</span><span class="p">:</span> <span class="n">no-historical-ligatures</span><span class="p">;</span>    <span class="c">/* &lt;historical-lig-values&gt; */</span>
+  <span class="nl">font-variant-ligatures</span><span class="p">:</span> <span class="n">contextual</span><span class="p">;</span>                 <span class="c">/* &lt;contextual-alt-values&gt; */</span>
+  <span class="nl">font-variant-ligatures</span><span class="p">:</span> <span class="n">no-contextual</span><span class="p">;</span>              <span class="c">/* &lt;contextual-alt-values&gt; */</span>
+  <span class="nl">font-variant-ligatures</span><span class="p">:</span> <span class="n">contextual</span><span class="p">;</span>                 <span class="c">/* &lt;no-historical-ligatures&gt; &lt;common-ligatures&gt; */</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h2 id="paragraph--alignment">Paragraph &amp; Alignment</h2>
+<h4 id="justify-alignment">Justify Alignment</h4>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">#write</span> <span class="p">{</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">justify</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h4 id="center-alignment">Center alignment</h4>
+<p>For example, center align Heading 4, you can use</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">h4</span> <span class="p">{</span>
+  <span class="nl">text-align</span><span class="p">:</span><span class="nb">center</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>You can partially make a paragraph with centered texts by inputting HTML directly in Typora:</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;center&gt;</span>This text will be center aligned<span class="nt">&lt;/center&gt;</span>
+</code></pre></div></div>
+<h4 id="right-to-left-writing">Right to Left Writing</h4>
+<p>RTL (right-to-left) support is limited, see <a href="../RTL/index.html">https://support.typora.io/RTL/</a>.</p>
+<h4 id="vertical-writing">Vertical Writing</h4>
+<p>Vertical writing support is limited.</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">#write</span> <span class="p">{</span>
+   <span class="nl">writing-mode</span><span class="p">:</span> <span class="n">vertical-rl</span><span class="p">;</span> <span class="c">/*make it vertical rendering*/</span>
+   <span class="nl">-webkit-writing-mode</span><span class="p">:</span> <span class="n">vertical-rl</span><span class="p">;</span>
+  <span class="nl">text-orientation</span><span class="p">:</span> <span class="n">mixed</span><span class="p">;</span>
+  <span class="nl">overflow-x</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span> <span class="c">/* This enables horizontal scrolling */</span>
+<span class="p">}</span>
+
+<span class="c">/* remove the default margin top */</span>
+<span class="nf">#write</span> <span class="o">&gt;</span> <span class="nt">p</span><span class="nd">:first-child</span><span class="o">,</span> <span class="nf">#write</span> <span class="o">&gt;</span> <span class="nt">ul</span><span class="nd">:first-child</span><span class="o">,</span> <span class="nf">#write</span> <span class="o">&gt;</span> <span class="nt">ol</span><span class="nd">:first-child</span><span class="o">,</span> <span class="nf">#write</span> <span class="o">&gt;</span> <span class="nt">pre</span><span class="nd">:first-child</span><span class="o">,</span> <span class="nf">#write</span> <span class="o">&gt;</span> <span class="nt">blockquote</span><span class="nd">:first-child</span><span class="o">,</span> <span class="nf">#write</span> <span class="o">&gt;</span> <span class="nt">div</span><span class="nd">:first-child</span><span class="o">,</span> <span class="nf">#write</span> <span class="o">&gt;</span> <span class="nt">table</span><span class="nd">:first-child</span> <span class="p">{</span>
+    <span class="nl">margin-top</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>For known issues, see <a href="https://github.com/typora/typora-issues/issues/1121">https://github.com/typora/typora-issues/issues/1121</a>.</p>
+<h4 id="center--do-not-center-image">Center / Do not Center Image</h4>
+<p>In default theme, if one paragraph it nothing but one image, Typora will center align it.</p>
+<p>To change this behavior, or center align multiple images, see <a href="https://support.typora.io/Images/#align-images">https://support.typora.io/Images/#align-images</a>.</p>
+<h2 id="components">Components</h2>
+<h4 id="auto-numbering-for-headings--outline--toc">Auto Numbering for Headings / Outline / TOC</h4>
+<p>See <a href="../Auto-Numbering/index.html">https://support.typora.io/Auto-Numbering/</a>.</p>
+<h4 id="control-toc-levels">Control TOC Levels</h4>
+<p>See <a href="../TOC-levels/index.html">https://support.typora.io/TOC-levels/</a>.</p>
+<h4 id="change-color-themes-for-code-fences--source-code-mode">Change Color Themes for Code Fences / Source Code Mode</h4>
+<p>See <a href="../Code-Block-Styles/index.html">https://support.typora.io/Code-Block-Styles/</a>.</p>
+<h4 id="erase-completed-tasks">“Erase” Completed Tasks</h4>
+<p>See <a href="../Task-List/index.html#erase-completed-tasks">https://support.typora.io/Task-List/#erase-completed-tasks</a>.</p>
+<h4 id="styles-for-diagrams">Styles for Diagrams</h4>
+<p>See <a href="../Draw-Diagrams-With-Markdown/index.html#sequence-diagrams-options">https://support.typora.io/Draw-Diagrams-With-Markdown/#sequence-diagrams-options</a> and <a href="../Draw-Diagrams-With-Markdown/index.html#mermaid-options">https://support.typora.io/Draw-Diagrams-With-Markdown/#mermaid-options</a>.</p>
+<h2 id="editing">Editing</h2>
+<h4 id="change-styles-for-focused--unfocused-text-in-focus-mode">Change Styles for Focused / Unfocused Text in <a href="../Focus-and-Typewriter-Mode/index.html">Focus Mode</a></h4>
+<p>See <a href="../Change-Styles-in-Focus-Mode/index.html">https://support.typora.io/Change-Styles-in-Focus-Mode/</a>.</p>
+<h4 id="do-not-hide-markdown-syntax">Do not Hide Markdown Syntax</h4>
+<p>You could check the <a href="https://theme.typora.io/theme/Monospace/">https://theme.typora.io/theme/Monospace/</a> theme.</p>
+<p>In short, it uses CSS to prevent markdown syntax from hiding:</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.md-meta</span><span class="o">,</span>
+<span class="nc">.md-content</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">inline</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+</div>
+</div>
+<footer id="post-footer" style="
+        background-color: rgb(51, 51, 51);
+        padding-top: 50px;
+        padding-bottom: 50px;
+        text-align: center;
+        font-size: 13px;
+      ">
+<a data-has-mirror href="https://store.typora.io">Get Typora</a> /
+<a href="https://github.com/typora/wiki-website">Help Improve our documents</a
+      >
+</footer>
+<script>
+      var backBtn = document.querySelector("#title-bar-feature-btn");
+      if (backBtn) {
+        backBtn.onclick = function (event) {
+          if (
+            window.history.length > 1 &&
+            document.referrer.indexOf(window.location.host) !== -1
+          ) {
+            console.log(" window.history.back");
+            event.preventDefault();
+            window.history.back();
+          }
+        };
+      }
+      if (location.host == "support.typoraio.cn" || location.host == "support.typora.com.cn") {
+        document.querySelectorAll("[data-has-mirror]").forEach((a) => {
+          var href = a.href;
+          if (href.indexOf("store.typora.io") > 0)
+            href = "https://typoraio.cn/";
+          else if (href.indexOf("https://typora.io") > -1)
+            href = "https://typoraio.cn/";
+          else href = href.replace("typora.io", "typoraio.cn");
+          a.href = href;
+        });
+      }
+    </script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-56771470-2", "auto");
+      ga("set", "page", "/support");
+      ga("send", "pageview");
+    </script>
+
+<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ed23a5bcf8c017f"></script>
+
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Change Background - Typora Support</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@typora" />
+<meta name="twitter:title" content="Change Background" />
+<meta name="twitter:url" content="/Backgound/" />
+<meta name="twitter:description" content="NOTE: Some of following CSS style will only work for recent versions of Typora (&gt;= 0.9.9.6 on macOS, and &gt;=0.9.13 on Windows). TIP: To know where to put those CSS snippets, please see Add Custom CSS. Personally, I don’t recommend users set a background for a text editor, but if you still want this, here’s what to do. For example, add a notebook background for Typora. (This free image is taken from Fuzzimo, and is copied under the theme folder of Typora.) Use CSS code like: content { background: url(./fzm-seamless.notebook.texture-14.png); background-repeat: repeat; } #write { padding-left: 120px; /*adjust writing area..." />
+<meta name="twitter:image:src" content="http://typora.io/img/twitter-sum.png" />
+<meta name="twitter:image" content="http://typora.io/img/twitter-sum.png" />
+<meta property="og:url" content="/Backgound/" />
+<meta property="og:title" content="Change Background" />
+<meta property="og:description" content="NOTE: Some of following CSS style will only work for recent versions of Typora (&gt;= 0.9.9.6 on macOS, and &gt;=0.9.13 on Windows). TIP: To know where to put those CSS snippets, please see Add Custom CSS. Personally, I don’t recommend users set a background for a text editor, but if you still want this, here’s what to do. For example, add a notebook background for Typora. (This free image is taken from Fuzzimo, and is copied under the theme folder of Typora.) Use CSS code like: content { background: url(./fzm-seamless.notebook.texture-14.png); background-repeat: repeat; } #write { padding-left: 120px; /*adjust writing area..." />
+<meta name="og:image" content="http://typora.io/img/twitter-sum.png" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+
+<link href="../assets/css/pure-min.css" rel="stylesheet" />
+
+<link href="../assets/css/syntax.css" rel="stylesheet" />
+<link href="../assets/css/typora-wiki.css" rel="stylesheet" />
+<link rel="icon" href="../assets/img/favicon-16.png" sizes="16x16" />
+<link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32" />
+<link rel="icon" href="https://support.typora.io/assets/img/favicon-64.png" sizes="64x64" />
+<link rel="icon" href="../assets/img/favicon-128.png" sizes="128x128" />
+<script>
+      if (
+        window.location.host.indexOf("typora.io") > -1 &&
+        window.location.protocol != "https:"
+      ) {
+        window.location.protocol = "https";
+      }
+      if (location.host == "support.typora.com.cn") {
+        location = `https://support.typoraio.cn${location.pathname}${location.hash}`;
+      }
+    </script>
+</head>
+<body>
+<style type="text/css">
+      body {
+        
+          font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman",
+          "STSong", Serif;
+		    
+        font-weight: 300;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #2e2e2e;
+        line-height: 1.15em;
+        font-family: "Open Sans", "Hiragino Sans GB", "Microsoft YaHei",
+          "WenQuanYi Micro Hei", sans-serif;
+        text-rendering: geometricPrecision;
+      }
+
+      #pagecontainer {
+        background-color: #fff;
+        min-height: calc(100vh - 510px);
+        flex: 2;
+      }
+
+      #post-content {
+        padding-top: 36px;
+        border-top: 1px dashed #999999;
+        line-height: 1.6rem;
+        padding-bottom: 100px;
+      }
+
+      #post-content > blockquote:first-child {
+        padding-top: 0.4em;
+        padding-bottom: 0.4em;
+        margin-bottom: 2em;
+        margin-left: 0;
+      }
+
+      .nav {
+        border-bottom: none;
+        height: auto;
+      }
+
+      .inner-page {
+        width: 90%;
+        max-width: 800px;
+        margin: auto;
+      }
+
+      h1 {
+        border-bottom: 0;
+      }
+
+      #header {
+        padding-bottom: 32px;
+      }
+
+      #header h1 {
+        text-align: center;
+        white-space: pre-wrap;
+        width: 90%;
+        margin: 81px auto 48px auto;
+      }
+
+      h1 {
+        font-size: 3.6rem;
+        letter-spacing: -2px;
+        text-indent: -3px;
+      }
+
+      h2 {
+        margin-top: 2em;
+      }
+
+      .pure-menu-active > .pure-menu-link,
+      .pure-menu-link:hover,
+      .pure-menu-link:focus {
+        background-color: initial;
+        border: #777 solid 1px;
+      }
+
+      .post-meta {
+        font-style: italic;
+        text-align: center;
+        color: #7a7a7a;
+      }
+
+      div.highlighter-rouge {
+        padding: 8px;
+        border: 1px #777 solid;
+        line-height: 1.2rem;
+        font-family: Menlo, Monaco, "Courier New", monospace;
+      }
+
+      div.highlighter-rouge pre {
+        font-size: 0.95em;
+        overflow: hidden;
+        word-break: break-word;
+        white-space: pre-wrap;
+      }
+
+      a {
+        color: #463f5c;
+        text-decoration: underline;
+      }
+    </style>
+<header class="pure-menu pure-menu-horizontal nav post-title" id="header">
+<div class="gallery">
+<ul class="pure-menu-list" style="float: left; margin-left: 1em; position: absolute">
+<li class="pure-menu-item pure-menu-active">
+<a href="../index.html" class="pure-menu-link" id="title-bar-feature-btn">Back</a
+            >
+</li>
+</ul>
+</div>
+<h1>Change Background</h1>
+<section class="post-meta">
+<time>June 24, 2016</time>
+by
+<span>typora.io</span>
+</section>
+</header>
+<div id="pagecontainer" class="container">
+<div id="post-content" class="inner-page"><blockquote>
+<p>NOTE: Some of following CSS style will only work for recent versions of Typora (&gt;= 0.9.9.6 on macOS, and &gt;=0.9.13 on Windows).</p>
+</blockquote>
+<blockquote>
+<p>TIP: To know where to put those CSS snippets, please see <a href="../Add-Custom-CSS/index.html">Add Custom CSS</a>.</p>
+</blockquote>
+<p>Personally, I don’t recommend users set a background for a text editor, but if you still want this, here’s what to do.</p>
+<p>For example, add a notebook background for Typora. (This free image is taken from <a href="http://www.fuzzimo.com/free-seamless-textures-notebook-papers/">Fuzzimo</a>, and is copied under the theme folder of Typora.)</p>
+<p>Use CSS code like:</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">content</span> <span class="p">{</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="sx">url(./fzm-seamless.notebook.texture-14.png)</span><span class="p">;</span>
+  <span class="nl">background-repeat</span><span class="p">:</span> <span class="nb">repeat</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#write</span> <span class="p">{</span>
+  <span class="nl">padding-left</span><span class="p">:</span> <span class="m">120px</span><span class="p">;</span> <span class="c">/*adjust writing area position*/</span>
+<span class="p">}</span>
+
+<span class="nt">body</span> <span class="p">{</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="m">#F3F3F3</span><span class="p">;</span> 
+  <span class="c">/*Please set this background color as close to the background image as possible.
+  titlebar for seamless window on macOS will use this background color. 
+  typora for Win/Linux will use this to judge whether typora is in dark mode or light mode*/</span>
+<span class="p">}</span>
+
+<span class="c">/**Other css may needed to adjust UI components**/</span>
+</code></pre></div></div>
+<p>The result is:</p>
+<p><img src="../media/background/Snip20160625_1.png" alt="Snip20160625_1" /></p>
+<p>Another example:</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">content</span> <span class="p">{</span>
+  <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url(http://localhost:4000/media/background/crashed_ship_by_hiddenvortexdesigns-da57nk8.jpg)</span><span class="p">;</span>
+  <span class="nl">background-repeat</span><span class="p">:</span> <span class="nb">repeat</span><span class="p">;</span>
+  <span class="nl">background-position</span><span class="p">:</span> <span class="m">-52px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#write</span> <span class="p">{</span>
+  <span class="nl">margin-top</span><span class="p">:</span> <span class="m">24px</span><span class="p">;</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">0.68</span><span class="p">);</span>
+  <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">24px</span><span class="p">;</span>
+  <span class="nl">min-height</span><span class="p">:</span> <span class="n">calc</span><span class="p">(</span><span class="m">100%</span> <span class="n">-</span> <span class="m">48px</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nt">body</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="m">#8F9D9A</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/**Other CSS to adjust UI components*/</span>
+</code></pre></div></div>
+<p>Produces:</p>
+<p><img src="../media/background/Snip20160625_2.png" alt="Snip20160625_2" /></p>
+</div>
+</div>
+<footer id="post-footer" style="
+        background-color: rgb(51, 51, 51);
+        padding-top: 50px;
+        padding-bottom: 50px;
+        text-align: center;
+        font-size: 13px;
+      ">
+<a data-has-mirror href="https://store.typora.io">Get Typora</a> /
+<a href="https://github.com/typora/wiki-website">Help Improve our documents</a
+      >
+</footer>
+<script>
+      var backBtn = document.querySelector("#title-bar-feature-btn");
+      if (backBtn) {
+        backBtn.onclick = function (event) {
+          if (
+            window.history.length > 1 &&
+            document.referrer.indexOf(window.location.host) !== -1
+          ) {
+            console.log(" window.history.back");
+            event.preventDefault();
+            window.history.back();
+          }
+        };
+      }
+      if (location.host == "support.typoraio.cn" || location.host == "support.typora.com.cn") {
+        document.querySelectorAll("[data-has-mirror]").forEach((a) => {
+          var href = a.href;
+          if (href.indexOf("store.typora.io") > 0)
+            href = "https://typoraio.cn/";
+          else if (href.indexOf("https://typora.io") > -1)
+            href = "https://typoraio.cn/";
+          else href = href.replace("typora.io", "typoraio.cn");
+          a.href = href;
+        });
+      }
+    </script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-56771470-2", "auto");
+      ga("set", "page", "/support");
+      ga("send", "pageview");
+    </script>
+
+<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ed23a5bcf8c017f"></script>
+
+</body>
+</html>

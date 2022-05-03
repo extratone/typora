@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>File Management - Typora Support</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@typora" />
+<meta name="twitter:title" content="File Management" />
+<meta name="twitter:url" content="/File-Management/" />
+<meta name="twitter:description" content="This document may get updated after more or better file management features being introduced in future. Open Folder Files Sidebar Actions in File Sidebar Refresh File List / Tree Switch Folder Sort Files Move File Undo File Operation Links to File Open Quickly Global Search Tags Set Default Folder on Launch Reopen Last File on Launch JumpList (Windows) Open Folder You could select a folder in the open file dialog popup from File → Open menu to open a folder in Typora. Actually you do not need to open folder explicitly in this way, when you open a file, its..." />
+<meta name="twitter:image:src" content="http://typora.io/img/twitter-sum.png" />
+<meta name="twitter:image" content="http://typora.io/img/twitter-sum.png" />
+<meta property="og:url" content="/File-Management/" />
+<meta property="og:title" content="File Management" />
+<meta property="og:description" content="This document may get updated after more or better file management features being introduced in future. Open Folder Files Sidebar Actions in File Sidebar Refresh File List / Tree Switch Folder Sort Files Move File Undo File Operation Links to File Open Quickly Global Search Tags Set Default Folder on Launch Reopen Last File on Launch JumpList (Windows) Open Folder You could select a folder in the open file dialog popup from File → Open menu to open a folder in Typora. Actually you do not need to open folder explicitly in this way, when you open a file, its..." />
+<meta name="og:image" content="http://typora.io/img/twitter-sum.png" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+
+<link href="../assets/css/pure-min.css" rel="stylesheet" />
+
+<link href="../assets/css/syntax.css" rel="stylesheet" />
+<link href="../assets/css/typora-wiki.css" rel="stylesheet" />
+<link rel="icon" href="../assets/img/favicon-16.png" sizes="16x16" />
+<link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32" />
+<link rel="icon" href="https://support.typora.io/assets/img/favicon-64.png" sizes="64x64" />
+<link rel="icon" href="../assets/img/favicon-128.png" sizes="128x128" />
+<script>
+      if (
+        window.location.host.indexOf("typora.io") > -1 &&
+        window.location.protocol != "https:"
+      ) {
+        window.location.protocol = "https";
+      }
+      if (location.host == "support.typora.com.cn") {
+        location = `https://support.typoraio.cn${location.pathname}${location.hash}`;
+      }
+    </script>
+</head>
+<body>
+<style type="text/css">
+      body {
+        
+          font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman",
+          "STSong", Serif;
+		    
+        font-weight: 300;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #2e2e2e;
+        line-height: 1.15em;
+        font-family: "Open Sans", "Hiragino Sans GB", "Microsoft YaHei",
+          "WenQuanYi Micro Hei", sans-serif;
+        text-rendering: geometricPrecision;
+      }
+
+      #pagecontainer {
+        background-color: #fff;
+        min-height: calc(100vh - 510px);
+        flex: 2;
+      }
+
+      #post-content {
+        padding-top: 36px;
+        border-top: 1px dashed #999999;
+        line-height: 1.6rem;
+        padding-bottom: 100px;
+      }
+
+      #post-content > blockquote:first-child {
+        padding-top: 0.4em;
+        padding-bottom: 0.4em;
+        margin-bottom: 2em;
+        margin-left: 0;
+      }
+
+      .nav {
+        border-bottom: none;
+        height: auto;
+      }
+
+      .inner-page {
+        width: 90%;
+        max-width: 800px;
+        margin: auto;
+      }
+
+      h1 {
+        border-bottom: 0;
+      }
+
+      #header {
+        padding-bottom: 32px;
+      }
+
+      #header h1 {
+        text-align: center;
+        white-space: pre-wrap;
+        width: 90%;
+        margin: 81px auto 48px auto;
+      }
+
+      h1 {
+        font-size: 3.6rem;
+        letter-spacing: -2px;
+        text-indent: -3px;
+      }
+
+      h2 {
+        margin-top: 2em;
+      }
+
+      .pure-menu-active > .pure-menu-link,
+      .pure-menu-link:hover,
+      .pure-menu-link:focus {
+        background-color: initial;
+        border: #777 solid 1px;
+      }
+
+      .post-meta {
+        font-style: italic;
+        text-align: center;
+        color: #7a7a7a;
+      }
+
+      div.highlighter-rouge {
+        padding: 8px;
+        border: 1px #777 solid;
+        line-height: 1.2rem;
+        font-family: Menlo, Monaco, "Courier New", monospace;
+      }
+
+      div.highlighter-rouge pre {
+        font-size: 0.95em;
+        overflow: hidden;
+        word-break: break-word;
+        white-space: pre-wrap;
+      }
+
+      a {
+        color: #463f5c;
+        text-decoration: underline;
+      }
+    </style>
+<header class="pure-menu pure-menu-horizontal nav post-title" id="header">
+<div class="gallery">
+<ul class="pure-menu-list" style="float: left; margin-left: 1em; position: absolute">
+<li class="pure-menu-item pure-menu-active">
+<a href="../index.html" class="pure-menu-link" id="title-bar-feature-btn">Back</a
+            >
+</li>
+</ul>
+</div>
+<h1>File Management</h1>
+<section class="post-meta">
+<time>January 6, 2019</time>
+by
+<span>typora.io</span>
+</section>
+</header>
+<div id="pagecontainer" class="container">
+<div id="post-content" class="inner-page"><blockquote>
+<p>This document may get updated after more or better file management features being introduced in future.</p>
+</blockquote>
+<ul id="markdown-toc">
+<li><a href="index.html#open-folder" id="markdown-toc-open-folder">Open Folder</a></li>
+<li><a href="index.html#files-sidebar" id="markdown-toc-files-sidebar">Files Sidebar</a> <ul>
+<li><a href="index.html#actions-in-file-sidebar" id="markdown-toc-actions-in-file-sidebar">Actions in File Sidebar</a></li>
+<li><a href="index.html#refresh-file-list--tree" id="markdown-toc-refresh-file-list--tree">Refresh File List / Tree</a></li>
+<li><a href="index.html#switch-folder" id="markdown-toc-switch-folder">Switch Folder</a></li>
+<li><a href="index.html#sort-files" id="markdown-toc-sort-files">Sort Files</a></li>
+<li><a href="index.html#move-file" id="markdown-toc-move-file">Move File</a></li>
+<li><a href="index.html#undo-file-operation" id="markdown-toc-undo-file-operation">Undo File Operation</a></li>
+</ul>
+</li>
+<li><a href="index.html#links-to-file" id="markdown-toc-links-to-file">Links to File</a></li>
+<li><a href="index.html#open-quickly" id="markdown-toc-open-quickly">Open Quickly</a></li>
+<li><a href="index.html#global-search" id="markdown-toc-global-search">Global Search</a> <ul>
+<li><a href="index.html#tags" id="markdown-toc-tags">Tags</a></li>
+</ul>
+</li>
+<li><a href="index.html#set-default-folder-on-launch" id="markdown-toc-set-default-folder-on-launch">Set Default Folder on Launch</a></li>
+<li><a href="index.html#reopen-last-file-on-launch" id="markdown-toc-reopen-last-file-on-launch">Reopen Last File on Launch</a></li>
+<li><a href="index.html#jumplist-windows" id="markdown-toc-jumplist-windows">JumpList (Windows)</a></li>
+</ul>
+<h2 id="open-folder">Open Folder</h2>
+<p>You could select a folder in the open file dialog popup from <code class="language-plaintext highlighter-rouge">File</code> → <code class="language-plaintext highlighter-rouge">Open</code> menu to open a folder in Typora. Actually you do not need to open folder explicitly in this way, when you open a file, its parent folder will be automatically loaded, you could check the folder from “Files Sidebar”, which will be introduce below.</p>
+<h2 id="files-sidebar">Files Sidebar</h2>
+<p>User can toggle sidebar from menubar or from titlebar on macOS and from status bar on Windows/Linux.</p>
+<p>Typora has two types of sidebar:</p>
+<ul>
+<li>Outline Panel (display <em>table of contents</em> of current document)</li>
+<li>File Tree (display loaded folder in tree hierarchy)</li>
+<li>File List (display files in loaded folder as lists)</li>
+</ul>
+<div style="text-align:center">
+<figure style="margin:0;display:inline-block;">
+<img src="../media/files/CleanShot&#32;2019-01-06&#32;at&#32;00.12.18@2x.png" alt="toggle sidebar on macOS" style="zoom:50%;height: 158px;" />
+<figcaption><center><i>Toggle Sidebar on macOS</i></center></figcaption>
+</figure>
+<figure style="margin:0;display:inline-block;">
+<img src="../media/files/CleanShot&#32;2019-01-06&#32;at&#32;00.13.25@2x.png" alt="toggle sidebar on macOS" style="zoom:50%;height: 158px;" />
+<figcaption><center><i>Toggle Sidebar on Windows/Linux</i></center></figcaption>
+</figure>
+</div>
+<p>In file tree mode, currently only folder and files that are supported by Typora (Markdown file, text file, etc) is displayed.</p>
+<h3 id="actions-in-file-sidebar">Actions in File Sidebar</h3>
+<p>Users could hover on side panel to show more buttons. On the bottom of left side bar, user can pop up menu items for current folder.</p>
+<div style="text-align:center;">
+<img src="../media/files/Screen&#32;Shot&#32;2019-01-06&#32;at&#32;00.42.56.png" style="zoom:50%;margin-right:16px;display:inline-block;" />
+<img src="../media/files/Screen&#32;Shot&#32;2019-01-06&#32;at&#32;00.43.20.png" style="zoom:50%;margin-left:16px;display:inline-block;" />
+</div>
+<p>Other supported options can be found in context menu of specific file/folder. Supported actions includes:</p>
+<ul>
+<li>Open</li>
+<li>Open in New Window</li>
+<li>Undo File Operations</li>
+<li>New File/Folder</li>
+<li>Duplicate</li>
+<li>Rename</li>
+<li>Delete (Move to Trash)</li>
+<li>Copy File Path</li>
+<li>Reveal in Finder or Explorer</li>
+<li>…</li>
+</ul>
+<h3 id="refresh-file-list--tree">Refresh File List / Tree</h3>
+<p>Typora will watch file changes in opened folder, and the file tree / list will be updated automatically when change happens, such as file being moved or deleted.</p>
+<p>But in case the file tree / list does not updated correctly, you could perform a manual refresh by click “Refresh” item in the bottom menu of side bar.</p>
+<h3 id="switch-folder">Switch Folder</h3>
+<p>You could click “Open Folder…” item in the menu of file sidebar to open or switch current folder position.</p>
+<h3 id="sort-files">Sort Files</h3>
+<p>User can sort files by alphabet, natural order<sup id="fnref:nature-sort" role="doc-noteref"><a href="index.html#fn:nature-sort" class="footnote" rel="footnote">1</a></sup> or modified date. Sort type can be changed from menu of file sidebar.</p>
+<p><img src="../media/new-59/Screen&#32;Shot&#32;2018-10-23&#32;at&#32;00.28.46.png" alt="Screen Shot 2018-10-23 at 00.28.46" /></p>
+<h3 id="move-file">Move File</h3>
+<p>File or folder can be moved by drag and drop in file tree panel.</p>
+<video preload="auto" autoplay="autoplay" style="width: 100%;" muted="muted" loop="">
+<source src="../media/files/move-files.mp4" type="video/mp4" />
+</video>
+<p>You could also drag and drop between Finder/Explorer and Typora’s sidebar.</p>
+<video src="../media/files/move&#32;to&#32;finder.mp4" preload="auto" autoplay="autoplay" style="width: 100%;" muted="muted" loop=""></video>
+<p>Also, drag file/folder from sidebar to writing area to would insert links towards dragged files.</p>
+<h3 id="undo-file-operation">Undo File Operation</h3>
+<p>You could undo last file operation such as move, rename or delete (only on macOS) file.</p>
+<video preload="auto" autoplay="autoplay" style="width: 100%;" muted="muted" loop="">
+<source src="../media/files/undo.mp4" type="video/mp4" />
+</video>
+<p>Please note that only last <strong>one</strong> file operation in Typora is undoable, on Windows/Linux, delete file is not undoable, and it may fail in some case (for example, file exists at target file when undo move file operation).</p>
+<h2 id="links-to-file">Links to File</h2>
+<p>You could use hyperlink syntax ( <code class="language-plaintext highlighter-rouge">[label](src)</code> ) to create links that links to other files/folder, the <code class="language-plaintext highlighter-rouge">src</code> part can be either absolute path or relative path, for example: <code class="language-plaintext highlighter-rouge">[Readme](readme.md)</code>.</p>
+<p>(Typora ≥ 1.1) If target file does not exist, Typora will guide you to create the file automatically.</p>
+<p>(Typora ≥ 1.1) If you want to jump to target position of other files, you could append anchor after file target. For example, <code class="language-plaintext highlighter-rouge">[Readme](readme.md#header-1)</code> allows to jump to “header 1” position of <code class="language-plaintext highlighter-rouge">readme.md</code>. You can follow <a href="../Links/index.html#internal-links">internal links</a> about how to write an anchor.</p>
+<h2 id="open-quickly">Open Quickly</h2>
+<p>The quick open panel can be popped up by pressing <kbd>Command+Shift+O</kbd> (<em>on macOS</em>) or <kbd>Ctrl+P</kbd> (<em>on Windows/Linux</em>), or click “Open Quickly” from <code class="language-plaintext highlighter-rouge">File</code> menu.</p>
+<p>You could use fuzzy search to find &amp; open files in current folder quickly.</p>
+<p><img src="../media/files/Screen&#32;Shot&#32;2019-01-24&#32;at&#32;23.39.15.png" style="zoom:50%" /></p>
+<h2 id="global-search">Global Search</h2>
+<p><img src="../media/files/Screen&#32;Shot&#32;2019-01-06&#32;at&#32;22.18.56.png" style="zoom:50%" /></p>
+<p>You could click the “Search” icon on side panel on macOS or just scroll top on side panel on Windows/Linux version of Typora to show global search input. Or use hotkey <kbd>Command(Ctrl) + Shift + F</kbd> to open global search.</p>
+<h4 id="tags">Tags</h4>
+<p>Typora does not support <code class="language-plaintext highlighter-rouge">#tags</code> natively, but if you use <code class="language-plaintext highlighter-rouge">#tags</code> in your article, you could search “#tags” in global search to find all matched files.</p>
+<h2 id="set-default-folder-on-launch">Set Default Folder on Launch</h2>
+<p>As a file based Markdown editor, Typora does not have concepts like “default working folder”, but if you want Typora to load certain folder on launch, you could set a folder in Typora’s “launch options”.</p>
+<p><img src="../media/files/Screen&#32;Shot&#32;2019-01-06&#32;at&#32;22.39.31.png" style="zoom:50%;" /></p>
+<h2 id="reopen-last-file-on-launch">Reopen Last File on Launch</h2>
+<p>For Windows / Linux version, you can set this in <code class="language-plaintext highlighter-rouge">Preferences Panel</code> → <code class="language-plaintext highlighter-rouge">General</code> → <code class="language-plaintext highlighter-rouge">On Launch</code>.</p>
+<p><img src="https://user-images.githubusercontent.com/1621242/131283200-36c2c2fc-16d4-4257-89f4-dadf778f5406.png" alt="image" /></p>
+<p>For macOS version, you can do following:</p>
+<ol>
+<li>Choose Apple menu &gt; System Preferences, then click General. Open General preferences.</li>
+<li><strong>Uncheck</strong> “Close windows when quitting an app.”</li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/1621242/131282682-a6c4a25c-c6b5-403c-ad5e-ad5918a99386.png" style="zoom:50%;" /></p>
+<p>You can read more on <a href="https://support.apple.com/en-us/HT204005">Prevent apps and windows from reopening</a></p>
+<h2 id="jumplist-windows">JumpList (Windows)</h2>
+<p>Typora will put recent used folders/files on the jump list of Typora, you could <strong>pin</strong> frequently used file/folder and access them quickly from task bar.</p>
+<p><img src="../media/files/jump&#32;list.PNG" style="zoom:75%;" /></p>
+<p>Recent file and recent folder can be cleared by click “Open Recent” → “Clear Items” from File menu.</p>
+<hr />
+<div class="footnotes" role="doc-endnotes">
+<ol>
+<li id="fn:nature-sort" role="doc-endnote">
+<p>We will sort by file name naturally, for example: 1-xxx, 2-xxx, 10-xxx instead of in alphabet order (1-xxx, 10-xxx, 2-xxx). <a href="index.html#fnref:nature-sort" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<footer id="post-footer" style="
+        background-color: rgb(51, 51, 51);
+        padding-top: 50px;
+        padding-bottom: 50px;
+        text-align: center;
+        font-size: 13px;
+      ">
+<a data-has-mirror href="https://store.typora.io">Get Typora</a> /
+<a href="https://github.com/typora/wiki-website">Help Improve our documents</a
+      >
+</footer>
+<script>
+      var backBtn = document.querySelector("#title-bar-feature-btn");
+      if (backBtn) {
+        backBtn.onclick = function (event) {
+          if (
+            window.history.length > 1 &&
+            document.referrer.indexOf(window.location.host) !== -1
+          ) {
+            console.log(" window.history.back");
+            event.preventDefault();
+            window.history.back();
+          }
+        };
+      }
+      if (location.host == "support.typoraio.cn" || location.host == "support.typora.com.cn") {
+        document.querySelectorAll("[data-has-mirror]").forEach((a) => {
+          var href = a.href;
+          if (href.indexOf("store.typora.io") > 0)
+            href = "https://typoraio.cn/";
+          else if (href.indexOf("https://typora.io") > -1)
+            href = "https://typoraio.cn/";
+          else href = href.replace("typora.io", "typoraio.cn");
+          a.href = href;
+        });
+      }
+    </script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-56771470-2", "auto");
+      ga("set", "page", "/support");
+      ga("send", "pageview");
+    </script>
+
+<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ed23a5bcf8c017f"></script>
+
+</body>
+</html>

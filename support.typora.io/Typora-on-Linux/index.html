@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Install Typora on Linux - Typora Support</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@typora" />
+<meta name="twitter:title" content="Install Typora on Linux" />
+<meta name="twitter:url" content="/Typora-on-Linux/" />
+<meta name="twitter:description" content="Installation instructions for different flavours of Linux. Debian/Ubuntu # or use # sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add - # add Typora's repository sudo add-apt-repository 'deb https://typora.io/linux ./' sudo apt-get update # install typora sudo apt-get install typora Alternative for apt-key When you try to add an APT repository key using apt-key (first line in previous command line) on Debian, Ubuntu and Linux distributions based on these, you’ll see the following message: “Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8))”. The easiest way would be just to..." />
+<meta name="twitter:image:src" content="http://typora.io/img/twitter-sum.png" />
+<meta name="twitter:image" content="http://typora.io/img/twitter-sum.png" />
+<meta property="og:url" content="/Typora-on-Linux/" />
+<meta property="og:title" content="Install Typora on Linux" />
+<meta property="og:description" content="Installation instructions for different flavours of Linux. Debian/Ubuntu # or use # sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add - # add Typora's repository sudo add-apt-repository 'deb https://typora.io/linux ./' sudo apt-get update # install typora sudo apt-get install typora Alternative for apt-key When you try to add an APT repository key using apt-key (first line in previous command line) on Debian, Ubuntu and Linux distributions based on these, you’ll see the following message: “Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8))”. The easiest way would be just to..." />
+<meta name="og:image" content="http://typora.io/img/twitter-sum.png" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+
+<link href="../assets/css/pure-min.css" rel="stylesheet" />
+
+<link href="../assets/css/syntax.css" rel="stylesheet" />
+<link href="../assets/css/typora-wiki.css" rel="stylesheet" />
+<link rel="icon" href="../assets/img/favicon-16.png" sizes="16x16" />
+<link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32" />
+<link rel="icon" href="https://support.typora.io/assets/img/favicon-64.png" sizes="64x64" />
+<link rel="icon" href="../assets/img/favicon-128.png" sizes="128x128" />
+<script>
+      if (
+        window.location.host.indexOf("typora.io") > -1 &&
+        window.location.protocol != "https:"
+      ) {
+        window.location.protocol = "https";
+      }
+      if (location.host == "support.typora.com.cn") {
+        location = `https://support.typoraio.cn${location.pathname}${location.hash}`;
+      }
+    </script>
+</head>
+<body>
+<style type="text/css">
+      body {
+        
+          font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman",
+          "STSong", Serif;
+		    
+        font-weight: 300;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #2e2e2e;
+        line-height: 1.15em;
+        font-family: "Open Sans", "Hiragino Sans GB", "Microsoft YaHei",
+          "WenQuanYi Micro Hei", sans-serif;
+        text-rendering: geometricPrecision;
+      }
+
+      #pagecontainer {
+        background-color: #fff;
+        min-height: calc(100vh - 510px);
+        flex: 2;
+      }
+
+      #post-content {
+        padding-top: 36px;
+        border-top: 1px dashed #999999;
+        line-height: 1.6rem;
+        padding-bottom: 100px;
+      }
+
+      #post-content > blockquote:first-child {
+        padding-top: 0.4em;
+        padding-bottom: 0.4em;
+        margin-bottom: 2em;
+        margin-left: 0;
+      }
+
+      .nav {
+        border-bottom: none;
+        height: auto;
+      }
+
+      .inner-page {
+        width: 90%;
+        max-width: 800px;
+        margin: auto;
+      }
+
+      h1 {
+        border-bottom: 0;
+      }
+
+      #header {
+        padding-bottom: 32px;
+      }
+
+      #header h1 {
+        text-align: center;
+        white-space: pre-wrap;
+        width: 90%;
+        margin: 81px auto 48px auto;
+      }
+
+      h1 {
+        font-size: 3.6rem;
+        letter-spacing: -2px;
+        text-indent: -3px;
+      }
+
+      h2 {
+        margin-top: 2em;
+      }
+
+      .pure-menu-active > .pure-menu-link,
+      .pure-menu-link:hover,
+      .pure-menu-link:focus {
+        background-color: initial;
+        border: #777 solid 1px;
+      }
+
+      .post-meta {
+        font-style: italic;
+        text-align: center;
+        color: #7a7a7a;
+      }
+
+      div.highlighter-rouge {
+        padding: 8px;
+        border: 1px #777 solid;
+        line-height: 1.2rem;
+        font-family: Menlo, Monaco, "Courier New", monospace;
+      }
+
+      div.highlighter-rouge pre {
+        font-size: 0.95em;
+        overflow: hidden;
+        word-break: break-word;
+        white-space: pre-wrap;
+      }
+
+      a {
+        color: #463f5c;
+        text-decoration: underline;
+      }
+    </style>
+<header class="pure-menu pure-menu-horizontal nav post-title" id="header">
+<div class="gallery">
+<ul class="pure-menu-list" style="float: left; margin-left: 1em; position: absolute">
+<li class="pure-menu-item pure-menu-active">
+<a href="../index.html" class="pure-menu-link" id="title-bar-feature-btn">Back</a
+            >
+</li>
+</ul>
+</div>
+<h1>Install Typora on Linux</h1>
+<section class="post-meta">
+<time>September 26, 2016</time>
+by
+<span>typora.io</span>
+</section>
+</header>
+<div id="pagecontainer" class="container">
+<div id="post-content" class="inner-page"><p>Installation instructions for different flavours of Linux.</p>
+<h2 id="debianubuntu">Debian/Ubuntu</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># or use</span>
+<span class="c"># sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE</span>
+wget <span class="nt">-qO</span> - https://typora.io/linux/public-key.asc | <span class="nb">sudo </span>apt-key add -
+
+<span class="c"># add Typora's repository</span>
+<span class="nb">sudo </span>add-apt-repository <span class="s1">'deb https://typora.io/linux ./'</span>
+<span class="nb">sudo </span>apt-get update
+
+<span class="c"># install typora</span>
+<span class="nb">sudo </span>apt-get <span class="nb">install </span>typora
+</code></pre></div></div>
+<h3 id="alternative-for-apt-key">Alternative for <code class="language-plaintext highlighter-rouge">apt-key</code></h3>
+<p>When you try to add an APT repository key using <code class="language-plaintext highlighter-rouge">apt-key</code> (first line in previous command line) on Debian, Ubuntu and Linux distributions based on these, you’ll see the following message: “<em>Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8))</em>”.</p>
+<p>The easiest way would be just to ignore it.</p>
+<p>But if you’re not OK with the warning, you can do followings:</p>
+<ol>
+<li>
+<p>Download the key and save it locally somewhere.</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl https://typora.io/linux/public-key.asc | gpg <span class="nt">--dearmor</span> <span class="o">&gt;</span> /usr/share/keyrings/typora.gpg
+</code></pre></div> </div>
+</li>
+<li>
+<p>Create repo file <code class="language-plaintext highlighter-rouge">typora.list</code> in <code class="language-plaintext highlighter-rouge">/etc/apt/sources.list.d</code>.</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>vim /etc/apt/sources.list.d/typora.list
+</code></pre></div> </div>
+</li>
+<li>
+<p>Paste repo definition into this file:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>deb <span class="o">[</span><span class="nb">arch</span><span class="o">=</span>amd64 signed-by<span class="o">=</span>/usr/share/keyrings/typora.gpg] https://typora.io/linux ./
+</code></pre></div> </div>
+</li>
+<li>
+<p>Now you can install Typora:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get update
+<span class="nb">sudo </span>apt-get <span class="nb">install </span>typora
+</code></pre></div> </div>
+</li>
+</ol>
+<h3 id="upgrade-typora">Upgrade Typora</h3>
+<p>After installing Typora, the <code class="language-plaintext highlighter-rouge">typora</code> package will be managed by <code class="language-plaintext highlighter-rouge">apt-get</code>, so when your system updates installed packages, or you execute <code class="language-plaintext highlighter-rouge">apt-get upgrade</code>, Typora will be updated to latest version.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># upgrade all packages include Typora</span>
+<span class="nb">sudo </span>apt-get upgrade
+</code></pre></div></div>
+<h2 id="mint">Mint</h2>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># or use</span>
+<span class="c"># sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE</span>
+wget <span class="nt">-qO</span> - https://typora.io/linux/public-key.asc | <span class="nb">sudo </span>apt-key add -
+
+<span class="c"># add Typora's repository</span>
+<span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">deb https://typora.io/linux ./"</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/apt/sources.list
+<span class="nb">sudo </span>apt-get update
+
+<span class="c"># install typora</span>
+<span class="nb">sudo </span>apt-get <span class="nb">install </span>typora
+</code></pre></div></div>
+<h2 id="download-deb-file-manually">Download deb file manually</h2>
+<p>You can also manually download and install the deb package file, following those steps:</p>
+<ol>
+<li>Find download link from <a href="https://typora.io/releases/all">https://typora.io/releases/all</a> and download the Linux version.</li>
+<li>Double click the deb file to start installing on Ubuntu / Debian.</li>
+</ol>
+<h2 id="other-distributions">Other Distributions</h2>
+<ol>
+<li>Download the binary package <a href="https://typora.io/linux/Typora-linux-x64.tar.gz">Typora-linux-x64.tar.gz</a>.</li>
+<li>Try to install <code class="language-plaintext highlighter-rouge">apt-get</code> on your distribution, and then install typora.</li>
+</ol>
+<h2 id="snap-version">Snap Version</h2>
+<p>You could also install Typora via <code class="language-plaintext highlighter-rouge">snap install typora</code>.</p>
+<p>Please notice the <a href="../Snap/index.html#limitations-for-the-snap-version">limitation of snap version</a>.</p>
+<h2 id="wayland">Wayland</h2>
+<p>For wayland, please append flags when launching Typora (see <a href="https://blogs.igalia.com/msisov/2020/11/20/chrome-chromium-on-wayland-the-waylandification-project/">https://blogs.igalia.com/msisov/2020/11/20/chrome-chromium-on-wayland-the-waylandification-project/</a>).</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--enable-features=UseOzonePlatform --ozone-platform=wayland
+</code></pre></div></div>
+<h2 id="distribution-support">Distribution Support</h2>
+<p>Typora for Linux is tested only on Ubuntu. So, if you have a problem with other distributions, please email us at <a href="http://mailto:hi@typora.io"><span class="__cf_email__" data-cfemail="046c6d44707d746b7665">[email&#160;protected]</span></a>.</p>
+<h2 id="screenshots">Screenshots</h2>
+<p><img src="../media/typora-linux/screenshot.png" alt="screenshot" /></p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="common-solutions-for-typora-not-opening">Common Solutions for Typora not opening</h3>
+<p><strong>Make sure all the necessary dependencies are installed</strong>. You can run <code class="language-plaintext highlighter-rouge">ldd typora | grep not</code> on a Linux machine to check which dependencies are missing.</p>
+<h4 id="error-on-debian-stretch">Error on Debian Stretch</h4>
+<p>For following error:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[8898:0620/213856.172363:FATAL:setuid_sandbox_host.cc(157)] The SUID sandbox helper binary was found, but is not configured correctly. Rather than run without sandboxing I'm aborting now. You need to make sure that /usr/share/typora/chrome-sandbox is owned by root and has mode 4755.
+</code></pre></div></div>
+<p>Try <code class="language-plaintext highlighter-rouge">chmod 4755 /usr/share/typora/chrome-sandbox</code></p>
+<p>See discussion in https://github.com/electron/electron/issues/17972</p>
+<h4 id="cannot-open-typora-binary-there-is-no-application-installed-for-shared-library">Cannot open Typora binary “there is no application installed for shared library”</h4>
+<p>When double clicking on Typora’s binary file, Nautilus (file manager) doesn’t run it, as I can’t detect it as an executable file.</p>
+<p>This is caused by a Nautilus’s bug, see discussions in https://github.com/electron/electron/issues/15406. You can either: install Typora via <code class="language-plaintext highlighter-rouge">deb</code> or <code class="language-plaintext highlighter-rouge">apt-get</code>, or run Typora from terminal (<code class="language-plaintext highlighter-rouge">./Typora</code>).</p>
+<h4 id="started-typora-and-got-version-glibcxx_3421-not-defined-in-file-libstdcso6-error">Started Typora and got <code class="language-plaintext highlighter-rouge">version GLIBCXX_3.4.21 not defined in file libstdc++.so.6</code> error</h4>
+<p>When you start Typora on Ubuntu 14.x, if following error happens:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/share/typora/Typora: relocation error: /usr/share/typora/resources/app/node_modules/spellchecker/build/Release/spellchecker.node: symbol _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE10_M_replaceEmmPKcm, version GLIBCXX_3.4.21 not defined in file libstdc++.so.6 with link time reference
+</code></pre></div></div>
+<p>then download the Debian of package libstdc++6 for Xenial at link http://packages.ubuntu.com/xenial/libstdc++6 and installed it using <code class="language-plaintext highlighter-rouge">dpkg -i</code> (reference: https://askubuntu.com/questions/777803/apt-relocation-error-version-glibcxx-3-4-21-not-defined-in-file-libstdc-so-6).</p>
+<h4 id="ubuntu-1404--typora-libx86_64-linux-gnulibdbus-1so3-no-version-information-available-required-by-typora">[Ubuntu 14.04 ] typora: /lib/x86_64-linux-gnu/libdbus-1.so.3: no version information available (required by typora)</h4>
+<p>See <a href="https://github.com/electron/electron/issues/16364#issuecomment-492199424">electron/electron#16364 (comment)</a></p>
+<h4 id="error-while-loading-shared-libraries-libgconf-2so4">Error while loading shared libraries: libgconf-2.so.4</h4>
+<p>Try install <code class="language-plaintext highlighter-rouge">libgconf-2-4</code> first.</p>
+<h4 id="nss-out-of-date">NSS out-of-date</h4>
+<p>If you receive following error when launching Typora:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[7465:7499:0911/174740.042852:FATAL:nss_util.cc(632)] NSS_VersionCheck("3.26") failed. NSS &gt;= 3.26 is required. Please upgrade to the latest NSS, and if you still get this error, contact your distribution maintainer.
+Aborted
+</code></pre></div></div>
+<p>then:</p>
+<ol>
+<li>Ensure <code class="language-plaintext highlighter-rouge">xenial-security</code> updates are included in <em>Software &amp; Updates</em>.</li>
+<li>run <code class="language-plaintext highlighter-rouge">sudo apt-get update &amp;&amp; sudo apt-get install libnss3</code></li>
+</ol>
+<h4 id="malformed-input-repository-not-added">Malformed input, repository not added</h4>
+<p>You can add a repository by:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">deb https://typora.io/linux ./"</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/apt/sources.list
+</code></pre></div></div>
+<p>see related discussion in <a href="https://github.com/typora/typora-issues/issues/2065#issuecomment-455877843">https://github.com/typora/typora-issues/issues/2065#issuecomment-455877843</a>.</p>
+<h4 id="shortcut-for-heading-5-is-not-working">Shortcut for Heading 5 is not working</h4>
+<p>Please check if you uses fcitx (e.g. for typing Chinese)? <code class="language-plaintext highlighter-rouge">Ctrl + 5</code> is the global shortcut key for fcitx to reload its config. Deleting that global shortcut should make ctrl+5 work in Typora. (Thanks to https://github.com/typora/typora-issues/issues/867#issuecomment-647082881).</p>
+<h4 id="libva-error-vagetdrivernamebyindex-failed-with-unknown-libva-error-driver_name--null">libva error: vaGetDriverNameByIndex() failed with unknown libva error, driver_name = (null)</h4>
+<p>Try launch typora with extra arguments <code class="language-plaintext highlighter-rouge">--disable-gpu</code>.</p>
+<h4 id="text-not-displayed-in-dialogs">Text not displayed in dialogs</h4>
+<p><img src="https://user-images.githubusercontent.com/26056183/89756594-a3094c80-db00-11ea-943c-f214fea0c5ef.png" alt="text not displayed in open file dialog" /></p>
+<p>Please refer <a href="https://github.com/electron-userland/electron-builder/issues/5217#issuecomment-700707564">https://github.com/electron-userland/electron-builder/issues/5217#issuecomment-700707564</a></p>
+</div>
+</div>
+<footer id="post-footer" style="
+        background-color: rgb(51, 51, 51);
+        padding-top: 50px;
+        padding-bottom: 50px;
+        text-align: center;
+        font-size: 13px;
+      ">
+<a data-has-mirror href="https://store.typora.io">Get Typora</a> /
+<a href="https://github.com/typora/wiki-website">Help Improve our documents</a
+      >
+</footer>
+<script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+      var backBtn = document.querySelector("#title-bar-feature-btn");
+      if (backBtn) {
+        backBtn.onclick = function (event) {
+          if (
+            window.history.length > 1 &&
+            document.referrer.indexOf(window.location.host) !== -1
+          ) {
+            console.log(" window.history.back");
+            event.preventDefault();
+            window.history.back();
+          }
+        };
+      }
+      if (location.host == "support.typoraio.cn" || location.host == "support.typora.com.cn") {
+        document.querySelectorAll("[data-has-mirror]").forEach((a) => {
+          var href = a.href;
+          if (href.indexOf("store.typora.io") > 0)
+            href = "https://typoraio.cn/";
+          else if (href.indexOf("https://typora.io") > -1)
+            href = "https://typoraio.cn/";
+          else href = href.replace("typora.io", "typoraio.cn");
+          a.href = href;
+        });
+      }
+    </script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-56771470-2", "auto");
+      ga("set", "page", "/support");
+      ga("send", "pageview");
+    </script>
+
+<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ed23a5bcf8c017f"></script>
+
+</body>
+</html>

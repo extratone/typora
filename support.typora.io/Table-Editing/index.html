@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Table Editing - Typora Support</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@typora" />
+<meta name="twitter:title" content="Table Editing" />
+<meta name="twitter:url" content="/Table-Editing/" />
+<meta name="twitter:description" content="Tables in Markdown Table Editing in Typora Create Table in Typora Add Row in Table Delete Row in Table Add/Delete Column in Table Resize Table Text Alignment in Column Move Row/Column Touch Bar Support Tables in Markdown Typora supports table syntax of GitHub Flavored Markdown. For example, it will parse following text in a markdown file into a table. |First Header | Second Header| |------------ | -------------| |Content from cell 1 | Content from cell 2| |Content in the first column | Content in the second column| Table Editing in Typora In Typora, you can write or edit the markdown..." />
+<meta name="twitter:image:src" content="http://typora.io/img/twitter-sum.png" />
+<meta name="twitter:image" content="http://typora.io/img/twitter-sum.png" />
+<meta property="og:url" content="/Table-Editing/" />
+<meta property="og:title" content="Table Editing" />
+<meta property="og:description" content="Tables in Markdown Table Editing in Typora Create Table in Typora Add Row in Table Delete Row in Table Add/Delete Column in Table Resize Table Text Alignment in Column Move Row/Column Touch Bar Support Tables in Markdown Typora supports table syntax of GitHub Flavored Markdown. For example, it will parse following text in a markdown file into a table. |First Header | Second Header| |------------ | -------------| |Content from cell 1 | Content from cell 2| |Content in the first column | Content in the second column| Table Editing in Typora In Typora, you can write or edit the markdown..." />
+<meta name="og:image" content="http://typora.io/img/twitter-sum.png" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+
+<link href="../assets/css/pure-min.css" rel="stylesheet" />
+
+<link href="../assets/css/syntax.css" rel="stylesheet" />
+<link href="../assets/css/typora-wiki.css" rel="stylesheet" />
+<link rel="icon" href="../assets/img/favicon-16.png" sizes="16x16" />
+<link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32" />
+<link rel="icon" href="https://support.typora.io/assets/img/favicon-64.png" sizes="64x64" />
+<link rel="icon" href="../assets/img/favicon-128.png" sizes="128x128" />
+<script>
+      if (
+        window.location.host.indexOf("typora.io") > -1 &&
+        window.location.protocol != "https:"
+      ) {
+        window.location.protocol = "https";
+      }
+      if (location.host == "support.typora.com.cn") {
+        location = `https://support.typoraio.cn${location.pathname}${location.hash}`;
+      }
+    </script>
+</head>
+<body>
+<style type="text/css">
+      body {
+        
+          font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman",
+          "STSong", Serif;
+		    
+        font-weight: 300;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #2e2e2e;
+        line-height: 1.15em;
+        font-family: "Open Sans", "Hiragino Sans GB", "Microsoft YaHei",
+          "WenQuanYi Micro Hei", sans-serif;
+        text-rendering: geometricPrecision;
+      }
+
+      #pagecontainer {
+        background-color: #fff;
+        min-height: calc(100vh - 510px);
+        flex: 2;
+      }
+
+      #post-content {
+        padding-top: 36px;
+        border-top: 1px dashed #999999;
+        line-height: 1.6rem;
+        padding-bottom: 100px;
+      }
+
+      #post-content > blockquote:first-child {
+        padding-top: 0.4em;
+        padding-bottom: 0.4em;
+        margin-bottom: 2em;
+        margin-left: 0;
+      }
+
+      .nav {
+        border-bottom: none;
+        height: auto;
+      }
+
+      .inner-page {
+        width: 90%;
+        max-width: 800px;
+        margin: auto;
+      }
+
+      h1 {
+        border-bottom: 0;
+      }
+
+      #header {
+        padding-bottom: 32px;
+      }
+
+      #header h1 {
+        text-align: center;
+        white-space: pre-wrap;
+        width: 90%;
+        margin: 81px auto 48px auto;
+      }
+
+      h1 {
+        font-size: 3.6rem;
+        letter-spacing: -2px;
+        text-indent: -3px;
+      }
+
+      h2 {
+        margin-top: 2em;
+      }
+
+      .pure-menu-active > .pure-menu-link,
+      .pure-menu-link:hover,
+      .pure-menu-link:focus {
+        background-color: initial;
+        border: #777 solid 1px;
+      }
+
+      .post-meta {
+        font-style: italic;
+        text-align: center;
+        color: #7a7a7a;
+      }
+
+      div.highlighter-rouge {
+        padding: 8px;
+        border: 1px #777 solid;
+        line-height: 1.2rem;
+        font-family: Menlo, Monaco, "Courier New", monospace;
+      }
+
+      div.highlighter-rouge pre {
+        font-size: 0.95em;
+        overflow: hidden;
+        word-break: break-word;
+        white-space: pre-wrap;
+      }
+
+      a {
+        color: #463f5c;
+        text-decoration: underline;
+      }
+    </style>
+<header class="pure-menu pure-menu-horizontal nav post-title" id="header">
+<div class="gallery">
+<ul class="pure-menu-list" style="float: left; margin-left: 1em; position: absolute">
+<li class="pure-menu-item pure-menu-active">
+<a href="../index.html" class="pure-menu-link" id="title-bar-feature-btn">Back</a
+            >
+</li>
+</ul>
+</div>
+<h1>Table Editing</h1>
+<section class="post-meta">
+<time>February 28, 2017</time>
+by
+<span>typora.io</span>
+</section>
+</header>
+<div id="pagecontainer" class="container">
+<div id="post-content" class="inner-page"><ul id="markdown-toc">
+<li><a href="index.html#tables-in-markdown" id="markdown-toc-tables-in-markdown">Tables in Markdown</a></li>
+<li><a href="index.html#table-editing-in-typora" id="markdown-toc-table-editing-in-typora">Table Editing in Typora</a> <ul>
+<li><a href="index.html#create-table-in-typora" id="markdown-toc-create-table-in-typora">Create Table in Typora</a></li>
+<li><a href="index.html#add-row-in-table" id="markdown-toc-add-row-in-table">Add Row in Table</a></li>
+<li><a href="index.html#delete-row-in-table" id="markdown-toc-delete-row-in-table">Delete Row in Table</a></li>
+<li><a href="index.html#adddelete-column-in-table" id="markdown-toc-adddelete-column-in-table">Add/Delete Column in Table</a></li>
+<li><a href="index.html#resize-table" id="markdown-toc-resize-table">Resize Table</a></li>
+<li><a href="index.html#text-alignment-in-column" id="markdown-toc-text-alignment-in-column">Text Alignment in Column</a></li>
+<li><a href="index.html#move-rowcolumn" id="markdown-toc-move-rowcolumn">Move Row/Column</a></li>
+<li><a href="index.html#touch-bar-support" id="markdown-toc-touch-bar-support">Touch Bar Support</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="tables-in-markdown">Tables in Markdown</h2>
+<p>Typora supports table syntax of <a href="https://guides.github.com/features/mastering-markdown/">GitHub Flavored Markdown</a>. For example, it will parse following text in a markdown file into a table.</p>
+<blockquote>
+<pre><code class="language-gfm">|First Header | Second Header|
+|------------ | -------------|
+|Content from cell 1 | Content from cell 2|
+|Content in the first column | Content in the second column|
+</code></pre>
+</blockquote>
+<h2 id="table-editing-in-typora">Table Editing in Typora</h2>
+<p>In Typora, you can write or edit the markdown text to add or modify tables.</p>
+<p>We also provides menu entry, context menu, shortcut keys, drag &amp; move, tooltips to make table editing easier to use under related GUI.</p>
+<figure style="text-align:center;">
+<img src="../media/new-73/Screen&#32;Shot&#32;2019-07-26&#32;at&#32;01.03.21.png" style="zoom:50%;display:inline-block;vertical-align:middle;" />
+<figcaption>Table Menu in Typora</figcaption>
+</figure>
+<h3 id="create-table-in-typora">Create Table in Typora</h3>
+<p>To create a table in Typora, you can simply write out a table header in markdown.</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>|First Header | Second Header|
+</code></pre></div></div>
+<p>Or, you can also insert table from the menu bar.</p>
+<p>A table must have table headers and at least one row and one column.</p>
+<h3 id="add-row-in-table">Add Row in Table</h3>
+<p>Press <code class="language-plaintext highlighter-rouge">Command/Ctrl+Enter</code> to quickly insert an empty row under the current table row, or use the Context menu (right click).</p>
+<p>In newer version, you can just add rows by pressing “Tab Key”.</p>
+<p><img src="../media/new-10/CleanShot&#32;2021-04-05&#32;at&#32;23.43.07.gif" alt="CleanShot 2021-04-05 at 23.43.07" style="zoom:50%;" /></p>
+<h3 id="delete-row-in-table">Delete Row in Table</h3>
+<p>The delete line command or delete table row (Shift+Ctrl+L or Shift+Command+L on macOS) will delete current table row in a table, or use the Context menu (right click).</p>
+<h3 id="adddelete-column-in-table">Add/Delete Column in Table</h3>
+<p>Right click on a table cell, and in the Context menu, there are menu items for add/remove table columns.</p>
+<h3 id="resize-table">Resize Table</h3>
+<p>Put the cursor inside a table and a table tooltip will show above the table header. Click the most left icon, and you will be able to resize the table.</p>
+<p>If you want to make the table larger than 6 columns or 10 rows, you can click the row/column number and enter a number.</p>
+<p><img src="../media/table-editing/Snip20170227_2.png" alt="Snip20170227_2" /></p>
+<h3 id="text-alignment-in-column">Text Alignment in Column</h3>
+<p>In <a href="https://guides.github.com/features/mastering-markdown/">GitHub Flavored Markdown</a>, column alignment can be specified as follows:</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>| Default | Left  | Right | Center |
+| ------- | :---- | ----: | :----: |
+| cell1   | cell2 | cell3 | cell4  |
+</code></pre></div></div>
+<p>In Typora, you can simply change text alignment under a column by selecting the related alignment icon from table tooltip.</p>
+<p>With alignment set, Typora will add attribute like <code class="language-plaintext highlighter-rouge">style="text-align: left"</code> to the current column (<code class="language-plaintext highlighter-rouge">&lt;td&gt;</code>), but the final alignment can still be changed by CSS rules in current theme or custom CSS.</p>
+<h3 id="move-rowcolumn">Move Row/Column</h3>
+<p>It’s easy to reorder rows/columns through Typora’s WYSIWYG feature. Just click on the left/top border of a row/column, and use drag and drop to move it:</p>
+<p style="text-align:center"><video src="../media/table-editing/move-row-col.mp4" style="width:540px;" autoplay="autoplay" mute="mute" loop="loop"></video></p>
+<h3 id="touch-bar-support">Touch Bar Support</h3>
+<p>Tables can also be altered using the Touch Bar on certain MacBook laptops.</p>
+<p><img src="../media/table-editing/TouchBarShot.png" alt="TouchBar" /></p>
+</div>
+</div>
+<footer id="post-footer" style="
+        background-color: rgb(51, 51, 51);
+        padding-top: 50px;
+        padding-bottom: 50px;
+        text-align: center;
+        font-size: 13px;
+      ">
+<a data-has-mirror href="https://store.typora.io">Get Typora</a> /
+<a href="https://github.com/typora/wiki-website">Help Improve our documents</a
+      >
+ </footer>
+<script>
+      var backBtn = document.querySelector("#title-bar-feature-btn");
+      if (backBtn) {
+        backBtn.onclick = function (event) {
+          if (
+            window.history.length > 1 &&
+            document.referrer.indexOf(window.location.host) !== -1
+          ) {
+            console.log(" window.history.back");
+            event.preventDefault();
+            window.history.back();
+          }
+        };
+      }
+      if (location.host == "support.typoraio.cn" || location.host == "support.typora.com.cn") {
+        document.querySelectorAll("[data-has-mirror]").forEach((a) => {
+          var href = a.href;
+          if (href.indexOf("store.typora.io") > 0)
+            href = "https://typoraio.cn/";
+          else if (href.indexOf("https://typora.io") > -1)
+            href = "https://typoraio.cn/";
+          else href = href.replace("typora.io", "typoraio.cn");
+          a.href = href;
+        });
+      }
+    </script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-56771470-2", "auto");
+      ga("set", "page", "/support");
+      ga("send", "pageview");
+    </script>
+
+<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ed23a5bcf8c017f"></script>
+
+</body>
+</html>

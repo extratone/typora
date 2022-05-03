@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Typora 1.2 - Typora Support</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@typora" />
+<meta name="twitter:title" content="Typora 1.2" />
+<meta name="twitter:url" content="/What's-New-1.2/" />
+<meta name="twitter:description" content="New Update Mermaid Version Images Delete Image Files Move Images Picsee as New Image Uploader Other relates to images Improvements Bug Fix One More Thing New Update Mermaid Version Mermaid version is now at 8.14.0, compared to previous version typora used, it now has: New requirementDiagram support, e.g: requirementDiagram requirement test_req { id: 1 text: the test text. risk: high verifymethod: test } element test_entity { type: simulation } test_entity - satisfies -&gt; test_req Other improvements, such as erDiagram can have keys and commands. For more improvements, see https://github.com/mermaid-js/mermaid/releases. erDiagram CreativeWork { TEXT name_PK TEXT description TEXT reference_N } Images..." />
+<meta name="twitter:image:src" content="http://typora.io/img/twitter-sum.png" />
+<meta name="twitter:image" content="http://typora.io/img/twitter-sum.png" />
+<meta property="og:url" content="/What's-New-1.2/" />
+<meta property="og:title" content="Typora 1.2" />
+<meta property="og:description" content="New Update Mermaid Version Images Delete Image Files Move Images Picsee as New Image Uploader Other relates to images Improvements Bug Fix One More Thing New Update Mermaid Version Mermaid version is now at 8.14.0, compared to previous version typora used, it now has: New requirementDiagram support, e.g: requirementDiagram requirement test_req { id: 1 text: the test text. risk: high verifymethod: test } element test_entity { type: simulation } test_entity - satisfies -&gt; test_req Other improvements, such as erDiagram can have keys and commands. For more improvements, see https://github.com/mermaid-js/mermaid/releases. erDiagram CreativeWork { TEXT name_PK TEXT description TEXT reference_N } Images..." />
+<meta name="og:image" content="http://typora.io/img/twitter-sum.png" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+
+<link href="../assets/css/pure-min.css" rel="stylesheet" />
+
+<link href="../assets/css/syntax.css" rel="stylesheet" />
+<link href="../assets/css/typora-wiki.css" rel="stylesheet" />
+<link rel="icon" href="../assets/img/favicon-16.png" sizes="16x16" />
+<link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32" />
+<link rel="icon" href="https://support.typora.io/assets/img/favicon-64.png" sizes="64x64" />
+<link rel="icon" href="../assets/img/favicon-128.png" sizes="128x128" />
+<script>
+      if (
+        window.location.host.indexOf("typora.io") > -1 &&
+        window.location.protocol != "https:"
+      ) {
+        window.location.protocol = "https";
+      }
+      if (location.host == "support.typora.com.cn") {
+        location = `https://support.typoraio.cn${location.pathname}${location.hash}`;
+      }
+    </script>
+</head>
+<body>
+<style type="text/css">
+      body {
+        
+          font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman",
+          "STSong", Serif;
+		    
+        font-weight: 300;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #2e2e2e;
+        line-height: 1.15em;
+        font-family: "Open Sans", "Hiragino Sans GB", "Microsoft YaHei",
+          "WenQuanYi Micro Hei", sans-serif;
+        text-rendering: geometricPrecision;
+      }
+
+      #pagecontainer {
+        background-color: #fff;
+        min-height: calc(100vh - 510px);
+        flex: 2;
+      }
+
+      #post-content {
+        padding-top: 36px;
+        border-top: 1px dashed #999999;
+        line-height: 1.6rem;
+        padding-bottom: 100px;
+      }
+
+      #post-content > blockquote:first-child {
+        padding-top: 0.4em;
+        padding-bottom: 0.4em;
+        margin-bottom: 2em;
+        margin-left: 0;
+      }
+
+      .nav {
+        border-bottom: none;
+        height: auto;
+      }
+
+      .inner-page {
+        width: 90%;
+        max-width: 800px;
+        margin: auto;
+      }
+
+      h1 {
+        border-bottom: 0;
+      }
+
+      #header {
+        padding-bottom: 32px;
+      }
+
+      #header h1 {
+        text-align: center;
+        white-space: pre-wrap;
+        width: 90%;
+        margin: 81px auto 48px auto;
+      }
+
+      h1 {
+        font-size: 3.6rem;
+        letter-spacing: -2px;
+        text-indent: -3px;
+      }
+
+      h2 {
+        margin-top: 2em;
+      }
+
+      .pure-menu-active > .pure-menu-link,
+      .pure-menu-link:hover,
+      .pure-menu-link:focus {
+        background-color: initial;
+        border: #777 solid 1px;
+      }
+
+      .post-meta {
+        font-style: italic;
+        text-align: center;
+        color: #7a7a7a;
+      }
+
+      div.highlighter-rouge {
+        padding: 8px;
+        border: 1px #777 solid;
+        line-height: 1.2rem;
+        font-family: Menlo, Monaco, "Courier New", monospace;
+      }
+
+      div.highlighter-rouge pre {
+        font-size: 0.95em;
+        overflow: hidden;
+        word-break: break-word;
+        white-space: pre-wrap;
+      }
+
+      a {
+        color: #463f5c;
+        text-decoration: underline;
+      }
+    </style>
+<header class="pure-menu pure-menu-horizontal nav post-title" id="header">
+<div class="gallery">
+<ul class="pure-menu-list" style="float: left; margin-left: 1em; position: absolute">
+<li class="pure-menu-item pure-menu-active">
+<a href="../index.html" class="pure-menu-link" id="title-bar-feature-btn">Back</a
+            >
+</li>
+</ul>
+</div>
+<h1>Typora 1.2</h1>
+<section class="post-meta">
+<time>March 20, 2022</time>
+by
+<span>typora.io</span>
+</section>
+</header>
+<div id="pagecontainer" class="container">
+<div id="post-content" class="inner-page"><ul id="markdown-toc">
+<li><a href="index.html#new" id="markdown-toc-new">New</a> <ul>
+<li><a href="index.html#update-mermaid-version" id="markdown-toc-update-mermaid-version">Update Mermaid Version</a></li>
+<li><a href="index.html#images" id="markdown-toc-images">Images</a> <ul>
+<li><a href="index.html#delete-image-files" id="markdown-toc-delete-image-files">Delete Image Files</a></li>
+<li><a href="index.html#move-images" id="markdown-toc-move-images">Move Images</a></li>
+<li><a href="index.html#picsee-as-new-image-uploader" id="markdown-toc-picsee-as-new-image-uploader">Picsee as New Image Uploader</a></li>
+<li><a href="index.html#other-relates-to-images" id="markdown-toc-other-relates-to-images">Other relates to images</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="index.html#improvements" id="markdown-toc-improvements">Improvements</a></li>
+<li><a href="index.html#bug-fix" id="markdown-toc-bug-fix">Bug Fix</a></li>
+<li><a href="index.html#one-more-thing" id="markdown-toc-one-more-thing">One More Thing</a></li>
+</ul>
+<h1 id="new">New</h1>
+<h3 id="update-mermaid-version">Update Mermaid Version</h3>
+<p>Mermaid version is now at 8.14.0, compared to previous version typora used, it now has:</p>
+<ul>
+<li>
+<p>New <code class="language-plaintext highlighter-rouge">requirementDiagram</code> support, e.g:</p>
+<pre><code class="language-mermaid">requirementDiagram
+  
+    requirement test_req {
+    id: 1
+    text: the test text.
+    risk: high
+    verifymethod: test
+    }
+  
+    element test_entity {
+    type: simulation
+    }
+  
+    test_entity - satisfies -&gt; test_req
+</code></pre>
+</li>
+<li>
+<p>Other improvements, such as <code class="language-plaintext highlighter-rouge">erDiagram</code> can have keys and commands. For more improvements, see <a href="https://github.com/mermaid-js/mermaid/releases">https://github.com/mermaid-js/mermaid/releases</a>.</p>
+<pre><code class="language-mermaid">erDiagram
+    CreativeWork {
+      TEXT name_PK
+      TEXT description
+      TEXT reference_N
+    }
+</code></pre>
+</li>
+</ul>
+<h3 id="images">Images</h3>
+<h4 id="delete-image-files">Delete Image Files</h4>
+<p><img src="../media/new-1.2/CleanShot&#32;2022-03-19&#32;at&#32;20.01.00@2x.png" alt="CleanShot 2022-03-19 at 20.01.00@2x" style="zoom:50%;" /></p>
+<p>Now you can now <strong>delete</strong> original image files from context menu, it will remove image item displayed in your markdown file as well as its original files in local disk. But please ensure no other files using that image file before you delete it from disk.</p>
+<h4 id="move-images">Move Images</h4>
+<p>In previous Typora versions, you move copy images to a given folder, but the original image file will still be kept. This version we introduced “image move”, which allows you to move image from one location to another, update the references in Typora, and delete the original image files at disk.</p>
+<h4 id="picsee-as-new-image-uploader">Picsee as New Image Uploader</h4>
+<p>We are happy to announce that macOS users have a new option to <a href="../Upload-Image.html">upload their images</a> — <a href="https://enpicsee.chitaner.com/">Picsee</a>.</p>
+<p><img src="../media/new-1.2/picsee.png" alt="logo" /></p>
+<p><a href="https://enpicsee.chitaner.com/">Picsee</a> is an image viewer &amp; organizer on macOS.</p>
+<p>You could install it from <a href="https://apps.apple.com/app/id1454805783">Mac App Store</a>. To configure Picsee to upload your images, please refer <a href="https://enpicsee.chitaner.com/blog/Typora_imageCloud_config.html">this document</a>.</p>
+<h4 id="other-relates-to-images">Other relates to images</h4>
+<ul>
+<li>
+<p>Add a <code class="language-plaintext highlighter-rouge">Reload All Images</code> menu from <code class="language-plaintext highlighter-rouge">Format</code> → <code class="language-plaintext highlighter-rouge">Image</code> which will clear cache and force reload all images from local and remote websites. Please note that Typora already have a function to auto reload local images, but when it is not working or your images are stored in internet, this <code class="language-plaintext highlighter-rouge">Reload All Images</code> may help you.</p>
+</li>
+<li>
+<p>When you <strong>undo</strong> an image copy operation, newly copied image file will also be discard from local disk.</p>
+</li>
+<li>
+<p>We significantly improved the performance on (newer) macOS when you editing a markdown file contains lots of images.</p>
+<p>Following is a sample file contains 85 images at total 72.5 MB:</p>
+<p><img src="../media/new-1.2/CleanShot&#32;2022-03-20&#32;at&#32;14.53.29.gif" alt="CleanShot 2022-03-20 at 14.53.29" /></p>
+</li>
+</ul>
+<h1 id="improvements">Improvements</h1>
+<ul>
+<li>Added default shortcuts for Task List.</li>
+<li>Added <code class="language-plaintext highlighter-rouge">py</code> as alias of <code class="language-plaintext highlighter-rouge">python</code>, <code class="language-plaintext highlighter-rouge">docker</code> as alias of <code class="language-plaintext highlighter-rouge">dockerfile</code> for code fences.</li>
+<li>Update syntax highlight for <code class="language-plaintext highlighter-rouge">dart</code>, <code class="language-plaintext highlighter-rouge">python</code> and <code class="language-plaintext highlighter-rouge">sql</code>.</li>
+<li>Add syntax highlight support for <code class="language-plaintext highlighter-rouge">stata</code>, <code class="language-plaintext highlighter-rouge">postgresql</code>, and <code class="language-plaintext highlighter-rouge">hive</code>.</li>
+<li>Improve support for <code class="language-plaintext highlighter-rouge">&lt;source&gt;</code> tag in <code class="language-plaintext highlighter-rouge">html</code> code.</li>
+<li>Improve utf8 encode detection on Windows / Linux.</li>
+<li>Strip invisible control characters when paste into Typora.</li>
+<li>Slightly improve context menu UI for Windows / Linux.</li>
+<li>When you create new file after open a blank untitled window, the window will open the newly created file automatically on Linux.</li>
+<li>Update i18n translations.</li>
+</ul>
+<h1 id="bug-fix">Bug Fix</h1>
+<ul>
+<li>Fix some typo at the welcome page.</li>
+<li>Fix an issue that <code class="language-plaintext highlighter-rouge">title</code> not displayed for reference link.</li>
+<li>Fix <code class="language-plaintext highlighter-rouge">reveal in sidebar</code> not working when global search is displayed.</li>
+<li>Fix some issues relates to unnecessary scroll when code fences is involved.</li>
+<li>Fix delete folder in sidebar throw permission errors on Windows.</li>
+<li>Fix a bug that “Export in process” not hide when you cancel the export operation.</li>
+<li>Other bug fixes.</li>
+</ul>
+<h1 id="one-more-thing">One More Thing</h1>
+<p>Typora is on a <a href="https://www.mathjax.org/">MathJax</a> Supporter. Thanks to their great work to bring math functions into many websites and products, one beneficiary of them, is Typora.</p>
+<blockquote>
+<p><em>“We really appreciate the support provided by Typora,” said Davide Cervone, the lead developer for MathJax. “This support allows us to continue to grow MathJax’s features in version 3.”</em></p>
+</blockquote>
+<p><a href="https://www.mathjax.org/Typora-supports-MathJax/">https://www.mathjax.org/Typora-supports-MathJax/</a></p>
+</div>
+</div>
+<footer id="post-footer" style="
+        background-color: rgb(51, 51, 51);
+        padding-top: 50px;
+        padding-bottom: 50px;
+        text-align: center;
+        font-size: 13px;
+      ">
+<a data-has-mirror href="https://store.typora.io">Get Typora</a> /
+<a href="https://github.com/typora/wiki-website">Help Improve our documents</a
+      >
+</footer>
+<script>
+      var backBtn = document.querySelector("#title-bar-feature-btn");
+      if (backBtn) {
+        backBtn.onclick = function (event) {
+          if (
+            window.history.length > 1 &&
+            document.referrer.indexOf(window.location.host) !== -1
+          ) {
+            console.log(" window.history.back");
+            event.preventDefault();
+            window.history.back();
+          }
+        };
+      }
+      if (location.host == "support.typoraio.cn" || location.host == "support.typora.com.cn") {
+        document.querySelectorAll("[data-has-mirror]").forEach((a) => {
+          var href = a.href;
+          if (href.indexOf("store.typora.io") > 0)
+            href = "https://typoraio.cn/";
+          else if (href.indexOf("https://typora.io") > -1)
+            href = "https://typoraio.cn/";
+          else href = href.replace("typora.io", "typoraio.cn");
+          a.href = href;
+        });
+      }
+    </script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-56771470-2", "auto");
+      ga("set", "page", "/support");
+      ga("send", "pageview");
+    </script>
+
+<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ed23a5bcf8c017f"></script>
+
+</body>
+</html>

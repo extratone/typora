@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Spellcheck - Typora Support</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@typora" />
+<meta name="twitter:title" content="Spellcheck" />
+<meta name="twitter:url" content="/Spellcheck/" />
+<meta name="twitter:description" content="OS X There’s no extra setup on macOS, you could enable/disable spellcheck from Edit → Spelling and Grammar on menu bar (like other apps). Windows/Linux You could open spellcheck panel by click Edit → Spell Check… from menu, or just hover on status bar and open the “spell check“ icon. Left: Spellcheck in context menu / Right: Spellcheck Panel You could change the default spell check language or disable spell check by clicking “Global Setting…“ from the spell check panel or find it directly in preferences panel. Windows 10 On Windows 10, Typora may use the system built-in spellchecker, you..." />
+<meta name="twitter:image:src" content="http://typora.io/img/twitter-sum.png" />
+<meta name="twitter:image" content="http://typora.io/img/twitter-sum.png" />
+<meta property="og:url" content="/Spellcheck/" />
+<meta property="og:title" content="Spellcheck" />
+<meta property="og:description" content="OS X There’s no extra setup on macOS, you could enable/disable spellcheck from Edit → Spelling and Grammar on menu bar (like other apps). Windows/Linux You could open spellcheck panel by click Edit → Spell Check… from menu, or just hover on status bar and open the “spell check“ icon. Left: Spellcheck in context menu / Right: Spellcheck Panel You could change the default spell check language or disable spell check by clicking “Global Setting…“ from the spell check panel or find it directly in preferences panel. Windows 10 On Windows 10, Typora may use the system built-in spellchecker, you..." />
+<meta name="og:image" content="http://typora.io/img/twitter-sum.png" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+
+<link href="../assets/css/pure-min.css" rel="stylesheet" />
+
+<link href="../assets/css/syntax.css" rel="stylesheet" />
+<link href="../assets/css/typora-wiki.css" rel="stylesheet" />
+<link rel="icon" href="../assets/img/favicon-16.png" sizes="16x16" />
+<link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32" />
+<link rel="icon" href="https://support.typora.io/assets/img/favicon-64.png" sizes="64x64" />
+<link rel="icon" href="../assets/img/favicon-128.png" sizes="128x128" />
+<script>
+      if (
+        window.location.host.indexOf("typora.io") > -1 &&
+        window.location.protocol != "https:"
+      ) {
+        window.location.protocol = "https";
+      }
+      if (location.host == "support.typora.com.cn") {
+        location = `https://support.typoraio.cn${location.pathname}${location.hash}`;
+      }
+    </script>
+</head>
+<body>
+<style type="text/css">
+      body {
+        
+          font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman",
+          "STSong", Serif;
+		    
+        font-weight: 300;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #2e2e2e;
+        line-height: 1.15em;
+        font-family: "Open Sans", "Hiragino Sans GB", "Microsoft YaHei",
+          "WenQuanYi Micro Hei", sans-serif;
+        text-rendering: geometricPrecision;
+      }
+
+      #pagecontainer {
+        background-color: #fff;
+        min-height: calc(100vh - 510px);
+        flex: 2;
+      }
+
+      #post-content {
+        padding-top: 36px;
+        border-top: 1px dashed #999999;
+        line-height: 1.6rem;
+        padding-bottom: 100px;
+      }
+
+      #post-content > blockquote:first-child {
+        padding-top: 0.4em;
+        padding-bottom: 0.4em;
+        margin-bottom: 2em;
+        margin-left: 0;
+      }
+
+      .nav {
+        border-bottom: none;
+        height: auto;
+      }
+
+      .inner-page {
+        width: 90%;
+        max-width: 800px;
+        margin: auto;
+      }
+
+      h1 {
+        border-bottom: 0;
+      }
+
+      #header {
+        padding-bottom: 32px;
+      }
+
+      #header h1 {
+        text-align: center;
+        white-space: pre-wrap;
+        width: 90%;
+        margin: 81px auto 48px auto;
+      }
+
+      h1 {
+        font-size: 3.6rem;
+        letter-spacing: -2px;
+        text-indent: -3px;
+      }
+
+      h2 {
+        margin-top: 2em;
+      }
+
+      .pure-menu-active > .pure-menu-link,
+      .pure-menu-link:hover,
+      .pure-menu-link:focus {
+        background-color: initial;
+        border: #777 solid 1px;
+      }
+
+      .post-meta {
+        font-style: italic;
+        text-align: center;
+        color: #7a7a7a;
+      }
+
+      div.highlighter-rouge {
+        padding: 8px;
+        border: 1px #777 solid;
+        line-height: 1.2rem;
+        font-family: Menlo, Monaco, "Courier New", monospace;
+      }
+
+      div.highlighter-rouge pre {
+        font-size: 0.95em;
+        overflow: hidden;
+        word-break: break-word;
+        white-space: pre-wrap;
+      }
+
+      a {
+        color: #463f5c;
+        text-decoration: underline;
+      }
+    </style>
+<header class="pure-menu pure-menu-horizontal nav post-title" id="header">
+<div class="gallery">
+<ul class="pure-menu-list" style="float: left; margin-left: 1em; position: absolute">
+<li class="pure-menu-item pure-menu-active">
+<a href="../index.html" class="pure-menu-link" id="title-bar-feature-btn">Back</a
+            >
+</li>
+</ul>
+</div>
+<h1>Spellcheck</h1>
+<section class="post-meta">
+<time>October 22, 2018</time>
+by
+<span>typora.io</span>
+</section>
+</header>
+<div id="pagecontainer" class="container">
+<div id="post-content" class="inner-page"><h2 id="os-x">OS X</h2>
+<p>There’s no extra setup on macOS, you could enable/disable spellcheck from <code class="language-plaintext highlighter-rouge">Edit</code> → <code class="language-plaintext highlighter-rouge">Spelling and Grammar</code> on menu bar (like other apps).</p>
+<h2 id="windowslinux">Windows/Linux</h2>
+<p>You could open spellcheck panel by click <code class="language-plaintext highlighter-rouge">Edit</code> → <code class="language-plaintext highlighter-rouge">Spell Check…</code> from menu, or just hover on status bar and open the “spell check“ icon.</p>
+<figure>
+<img src="../media/spellcheck/Screen&#32;Shot&#32;2018-10-21&#32;at&#32;23.21.28.png" alt="spellcheck on windows" style="zoom:50%" />
+<figcaption>Left: Spellcheck in context menu / Right: Spellcheck Panel</figcaption>
+</figure>
+<p>You could change the default spell check language or disable spell check by clicking “Global Setting…“ from the spell check panel or find it directly in preferences panel.</p>
+<h2 id="windows-10">Windows 10</h2>
+<p>On Windows 10, Typora may use the system built-in spellchecker, you could enable “Highlight misspelled <strong>words</strong>” in Windows Settings → Devices → Typing.</p>
+<h2 id="install-missing-dictionaries">Install Missing Dictionaries</h2>
+<p>When you saw the warning icon on your status bar like following, it properly means that extra components are required to download in order to support spell check for target language.</p>
+<p><img src="../media/spellcheck/Screen&#32;Shot&#32;2018-10-22&#32;at&#32;00.22.33.png" alt="Screen Shot 2018-10-22 at 00.22.33" /></p>
+<p>You could click on the “warning“ icon and follow the instructions to download &amp; install missing dictionary files.</p>
+<h3 id="windows-810">Windows 8/10</h3>
+<p>Typora uses the system spellcheck on Windows ≥ 8 by default, but you could still choose to use the built-in spellcheck module in Typora, instead of install language support for whole system, just click the pulldown button, and select “Install dictionary file only for Typora“.</p>
+<p><img src="../media/spellcheck/CleanShot&#32;2018-10-22&#32;at&#32;21.57.11@2x.png" alt="CleanShot 2018-10-22 at 21.57.11@2x" /></p>
+<h4 id="install-language-support-on-windows-810">Install Language Support on Windows 8/10</h4>
+<p>You could install the language using the regional settings:</p>
+<p><img src="../media/spellcheck/windows-10-language-settings.jpg" alt="Windows 10 Language and Regions" /></p>
+<p>Once the additional language is added, Typora will need to be restarted.</p>
+<h4 id="install-language-support-only-for-typora">Install Language Support only for Typora</h4>
+<p>Click “Install dictionary file only for Typora“ from the pulldown button when Typora displays the “dictionary missing“ notification, Typora will automatically download needed files and use “hunspell“ module for spell check. You could learn more in following section.</p>
+<h3 id="linux-and-older-windows">Linux and older Windows</h3>
+<p>Click “Install language Support“ when error notification of spellcheck is shown, Typora will display the license info of the dictionary file, and then after click “download“ button, Typora will download the dictionary file. You could see the download progress from the status bar.</p>
+<p>You could download needed language manually from <a href="https://dict.typora.io/">https://dict.typora.io/</a>, and put them under folder <code class="language-plaintext highlighter-rouge">{typora-user-folder}\dictionaries</code>, you could find the location of <code class="language-plaintext highlighter-rouge">{typora-user-folder}</code> by opening “theme folder“ from preferences panels, and then open its parent folder. On Linux it looks like <code class="language-plaintext highlighter-rouge">~/.config/Typora</code>, and on Windows it looks like <code class="language-plaintext highlighter-rouge">C:/user/{your-user-name}/appData/Roaming/Typora</code>.</p>
+<h4 id="license-info">License info</h4>
+<p>Source and license info of those dictionaries are in <a href="https://github.com/typora/dictionaries">https://github.com/typora/dictionaries</a>.</p>
+<h2 id="learn-and-unlearn-misspelled-words">Learn and Unlearn Misspelled Words</h2>
+<p>You could tell Typora to learn a new word by select the word and click “learn spelling“ from context menu. To unlearned a previous added word, just select the word and select “unlearn spelling“ from context menu.</p>
+<p><strong>Nota Bene</strong>: There’s no spell check for Chinese/Japanese, when those languages are selected, Typora will use <code class="language-plaintext highlighter-rouge">en-US</code> spellchecker to check ASCII words.</p>
+</div>
+</div>
+<footer id="post-footer" style="
+        background-color: rgb(51, 51, 51);
+        padding-top: 50px;
+        padding-bottom: 50px;
+        text-align: center;
+        font-size: 13px;
+      ">
+<a data-has-mirror href="https://store.typora.io">Get Typora</a> /
+<a href="https://github.com/typora/wiki-website">Help Improve our documents</a
+      >
+</footer>
+<script>
+      var backBtn = document.querySelector("#title-bar-feature-btn");
+      if (backBtn) {
+        backBtn.onclick = function (event) {
+          if (
+            window.history.length > 1 &&
+            document.referrer.indexOf(window.location.host) !== -1
+          ) {
+            console.log(" window.history.back");
+            event.preventDefault();
+            window.history.back();
+          }
+        };
+      }
+      if (location.host == "support.typoraio.cn" || location.host == "support.typora.com.cn") {
+        document.querySelectorAll("[data-has-mirror]").forEach((a) => {
+          var href = a.href;
+          if (href.indexOf("store.typora.io") > 0)
+            href = "https://typoraio.cn/";
+          else if (href.indexOf("https://typora.io") > -1)
+            href = "https://typoraio.cn/";
+          else href = href.replace("typora.io", "typoraio.cn");
+          a.href = href;
+        });
+      }
+    </script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-56771470-2", "auto");
+      ga("set", "page", "/support");
+      ga("send", "pageview");
+    </script>
+
+<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ed23a5bcf8c017f"></script>
+
+</body>
+</html>

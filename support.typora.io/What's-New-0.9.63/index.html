@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Typora 0.9.9.21 (0.9.63) beta - Typora Support</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@typora" />
+<meta name="twitter:title" content="Typora 0.9.9.21 (0.9.63) beta" />
+<meta name="twitter:url" content="/What's-New-0.9.63/" />
+<meta name="twitter:description" content="Improvement JumpList (Windows) New version will also put recent used folders on the jump list of Typora, you could pin frequently used file/folder and access them quickly from task bar. Recent file and recent folder can be cleared by click “Open Recent” → “Clear Items” from File menu. Open Quickly Now recent files and files in current working folder will be listed in open quickly dialog in separated group. When user open new file or rename file, the file list in open quickly dialog will also get updated. Sidebar Full path will be display when hover on node/item in file..." />
+<meta name="twitter:image:src" content="http://typora.io/img/twitter-sum.png" />
+<meta name="twitter:image" content="http://typora.io/img/twitter-sum.png" />
+<meta property="og:url" content="/What's-New-0.9.63/" />
+<meta property="og:title" content="Typora 0.9.9.21 (0.9.63) beta" />
+<meta property="og:description" content="Improvement JumpList (Windows) New version will also put recent used folders on the jump list of Typora, you could pin frequently used file/folder and access them quickly from task bar. Recent file and recent folder can be cleared by click “Open Recent” → “Clear Items” from File menu. Open Quickly Now recent files and files in current working folder will be listed in open quickly dialog in separated group. When user open new file or rename file, the file list in open quickly dialog will also get updated. Sidebar Full path will be display when hover on node/item in file..." />
+<meta name="og:image" content="http://typora.io/img/twitter-sum.png" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+
+<link href="../assets/css/pure-min.css" rel="stylesheet" />
+
+<link href="../assets/css/syntax.css" rel="stylesheet" />
+<link href="../assets/css/typora-wiki.css" rel="stylesheet" />
+<link rel="icon" href="../assets/img/favicon-16.png" sizes="16x16" />
+<link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32" />
+<link rel="icon" href="https://support.typora.io/assets/img/favicon-64.png" sizes="64x64" />
+<link rel="icon" href="../assets/img/favicon-128.png" sizes="128x128" />
+<script>
+      if (
+        window.location.host.indexOf("typora.io") > -1 &&
+        window.location.protocol != "https:"
+      ) {
+        window.location.protocol = "https";
+      }
+      if (location.host == "support.typora.com.cn") {
+        location = `https://support.typoraio.cn${location.pathname}${location.hash}`;
+      }
+    </script>
+</head>
+<body>
+<style type="text/css">
+      body {
+        
+          font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman",
+          "STSong", Serif;
+		    
+        font-weight: 300;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #2e2e2e;
+        line-height: 1.15em;
+        font-family: "Open Sans", "Hiragino Sans GB", "Microsoft YaHei",
+          "WenQuanYi Micro Hei", sans-serif;
+        text-rendering: geometricPrecision;
+      }
+
+      #pagecontainer {
+        background-color: #fff;
+        min-height: calc(100vh - 510px);
+        flex: 2;
+      }
+
+      #post-content {
+        padding-top: 36px;
+        border-top: 1px dashed #999999;
+        line-height: 1.6rem;
+        padding-bottom: 100px;
+      }
+
+      #post-content > blockquote:first-child {
+        padding-top: 0.4em;
+        padding-bottom: 0.4em;
+        margin-bottom: 2em;
+        margin-left: 0;
+      }
+
+      .nav {
+        border-bottom: none;
+        height: auto;
+      }
+
+      .inner-page {
+        width: 90%;
+        max-width: 800px;
+        margin: auto;
+      }
+
+      h1 {
+        border-bottom: 0;
+      }
+
+      #header {
+        padding-bottom: 32px;
+      }
+
+      #header h1 {
+        text-align: center;
+        white-space: pre-wrap;
+        width: 90%;
+        margin: 81px auto 48px auto;
+      }
+
+      h1 {
+        font-size: 3.6rem;
+        letter-spacing: -2px;
+        text-indent: -3px;
+      }
+
+      h2 {
+        margin-top: 2em;
+      }
+
+      .pure-menu-active > .pure-menu-link,
+      .pure-menu-link:hover,
+      .pure-menu-link:focus {
+        background-color: initial;
+        border: #777 solid 1px;
+      }
+
+      .post-meta {
+        font-style: italic;
+        text-align: center;
+        color: #7a7a7a;
+      }
+
+      div.highlighter-rouge {
+        padding: 8px;
+        border: 1px #777 solid;
+        line-height: 1.2rem;
+        font-family: Menlo, Monaco, "Courier New", monospace;
+      }
+
+      div.highlighter-rouge pre {
+        font-size: 0.95em;
+        overflow: hidden;
+        word-break: break-word;
+        white-space: pre-wrap;
+      }
+
+      a {
+        color: #463f5c;
+        text-decoration: underline;
+      }
+    </style>
+<header class="pure-menu pure-menu-horizontal nav post-title" id="header">
+<div class="gallery">
+<ul class="pure-menu-list" style="float: left; margin-left: 1em; position: absolute">
+<li class="pure-menu-item pure-menu-active">
+<a href="../index.html" class="pure-menu-link" id="title-bar-feature-btn">Back</a
+            >
+</li>
+</ul>
+</div>
+<h1>Typora 0.9.9.21 (0.9.63) beta</h1>
+<section class="post-meta">
+<time>January 25, 2019</time>
+by
+<span>typora.io</span>
+</section>
+</header>
+<div id="pagecontainer" class="container">
+<div id="post-content" class="inner-page"><h1 id="improvement">Improvement</h1>
+<h2 id="jumplist-windows">JumpList (Windows)</h2>
+<p>New version will also put recent used folders on the jump list of Typora, you could pin frequently used file/folder and access them quickly from task bar.</p>
+<p><img src="../media/files/jump&#32;list.PNG" style="zoom:75%;" /></p>
+<p>Recent file and recent folder can be cleared by click “Open Recent” → “Clear Items” from File menu.</p>
+<h2 id="open-quickly">Open Quickly</h2>
+<p>Now recent files and files in current working folder will be listed in open quickly dialog in separated group. When user open new file or rename file, the file list in open quickly dialog will also get updated.</p>
+<p><img src="../media/files/Screen&#32;Shot&#32;2019-01-24&#32;at&#32;23.39.15.png" style="zoom:50%" /></p>
+<h2 id="sidebar">Sidebar</h2>
+<ul>
+<li>Full path will be display when hover on node/item in file tree/list.</li>
+<li>Make items in outline panel more easy to click. (Now user can click anywhere in the row, instead of text part only of each outline item).</li>
+</ul>
+<h2 id="copy-without-theme-styling">Copy without Theme Styling</h2>
+<p>Add new menu option to content semantic content without theme styling. For example, if you write “<strong>text</strong>”, then <code class="language-plaintext highlighter-rouge">&lt;strong&gt;</code> style is kept while specific styles, such as color, font family, line height, etc will not be copied. You could find more details in <a href="../Copy-and-Paste/index.html">https://support.typora.io/Copy-and-Paste/</a></p>
+<h2 id="math">Math</h2>
+<ul>
+<li>Use to mhchem 3.3 for better chemistry support. Also, after update, commands like <code class="language-plaintext highlighter-rouge">\pu</code>, <code class="language-plaintext highlighter-rouge">\xrightarrow</code>, etc are now supported.</li>
+<li>Fix issues with auto numbering on Windows/Linux.</li>
+</ul>
+<h2 id="i18n">i18n</h2>
+<ul>
+<li>Improved Japanese and Hrvatski translation.</li>
+</ul>
+<h2 id="source-code-mode">Source Code Mode</h2>
+<ul>
+<li>Add basic context menu for source code mode on Windows/Linux version.</li>
+</ul>
+<h1 id="bug-fix">Bug fix</h1>
+<ul>
+<li>Fix crash on macOS 10.10.x</li>
+<li><strong>[Security]</strong> Fix an XSS issue on sidebar.</li>
+<li>Fix bug that maximized window is not remembered on Windows/Linux.</li>
+<li>Fix bugs cursor jump when input block quotes or task lists.</li>
+<li>Fix bugs about Markdown parsing rules.</li>
+<li>Fix button actions and links for spellcheck panel.</li>
+<li>Other bug fix.</li>
+</ul>
+</div>
+</div>
+<footer id="post-footer" style="
+        background-color: rgb(51, 51, 51);
+        padding-top: 50px;
+        padding-bottom: 50px;
+        text-align: center;
+        font-size: 13px;
+      ">
+<a data-has-mirror href="https://store.typora.io">Get Typora</a> /
+<a href="https://github.com/typora/wiki-website">Help Improve our documents</a
+      >
+</footer>
+<script>
+      var backBtn = document.querySelector("#title-bar-feature-btn");
+      if (backBtn) {
+        backBtn.onclick = function (event) {
+          if (
+            window.history.length > 1 &&
+            document.referrer.indexOf(window.location.host) !== -1
+          ) {
+            console.log(" window.history.back");
+            event.preventDefault();
+            window.history.back();
+          }
+        };
+      }
+      if (location.host == "support.typoraio.cn" || location.host == "support.typora.com.cn") {
+        document.querySelectorAll("[data-has-mirror]").forEach((a) => {
+          var href = a.href;
+          if (href.indexOf("store.typora.io") > 0)
+            href = "https://typoraio.cn/";
+          else if (href.indexOf("https://typora.io") > -1)
+            href = "https://typoraio.cn/";
+          else href = href.replace("typora.io", "typoraio.cn");
+          a.href = href;
+        });
+      }
+    </script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-56771470-2", "auto");
+      ga("set", "page", "/support");
+      ga("send", "pageview");
+    </script>
+
+<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ed23a5bcf8c017f"></script>
+
+</body>
+</html>

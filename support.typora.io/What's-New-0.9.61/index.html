@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Typora 0.9.9.20 (0.9.61) beta - Typora Support</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@typora" />
+<meta name="twitter:title" content="Typora 0.9.9.20 (0.9.61) beta" />
+<meta name="twitter:url" content="/What's-New-0.9.61/" />
+<meta name="twitter:description" content="New Global Search In new release, you could click the “Search” icon on side panel on macOS or just scroll top on side panel on Windows/Linux version of Typora to show global search input. Or use hotkey Command(Ctrl) + Shift + F to open global search. Note: in new release, you could close sidebar via icons on titlebar (macOS) or status bar (Windows/Linux). Move Files by Drag &amp; Drop File moved are supported via drag &amp; drop in File Tree Panel. You could also drag and drop between Finder/Explorer and Typora’s sidebar. Also, drag file/folder from sidebar to writing area..." />
+<meta name="twitter:image:src" content="http://typora.io/img/twitter-sum.png" />
+<meta name="twitter:image" content="http://typora.io/img/twitter-sum.png" />
+<meta property="og:url" content="/What's-New-0.9.61/" />
+<meta property="og:title" content="Typora 0.9.9.20 (0.9.61) beta" />
+<meta property="og:description" content="New Global Search In new release, you could click the “Search” icon on side panel on macOS or just scroll top on side panel on Windows/Linux version of Typora to show global search input. Or use hotkey Command(Ctrl) + Shift + F to open global search. Note: in new release, you could close sidebar via icons on titlebar (macOS) or status bar (Windows/Linux). Move Files by Drag &amp; Drop File moved are supported via drag &amp; drop in File Tree Panel. You could also drag and drop between Finder/Explorer and Typora’s sidebar. Also, drag file/folder from sidebar to writing area..." />
+<meta name="og:image" content="http://typora.io/img/twitter-sum.png" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+
+<link href="../assets/css/pure-min.css" rel="stylesheet" />
+
+<link href="../assets/css/syntax.css" rel="stylesheet" />
+<link href="../assets/css/typora-wiki.css" rel="stylesheet" />
+<link rel="icon" href="../assets/img/favicon-16.png" sizes="16x16" />
+<link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32" />
+<link rel="icon" href="https://support.typora.io/assets/img/favicon-64.png" sizes="64x64" />
+<link rel="icon" href="../assets/img/favicon-128.png" sizes="128x128" />
+<script>
+      if (
+        window.location.host.indexOf("typora.io") > -1 &&
+        window.location.protocol != "https:"
+      ) {
+        window.location.protocol = "https";
+      }
+      if (location.host == "support.typora.com.cn") {
+        location = `https://support.typoraio.cn${location.pathname}${location.hash}`;
+      }
+    </script>
+</head>
+<body>
+<style type="text/css">
+      body {
+        
+          font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman",
+          "STSong", Serif;
+		    
+        font-weight: 300;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #2e2e2e;
+        line-height: 1.15em;
+        font-family: "Open Sans", "Hiragino Sans GB", "Microsoft YaHei",
+          "WenQuanYi Micro Hei", sans-serif;
+        text-rendering: geometricPrecision;
+      }
+
+      #pagecontainer {
+        background-color: #fff;
+        min-height: calc(100vh - 510px);
+        flex: 2;
+      }
+
+      #post-content {
+        padding-top: 36px;
+        border-top: 1px dashed #999999;
+        line-height: 1.6rem;
+        padding-bottom: 100px;
+      }
+
+      #post-content > blockquote:first-child {
+        padding-top: 0.4em;
+        padding-bottom: 0.4em;
+        margin-bottom: 2em;
+        margin-left: 0;
+      }
+
+      .nav {
+        border-bottom: none;
+        height: auto;
+      }
+
+      .inner-page {
+        width: 90%;
+        max-width: 800px;
+        margin: auto;
+      }
+
+      h1 {
+        border-bottom: 0;
+      }
+
+      #header {
+        padding-bottom: 32px;
+      }
+
+      #header h1 {
+        text-align: center;
+        white-space: pre-wrap;
+        width: 90%;
+        margin: 81px auto 48px auto;
+      }
+
+      h1 {
+        font-size: 3.6rem;
+        letter-spacing: -2px;
+        text-indent: -3px;
+      }
+
+      h2 {
+        margin-top: 2em;
+      }
+
+      .pure-menu-active > .pure-menu-link,
+      .pure-menu-link:hover,
+      .pure-menu-link:focus {
+        background-color: initial;
+        border: #777 solid 1px;
+      }
+
+      .post-meta {
+        font-style: italic;
+        text-align: center;
+        color: #7a7a7a;
+      }
+
+      div.highlighter-rouge {
+        padding: 8px;
+        border: 1px #777 solid;
+        line-height: 1.2rem;
+        font-family: Menlo, Monaco, "Courier New", monospace;
+      }
+
+      div.highlighter-rouge pre {
+        font-size: 0.95em;
+        overflow: hidden;
+        word-break: break-word;
+        white-space: pre-wrap;
+      }
+
+      a {
+        color: #463f5c;
+        text-decoration: underline;
+      }
+    </style>
+<header class="pure-menu pure-menu-horizontal nav post-title" id="header">
+<div class="gallery">
+<ul class="pure-menu-list" style="float: left; margin-left: 1em; position: absolute">
+<li class="pure-menu-item pure-menu-active">
+<a href="../index.html" class="pure-menu-link" id="title-bar-feature-btn">Back</a
+            >
+</li>
+</ul>
+</div>
+<h1>Typora 0.9.9.20 (0.9.61) beta</h1>
+<section class="post-meta">
+<time>January 8, 2019</time>
+by
+<span>typora.io</span>
+</section>
+</header>
+<div id="pagecontainer" class="container">
+<div id="post-content" class="inner-page"><h1 id="new">New</h1>
+<h2 id="global-search">Global Search</h2>
+<p>In new release, you could click the “Search” icon on side panel on macOS or just scroll top on side panel on Windows/Linux version of Typora to show global search input. Or use hotkey <kbd>Command(Ctrl) + Shift + F</kbd> to open global search.</p>
+<p><img src="../media/files/Screen&#32;Shot&#32;2019-01-06&#32;at&#32;22.18.56.png" style="zoom:50%" /></p>
+<p>Note: in new release, you could close sidebar via icons on titlebar (macOS) or status bar (Windows/Linux).</p>
+<h2 id="move-files-by-drag--drop">Move Files by Drag &amp; Drop</h2>
+<p>File moved are supported via drag &amp; drop in File Tree Panel.</p>
+<video preload="auto" autoplay="autoplay" style="width: 100%;" muted="muted" loop="">
+<source src="../media/files/move-files.mp4" type="video/mp4" />
+</video>
+<p>You could also drag and drop between Finder/Explorer and Typora’s sidebar.</p>
+<p>Also, drag file/folder from sidebar to writing area to would insert links towards dragged files.</p>
+<h2 id="new-language-support">New Language Support</h2>
+<p>We added:</p>
+<ul>
+<li>Separate Portuguese (Portugal) and Portuguese (Brazil), Portuguese (Portugal) is newly translated <a href="https://github.com/jcamilo93">camilo93</a>.</li>
+<li>Galician by <a href="https://github.com/nunhes">nunhes</a>.</li>
+</ul>
+<h1 id="improvements">Improvements</h1>
+<h2 id="word-count">Word Count</h2>
+<p>Read more details in <a href="../Word-Count.html">Word Count</a>.</p>
+<h3 id="choose-default-counting-statistics">Choose default counting statistics</h3>
+<p>Now user can choose one from character count, word count, line count, and read time as default counting statistics by click the “word count” button.</p>
+<p><img src="../media/word-count/CleanShot&#32;2019-01-04&#32;at&#32;01.08.13@2x-6535752.png" style="zoom:50%" /></p>
+<h3 id="improve-word-count">Improve word count</h3>
+<ul>
+<li>When “always show word count” is enabled in preferences panel, “word count” will still be visible after Typora enter fullscreen mode on macOS</li>
+<li>Fix bug that word count cannot text correctly when the document contains list.</li>
+</ul>
+<h2 id="file-operations">File Operations</h2>
+<ul>
+<li>Confirm dialog are added for user operations such as move file or delete file.</li>
+<li>Typora could highlight changed file caused by user operation in side bar.</li>
+<li>User can undo latest one operation.</li>
+<li>Support “duplicate file” in context menu of file side bar.</li>
+</ul>
+<video preload="auto" autoplay="autoplay" style="width: 100%;" muted="muted" loop="">
+<source src="../media/files/undo.mp4" type="video/mp4" />
+</video>
+<p>You could find more details <a href="../File-Management/index.html">here</a>.</p>
+<h2 id="searchable">Searchable</h2>
+<h3 id="outline-panel">Outline Panel</h3>
+<p>We added filter in outline panel, for quickly jump to target position.</p>
+<video src="../media/outline/outline-filter.mp4" preload="auto" autoplay="autoplay" style="width: 100%;" muted="muted" loop=""></video>
+<h3 id="preferences-panel">Preferences Panel</h3>
+<p>Since there are more and more options in preferences panel, now preferences panel is also search on Windows/Linux version. User could search either in current language or in English.</p>
+<p><img src="../media/new-61/Screen&#32;Shot&#32;2019-01-08&#32;at&#32;20.50.50.png" style="zoom:50%" /></p>
+<h3 id="wiki-site">Wiki Site</h3>
+<p>Search is also enabled in this support site <a href="../index.html">https://support.typora.io/</a>.</p>
+<p><img src="../media/new-61/Screen&#32;Shot&#32;2019-01-08&#32;at&#32;21.00.56.png" style="zoom:50%" /></p>
+<h2 id="other">Other</h2>
+<ul>
+<li>Add syntax highlight for COBOL.</li>
+<li>Upgrade MathJax to v2.7.5</li>
+<li>Use more compact table layout when rendering tables.</li>
+<li>Export will show notification inside editor after export operation finished, instead of show exported file on Finder/Explorer directly.</li>
+<li>Support “Disable GPU Acceleration” option in advanced setting when launching Typora on Windows/Linux.</li>
+</ul>
+<h1 id="bug-fix">Bug Fix</h1>
+<ul>
+<li>Fix an XSS issue for rendering <code class="language-plaintext highlighter-rouge">&lt;img&gt;</code>.</li>
+<li>Fix text in menubar is invisible under Linux.</li>
+<li>Fix image will be copied twice when insert sometimes.</li>
+<li>Improve math equations in exported PDF/Docx.</li>
+<li>Fix too much margin for mermaid diagram.</li>
+<li>Fix link on mermaid diagram.</li>
+<li>Other bug fix.</li>
+</ul>
+</div>
+</div>
+<footer id="post-footer" style="
+        background-color: rgb(51, 51, 51);
+        padding-top: 50px;
+        padding-bottom: 50px;
+        text-align: center;
+        font-size: 13px;
+      ">
+<a data-has-mirror href="https://store.typora.io">Get Typora</a> /
+<a href="https://github.com/typora/wiki-website">Help Improve our documents</a
+      >
+</footer>
+<script>
+      var backBtn = document.querySelector("#title-bar-feature-btn");
+      if (backBtn) {
+        backBtn.onclick = function (event) {
+          if (
+            window.history.length > 1 &&
+            document.referrer.indexOf(window.location.host) !== -1
+          ) {
+            console.log(" window.history.back");
+            event.preventDefault();
+            window.history.back();
+          }
+        };
+      }
+      if (location.host == "support.typoraio.cn" || location.host == "support.typora.com.cn") {
+        document.querySelectorAll("[data-has-mirror]").forEach((a) => {
+          var href = a.href;
+          if (href.indexOf("store.typora.io") > 0)
+            href = "https://typoraio.cn/";
+          else if (href.indexOf("https://typora.io") > -1)
+            href = "https://typoraio.cn/";
+          else href = href.replace("typora.io", "typoraio.cn");
+          a.href = href;
+        });
+      }
+    </script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-56771470-2", "auto");
+      ga("set", "page", "/support");
+      ga("send", "pageview");
+    </script>
+
+<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ed23a5bcf8c017f"></script>
+
+</body>
+</html>

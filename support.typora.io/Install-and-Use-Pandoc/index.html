@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Install and Use Pandoc - Typora Support</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@typora" />
+<meta name="twitter:title" content="Install and Use Pandoc" />
+<meta name="twitter:url" content="/Install-and-Use-Pandoc/" />
+<meta name="twitter:description" content="TL;DR: Typora requires Pandoc for some of its advanced features. If you don’t have Pandoc (or have a version older than v2.0), please download and run the installer from Pandoc Download Page. You may need to restart Typora after install Pandoc if you receive an error that Typora cannot find Pandoc. For Windows users, if Typora is still saying it cannot find Pandoc, you may need to restart your PC. Pandoc Integration In Typora, import function and export function for some file formats (including docx, odt, rtf, epub, LaTeX and wiki) are powered by a 3rd party software named Pandoc...." />
+<meta name="twitter:image:src" content="http://typora.io/img/twitter-sum.png" />
+<meta name="twitter:image" content="http://typora.io/img/twitter-sum.png" />
+<meta property="og:url" content="/Install-and-Use-Pandoc/" />
+<meta property="og:title" content="Install and Use Pandoc" />
+<meta property="og:description" content="TL;DR: Typora requires Pandoc for some of its advanced features. If you don’t have Pandoc (or have a version older than v2.0), please download and run the installer from Pandoc Download Page. You may need to restart Typora after install Pandoc if you receive an error that Typora cannot find Pandoc. For Windows users, if Typora is still saying it cannot find Pandoc, you may need to restart your PC. Pandoc Integration In Typora, import function and export function for some file formats (including docx, odt, rtf, epub, LaTeX and wiki) are powered by a 3rd party software named Pandoc...." />
+<meta name="og:image" content="http://typora.io/img/twitter-sum.png" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+
+<link href="../assets/css/pure-min.css" rel="stylesheet" />
+
+<link href="../assets/css/syntax.css" rel="stylesheet" />
+<link href="../assets/css/typora-wiki.css" rel="stylesheet" />
+<link rel="icon" href="../assets/img/favicon-16.png" sizes="16x16" />
+<link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32" />
+<link rel="icon" href="https://support.typora.io/assets/img/favicon-64.png" sizes="64x64" />
+<link rel="icon" href="../assets/img/favicon-128.png" sizes="128x128" />
+<script>
+      if (
+        window.location.host.indexOf("typora.io") > -1 &&
+        window.location.protocol != "https:"
+      ) {
+        window.location.protocol = "https";
+      }
+      if (location.host == "support.typora.com.cn") {
+        location = `https://support.typoraio.cn${location.pathname}${location.hash}`;
+      }
+    </script>
+</head>
+<body>
+<style type="text/css">
+      body {
+        
+          font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman",
+          "STSong", Serif;
+		    
+        font-weight: 300;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #2e2e2e;
+        line-height: 1.15em;
+        font-family: "Open Sans", "Hiragino Sans GB", "Microsoft YaHei",
+          "WenQuanYi Micro Hei", sans-serif;
+        text-rendering: geometricPrecision;
+      }
+
+      #pagecontainer {
+        background-color: #fff;
+        min-height: calc(100vh - 510px);
+        flex: 2;
+      }
+
+      #post-content {
+        padding-top: 36px;
+        border-top: 1px dashed #999999;
+        line-height: 1.6rem;
+        padding-bottom: 100px;
+      }
+
+      #post-content > blockquote:first-child {
+        padding-top: 0.4em;
+        padding-bottom: 0.4em;
+        margin-bottom: 2em;
+        margin-left: 0;
+      }
+
+      .nav {
+        border-bottom: none;
+        height: auto;
+      }
+
+      .inner-page {
+        width: 90%;
+        max-width: 800px;
+        margin: auto;
+      }
+
+      h1 {
+        border-bottom: 0;
+      }
+
+      #header {
+        padding-bottom: 32px;
+      }
+
+      #header h1 {
+        text-align: center;
+        white-space: pre-wrap;
+        width: 90%;
+        margin: 81px auto 48px auto;
+      }
+
+      h1 {
+        font-size: 3.6rem;
+        letter-spacing: -2px;
+        text-indent: -3px;
+      }
+
+      h2 {
+        margin-top: 2em;
+      }
+
+      .pure-menu-active > .pure-menu-link,
+      .pure-menu-link:hover,
+      .pure-menu-link:focus {
+        background-color: initial;
+        border: #777 solid 1px;
+      }
+
+      .post-meta {
+        font-style: italic;
+        text-align: center;
+        color: #7a7a7a;
+      }
+
+      div.highlighter-rouge {
+        padding: 8px;
+        border: 1px #777 solid;
+        line-height: 1.2rem;
+        font-family: Menlo, Monaco, "Courier New", monospace;
+      }
+
+      div.highlighter-rouge pre {
+        font-size: 0.95em;
+        overflow: hidden;
+        word-break: break-word;
+        white-space: pre-wrap;
+      }
+
+      a {
+        color: #463f5c;
+        text-decoration: underline;
+      }
+    </style>
+<header class="pure-menu pure-menu-horizontal nav post-title" id="header">
+<div class="gallery">
+<ul class="pure-menu-list" style="float: left; margin-left: 1em; position: absolute">
+<li class="pure-menu-item pure-menu-active">
+<a href="../index.html" class="pure-menu-link" id="title-bar-feature-btn">Back</a
+            >
+</li>
+</ul>
+</div>
+<h1>Install and Use Pandoc</h1>
+<section class="post-meta">
+<time>May 2, 2016</time>
+by
+<span>typora.io</span>
+</section>
+</header>
+<div id="pagecontainer" class="container">
+<div id="post-content" class="inner-page"><p>TL;DR:</p>
+<p>Typora requires <a href="http://pandoc.org/">Pandoc</a> for some of its advanced features. If you don’t have Pandoc (or have a version older than v2.0), please download and run the installer from <strong><a href="https://github.com/jgm/pandoc/releases/latest">Pandoc Download Page</a></strong>.</p>
+<p>You may need to restart Typora after install Pandoc if you receive an error that Typora cannot find Pandoc.</p>
+<p>For Windows users, if Typora is still saying it cannot find Pandoc, you may need to restart your PC.</p>
+<h1 id="pandoc-integration">Pandoc Integration</h1>
+<p>In Typora, import function and export function for some file formats (including docx, odt, rtf, epub, LaTeX and wiki) are powered by a 3rd party software named Pandoc. Those features require Pandoc (≥ v2.0) to be installed.</p>
+<p>Please note that installation of Pandoc is optional for Typora, if you do not need advanced import/export support in Typora, then you do not have to install Pandoc on your computer.</p>
+<p>This document will show how to install Pandoc and use Typora with Pandoc for full import/export functions.</p>
+<h2 id="what-is-pandoc">What is Pandoc</h2>
+<p><a href="http://pandoc.org/">Pandoc</a> is a universal document text converter. Typora uses it to support file import/export features for several file types.</p>
+<h2 id="install-pandoc">Install Pandoc</h2>
+<h3 id="for-mac-users">For Mac Users</h3>
+<p>Briefly speaking, there are two recommended ways.</p>
+<h5 id="install-from-downloaded-package-installer">Install from downloaded package installer</h5>
+<p>Download a package installer from Pandoc’s <a href="https://github.com/jgm/pandoc/releases/latest">download page</a>, open it and follow the instructions for installation.</p>
+<p><img src="../media/pandoc/Snip20160502_1.png" alt="Snip20160502_1" /></p>
+<h5 id="install-from-homebrew">Install from Homebrew</h5>
+<p>For developers using <a href="http://brew.sh/">Homebrew</a>, installing Pandoc can be one line from terminal:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew <span class="nb">install </span>pandoc
+</code></pre></div></div>
+<h3 id="for-windows-users">For Windows Users</h3>
+<p>Download the <code class="language-plaintext highlighter-rouge">pandoc-*-window.msi</code> from Pandoc’s <a href="https://github.com/jgm/pandoc/releases/latest">download page</a>, open it and follow the instructions for installation.</p>
+<p><img src="../media/pandoc/pandoc-win.PNG" alt="pandoc-win" /></p>
+<h4 id="install-via-winget">Install via Winget</h4>
+<p>For Windows 11 users, you could also install via <code class="language-plaintext highlighter-rouge">winget install pandoc</code> in cmd.</p>
+<h3 id="install-for-linux">Install for Linux</h3>
+<p>You could install pandoc via <code class="language-plaintext highlighter-rouge">sudo apt install pandoc</code> in terminal.</p>
+<blockquote>
+<p>If you are using the <a href="../Snap/index.html">Snap</a> version of Typora, the pandoc is included in the snap.</p>
+</blockquote>
+<h2 id="config-pandoc-path">Config Pandoc Path</h2>
+<p>If Typora still shows “Require Pandoc to Continue” even after installed pandoc, please try restart Typora. If typora still cannot find pandoc after restart, you can manually input pandoc path on <code class="language-plaintext highlighter-rouge">Preferences Panel</code> → <code class="language-plaintext highlighter-rouge">Export</code> → <code class="language-plaintext highlighter-rouge">General</code>.</p>
+<p><img src="../media/export/Screen&#32;Shot&#32;2021-01-18&#32;at&#32;22.51.30.png" alt="pandoc path" /></p>
+<h2 id="use-pandoc">Use Pandoc</h2>
+<p>After Pandoc is installed, then you can import supported file types by clicking File -&gt; Import from the menu bar, or simply drag and drop a file into Typora. There are also new Export functions available from the menu bar. Pandoc will run in background for those tasks and then exit automatically, so you may not notice it.</p>
+<h2 id="faq">FAQ</h2>
+<h4 id="which-version-of-pandoc-is-supported">Which version of Pandoc is supported?</h4>
+<p>Versions ≥ 2.0 are required. The latest version, the better. So updating Pandoc is encouraged if your Pandoc version is too old.</p>
+<p>You can check your pandoc version via</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pandoc <span class="nt">--version</span>
+</code></pre></div></div>
+<h4 id="can-typora-work-without-pandoc">Can Typora work without Pandoc?</h4>
+<p>Yes. Only import and export (other than HTML/PDF file types) needs it.</p>
+<h4 id="which-file-types-can-be-imported-or-exported-by-typora">Which file types can be imported or exported by Typora?</h4>
+<p>Import supports files with these extensions: .docx, .latex, .tex, .ltx, .rst, .rest, .org, .wiki, .dokuwiki, .textile, .opml, .epub.</p>
+<p>Export supports file formats of: HTML, PDF (these two do not need Typora), Docx, odt, rtf, Epub, LaTeX, Media Wiki.</p>
+<p>Pandoc itself supports more file types which Typora does not yet integrate. It has more details <a href="http://pandoc.org/">here</a>.</p>
+<h4 id="whats-the-difference-between-exporting-by-typora-and-exporting-by-using-pandoc-from-command-line">What’s the difference between exporting by Typora and exporting by using Pandoc from command line?</h4>
+<p>Exporting by Typora is also powered by Pandoc, yet Typora will not convert directly from markdown to target file type, instead, it converts to an inner format Pandoc can read and then write as target file type. In detail:</p>
+<ul>
+<li>If you run Pandoc from command line, then you need to specify its markdown parser (from Pandoc Markdown, <a href="http://commonmark.org/">CommonMark</a>, <a href="https://michelf.ca/projects/php-markdown/extra/">PHP Markdown Extra</a>, <a href="https://help.github.com/articles/github-flavored-markdown/">GitHub-Flavored Markdown</a>).</li>
+<li>While exporting using Typora, Typora will pass its inner AST to Pandoc for file conversion. In other words, the format of blocks or inline elements in exported output will always be consistent with what you see in Typora and exported HTML/PDF. Yet, the styling may be different.</li>
+<li>Some Markdown syntax extensions invented by Pandoc Markdown, like citations, are not supported when you export from Typora, as only Markdown syntax Typora supports will be correctly exported. But we may support more extended markdown syntax in future.</li>
+<li><code class="language-plaintext highlighter-rouge">[TOC]</code> will be correctly exported from Typora for all file types. Highlight and underline will be supported for LaTeX, rtf, Epub, wiki formats and sometimes Docx. Yet, they are only supported for HTML based file formats in raw Pandoc. Other block and inline elements is basically both supported by raw Pandoc and Typora+Pandoc.</li>
+</ul>
+<h4 id="can-all-blockinline-element-types-be-exported-correctly">Can all block/inline element types be exported correctly?</h4>
+<p>Exporting Task lists are not supported yet. Underline and highlight for <code class="language-plaintext highlighter-rouge">.docx</code> is supported only if they are not used inside or outside other inline styles. Underlining and highlights are not support for OpenOffice(<code class="language-plaintext highlighter-rouge">.odt</code>). Embedding .gif files is not support for LaTeX. Other block or inline elements can be exported, but the styles cannot be 100% matched when imported or exported.</p>
+<h4 id="how-to-uninstall-pandoc-for-mac">How to uninstall Pandoc for mac?</h4>
+<p>Follow <a href="http://pandoc.org/installing.html">Pandoc’s official instructions</a>:</p>
+<blockquote>
+<p>If you later want to uninstall the package, you can do so by downloading <a href="https://raw.githubusercontent.com/jgm/pandoc/master/osx/uninstall-pandoc.pl">this script</a> and running it with <code class="language-plaintext highlighter-rouge">perl uninstall-pandoc.pl</code>”.</p>
+</blockquote>
+<h4 id="found-a-bug-and-unsupported-syntax-for-exporting">Found a bug and unsupported syntax for exporting?</h4>
+<p>Contact us <a href="../cdn-cgi/l/email-protection.html#e38b8aa3979a938c9182cd8a8c"><span class="__cf_email__" data-cfemail="244c4d64505d544b56450a4d4b">[email&#160;protected]</span></a>, and please provide a sample <code class="language-plaintext highlighter-rouge">.md</code> file, so we can reproduce the bug.</p>
+<p>If you have a bug/feature request for Pandoc, you please contact its community via <a href="https://groups.google.com/forum/#!forum/pandoc-discuss">pandoc-discuss</a>.</p>
+</div>
+</div>
+<footer id="post-footer" style="
+        background-color: rgb(51, 51, 51);
+        padding-top: 50px;
+        padding-bottom: 50px;
+        text-align: center;
+        font-size: 13px;
+      ">
+<a data-has-mirror href="https://store.typora.io">Get Typora</a> /
+<a href="https://github.com/typora/wiki-website">Help Improve our documents</a
+      >
+</footer>
+<script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+      var backBtn = document.querySelector("#title-bar-feature-btn");
+      if (backBtn) {
+        backBtn.onclick = function (event) {
+          if (
+            window.history.length > 1 &&
+            document.referrer.indexOf(window.location.host) !== -1
+          ) {
+            console.log(" window.history.back");
+            event.preventDefault();
+            window.history.back();
+          }
+        };
+      }
+      if (location.host == "support.typoraio.cn" || location.host == "support.typora.com.cn") {
+        document.querySelectorAll("[data-has-mirror]").forEach((a) => {
+          var href = a.href;
+          if (href.indexOf("store.typora.io") > 0)
+            href = "https://typoraio.cn/";
+          else if (href.indexOf("https://typora.io") > -1)
+            href = "https://typoraio.cn/";
+          else href = href.replace("typora.io", "typoraio.cn");
+          a.href = href;
+        });
+      }
+    </script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-56771470-2", "auto");
+      ga("set", "page", "/support");
+      ga("send", "pageview");
+    </script>
+
+<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ed23a5bcf8c017f"></script>
+
+</body>
+</html>

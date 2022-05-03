@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Typora 0.9.9.32 (0.9.84) beta - Typora Support</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@typora" />
+<meta name="twitter:title" content="Typora 0.9.9.32 (0.9.84) beta" />
+<meta name="twitter:url" content="/What's-New-0.9.84/" />
+<meta name="twitter:description" content="New Upload Images Now Typora on all OS supports upload images. Previously, we only support integration with iPic on macOS, now we added support for uPic (macOS), PicGo-Core, PicGo.app (Chinese Language Only), and custom commands. So users in all operation system now have free options to upload images. For details, please check here. Improvement Footnote Quick Jump For the footnote syntax, we will append an ↩ link after its definition when it is used. And user will jump to its references by clicking the link. Also for the reference of footnote (like [^footnote]), user can jump it is definition quickly..." />
+<meta name="twitter:image:src" content="http://typora.io/img/twitter-sum.png" />
+<meta name="twitter:image" content="http://typora.io/img/twitter-sum.png" />
+<meta property="og:url" content="/What's-New-0.9.84/" />
+<meta property="og:title" content="Typora 0.9.9.32 (0.9.84) beta" />
+<meta property="og:description" content="New Upload Images Now Typora on all OS supports upload images. Previously, we only support integration with iPic on macOS, now we added support for uPic (macOS), PicGo-Core, PicGo.app (Chinese Language Only), and custom commands. So users in all operation system now have free options to upload images. For details, please check here. Improvement Footnote Quick Jump For the footnote syntax, we will append an ↩ link after its definition when it is used. And user will jump to its references by clicking the link. Also for the reference of footnote (like [^footnote]), user can jump it is definition quickly..." />
+<meta name="og:image" content="http://typora.io/img/twitter-sum.png" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+
+<link href="../assets/css/pure-min.css" rel="stylesheet" />
+
+<link href="../assets/css/syntax.css" rel="stylesheet" />
+<link href="../assets/css/typora-wiki.css" rel="stylesheet" />
+<link rel="icon" href="../assets/img/favicon-16.png" sizes="16x16" />
+<link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32" />
+<link rel="icon" href="https://support.typora.io/assets/img/favicon-64.png" sizes="64x64" />
+<link rel="icon" href="../assets/img/favicon-128.png" sizes="128x128" />
+<script>
+      if (
+        window.location.host.indexOf("typora.io") > -1 &&
+        window.location.protocol != "https:"
+      ) {
+        window.location.protocol = "https";
+      }
+      if (location.host == "support.typora.com.cn") {
+        location = `https://support.typoraio.cn${location.pathname}${location.hash}`;
+      }
+    </script>
+</head>
+<body>
+<style type="text/css">
+      body {
+        
+          font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman",
+          "STSong", Serif;
+		    
+        font-weight: 300;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #2e2e2e;
+        line-height: 1.15em;
+        font-family: "Open Sans", "Hiragino Sans GB", "Microsoft YaHei",
+          "WenQuanYi Micro Hei", sans-serif;
+        text-rendering: geometricPrecision;
+      }
+
+      #pagecontainer {
+        background-color: #fff;
+        min-height: calc(100vh - 510px);
+        flex: 2;
+      }
+
+      #post-content {
+        padding-top: 36px;
+        border-top: 1px dashed #999999;
+        line-height: 1.6rem;
+        padding-bottom: 100px;
+      }
+
+      #post-content > blockquote:first-child {
+        padding-top: 0.4em;
+        padding-bottom: 0.4em;
+        margin-bottom: 2em;
+        margin-left: 0;
+      }
+
+      .nav {
+        border-bottom: none;
+        height: auto;
+      }
+
+      .inner-page {
+        width: 90%;
+        max-width: 800px;
+        margin: auto;
+      }
+
+      h1 {
+        border-bottom: 0;
+      }
+
+      #header {
+        padding-bottom: 32px;
+      }
+
+      #header h1 {
+        text-align: center;
+        white-space: pre-wrap;
+        width: 90%;
+        margin: 81px auto 48px auto;
+      }
+
+      h1 {
+        font-size: 3.6rem;
+        letter-spacing: -2px;
+        text-indent: -3px;
+      }
+
+      h2 {
+        margin-top: 2em;
+      }
+
+      .pure-menu-active > .pure-menu-link,
+      .pure-menu-link:hover,
+      .pure-menu-link:focus {
+        background-color: initial;
+        border: #777 solid 1px;
+      }
+
+      .post-meta {
+        font-style: italic;
+        text-align: center;
+        color: #7a7a7a;
+      }
+
+      div.highlighter-rouge {
+        padding: 8px;
+        border: 1px #777 solid;
+        line-height: 1.2rem;
+        font-family: Menlo, Monaco, "Courier New", monospace;
+      }
+
+      div.highlighter-rouge pre {
+        font-size: 0.95em;
+        overflow: hidden;
+        word-break: break-word;
+        white-space: pre-wrap;
+      }
+
+      a {
+        color: #463f5c;
+        text-decoration: underline;
+      }
+    </style>
+<header class="pure-menu pure-menu-horizontal nav post-title" id="header">
+<div class="gallery">
+<ul class="pure-menu-list" style="float: left; margin-left: 1em; position: absolute">
+<li class="pure-menu-item pure-menu-active">
+<a href="../index.html" class="pure-menu-link" id="title-bar-feature-btn">Back</a
+            >
+</li>
+</ul>
+</div>
+<h1>Typora 0.9.9.32 (0.9.84) beta</h1>
+<section class="post-meta">
+<time>February 22, 2020</time>
+by
+<span>typora.io</span>
+</section>
+</header>
+<div id="pagecontainer" class="container">
+<div id="post-content" class="inner-page"><h1 id="new">New</h1>
+<h3 id="upload-images">Upload Images</h3>
+<p>Now Typora on all OS supports upload images. Previously, we only support integration with iPic on macOS, now we added support for uPic (macOS), PicGo-Core, PicGo.app (Chinese Language Only), and custom commands. So users in all operation system now have free options to upload images.</p>
+<p><img src="../media/image-upload/upload.gif" alt="upload" style="zoom:50%;" /></p>
+<p>For details, please <a href="../Upload-Image.html">check here</a>.</p>
+<h1 id="improvement">Improvement</h1>
+<h3 id="footnote-quick-jump">Footnote Quick Jump</h3>
+<p>For the <a href="../Markdown-Reference/index.html#footnotes">footnote</a> syntax, we will append an <a href="index.html#">↩</a> link after its definition when it is used. And user will jump to its references by clicking the link. Also for the reference of footnote (like <code class="language-plaintext highlighter-rouge">[^footnote]</code>), user can jump it is definition quickly by clicking it when pressing <code class="language-plaintext highlighter-rouge">ctrl</code> or <code class="language-plaintext highlighter-rouge">command</code> (macOS) key.</p>
+<p><img src="../media/new-84/2020-02-23&#32;18-04-19.2020-02-23&#32;18_05_49.gif" alt="2020-02-23 18-04-19.2020-02-23 18_05_49" style="zoom:50%;" /></p>
+<h3 id="mermaid">Mermaid</h3>
+<p>We improved the style of pie chart of Mermaid dialog.</p>
+<p><img src="../media/new-84/Screen&#32;Shot&#32;2020-02-23&#32;at&#32;18.13.17.png" alt="Screen Shot 2020-02-23 at 18.13.17" style="zoom:50%;" /></p>
+<h3 id="spellcheck">SpellCheck</h3>
+<ul>
+ <li>Spellcheck will ignore HTML entities like <code class="language-plaintext highlighter-rouge">&amp;nbsp;</code>.</li>
+<li>Spellcheck will ignore the label of footnote definitions since it usually use abbreviations to shorten words.</li>
+</ul>
+<h3 id="language-support">Language Support</h3>
+<ul>
+<li>Improve Danish translation by <a href="https://github.com/archfrog">archfrog</a></li>
+<li>Improve Japanese translation by <a href="https://github.com/ScratchBuild">ScratchBuild</a></li>
+<li>Improve Russian translation by <a href="https://github.com/dragomano">dragomano</a></li>
+<li>Improve Swedish translation by <a href="https://github.com/passa">passar</a></li>
+<li>Added swiss version of German by <a href="https://github.com/Indeximal">Indeximal</a></li>
+<li>Added Persian translation by <a href="https://github.com/sadra">sadra</a></li>
+</ul>
+<h3 id="others">Others</h3>
+<ul>
+<li>Auto reload failed local images when window get focused again.</li>
+<li>Support theme css file that contains CJK characters in filename.</li>
+<li>Improve search and replace function.</li>
+</ul>
+<h1 id="fix">Fix</h1>
+<h3 id="auto-update">Auto Update</h3>
+<ul>
+<li>Fix a bug that <code class="language-plaintext highlighter-rouge">check updates automatically</code> cannot be unchecked on Windows.</li>
+<li>Fix a bug that js error dialog may pop when checking updates.</li>
+<li>Add total size and downloaded size on the process bar on Windows version.</li>
+</ul>
+<h3 id="security">Security</h3>
+<ul>
+<li>Fixed an mXSS vulnerability.</li>
+</ul>
+<h3 id="cursor--key-navigations">Cursor / Key Navigations</h3>
+<ul>
+<li>Fix cursor goes wrong after toggle inline styles using shortcut key.</li>
+<li>Fix cursor position when click task list and when window refocus.</li>
+<li>Fix up / down key around soft line break or horizontal line.</li>
+<li>Fix shift + arrow key on line end.</li>
+</ul>
+<h3 id="stability">Stability</h3>
+<ul>
+<li>Improve stability on Windows and macOS.</li>
+</ul>
+<h3 id="others-1">Others</h3>
+<ul>
+<li>Fix small errors when editing tables.</li>
+<li>Improve styles on source code mode, quick open dialog, and builtin themes.</li>
+<li>Fix empty line after HTML blocks are not kept after reopen.</li>
+<li>Other small fix.</li>
+</ul>
+</div>
+</div>
+<footer id="post-footer" style="
+        background-color: rgb(51, 51, 51);
+        padding-top: 50px;
+        padding-bottom: 50px;
+        text-align: center;
+        font-size: 13px;
+      ">
+<a data-has-mirror href="https://store.typora.io">Get Typora</a> /
+<a href="https://github.com/typora/wiki-website">Help Improve our documents</a
+      >
+</footer>
+<script>
+      var backBtn = document.querySelector("#title-bar-feature-btn");
+      if (backBtn) {
+        backBtn.onclick = function (event) {
+          if (
+            window.history.length > 1 &&
+            document.referrer.indexOf(window.location.host) !== -1
+          ) {
+            console.log(" window.history.back");
+            event.preventDefault();
+            window.history.back();
+          }
+        };
+      }
+      if (location.host == "support.typoraio.cn" || location.host == "support.typora.com.cn") {
+        document.querySelectorAll("[data-has-mirror]").forEach((a) => {
+          var href = a.href;
+          if (href.indexOf("store.typora.io") > 0)
+            href = "https://typoraio.cn/";
+          else if (href.indexOf("https://typora.io") > -1)
+            href = "https://typoraio.cn/";
+          else href = href.replace("typora.io", "typoraio.cn");
+          a.href = href;
+        });
+      }
+    </script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-56771470-2", "auto");
+      ga("set", "page", "/support");
+      ga("send", "pageview");
+    </script>
+
+<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ed23a5bcf8c017f"></script>
+
+</body>
+</html>

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Typora 的 Markdown 语法 - Typora Support</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@typora" />
+<meta name="twitter:title" content="Typora 的 Markdown 语法" />
+<meta name="twitter:url" content="/zh/Markdown-Reference/" />
+<meta name="twitter:description" content="English Original Version Help Improve the Translation 概述 Markdown 由 Daring Fireball 创建，原始指南在 这里。但是，它的语法因不同的解析器或编辑器而异。Typora 正在使用 GitHub Flavored Markdown。 大纲 概述 块元素 段落和换行符 标题 引用文字 列表 任务列表 （栅栏式）代码块 数学公式块 表格 脚注 水平线 YAML Front Matter 目录 (TOC) 图表 (Sequence, Flowchart and Mermaid) Span 元素 链接 内部链接 参考链接 URL网址 图片 强调（斜体） 粗体 代码 删除线 下划线 表情符号 :smile: 内联数学公式 下标 上标 高亮 HTML 嵌入内容 视频 其他 HTML 支持 块元素 段落和换行符 段落只是一行或多行连续的文本。在 markdown 源代码中，段落由多个空行分隔。在Typora中，您只需按下 Return 即可创建新段落。 按 Shift + Return 可创建单个换行符。但是，大多数 markdown 解析器将忽略单行中断，要使其他 markdown 解析器识别您的换行符，可以在行尾留下两个空格，或者插入 &lt;br/&gt;. 标题 标题在行的开头使用1-6个＃字符，对应于标题级别1-6。例如： # 这是一级标题 ## 这是二级标题 ###### 这是六级标题 在typora中，输入’＃’后跟标题内容，按下 Return 键将创建标题。 引用文字 Markdown 使用电子邮件样式&gt;字符进行块引用。它们表示为： &gt; 这是一个有两段的块引用。这是第一段。 &gt; &gt;..." />
+<meta name="twitter:image:src" content="http://typora.io/img/twitter-sum.png" />
+<meta name="twitter:image" content="http://typora.io/img/twitter-sum.png" />
+<meta property="og:url" content="/zh/Markdown-Reference/" />
+<meta property="og:title" content="Typora 的 Markdown 语法" />
+<meta property="og:description" content="English Original Version Help Improve the Translation 概述 Markdown 由 Daring Fireball 创建，原始指南在 这里。但是，它的语法因不同的解析器或编辑器而异。Typora 正在使用 GitHub Flavored Markdown。 大纲 概述 块元素 段落和换行符 标题 引用文字 列表 任务列表 （栅栏式）代码块 数学公式块 表格 脚注 水平线 YAML Front Matter 目录 (TOC) 图表 (Sequence, Flowchart and Mermaid) Span 元素 链接 内部链接 参考链接 URL网址 图片 强调（斜体） 粗体 代码 删除线 下划线 表情符号 :smile: 内联数学公式 下标 上标 高亮 HTML 嵌入内容 视频 其他 HTML 支持 块元素 段落和换行符 段落只是一行或多行连续的文本。在 markdown 源代码中，段落由多个空行分隔。在Typora中，您只需按下 Return 即可创建新段落。 按 Shift + Return 可创建单个换行符。但是，大多数 markdown 解析器将忽略单行中断，要使其他 markdown 解析器识别您的换行符，可以在行尾留下两个空格，或者插入 &lt;br/&gt;. 标题 标题在行的开头使用1-6个＃字符，对应于标题级别1-6。例如： # 这是一级标题 ## 这是二级标题 ###### 这是六级标题 在typora中，输入’＃’后跟标题内容，按下 Return 键将创建标题。 引用文字 Markdown 使用电子邮件样式&gt;字符进行块引用。它们表示为： &gt; 这是一个有两段的块引用。这是第一段。 &gt; &gt;..." />
+<meta name="og:image" content="http://typora.io/img/twitter-sum.png" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+
+<link href="../../assets/css/pure-min.css" rel="stylesheet" />
+
+<link href="../../assets/css/syntax.css" rel="stylesheet" />
+<link href="../../assets/css/typora-wiki.css" rel="stylesheet" />
+<link rel="icon" href="../../assets/img/favicon-16.png" sizes="16x16" />
+<link rel="icon" href="../../assets/img/favicon-32.png" sizes="32x32" />
+<link rel="icon" href="https://support.typora.io/assets/img/favicon-64.png" sizes="64x64" />
+<link rel="icon" href="../../assets/img/favicon-128.png" sizes="128x128" />
+<script>
+      if (
+        window.location.host.indexOf("typora.io") > -1 &&
+        window.location.protocol != "https:"
+      ) {
+        window.location.protocol = "https";
+      }
+      if (location.host == "support.typora.com.cn") {
+        location = `https://support.typoraio.cn${location.pathname}${location.hash}`;
+      }
+    </script>
+</head>
+<body>
+<style type="text/css">
+      body {
+        
+        font-weight: 300;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #2e2e2e;
+        line-height: 1.15em;
+        font-family: "Open Sans", "Hiragino Sans GB", "Microsoft YaHei",
+          "WenQuanYi Micro Hei", sans-serif;
+        text-rendering: geometricPrecision;
+      }
+
+      #pagecontainer {
+        background-color: #fff;
+        min-height: calc(100vh - 510px);
+        flex: 2;
+      }
+
+      #post-content {
+        padding-top: 36px;
+        border-top: 1px dashed #999999;
+        line-height: 1.6rem;
+        padding-bottom: 100px;
+      }
+
+      #post-content > blockquote:first-child {
+        padding-top: 0.4em;
+        padding-bottom: 0.4em;
+        margin-bottom: 2em;
+        margin-left: 0;
+      }
+
+      .nav {
+        border-bottom: none;
+        height: auto;
+      }
+
+      .inner-page {
+        width: 90%;
+        max-width: 800px;
+        margin: auto;
+      }
+
+      h1 {
+        border-bottom: 0;
+      }
+
+      #header {
+        padding-bottom: 32px;
+      }
+
+      #header h1 {
+        text-align: center;
+        white-space: pre-wrap;
+        width: 90%;
+        margin: 81px auto 48px auto;
+      }
+
+      h1 {
+        font-size: 3.6rem;
+        letter-spacing: -2px;
+        text-indent: -3px;
+      }
+
+      h2 {
+        margin-top: 2em;
+      }
+
+      .pure-menu-active > .pure-menu-link,
+      .pure-menu-link:hover,
+      .pure-menu-link:focus {
+        background-color: initial;
+        border: #777 solid 1px;
+      }
+
+      .post-meta {
+        font-style: italic;
+        text-align: center;
+        color: #7a7a7a;
+      }
+
+      div.highlighter-rouge {
+        padding: 8px;
+        border: 1px #777 solid;
+        line-height: 1.2rem;
+        font-family: Menlo, Monaco, "Courier New", monospace;
+      }
+
+      div.highlighter-rouge pre {
+        font-size: 0.95em;
+        overflow: hidden;
+        word-break: break-word;
+        white-space: pre-wrap;
+      }
+
+      a {
+        color: #463f5c;
+        text-decoration: underline;
+      }
+    </style>
+<header class="pure-menu pure-menu-horizontal nav post-title" id="header">
+<div class="gallery">
+<ul class="pure-menu-list" style="float: left; margin-left: 1em; position: absolute">
+<li class="pure-menu-item pure-menu-active">
+<a href="../../index.html" class="pure-menu-link" id="title-bar-feature-btn">Back</a
+            >
+</li>
+</ul>
+</div>
+<h1>Typora 的 Markdown 语法</h1>
+<section class="post-meta">
+<time>January 1, 2022</time>
+by
+<span>typora.io</span>
+</section>
+</header>
+<div id="pagecontainer" class="container">
+<div id="post-content" class="inner-page"><p><a href="../../Markdown-Reference/index.html">English Original Version</a> <a href="https://github.com/typora/wiki-website">Help Improve the Translation</a></p>
+<h2 id="概述">概述</h2>
+<p><strong>Markdown</strong> 由 <a href="http://daringfireball.net/">Daring Fireball</a> 创建，原始指南在 <a href="http://daringfireball.net/projects/markdown/syntax">这里</a>。但是，它的语法因不同的解析器或编辑器而异。<strong>Typora</strong> 正在使用 <a href="https://help.github.com/articles/github-flavored-markdown/">GitHub Flavored Markdown</a>。</p>
+<p><strong>大纲</strong></p>
+<ul id="markdown-toc">
+<li><a href="index.html#概述" id="markdown-toc-概述">概述</a></li>
+<li><a href="index.html#块元素" id="markdown-toc-块元素">块元素</a> <ul>
+<li><a href="index.html#段落和换行符" id="markdown-toc-段落和换行符">段落和换行符</a></li>
+<li><a href="index.html#标题" id="markdown-toc-标题">标题</a></li>
+<li><a href="index.html#引用文字" id="markdown-toc-引用文字">引用文字</a></li>
+<li><a href="index.html#列表" id="markdown-toc-列表">列表</a></li>
+<li><a href="index.html#任务列表" id="markdown-toc-任务列表">任务列表</a></li>
+<li><a href="index.html#栅栏式代码块" id="markdown-toc-栅栏式代码块">（栅栏式）代码块</a></li>
+<li><a href="index.html#数学公式块" id="markdown-toc-数学公式块">数学公式块</a></li>
+<li><a href="index.html#表格" id="markdown-toc-表格">表格</a></li>
+<li><a href="index.html#脚注" id="markdown-toc-脚注">脚注</a></li>
+<li><a href="index.html#水平线" id="markdown-toc-水平线">水平线</a></li>
+<li><a href="index.html#yaml-front-matter" id="markdown-toc-yaml-front-matter">YAML Front Matter</a></li>
+<li><a href="index.html#目录-toc" id="markdown-toc-目录-toc">目录 (TOC)</a></li>
+<li><a href="index.html#图表-sequence-flowchart-and-mermaid" id="markdown-toc-图表-sequence-flowchart-and-mermaid">图表 (Sequence, Flowchart and Mermaid)</a></li>
+</ul>
+</li>
+<li><a href="index.html#span-元素" id="markdown-toc-span-元素">Span 元素</a> <ul>
+<li><a href="index.html#链接" id="markdown-toc-链接">链接</a> <ul>
+<li><a href="index.html#内部链接" id="markdown-toc-内部链接">内部链接</a></li>
+<li><a href="index.html#参考链接" id="markdown-toc-参考链接">参考链接</a></li>
+</ul>
+</li>
+<li><a href="index.html#url网址" id="markdown-toc-url网址">URL网址</a></li>
+<li><a href="index.html#图片" id="markdown-toc-图片">图片</a></li>
+<li><a href="index.html#强调斜体" id="markdown-toc-强调斜体">强调（斜体）</a></li>
+<li><a href="index.html#粗体" id="markdown-toc-粗体">粗体</a></li>
+<li><a href="index.html#代码" id="markdown-toc-代码">代码</a></li>
+<li><a href="index.html#删除线" id="markdown-toc-删除线">删除线</a></li>
+<li><a href="index.html#下划线" id="markdown-toc-下划线">下划线</a></li>
+<li><a href="index.html#表情符号-smile" id="markdown-toc-表情符号-smile">表情符号 :smile:</a></li>
+<li><a href="index.html#内联数学公式" id="markdown-toc-内联数学公式">内联数学公式</a></li>
+<li><a href="index.html#下标" id="markdown-toc-下标">下标</a></li>
+<li><a href="index.html#上标" id="markdown-toc-上标">上标</a></li>
+<li><a href="index.html#高亮" id="markdown-toc-高亮">高亮</a></li>
+</ul>
+</li>
+<li><a href="index.html#html" id="markdown-toc-html">HTML</a> <ul>
+<li><a href="index.html#嵌入内容" id="markdown-toc-嵌入内容">嵌入内容</a></li>
+<li><a href="index.html#视频" id="markdown-toc-视频">视频</a></li>
+<li><a href="index.html#其他-html-支持" id="markdown-toc-其他-html-支持">其他 HTML 支持</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="块元素">块元素</h2>
+<h3 id="段落和换行符">段落和换行符</h3>
+<p>段落只是一行或多行连续的文本。在 markdown 源代码中，段落由多个空行分隔。在Typora中，您只需按下 <code class="language-plaintext highlighter-rouge">Return</code> 即可创建新段落。</p>
+<p>按 <code class="language-plaintext highlighter-rouge">Shift</code> + <code class="language-plaintext highlighter-rouge">Return</code> 可创建单个换行符。但是，大多数 markdown 解析器将忽略单行中断，要使其他 markdown 解析器识别您的换行符，可以在行尾留下两个空格，或者插入 <code class="language-plaintext highlighter-rouge">&lt;br/&gt;</code>.</p>
+<h3 id="标题">标题</h3>
+<p>标题在行的开头使用1-6个＃字符，对应于标题级别1-6。例如：</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh"># 这是一级标题</span>
+
+<span class="gu">## 这是二级标题</span>
+
+<span class="gu">###### 这是六级标题</span>
+</code></pre></div></div>
+<p>在typora中，输入’＃’后跟标题内容，按下 <code class="language-plaintext highlighter-rouge">Return</code> 键将创建标题。</p>
+<h3 id="引用文字">引用文字</h3>
+<p>Markdown 使用电子邮件样式&gt;字符进行块引用。它们表示为：</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; 这是一个有两段的块引用。这是第一段。</span>
+<span class="gt">&gt;</span>
+<span class="gt">&gt; 这是第二段。Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</span><span class="sb">
+
+
+
+</span><span class="gt">&gt; 这是另一个只有一个段落的块引用。有三个空行分隔两个块引用。</span>
+</code></pre></div></div>
+<p>在typora中，只需输入’&gt;’后跟引用内容即可生成块引用。Typora将为您插入正确的“&gt;”或换行符。通过添加额外级别的“&gt;”允许在块引用内嵌入另一个块引用。</p>
+<h3 id="列表">列表</h3>
+<p>输入 <code class="language-plaintext highlighter-rouge">* list item 1</code> 将创建一个无序列表，该 <code class="language-plaintext highlighter-rouge">*</code> 符号可以替换为 <code class="language-plaintext highlighter-rouge">+</code> 或 <code class="language-plaintext highlighter-rouge">-</code>.</p>
+<p>输入 <code class="language-plaintext highlighter-rouge">1. list item 1</code> 将创建一个有序列表，其 markdown 源代码如下：</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gu">## 无序列表</span>
+<span class="p">*</span>   红色
+<span class="p">*</span>   绿色
+<span class="p">*</span>   蓝色
+
+<span class="gu">## 有序列表</span>
+<span class="p">1.</span>  红色
+<span class="p">2.</span> 	绿色
+<span class="p">3.</span>	蓝色
+</code></pre></div></div>
+<h3 id="任务列表">任务列表</h3>
+<p>任务列表是标记为[ ]或[x]（未完成或完成）的项目的列表。例如：</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">-</span> [ ] 这是一个任务列表项
+<span class="p">-</span> [ ] 需要在前面使用列表的语法
+<span class="p">-</span> [ ] normal <span class="gs">**formatting**</span>, @mentions, #1234 refs
+<span class="p">-</span> [ ] 未完成
+<span class="p">-</span> [x] 完成
+</code></pre></div></div>
+<p>您可以通过单击项目前面的复选框来更改完成/未完成状态。</p>
+<h3 id="栅栏式代码块">（栅栏式）代码块</h3>
+<p>Typora仅支持 Github Flavored Markdown 中的栅栏式代码块。不支持 markdown 中的原始代码块。</p>
+<p>使用栅栏式代码块很简单：输入```之后输入一个可选的语言标识符，然后按<code class="language-plaintext highlighter-rouge">return</code>键后输入代码，我们将通过语法高亮显示它：</p>
+<pre><code class="language-gfm">这是一个例子：
+
+```
+function test() {
+  console.log("notice the blank line before this function?");
+}
+```
+
+语法高亮：
+```ruby
+require 'redcarpet'
+markdown = Redcarpet.new("Hello World!")
+puts markdown.to_html
+```
+</code></pre>
+<h3 id="数学公式块">数学公式块</h3>
+<p>您可以使用 <strong>MathJax</strong> 渲染 <em>LaTeX</em> 数学表达式。</p>
+<p>输入 <code class="language-plaintext highlighter-rouge">$$</code>, 然后按“return”键将触发一个接受<em>Tex / LaTex</em>源代码的输入区域。以下是一个例子：
+\(\mathbf{V}_1 \times \mathbf{V}_2 = \begin{vmatrix}
+\mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\
+\frac{\partial X}{\partial u} &amp; \frac{\partial Y}{\partial u} &amp; 0 \\
+\frac{\partial X}{\partial v} &amp; \frac{\partial Y}{\partial v} &amp; 0 \\
+\end{vmatrix}\)</p>
+<p>在 markdown 源文件中，数学公式块是由’$$’标记包装的 <em>LaTeX</em> 表达式：</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$$
+<span class="se">\m</span>athbf{V}_1 <span class="se">\t</span>imes <span class="se">\m</span>athbf{V}_2 =  <span class="se">\b</span>egin{vmatrix} 
+<span class="se">\m</span>athbf{i} &amp; <span class="se">\m</span>athbf{j} &amp; <span class="se">\m</span>athbf{k} <span class="se">\\</span>
+<span class="se">\f</span>rac{<span class="se">\p</span>artial X}{<span class="se">\p</span>artial u} &amp;  <span class="se">\f</span>rac{<span class="se">\p</span>artial Y}{<span class="se">\p</span>artial u} &amp; 0 <span class="se">\\</span>
+<span class="se">\f</span>rac{<span class="se">\p</span>artial X}{<span class="se">\p</span>artial v} &amp;  <span class="se">\f</span>rac{<span class="se">\p</span>artial Y}{<span class="se">\p</span>artial v} &amp; 0 <span class="se">\\</span>
+<span class="se">\e</span>nd{vmatrix}
+$$
+</code></pre></div></div>
+<h3 id="表格">表格</h3>
+<p>输入 <code class="language-plaintext highlighter-rouge">| First Header | Second Header |</code> 并按下 <code class="language-plaintext highlighter-rouge">return</code> 键将创建一个包含两列的表。</p>
+<p>创建表后，焦点在该表上将弹出一个表格工具栏，您可以在其中调整表格，对齐或删除表格。您还可以使用上下文菜单来复制和添加/删除列/行。</p>
+<p>可以跳过以下描述，因为表格的 markdown 源代码是由typora自动生成的。</p>
+<p>在 markdown 源代码中，它们看起来像这样：</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+</code></pre></div></div>
+<p>您还可以在表格中包括内联 Markdown 语法，例如链接，粗体，斜体或删除线。</p>
+<p>最后，通过在标题行中包含冒号：您可以将文本定义为左对齐，右对齐或居中对齐：</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>| Left-Aligned  | Center Aligned  | Right Aligned |
+| :------------ |:---------------:| -----:|
+| col 3 is      | some wordy text | $1600 |
+| col 2 is      | centered        |   $12 |
+| zebra stripes | are neat        |    $1 |
+</code></pre></div></div>
+<p>最左侧的冒号表示左对齐的列; 最右侧的冒号表示右对齐的列; 两侧的冒号表示中心对齐的列。</p>
+<h3 id="脚注">脚注</h3>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>您可以像这样创建脚注[^footnote].
+
+<span class="p">[</span><span class="ss">^footnote</span><span class="p">]:</span> <span class="sx">Here</span> is the <span class="ge">*text*</span> of the <span class="gs">**footnote**</span>.
+</code></pre></div></div>
+<p>将产生：</p>
+<p>您可以像这样创建脚注<sup id="fnref:footnote" role="doc-noteref"><a href="index.html#fn:footnote" class="footnote" rel="footnote">1</a></sup>.</p>
+<p>鼠标移动到‘footnote’上标中查看脚注的内容。</p>
+<h3 id="水平线">水平线</h3>
+<p>输入 <code class="language-plaintext highlighter-rouge">***</code> 或 <code class="language-plaintext highlighter-rouge">---</code> 在空行上按 <code class="language-plaintext highlighter-rouge">return</code> 键将绘制一条水平线。</p>
+<hr />
+<h3 id="yaml-front-matter">YAML Front Matter</h3>
+<p>Typora 现在支持 <a href="http://jekyllrb.com/docs/frontmatter/">YAML Front Matter</a> 。 在文章顶部输入 <code class="language-plaintext highlighter-rouge">---</code> 然后按 <code class="language-plaintext highlighter-rouge">Enter</code> 键将引入一个，或者从菜单中插入一个元数据块。</p>
+<h3 id="目录-toc">目录 (TOC)</h3>
+<p>输入 <code class="language-plaintext highlighter-rouge">[toc]</code> 然后按 <code class="language-plaintext highlighter-rouge">Return</code> 键将创建一个“目录”部分，自动从文档内容中提取所有标题，其内容会自动更新。</p>
+<h3 id="图表-sequence-flowchart-and-mermaid">图表 (Sequence, Flowchart and Mermaid)</h3>
+<p>Typora 支持, <a href="https://bramp.github.io/js-sequence-diagrams/">sequence</a>, <a href="http://flowchart.js.org/">flowchart</a> and <a href="https://knsv.github.io/mermaid/#mermaid">mermaid</a>, 使用前要先从偏好设置面板启用该功能。</p>
+<p>详细信息请参阅此 <a href="http://support.typora.io/Draw-Diagrams-With-Markdown/">文档</a></p>
+<h2 id="span-元素">Span 元素</h2>
+<p>在您输入后Span元素会被立即解析并呈现。在这些span元素上移动光标会将这些元素扩展为markdown源代码。以下将解释这些span元素的语法。</p>
+<h3 id="链接">链接</h3>
+<p>Markdown 支持两种类型的链接：内联和引用。</p>
+<p>在这两种样式中，链接文本都写在[方括号]内。</p>
+<p>要创建内联链接，请在链接文本的结束方括号后立即使用一组常规括号。在常规括号内，输入URL地址，以及可选的用引号括起来的链接标题。例如：</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>This is <span class="p">[</span><span class="nv">an example</span><span class="p">](</span><span class="sx">http://example.com/</span> <span class="nn">"Title"</span><span class="p">)</span> inline link.
+
+<span class="p">[</span><span class="nv">This link</span><span class="p">](</span><span class="sx">http://example.net/</span><span class="p">)</span> has no title attribute.
+</code></pre></div></div>
+<p>将产生：</p>
+<p>This is <a href="http://example.com/&quot;Title&quot;">an example</a> inline link. (<code class="language-plaintext highlighter-rouge">&lt;p&gt;This is &lt;a href="http://example.com/" title="Title"&gt;</code>)</p>
+<p><a href="http://example.net/">This link</a> has no title attribute. (<code class="language-plaintext highlighter-rouge">&lt;p&gt;&lt;a href="http://example.net/"&gt;This link&lt;/a&gt; has no</code>)</p>
+<h4 id="内部链接">内部链接</h4>
+<p><strong>您可以将常规括号内的 href 设置为文档内的某一个标题</strong>，这将创建一个书签，允许您在单击后跳转到该部分。例如：</p>
+<p>Command(在Windows上：Ctrl) + 单击 <a href="index.html#块元素">此链接</a> 将跳转到标题 <code class="language-plaintext highlighter-rouge">块元素</code>处。 要查看如何编写，请移动光标或按住 <code class="language-plaintext highlighter-rouge">⌘</code> 键单击以将元素展开为 Markdown 源代码。</p>
+<h4 id="参考链接">参考链接</h4>
+<p>参考样式链接使用第二组方括号，在其中放置您选择的标签以标识链接：</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>This is <span class="p">[</span><span class="nv">an example</span><span class="p">][</span><span class="ss">id</span><span class="p">]</span> reference-style link.
+
+然后，在文档中的任何位置，您可以单独定义链接标签，如下所示：
+
+<span class="p">[</span><span class="ss">id</span><span class="p">]:</span> <span class="sx">http://example.com/</span>  <span class="nn">"Optional Title Here"</span>
+</code></pre></div></div>
+<p>在typora中，它们将呈现为：</p>
+<p>This is <a href="http://example.com/" title="Optional Title Here">an example</a> reference-style link.</p>
+<p>隐式链接名称快捷方式允许您省略链接的名称，在这种情况下，链接文本本身将用作名称。只需使用一组空的方括号，例如，将“Google”一词链接到google.com网站，您只需写下：</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nv">Google</span><span class="p">][]</span>
+然后定义链接：
+
+<span class="p">[</span><span class="ss">Google</span><span class="p">]:</span> <span class="sx">http://google.com/</span>
+</code></pre></div></div>
+<p>在typora中单击链接将其展开以进行编辑，command + 单击将在 Web 浏览器中打开超链接。</p>
+<h3 id="url网址">URL网址</h3>
+<p>Typora允许您将 URL 作为链接插入，用 <code class="language-plaintext highlighter-rouge">&lt;</code>括号括起来<code class="language-plaintext highlighter-rouge">&gt;</code>。</p>
+<p><code class="language-plaintext highlighter-rouge">&lt;<a href="../../cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="1b725b6f626b74697a357274">[email&#160;protected]</a>&gt;</code> 成为 <a href="../../cdn-cgi/l/email-protection.html#0e674e7a777e617c6f206761"><span class="__cf_email__" data-cfemail="f198b18588819e8390df989e">[email&#160;protected]</span></a>.</p>
+<p>Typora也将自动链接标准URL。例如： www.google.com.</p>
+<h3 id="图片">图片</h3>
+<p>图像与链接类似， 但在链接语法之前需要添加额外的 <code class="language-plaintext highlighter-rouge">!</code> 字符。 图像语法如下所示：</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">![</span><span class="nv">替代文字</span><span class="p">](</span><span class="sx">/path/to/img.jpg</span><span class="p">)</span>
+
+<span class="p">![</span><span class="nv">替代文字</span><span class="p">](</span><span class="sx">/path/to/img.jpg</span> <span class="nn">"可选标题"</span><span class="p">)</span>
+</code></pre></div></div>
+<p>您可以使用拖放操作从图像文件或浏览器来插入图像。并通过单击图像修改 markdown 源代码。如果图像在拖放时与当前编辑文档位于同一目录或子目录中，则将使用相对路径。</p>
+<p>有关图像的更多提示，请阅读 <a href="../../Images/index.html">http://support.typora.io//Images/</a></p>
+<h3 id="强调斜体">强调（斜体）</h3>
+<p>Markdown 将星号 (<code class="language-plaintext highlighter-rouge">*</code>) 和下划线(<code class="language-plaintext highlighter-rouge">_</code>) 视为强调的指示。用一个 <code class="language-plaintext highlighter-rouge">*</code> or <code class="language-plaintext highlighter-rouge">_</code> 包裹文本将使用HTML <code class="language-plaintext highlighter-rouge">&lt;em&gt;</code> 标签包裹文本。例如：</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="ge">*单个星号*</span>
+
+<span class="ge">_单个下划线_</span>
+</code></pre></div></div>
+<p>输出：</p>
+<p><em>单个星号</em></p>
+<p><em>单个下划线</em></p>
+<p>GFM将忽略单词中的下划线，这通常用在代码和名称中，如下所示：</p>
+<blockquote>
+<p>wow_great_stuff</p>
+<p>do_this_and_do_that_and_another_thing.</p>
+</blockquote>
+<p>要在用作强调分隔符的位置生成文字星号或下划线，可以用反斜杠转义：</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="se">\*</span>这个文字被文字星号包围<span class="se">\*</span>
+</code></pre></div></div>
+<p>Typora建议使用 <code class="language-plaintext highlighter-rouge">*</code> 号.</p>
+<h3 id="粗体">粗体</h3>
+<p>用两个 * 或 _ 包裹的文本将使用HTML <code class="language-plaintext highlighter-rouge">&lt;strong&gt;</code> 标签包裹，例如：</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gs">**双星号**</span>
+
+<span class="gs">__双重下划线__</span>
+</code></pre></div></div>
+<p>输出：</p>
+<p><strong>双星号</strong></p>
+<p><strong>双重下划线</strong></p>
+<p>Typora 建议使用 <code class="language-plaintext highlighter-rouge">**</code> 号。</p>
+<h3 id="代码">代码</h3>
+<p>要指示代码范围，请使用反引号（`）进行包裹。与预格式化的代码块不同，代码跨度表示正常段落中的代码。例如：</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>使用<span class="sb">`printf()`</span>函数。
+</code></pre></div></div>
+<p>将产生：</p>
+<p>使用 <code class="language-plaintext highlighter-rouge">printf()</code> 函数。</p>
+<h3 id="删除线">删除线</h3>
+<p>GFM通过添加语法来创建删除线文本，标准的Markdown中缺少该文本。</p>
+<p><code class="language-plaintext highlighter-rouge">~~错误的文字。~~</code> 变成 <del>错误的文字。</del></p>
+<h3 id="下划线">下划线</h3>
+<p>下划线由原始HTML提供支持。</p>
+<p><code class="language-plaintext highlighter-rouge">&lt;u&gt;下划线&lt;/u&gt;</code> 变成 <u>下划线</u></p>
+<h3 id="表情符号-smile">表情符号 :smile:</h3>
+<p>输入表情符号的语法是 <code class="language-plaintext highlighter-rouge">:smile:</code></p>
+<p>用户可以通过 <code class="language-plaintext highlighter-rouge">ESC</code> 按键触发表情符号的自动完成建议，或者在偏好设置面板里启用后自动触发表情符号。此外，还支持直接从 <code class="language-plaintext highlighter-rouge">Edit</code> -&gt; <code class="language-plaintext highlighter-rouge">Emoji &amp; Symbols</code> 菜单栏输入UTF8表情符号字符。</p>
+<h3 id="内联数学公式">内联数学公式</h3>
+<p>要使用此功能，首先，请在 <code class="language-plaintext highlighter-rouge">偏好设置</code> 面板 -&gt; <code class="language-plaintext highlighter-rouge">Markdown扩展语法</code> 选项卡中启用它。然后使用 <code class="language-plaintext highlighter-rouge">$</code> 来包裹TeX命令，例如： <code class="language-plaintext highlighter-rouge">$\lim_{x \to \infty} \exp(-x) = 0$</code> 将呈现为LaTeX命令。</p>
+<p>要触发内联公式的预览提示功能：输入“$”, 然后按 <code class="language-plaintext highlighter-rouge">ESC</code> 键, 然后输入TeX命令, 预览工具提示将如下所示：</p>
+<p><img src="http://typora.io/img/inline-math.gif" style="zoom:50%;" /></p>
+<h3 id="下标">下标</h3>
+<p>要使用此功能，首先，请在 <code class="language-plaintext highlighter-rouge">偏好设置</code> 面板 -&gt; <code class="language-plaintext highlighter-rouge">Markdown扩展语法</code> 选项卡中启用它。然后用 <code class="language-plaintext highlighter-rouge">~</code> 来包裹下标内容，例如： <code class="language-plaintext highlighter-rouge">H~2~O</code>, <code class="language-plaintext highlighter-rouge">X~long\ text~</code>/</p>
+<h3 id="上标">上标</h3>
+<p>要使用此功能，首先，请在 <code class="language-plaintext highlighter-rouge">偏好设置</code> 面板 -&gt; <code class="language-plaintext highlighter-rouge">Markdown扩展语法</code> 选项卡中启用它。然后用 <code class="language-plaintext highlighter-rouge">^</code> 来包裹上标内容，例如： <code class="language-plaintext highlighter-rouge">X^2^</code>。</p>
+<h3 id="高亮">高亮</h3>
+<p>要使用此功能，首先，请在 <code class="language-plaintext highlighter-rouge">偏好设置</code> 面板 -&gt; <code class="language-plaintext highlighter-rouge">Markdown扩展语法</code> 选项卡中启用它。然后用 <code class="language-plaintext highlighter-rouge">==</code> 来包裹高亮内容，例如： <code class="language-plaintext highlighter-rouge">==highlight==</code>。</p>
+<h2 id="html">HTML</h2>
+<p>您可以使用HTML来设置纯 Markdown 不支持的内容，例如， <code class="language-plaintext highlighter-rouge">&lt;span style="color:red"&gt;this text is red&lt;/span&gt;</code> 用于添加红色文本。</p>
+<h3 id="嵌入内容">嵌入内容</h3>
+<p>有些网站提供基于iframe的嵌入代码，您也可以将其粘贴到Typora中，例如：</p>
+<pre><code class="language-Markdown">&lt;iframe height='265' scrolling='no' title='Fancy Animated SVG Menu' src='http://codepen.io/jeangontijo/embed/OxVywj/?height=265&amp;theme-id=0&amp;default-tab=css,result&amp;embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'&gt;&lt;/iframe&gt;
+</code></pre>
+<h3 id="视频">视频</h3>
+<p>您可以使用 <code class="language-plaintext highlighter-rouge">&lt;video&gt;</code> HTML标记嵌入视频，例如：</p>
+<pre><code class="language-Markdown">&lt;video src="xxx.mp4" /&gt;
+</code></pre>
+<h3 id="其他-html-支持">其他 HTML 支持</h3>
+<p>你可以在 <a href="http://support.typora.io/HTML/">这里</a>找到细节。</p>
+<div class="footnotes" role="doc-endnotes">
+<ol>
+<li id="fn:footnote" role="doc-endnote">
+<p>Here is the <em>text</em> of the <strong>footnote</strong>. <a href="index.html#fnref:footnote" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<footer id="post-footer" style="
+        background-color: rgb(51, 51, 51);
+        padding-top: 50px;
+        padding-bottom: 50px;
+        text-align: center;
+        font-size: 13px;
+      ">
+<a data-has-mirror href="https://store.typora.io">Get Typora</a> /
+<a href="https://github.com/typora/wiki-website">Help Improve our documents</a
+      >
+</footer>
+<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+      var backBtn = document.querySelector("#title-bar-feature-btn");
+      if (backBtn) {
+        backBtn.onclick = function (event) {
+          if (
+            window.history.length > 1 &&
+            document.referrer.indexOf(window.location.host) !== -1
+          ) {
+            console.log(" window.history.back");
+            event.preventDefault();
+            window.history.back();
+          }
+        };
+      }
+      if (location.host == "support.typoraio.cn" || location.host == "support.typora.com.cn") {
+        document.querySelectorAll("[data-has-mirror]").forEach((a) => {
+          var href = a.href;
+          if (href.indexOf("store.typora.io") > 0)
+            href = "https://typoraio.cn/";
+          else if (href.indexOf("https://typora.io") > -1)
+            href = "https://typoraio.cn/";
+          else href = href.replace("typora.io", "typoraio.cn");
+          a.href = href;
+        });
+      }
+    </script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-56771470-2", "auto");
+      ga("set", "page", "/support");
+      ga("send", "pageview");
+    </script>
+
+<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ed23a5bcf8c017f"></script>
+
+</body>
+</html>

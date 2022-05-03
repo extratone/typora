@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Typora 0.11 beta - Typora Support</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@typora" />
+<meta name="twitter:title" content="Typora 0.11 beta" />
+<meta name="twitter:url" content="/What's-New-0.11/" />
+<meta name="twitter:description" content="New / Improvement UI Improvement Editor Markdown Spec Changes Export Windows Math Diagrams i18n Bug Fix New / Improvement UI Improvement Windows / Linux: Add shortcut key info on context menu. Press Tab or arrow keys to focus buttons on dialog, press Enter to press focused button or primary button by default. Editor Add menu item to control whether to append final new line or not. Add “Open Link” (can also be triggered by command / ctrl + click) and “Copy Link Address” in Format → Hyperlink Actions and context menu, you can also bind shortcut keys for quicker operations...." />
+<meta name="twitter:image:src" content="http://typora.io/img/twitter-sum.png" />
+<meta name="twitter:image" content="http://typora.io/img/twitter-sum.png" />
+<meta property="og:url" content="/What's-New-0.11/" />
+<meta property="og:title" content="Typora 0.11 beta" />
+<meta property="og:description" content="New / Improvement UI Improvement Editor Markdown Spec Changes Export Windows Math Diagrams i18n Bug Fix New / Improvement UI Improvement Windows / Linux: Add shortcut key info on context menu. Press Tab or arrow keys to focus buttons on dialog, press Enter to press focused button or primary button by default. Editor Add menu item to control whether to append final new line or not. Add “Open Link” (can also be triggered by command / ctrl + click) and “Copy Link Address” in Format → Hyperlink Actions and context menu, you can also bind shortcut keys for quicker operations...." />
+<meta name="og:image" content="http://typora.io/img/twitter-sum.png" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+
+<link href="../assets/css/pure-min.css" rel="stylesheet" />
+
+<link href="../assets/css/syntax.css" rel="stylesheet" />
+<link href="../assets/css/typora-wiki.css" rel="stylesheet" />
+<link rel="icon" href="../assets/img/favicon-16.png" sizes="16x16" />
+<link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32" />
+<link rel="icon" href="https://support.typora.io/assets/img/favicon-64.png" sizes="64x64" />
+<link rel="icon" href="../assets/img/favicon-128.png" sizes="128x128" />
+<script>
+      if (
+        window.location.host.indexOf("typora.io") > -1 &&
+        window.location.protocol != "https:"
+      ) {
+        window.location.protocol = "https";
+      }
+      if (location.host == "support.typora.com.cn") {
+        location = `https://support.typoraio.cn${location.pathname}${location.hash}`;
+      }
+    </script>
+</head>
+<body>
+<style type="text/css">
+      body {
+        
+          font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman",
+          "STSong", Serif;
+		    
+        font-weight: 300;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #2e2e2e;
+        line-height: 1.15em;
+        font-family: "Open Sans", "Hiragino Sans GB", "Microsoft YaHei",
+          "WenQuanYi Micro Hei", sans-serif;
+        text-rendering: geometricPrecision;
+      }
+
+      #pagecontainer {
+        background-color: #fff;
+        min-height: calc(100vh - 510px);
+        flex: 2;
+      }
+
+      #post-content {
+        padding-top: 36px;
+        border-top: 1px dashed #999999;
+        line-height: 1.6rem;
+        padding-bottom: 100px;
+      }
+
+      #post-content > blockquote:first-child {
+        padding-top: 0.4em;
+        padding-bottom: 0.4em;
+        margin-bottom: 2em;
+        margin-left: 0;
+      }
+
+      .nav {
+        border-bottom: none;
+        height: auto;
+      }
+
+      .inner-page {
+        width: 90%;
+        max-width: 800px;
+        margin: auto;
+      }
+
+      h1 {
+        border-bottom: 0;
+      }
+
+      #header {
+        padding-bottom: 32px;
+      }
+
+      #header h1 {
+        text-align: center;
+        white-space: pre-wrap;
+        width: 90%;
+        margin: 81px auto 48px auto;
+      }
+
+      h1 {
+        font-size: 3.6rem;
+        letter-spacing: -2px;
+        text-indent: -3px;
+      }
+
+      h2 {
+        margin-top: 2em;
+      }
+
+      .pure-menu-active > .pure-menu-link,
+      .pure-menu-link:hover,
+      .pure-menu-link:focus {
+        background-color: initial;
+        border: #777 solid 1px;
+      }
+
+      .post-meta {
+        font-style: italic;
+        text-align: center;
+        color: #7a7a7a;
+      }
+
+      div.highlighter-rouge {
+        padding: 8px;
+        border: 1px #777 solid;
+        line-height: 1.2rem;
+        font-family: Menlo, Monaco, "Courier New", monospace;
+      }
+
+      div.highlighter-rouge pre {
+        font-size: 0.95em;
+        overflow: hidden;
+        word-break: break-word;
+        white-space: pre-wrap;
+      }
+
+      a {
+        color: #463f5c;
+        text-decoration: underline;
+      }
+    </style>
+<header class="pure-menu pure-menu-horizontal nav post-title" id="header">
+<div class="gallery">
+<ul class="pure-menu-list" style="float: left; margin-left: 1em; position: absolute">
+<li class="pure-menu-item pure-menu-active">
+<a href="../index.html" class="pure-menu-link" id="title-bar-feature-btn">Back</a
+            >
+</li>
+</ul>
+</div>
+<h1>Typora 0.11 beta</h1>
+<section class="post-meta">
+<time>July 12, 2021</time>
+by
+<span>typora.io</span>
+</section>
+</header>
+<div id="pagecontainer" class="container">
+<div id="post-content" class="inner-page"><ul id="markdown-toc">
+<li><a href="index.html#new--improvement" id="markdown-toc-new--improvement">New / Improvement</a> <ul>
+<li><a href="index.html#ui-improvement" id="markdown-toc-ui-improvement">UI Improvement</a></li>
+<li><a href="index.html#editor" id="markdown-toc-editor">Editor</a></li>
+<li><a href="index.html#markdown-spec-changes" id="markdown-toc-markdown-spec-changes">Markdown Spec Changes</a></li>
+<li><a href="index.html#export" id="markdown-toc-export">Export</a></li>
+<li><a href="index.html#windows" id="markdown-toc-windows">Windows</a></li>
+<li><a href="index.html#math" id="markdown-toc-math">Math</a></li>
+<li><a href="index.html#diagrams" id="markdown-toc-diagrams">Diagrams</a></li>
+<li><a href="index.html#i18n" id="markdown-toc-i18n">i18n</a></li>
+</ul>
+</li>
+<li><a href="index.html#bug-fix" id="markdown-toc-bug-fix">Bug Fix</a></li>
+</ul>
+<h2 id="new--improvement">New / Improvement</h2>
+<h3 id="ui-improvement">UI Improvement</h3>
+<ul>
+<li>
+<p>Windows / Linux: Add shortcut key info on context menu.</p>
+<p><img src="../media/new-11/CleanShot&#32;2021-07-11&#32;at&#32;22.22.44@2x.png" alt="CleanShot 2021-07-11 at 22.22.44@2x" style="zoom:50%;" /></p>
+</li>
+<li>
+<p>Press Tab or arrow keys to focus buttons on dialog, press Enter to press focused button or primary button by default.</p>
+<p><img src="../media/new-11/CleanShot&#32;2021-07-11&#32;at&#32;22.40.32.gif" alt="CleanShot 2021-07-11 at 22.40.32" style="zoom:50%;" /></p>
+</li>
+</ul>
+<h3 id="editor">Editor</h3>
+<ul>
+<li>Add menu item to control whether to append final new line or not.</li>
+<li>Add “Open Link” (can also be triggered by command / ctrl + click) and “Copy Link Address” in <code class="language-plaintext highlighter-rouge">Format</code> → <code class="language-plaintext highlighter-rouge">Hyperlink Actions</code> and context menu, you can also <a href="../Shortcut-Keys/index.html#change-shortcut-keys">bind shortcut keys</a> for quicker operations.</li>
+<li>Fix macOS “Text Replacement” feature not working in code/math blocks.</li>
+</ul>
+<div style="text-align:center;">
+<img src="../media/new-11/Screen&#32;Shot&#32;2021-07-12&#32;at&#32;19.45.18.png" alt="Screen Shot 2021-07-12 at 19.45.18" style="zoom:50%;" />
+<img src="../media/new-11/Screen&#32;Shot&#32;2021-07-12&#32;at&#32;19.46.18.png" alt="Screen Shot 2021-07-12 at 19.46.18" style="zoom:50%;" />
+</div>
+<h3 id="markdown-spec-changes">Markdown Spec Changes</h3>
+<ul>
+<li>
+<p>YAML Front matters now supports ending with three dots (…), based on the <a href="https://yaml.org/spec/1.2/spec.html#Preview">Yaml spec, “2.2. Structures”</a>:</p>
+<blockquote>
+<p>YAML uses three dashes (“—”) to separate directives from document content. This also serves to signal the start of a document if no directives are present. Three dots ( “…”) indicate the end of a document without starting a new one, for use in communication channels.</p>
+</blockquote>
+<p>Three dot ending is also supported in Pandoc Markdown and Jekyll.</p>
+</li>
+<li>
+<p>Code Fences now is better GFM / CommonMark compatible. You can put extra <code class="language-plaintext highlighter-rouge">` or `~` to warp code block which contains &lt;code&gt;</code>`&lt;/code&gt; or <code>~~~</code>, for example:</p>
+<pre><code class="language-gfm">````
+text
+  
+```
+``` inside a code block
+```
+  
+text
+````
+</code></pre>
+<p><strong>Previously, typora support this via inserting a zero-with whitespace</strong>, now it is no longer needed, and will be rendered as a red dot like what it is a source code mode. Please remove zero-with whitespace if they cause rendering issues in other markdown engines.</p>
+</li>
+<li>
+<p>Typora now follows GFM / CommonMark to parse <code class="language-plaintext highlighter-rouge">1)</code> as ordered list, for example:</p>
+<pre><code class="language-gfm">1) list item 1
+2) list item 2
+  
+which is same as
+  
+1. list item 1
+2. list item 2
+</code></pre>
+</li>
+<li>
+<p>Use GFM compatible tables, please note that if you create table in hybrid editing mode, you will generate a well formatted and compatible table source code that follow changes and future changes will not affect your docs.</p>
+<ul>
+<li>
+<p>Leading or trailing pipes are optional in table rows, and it does not make any differences.</p>
+<pre><code class="language-gfm">&lt;!-- table --&gt;
+| abc | defghi |
+| :-: | -----: |
+| bar |    bar |
+    
+&lt;!-- also a table --&gt;
+| abc | defghi |
+:-: | -----------:
+bar | baz
+    
+&lt;!-- also a table --&gt;
+| abc |
+:-:
+bar
+</code></pre>
+</li>
+<li>
+<p>But please note that table will stop at block elements:</p>
+<pre><code class="language-gfm">| abc | defghi |
+| :-: | -----: |
+      |    bar |
+&lt;!-- above line is not a table row since 4 whitespace makes a block list&gt;
+</code></pre>
+</li>
+<li>
+<p>The header row must match the <a href="https://github.github.com/gfm/#delimiter-row">delimiter row</a> in the number of cells. If not, a table will not be recognized:</p>
+<pre><code class="language-gfm">| abc | def |
+| --- |
+| bar |
+    
+&lt;!-- this is not a table since header row and second row does not share same cell counts --&gt;
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Fix some other parsing bugs.</p>
+</li>
+</ul>
+<h3 id="export">Export</h3>
+<ul>
+<li>Export will now display warning if it succeeded but with warnings.</li>
+<li>Add <code class="language-plaintext highlighter-rouge">Export Setting…</code> menu item under <code class="language-plaintext highlighter-rouge">Export</code> menu.</li>
+</ul>
+<p><img src="../media/new-11/Screen&#32;Shot&#32;2021-07-12&#32;at&#32;19.49.09.png" alt="Screen Shot 2021-07-12 at 19.49.09" style="zoom:50%;" /></p>
+<h3 id="windows">Windows</h3>
+<ul>
+<li>Now sort in alphabet in file list / tree should result as same order as in Explorer.</li>
+<li>Fix background on Windows start menu tile.</li>
+<li>On Windows unibody style, users can right click on menu icon or use <code class="language-plaintext highlighter-rouge">Alt</code> + <code class="language-plaintext highlighter-rouge">(E)dit</code>, <code class="language-plaintext highlighter-rouge">Alt</code> + <code class="language-plaintext highlighter-rouge">(P)aragraph</code>, <code class="language-plaintext highlighter-rouge">Alt</code> + <code class="language-plaintext highlighter-rouge">F(o)rmat</code>, etc key combinations to open main menu.</li>
+</ul>
+<p><img src="../media/new-11/image.png" alt="image" style="zoom: 80%;" /></p>
+<h3 id="math">Math</h3>
+<ul>
+<li>
+<p>Upgrade to MathJax 3.2 for math faster and better math rendering.</p>
+</li>
+<li>
+<p>Fix several issues about math numbering and references.</p>
+</li>
+<li>
+<p>Fix numbered math block size issue on exported PDF.</p>
+</li>
+<li>
+<p>In previous versions, when inputting math, errors are thrown for unclosed braces, etc, and previous rendered math will be replaced by the error message, which makes it difficult to use Typora live for lecturing or giving talks. Now, errors are shown under previous correctly rendered math, making live lecturing go smoothly.</p>
+</li>
+<li>
+<p>Compared to previous versions, following TeX Packages are supported:</p>
+<ul>
+<li>
+<p><a href="https://www.ctan.org/pkg/cases">cases</a> — provides environments for individually numbered cases</p>
+</li>
+<li>
+<p><a href="https://www.ctan.org/pkg/centernot">centernot</a> — implements a centered not command (and a non-standard centerOver that places one symbol centered on top of another).</p>
+</li>
+<li>
+<p><a href="http://docs.mathjax.org/en/latest/input/tex/extensions/colortbl.html#tex-colortbl">colortbl</a> — provides macros for coloring cells of an array or alignment. Note: MathJax currently does not implement any commands for styling or coloring table boundaries.</p>
+<p><img src="../media/new-11/colortbl.png" alt="colortbl" style="zoom:50%;" /></p>
+</li>
+<li>
+<p><a href="http://docs.mathjax.org/en/latest/input/tex/extensions/empheq.html#tex-empheq">empheq</a> — an environment for placing material to the left or right of an alignment that has individual equation numbers.</p>
+</li>
+<li>
+<p><a href="http://docs.mathjax.org/en/latest/input/tex/extensions/gensymb.html#tex-gensymb">gensymb</a> — provides macros for some specific units.</p>
+<p><img src="../media/new-11/gensymb.png" alt="gensymb" style="zoom:50%;" /></p>
+</li>
+<li>
+<p><a href="https://www.ctan.org/pkg/mathtools">mathtools</a> — offers a range of macros and environments for advanced mathematical typesetting.</p>
+<p><img src="../media/new-11/Screen&#32;Shot&#32;2021-07-11&#32;at&#32;21.52.57.png" alt="Screen Shot 2021-07-11 at 21.52.57" style="zoom:50%;" /></p>
+</li>
+<li>
+<p><a href="http://docs.mathjax.org/en/latest/input/tex/extensions/textcomp.html#tex-textcomp">textcomp</a> — provides a range of macros for specifying various text characters.</p>
+<p><img src="../media/new-11/Screen&#32;Shot&#32;2021-07-11&#32;at&#32;21.59.53.png" alt="Screen Shot 2021-07-11 at 21.59.53" style="zoom:50%;" /></p>
+</li>
+<li>
+<p><a href="http://docs.mathjax.org/en/latest/input/tex/extensions/upgreek.html#tex-upgreek">upgreek</a> — provides macros for upright Greek characters.</p>
+<p><img src="../media/new-11/Screen&#32;Shot&#32;2021-07-11&#32;at&#32;22.00.50.png" alt="Screen Shot 2021-07-11 at 22.00.50" style="zoom:50%;" /></p>
+</li>
+<li>
+<p>braket — The braket extension defines the following macros for producing the <a href="https://en.wikipedia.org/wiki/Bra–ket_notation">bra-ket notation</a> and set notation used in quantum mechanics</p>
+</li>
+<li>
+ <p>physics — The physics extension implements much of the LaTeX <a href="https://ctan.org/pkg/physics?lang=en">physics package</a>.</p>
+<p><img src="../media/new-11/Screen&#32;Shot&#32;2021-07-11&#32;at&#32;22.16.09.png" alt="Screen Shot 2021-07-11 at 22.16.09" style="zoom:50%;" /></p>
+</li>
+<li>
+<p><a href="https://github.com/sonoisa/XyJax-v3">xypic</a> — draw various graphs and diagrams.</p>
+<p><img src="../media/new-11/Screen&#32;Shot&#32;2021-07-11&#32;at&#32;22.18.57.png" alt="Screen Shot 2021-07-11 at 22.18.57" style="zoom:50%;" /></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="diagrams">Diagrams</h3>
+<ul>
+<li>
+<p>Upgrade flowchart version, which supports named branches.</p>
+<p><img src="../media/new-11/Screen&#32;Shot&#32;2021-07-11&#32;at&#32;22.58.39.png" alt="Screen Shot 2021-07-11 at 22.58.39" style="zoom:50%;" /></p>
+</li>
+</ul>
+<h3 id="i18n">i18n</h3>
+<ul>
+<li>
+<p>Add Romanian Translation by <a href="https://github.com/Mooyeee">Mooyeee</a>.</p>
+<p><img src="../media/new-11/Screen&#32;Shot&#32;2021-07-12&#32;at&#32;22.54.09.png" alt="Screen Shot 2021-07-12 at 22.54.09" style="zoom:50%;" /></p>
+</li>
+<li>
+<p>Smart quote / dashes will not auto convert quotes and dashes in urls and inline codes. When smart quote / dashes are enabled with option ‘Convert on Input’, users know can use undo to revert back to original quote characters.</p>
+</li>
+</ul>
+<h2 id="bug-fix">Bug Fix</h2>
+<ul>
+<li>Fix bugs that image copy not working.</li>
+<li>Fix context menu inside tables.</li>
+<li>Fix a bug that editing table may not save edited changes.</li>
+<li>Fix ui issue on preferences panel.</li>
+<li>Fix cursor position when editing after emoji.</li>
+<li>Fix word count text not shown when selecting texts.</li>
+<li>Fix some unicode characters get replaced incorrectly in links.</li>
+<li>Add links to set pandoc path when Typora cannot find it.</li>
+<li>Fix issues on toggle list styles.</li>
+</ul>
+<hr />
+<p><strong>One more thing: Typora v1.0 is coming!</strong> You could subscribe to our newsletters at <a href="https://typora.io/#subscribe">https://typora.io/#subscribe</a> to get notified. No spam, promised.</p>
+</div>
+</div>
+<footer id="post-footer" style="
+        background-color: rgb(51, 51, 51);
+        padding-top: 50px;
+        padding-bottom: 50px;
+        text-align: center;
+        font-size: 13px;
+      ">
+<a data-has-mirror href="https://store.typora.io">Get Typora</a> /
+<a href="https://github.com/typora/wiki-website">Help Improve our documents</a
+      >
+</footer>
+<script>
+      var backBtn = document.querySelector("#title-bar-feature-btn");
+      if (backBtn) {
+        backBtn.onclick = function (event) {
+          if (
+            window.history.length > 1 &&
+            document.referrer.indexOf(window.location.host) !== -1
+          ) {
+            console.log(" window.history.back");
+            event.preventDefault();
+            window.history.back();
+          }
+        };
+      }
+      if (location.host == "support.typoraio.cn" || location.host == "support.typora.com.cn") {
+        document.querySelectorAll("[data-has-mirror]").forEach((a) => {
+          var href = a.href;
+          if (href.indexOf("store.typora.io") > 0)
+            href = "https://typoraio.cn/";
+          else if (href.indexOf("https://typora.io") > -1)
+            href = "https://typoraio.cn/";
+          else href = href.replace("typora.io", "typoraio.cn");
+          a.href = href;
+        });
+      }
+    </script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-56771470-2", "auto");
+      ga("set", "page", "/support");
+      ga("send", "pageview");
+    </script>
+
+<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ed23a5bcf8c017f"></script>
+
+</body>
+</html>

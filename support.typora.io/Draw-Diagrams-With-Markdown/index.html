@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Draw Diagrams With Markdown - Typora Support</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@typora" />
+<meta name="twitter:title" content="Draw Diagrams With Markdown" />
+<meta name="twitter:url" content="/Draw-Diagrams-With-Markdown/" />
+<meta name="twitter:description" content="Sequence Diagrams Sequence Diagrams Options Flowcharts Mermaid Sequence Diagrams Flowcharts Gantt Charts Class Diagrams State Diagrams Pie Charts Mermaid Options Overview Mermaid Theme Auto Numbering Flowchart Curve Gantt Padding Typora supports some Markdown extensions for diagrams, once they are enabled from preference panel. When exporting as HTML, PDF, epub, docx, those rendered diagrams will also be included, but diagrams features are not supported when exporting markdown into other file formats in current version. Besides, you should also notice that diagrams is not supported by standard Markdown, CommonMark or GFM. Therefore, we still recommend you to insert an image of these..." />
+<meta name="twitter:image:src" content="http://typora.io/img/twitter-sum.png" />
+<meta name="twitter:image" content="http://typora.io/img/twitter-sum.png" />
+<meta property="og:url" content="/Draw-Diagrams-With-Markdown/" />
+<meta property="og:title" content="Draw Diagrams With Markdown" />
+<meta property="og:description" content="Sequence Diagrams Sequence Diagrams Options Flowcharts Mermaid Sequence Diagrams Flowcharts Gantt Charts Class Diagrams State Diagrams Pie Charts Mermaid Options Overview Mermaid Theme Auto Numbering Flowchart Curve Gantt Padding Typora supports some Markdown extensions for diagrams, once they are enabled from preference panel. When exporting as HTML, PDF, epub, docx, those rendered diagrams will also be included, but diagrams features are not supported when exporting markdown into other file formats in current version. Besides, you should also notice that diagrams is not supported by standard Markdown, CommonMark or GFM. Therefore, we still recommend you to insert an image of these..." />
+<meta name="og:image" content="http://typora.io/img/twitter-sum.png" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+
+<link href="../assets/css/pure-min.css" rel="stylesheet" />
+
+<link href="../assets/css/syntax.css" rel="stylesheet" />
+<link href="../assets/css/typora-wiki.css" rel="stylesheet" />
+<link rel="icon" href="../assets/img/favicon-16.png" sizes="16x16" />
+<link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32" />
+<link rel="icon" href="https://support.typora.io/assets/img/favicon-64.png" sizes="64x64" />
+<link rel="icon" href="../assets/img/favicon-128.png" sizes="128x128" />
+<script>
+      if (
+        window.location.host.indexOf("typora.io") > -1 &&
+        window.location.protocol != "https:"
+      ) {
+        window.location.protocol = "https";
+      }
+      if (location.host == "support.typora.com.cn") {
+        location = `https://support.typoraio.cn${location.pathname}${location.hash}`;
+      }
+    </script>
+</head>
+<body>
+<style type="text/css">
+      body {
+        
+          font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman",
+          "STSong", Serif;
+		    
+        font-weight: 300;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #2e2e2e;
+        line-height: 1.15em;
+        font-family: "Open Sans", "Hiragino Sans GB", "Microsoft YaHei",
+          "WenQuanYi Micro Hei", sans-serif;
+        text-rendering: geometricPrecision;
+      }
+
+      #pagecontainer {
+        background-color: #fff;
+        min-height: calc(100vh - 510px);
+        flex: 2;
+      }
+
+      #post-content {
+        padding-top: 36px;
+        border-top: 1px dashed #999999;
+        line-height: 1.6rem;
+        padding-bottom: 100px;
+      }
+
+      #post-content > blockquote:first-child {
+        padding-top: 0.4em;
+        padding-bottom: 0.4em;
+        margin-bottom: 2em;
+        margin-left: 0;
+      }
+
+      .nav {
+        border-bottom: none;
+        height: auto;
+      }
+
+      .inner-page {
+        width: 90%;
+        max-width: 800px;
+        margin: auto;
+      }
+
+      h1 {
+        border-bottom: 0;
+      }
+
+      #header {
+        padding-bottom: 32px;
+      }
+
+      #header h1 {
+        text-align: center;
+        white-space: pre-wrap;
+        width: 90%;
+        margin: 81px auto 48px auto;
+      }
+
+      h1 {
+        font-size: 3.6rem;
+        letter-spacing: -2px;
+        text-indent: -3px;
+      }
+
+      h2 {
+        margin-top: 2em;
+      }
+
+      .pure-menu-active > .pure-menu-link,
+      .pure-menu-link:hover,
+      .pure-menu-link:focus {
+        background-color: initial;
+        border: #777 solid 1px;
+      }
+
+      .post-meta {
+        font-style: italic;
+        text-align: center;
+        color: #7a7a7a;
+      }
+
+      div.highlighter-rouge {
+        padding: 8px;
+        border: 1px #777 solid;
+        line-height: 1.2rem;
+        font-family: Menlo, Monaco, "Courier New", monospace;
+      }
+
+      div.highlighter-rouge pre {
+        font-size: 0.95em;
+        overflow: hidden;
+        word-break: break-word;
+        white-space: pre-wrap;
+      }
+
+      a {
+        color: #463f5c;
+        text-decoration: underline;
+      }
+    </style>
+<header class="pure-menu pure-menu-horizontal nav post-title" id="header">
+<div class="gallery">
+<ul class="pure-menu-list" style="float: left; margin-left: 1em; position: absolute">
+<li class="pure-menu-item pure-menu-active">
+<a href="../index.html" class="pure-menu-link" id="title-bar-feature-btn">Back</a
+            >
+</li>
+</ul>
+</div>
+<h1>Draw Diagrams With Markdown</h1>
+<section class="post-meta">
+<time>August 15, 2016</time>
+by
+<span>typora.io</span>
+</section>
+</header>
+<div id="pagecontainer" class="container">
+<div id="post-content" class="inner-page"><ul id="markdown-toc">
+<li><a href="index.html#sequence-diagrams" id="markdown-toc-sequence-diagrams">Sequence Diagrams</a> <ul>
+<li><a href="index.html#sequence-diagrams-options" id="markdown-toc-sequence-diagrams-options">Sequence Diagrams Options</a></li>
+</ul>
+</li>
+<li><a href="index.html#flowcharts" id="markdown-toc-flowcharts">Flowcharts</a></li>
+<li><a href="index.html#mermaid" id="markdown-toc-mermaid">Mermaid</a> <ul>
+<li><a href="index.html#sequence-diagrams-1" id="markdown-toc-sequence-diagrams-1">Sequence Diagrams</a></li>
+<li><a href="index.html#flowcharts-1" id="markdown-toc-flowcharts-1">Flowcharts</a></li>
+<li><a href="index.html#gantt-charts" id="markdown-toc-gantt-charts">Gantt Charts</a></li>
+<li><a href="index.html#class-diagrams" id="markdown-toc-class-diagrams">Class Diagrams</a></li>
+<li><a href="index.html#state-diagrams" id="markdown-toc-state-diagrams">State Diagrams</a></li>
+<li><a href="index.html#pie-charts" id="markdown-toc-pie-charts">Pie Charts</a></li>
+<li><a href="index.html#mermaid-options" id="markdown-toc-mermaid-options">Mermaid Options</a> <ul>
+<li><a href="index.html#overview" id="markdown-toc-overview">Overview</a></li>
+<li><a href="index.html#mermaid-theme" id="markdown-toc-mermaid-theme">Mermaid Theme</a></li>
+<li><a href="index.html#auto-numbering" id="markdown-toc-auto-numbering">Auto Numbering</a></li>
+<li><a href="index.html#flowchart-curve" id="markdown-toc-flowchart-curve">Flowchart Curve</a></li>
+<li><a href="index.html#gantt-padding" id="markdown-toc-gantt-padding">Gantt Padding</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Typora supports some Markdown extensions for diagrams, once they are enabled from preference panel.</p>
+<p>When exporting as HTML, PDF, epub, docx, those rendered diagrams will also be included, but diagrams features are not supported when exporting markdown into other file formats in current version. Besides, you should also notice that diagrams is not supported by standard Markdown, CommonMark or GFM. Therefore, we still recommend you to insert an image of these diagrams instead of write them in Markdown directly.</p>
+<h1 id="sequence-diagrams">Sequence Diagrams</h1>
+<p>This feature uses <a href="https://bramp.github.io/js-sequence-diagrams/">js-sequence</a>, which turns the following code block into a rendered diagram:</p>
+<pre><code class="language-gfm">```sequence
+Alice-&gt;Bob: Hello Bob, how are you?
+Note right of Bob: Bob thinks
+Bob--&gt;Alice: I am good thanks!
+```
+</code></pre>
+<p><img src="../media/diagrams/js-sequence.png" alt="js-sequence" style="zoom:50%;" /></p>
+<p>For more details, please see <a href="https://bramp.github.io/js-sequence-diagrams/#syntax">this syntax explanation</a>.</p>
+<h3 id="sequence-diagrams-options">Sequence Diagrams Options</h3>
+<p>You could change CSS variable <code class="language-plaintext highlighter-rouge">--sequence-theme</code> to set theme for sequence diagrams, supported value are <code class="language-plaintext highlighter-rouge">simple</code> (default) and <code class="language-plaintext highlighter-rouge">hand</code>. For example, add following CSS in <a href="../Add-Custom-CSS/index.html">Custom CSS</a>, and you will get:</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">:root</span> <span class="p">{</span>
+  <span class="py">--sequence-theme</span><span class="p">:</span> <span class="n">hand</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<table>
+<thead>
+<tr>
+<th>–sequence-theme: simple</th>
+<th>–sequence-theme: hand</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="../media/diagrams/Screen&#32;Shot&#32;2021-04-05&#32;at&#32;23.38.52.png" alt="Screen Shot 2021-04-05 at 23.38.52" style="zoom:50%;" /></td>
+<td><img src="../media/diagrams/js-sequence-hand.png" alt="Screen Shot 2021-03-13 at 23.56.07" style="zoom:50%;" /></td>
+</tr>
+</tbody>
+</table>
+<h1 id="flowcharts">Flowcharts</h1>
+<p>This feature uses <a href="http://flowchart.js.org/">flowchart.js</a>, which turns the following code block into a rendered diagram:</p>
+<pre><code class="language-gfm">```flow
+st=&gt;start: Start
+op=&gt;operation: Your Operation
+cond=&gt;condition: Yes or No?
+e=&gt;end
+
+st-&gt;op-&gt;cond
+cond(yes)-&gt;e
+cond(no)-&gt;op
+​```
+</code></pre>
+<p><img src="../media/diagrams/flowchart.png" alt="flowchart" style="zoom:50%;" /></p>
+<h1 id="mermaid">Mermaid</h1>
+<p>Typora also has integration with <a href="https://mermaid-js.github.io/mermaid/#/">mermaid</a>, which supports sequence diagrams, flowcharts, Gantt charts, class and state diagrams, and pie charts.</p>
+<h2 id="sequence-diagrams-1">Sequence Diagrams</h2>
+<p>For more details see <a href="https://mermaid-js.github.io/mermaid/#/sequenceDiagram">these instructions</a>.</p>
+<pre><code class="language-gfm">```mermaid
+%% Example of sequence diagram
+  sequenceDiagram
+    Alice-&gt;&gt;Bob: Hello Bob, how are you?
+    alt is sick
+    Bob-&gt;&gt;Alice: Not so good :(
+    else is well
+    Bob-&gt;&gt;Alice: Feeling fresh like a daisy
+    end
+    opt Extra response
+    Bob-&gt;&gt;Alice: Thanks for asking
+    end
+​```
+</code></pre>
+<p><img src="../media/diagrams/mermaid-sequence.png" alt="mermaid-sequence" style="zoom:50%;" /></p>
+<h2 id="flowcharts-1">Flowcharts</h2>
+<p>For more details see <a href="https://mermaid-js.github.io/mermaid/#/flowchart">these instructions</a>.</p>
+<pre><code class="language-gfm">```mermaid
+graph LR
+A[Hard edge] --&gt;B(Round edge)
+    B --&gt; C{Decision}
+    C --&gt;|One| D[Result one]
+    C --&gt;|Two| E[Result two]
+​```
+</code></pre>
+<p><img src="../media/diagrams/mermaid-flowchart.png" alt="mermaid-flowchart" /></p>
+<h2 id="gantt-charts">Gantt Charts</h2>
+<p>For more details see <a href="https://mermaid-js.github.io/mermaid/#gantt">these instructions</a>.</p>
+<pre><code class="language-gfm">```mermaid
+%% Example with selection of syntaxes
+        gantt
+        dateFormat  YYYY-MM-DD
+        title Adding GANTT diagram functionality to mermaid
+
+        section A section
+        Completed task            :done,    des1, 2014-01-06,2014-01-08
+        Active task               :active,  des2, 2014-01-09, 3d
+        Future task               :         des3, after des2, 5d
+        Future task2               :         des4, after des3, 5d
+
+        section Critical tasks
+        Completed task in the critical line :crit, done, 2014-01-06,24h
+        Implement parser and jison          :crit, done, after des1, 2d
+        Create tests for parser             :crit, active, 3d
+        Future task in critical line        :crit, 5d
+        Create tests for renderer           :2d
+        Add to mermaid                      :1d
+
+        section Documentation
+        Describe gantt syntax               :active, a1, after des1, 3d
+        Add gantt diagram to demo page      :after a1  , 20h
+        Add another diagram to demo page    :doc1, after a1  , 48h
+
+        section Last section
+        Describe gantt syntax               :after doc1, 3d
+        Add gantt diagram to demo page      : 20h
+        Add another diagram to demo page    : 48h
+​```
+</code></pre>
+<p><img src="../media/diagrams/mermaid-Gantt-chart.png" alt="mermaid-Gantt" /></p>
+<h2 id="class-diagrams">Class Diagrams</h2>
+<p>For more details see <a href="https://mermaid-js.github.io/mermaid/#/classDiagram">these instructions</a>.</p>
+<pre><code class="language-gfm">```mermaid
+classDiagram
+      Animal &lt;|-- Duck
+      Animal &lt;|-- Fish
+      Animal &lt;|-- Zebra
+      Animal : +int age
+      Animal : +String gender
+      Animal: +isMammal()
+      Animal: +mate()
+      class Duck{
+          +String beakColor
+          +swim()
+          +quack()
+      }
+      class Fish{
+          -int sizeInFeet
+          -canEat()
+      }
+      class Zebra{
+          +bool is_wild
+          +run()
+      }
+```
+</code></pre>
+<p><img src="../media/new-80/class-diagram.png" alt="class-diagram" style="zoom:50%;" /></p>
+<h2 id="state-diagrams">State Diagrams</h2>
+<p>For more details see <a href="https://mermaidjs.github.io/#/stateDiagram">these instructions</a>.</p>
+<pre><code class="language-gfm">```mermaid
+stateDiagram
+    [*] --&gt; Still
+    Still --&gt; [*]
+
+    Still --&gt; Moving
+    Moving --&gt; Still
+    Moving --&gt; Crash
+    Crash --&gt; [*]
+```
+</code></pre>
+<p><img src="../media/new-80/state-diagram.png" alt="state-diagram" style="zoom:50%;" /></p>
+<h2 id="pie-charts">Pie Charts</h2>
+<pre><code class="language-gfm">```mermaid
+pie
+    title Pie Chart
+    "Dogs" : 386
+    "Cats" : 85
+    "Rats" : 150 
+```
+</code></pre>
+<p><img src="../media/new-80/pie-chart.png" alt="pie-chart" style="zoom:50%;" /></p>
+<h2 id="mermaid-options">Mermaid Options</h2>
+<h3 id="overview">Overview</h3>
+<p>You can change Mermaid options by adding <a href="../Add-Custom-CSS/index.html">Custom CSS</a>, supported options include:</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">:root</span> <span class="p">{</span>
+  <span class="py">--mermaid-theme</span><span class="p">:</span> <span class="nb">default</span><span class="p">;</span> <span class="c">/*or base, dark, forest, neutral, night */</span>
+  <span class="py">--mermaid-font-family</span><span class="p">:</span> <span class="s1">"trebuchet ms"</span><span class="p">,</span> <span class="n">verdana</span><span class="p">,</span> <span class="n">arial</span><span class="p">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+  <span class="py">--mermaid-sequence-numbers</span><span class="p">:</span> <span class="n">off</span><span class="p">;</span> <span class="c">/* or "on", see https://mermaid-js.github.io/mermaid/#/sequenceDiagram?id=sequencenumbers*/</span>
+  <span class="py">--mermaid-flowchart-curve</span><span class="p">:</span> <span class="n">linear</span> <span class="c">/* or "basis", see https://github.com/typora/typora-issues/issues/1632*/</span><span class="p">;</span>
+  <span class="py">--mermaid--gantt-left-padding</span><span class="p">:</span> <span class="m">75</span><span class="p">;</span> <span class="c">/* see https://github.com/typora/typora-issues/issues/1665*/</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Please note that if you export document with other themes than currently used one, some mermaid options will not be applied to exported HTML / PDF / Image. For example, if you currently use them Github, but while export to PDF, you set theme YYY for PDF export, and YYY.css defines <code class="language-plaintext highlighter-rouge">--mermaid-sequence-numbers: on</code>, then the <code class="language-plaintext highlighter-rouge">--mermaid-sequence-numbers: on</code> would not be applied to exported PDF.</p>
+<h3 id="mermaid-theme">Mermaid Theme</h3>
+<p>Added <code class="language-plaintext highlighter-rouge">--mermaid-theme</code> css variable to quickly define a mermaid theme that fits your theme, the value can be <code class="language-plaintext highlighter-rouge">base</code>, <code class="language-plaintext highlighter-rouge">default</code>, <code class="language-plaintext highlighter-rouge">dark</code>, <code class="language-plaintext highlighter-rouge">forest</code>, <code class="language-plaintext highlighter-rouge">neutral</code>, <code class="language-plaintext highlighter-rouge">night</code> (the one used in night theme), for example:</p>
+<table>
+<thead>
+<tr>
+<th>CSS</th>
+<th>Mermaid Demo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="language-plaintext highlighter-rouge">:root {--mermaid-theme:dark;}</code></td>
+<td><img src="../media/new-97/Screen&#32;Shot&#32;2020-12-05&#32;at&#32;17.08.46.png" alt="Screen Shot 2020-12-05 at 17.08.46" style="zoom:50%;" /></td>
+</tr>
+<tr>
+<td><code class="language-plaintext highlighter-rouge">:root {--mermaid-theme:neutral;}</code></td>
+<td><img src="../media/new-97/Screen&#32;Shot&#32;2020-12-05&#32;at&#32;17.09.42.png" alt="Screen Shot 2020-12-05 at 17.09.42" style="zoom:50%;" /></td>
+</tr>
+<tr>
+<td><code class="language-plaintext highlighter-rouge">:root {--mermaid-theme:forest;}</code></td>
+<td><img src="../media/new-97/Screen&#32;Shot&#32;2020-12-05&#32;at&#32;17.10.11.png" alt="Screen Shot 2020-12-05 at 17.10.11" style="zoom:50%;" /></td>
+</tr>
+</tbody>
+</table>
+<h3 id="auto-numbering">Auto Numbering</h3>
+<p>Add <code class="language-plaintext highlighter-rouge">--mermaid-sequence-numbers: on;</code> in <a href="../Add-Custom-CSS/index.html">Custom CSS</a> will enable auto numbering for sequence in mermaid:</p>
+<table>
+<thead>
+<tr>
+<th>–mermaid-sequence-numbers:off</th>
+<th>–mermaid-sequence-numbers:on</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="../media/new-10/Screen&#32;Shot&#32;2021-04-05&#32;at&#32;23.08.37.png" alt="Screen Shot 2021-04-05 at 23.08.37" style="zoom:50%;" /></td>
+<td><img src="../media/new-10/Screen&#32;Shot&#32;2021-04-05&#32;at&#32;23.20.31.png" alt="Screen Shot 2021-04-05 at 23.20.31" style="zoom:50%;" /></td>
+</tr>
+</tbody>
+</table>
+<h3 id="flowchart-curve">Flowchart Curve</h3>
+<p>Add <code class="language-plaintext highlighter-rouge">--mermaid-flowchart-curve: basis</code> to get other type of curves.</p>
+<table>
+<thead>
+<tr>
+<th>–mermaid-flowchart-curve: linear;</th>
+<th>–mermaid-flowchart-curve: basis</th>
+<th>–mermaid-flowchart-curve: natural;</th>
+<th>–mermaid-flowchart-curve: step;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="../media/new-10/Screen&#32;Shot&#32;2021-04-05&#32;at&#32;23.25.41.png" alt="Screen Shot 2021-04-05 at 23.25.41" style="zoom:50%;" /></td>
+<td><img src="../media/new-10/Screen&#32;Shot&#32;2021-04-05&#32;at&#32;23.30.11.png" alt="Screen Shot 2021-04-05 at 23.30.11" style="zoom:50%;" /></td>
+<td><img src="../media/new-10/Screen&#32;Shot&#32;2021-04-05&#32;at&#32;23.28.06.png" alt="Screen Shot 2021-04-05 at 23.28.06" style="zoom:50%;" /></td>
+<td><img src="../media/new-10/Screen&#32;Shot&#32;2021-04-05&#32;at&#32;23.28.52.png" alt="Screen Shot 2021-04-05 at 23.28.52" style="zoom:50%;" /></td>
+</tr>
+</tbody>
+</table>
+<h3 id="gantt-padding">Gantt Padding</h3>
+<table>
+<thead>
+<tr>
+<th>–mermaid–gantt-left-padding:75</th>
+<th>–mermaid–gantt-left-padding:200</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="../media/new-10/Screen&#32;Shot&#32;2021-04-05&#32;at&#32;23.33.31.png" alt="Screen Shot 2021-04-05 at 23.33.31" style="zoom:50%;" /></td>
+<td><img src="../media/new-10/Screen&#32;Shot&#32;2021-04-05&#32;at&#32;23.33.00.png" alt="Screen Shot 2021-04-05 at 23.33.00" style="zoom:50%;" /></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<footer id="post-footer" style="
+        background-color: rgb(51, 51, 51);
+        padding-top: 50px;
+        padding-bottom: 50px;
+        text-align: center;
+        font-size: 13px;
+      ">
+<a data-has-mirror href="https://store.typora.io">Get Typora</a> /
+<a href="https://github.com/typora/wiki-website">Help Improve our documents</a
+      >
+</footer>
+<script>
+      var backBtn = document.querySelector("#title-bar-feature-btn");
+      if (backBtn) {
+        backBtn.onclick = function (event) {
+          if (
+            window.history.length > 1 &&
+            document.referrer.indexOf(window.location.host) !== -1
+          ) {
+            console.log(" window.history.back");
+            event.preventDefault();
+            window.history.back();
+          }
+        };
+      }
+      if (location.host == "support.typoraio.cn" || location.host == "support.typora.com.cn") {
+        document.querySelectorAll("[data-has-mirror]").forEach((a) => {
+          var href = a.href;
+          if (href.indexOf("store.typora.io") > 0)
+            href = "https://typoraio.cn/";
+          else if (href.indexOf("https://typora.io") > -1)
+            href = "https://typoraio.cn/";
+          else href = href.replace("typora.io", "typoraio.cn");
+          a.href = href;
+        });
+      }
+    </script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-56771470-2", "auto");
+      ga("set", "page", "/support");
+      ga("send", "pageview");
+    </script>
+
+<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ed23a5bcf8c017f"></script>
+
+</body>
+</html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Images in Typora - Typora Support</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@typora" />
+<meta name="twitter:title" content="Images in Typora" />
+<meta name="twitter:url" content="/Images/" />
+<meta name="twitter:description" content="Images in Markdown How to insert images in Typora Write the Markdown Drag &amp; Drop Select from local files Paste images from clipboard When insert images… Default behaviors Use Relative Path Use Escaped Path Copy image files to target folder when inserting local image Upload image file to web server. Use global setting for image insert operations Display images in relative path Relative path to current file/folder (default behavior) Relative path to certain folder Upload images to cloud server Upload all local images to cloud server Upload when inserting images Align images Resize images Images in Markdown Since a Markdown..." />
+<meta name="twitter:image:src" content="http://typora.io/img/twitter-sum.png" />
+<meta name="twitter:image" content="http://typora.io/img/twitter-sum.png" />
+<meta property="og:url" content="/Images/" />
+<meta property="og:title" content="Images in Typora" />
+<meta property="og:description" content="Images in Markdown How to insert images in Typora Write the Markdown Drag &amp; Drop Select from local files Paste images from clipboard When insert images… Default behaviors Use Relative Path Use Escaped Path Copy image files to target folder when inserting local image Upload image file to web server. Use global setting for image insert operations Display images in relative path Relative path to current file/folder (default behavior) Relative path to certain folder Upload images to cloud server Upload all local images to cloud server Upload when inserting images Align images Resize images Images in Markdown Since a Markdown..." />
+<meta name="og:image" content="http://typora.io/img/twitter-sum.png" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+
+<link href="http://support.typora.io/assets/css/pure-min.css" rel="stylesheet" />
+
+<link href="http://support.typora.io/assets/css/syntax.css" rel="stylesheet" />
+<link href="http://support.typora.io/assets/css/typora-wiki.css" rel="stylesheet" />
+<link rel="icon" href="http://support.typora.io/assets/img/favicon-16.png" sizes="16x16" />
+<link rel="icon" href="http://support.typora.io/assets/img/favicon-32.png" sizes="32x32" />
+<link rel="icon" href="http://support.typora.io/assets/img/favicon-64.png" sizes="64x64" />
+<link rel="icon" href="http://support.typora.io/assets/img/favicon-128.png" sizes="128x128" />
+<script>
+      if (
+        window.location.host.indexOf("typora.io") > -1 &&
+        window.location.protocol != "https:"
+      ) {
+        window.location.protocol = "https";
+      }
+      if (location.host == "support.typora.com.cn") {
+        location = `https://support.typoraio.cn${location.pathname}${location.hash}`;
+      }
+    </script>
+</head>
+<body>
+<style type="text/css">
+      body {
+        
+          font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman",
+          "STSong", Serif;
+		    
+        font-weight: 300;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #2e2e2e;
+        line-height: 1.15em;
+        font-family: "Open Sans", "Hiragino Sans GB", "Microsoft YaHei",
+          "WenQuanYi Micro Hei", sans-serif;
+        text-rendering: geometricPrecision;
+      }
+
+      #pagecontainer {
+        background-color: #fff;
+        min-height: calc(100vh - 510px);
+        flex: 2;
+      }
+
+      #post-content {
+        padding-top: 36px;
+        border-top: 1px dashed #999999;
+        line-height: 1.6rem;
+        padding-bottom: 100px;
+      }
+
+      #post-content > blockquote:first-child {
+        padding-top: 0.4em;
+        padding-bottom: 0.4em;
+        margin-bottom: 2em;
+        margin-left: 0;
+      }
+
+      .nav {
+        border-bottom: none;
+        height: auto;
+      }
+
+      .inner-page {
+        width: 90%;
+        max-width: 800px;
+        margin: auto;
+      }
+
+      h1 {
+        border-bottom: 0;
+      }
+
+      #header {
+        padding-bottom: 32px;
+      }
+
+      #header h1 {
+        text-align: center;
+        white-space: pre-wrap;
+        width: 90%;
+        margin: 81px auto 48px auto;
+      }
+
+      h1 {
+        font-size: 3.6rem;
+        letter-spacing: -2px;
+        text-indent: -3px;
+      }
+
+      h2 {
+        margin-top: 2em;
+      }
+
+      .pure-menu-active > .pure-menu-link,
+      .pure-menu-link:hover,
+      .pure-menu-link:focus {
+        background-color: initial;
+        border: #777 solid 1px;
+      }
+
+      .post-meta {
+        font-style: italic;
+        text-align: center;
+        color: #7a7a7a;
+      }
+
+      div.highlighter-rouge {
+        padding: 8px;
+        border: 1px #777 solid;
+        line-height: 1.2rem;
+        font-family: Menlo, Monaco, "Courier New", monospace;
+      }
+
+      div.highlighter-rouge pre {
+        font-size: 0.95em;
+        overflow: hidden;
+        word-break: break-word;
+        white-space: pre-wrap;
+      }
+
+      a {
+        color: #463f5c;
+        text-decoration: underline;
+      }
+    </style>
+<header class="pure-menu pure-menu-horizontal nav post-title" id="header">
+<div class="gallery">
+<ul class="pure-menu-list" style="float: left; margin-left: 1em; position: absolute">
+<li class="pure-menu-item pure-menu-active">
+<a href="http://support.typora.io/" class="pure-menu-link" id="title-bar-feature-btn">Back</a
+            >
+</li>
+</ul>
+</div>
+<h1>Images in Typora</h1>
+<section class="post-meta">
+<time>November 11, 2016</time>
+by
+<span>typora.io</span>
+</section>
+</header>
+<div id="pagecontainer" class="container">
+<div id="post-content" class="inner-page"><ul id="markdown-toc">
+<li><a href="index.html#images-in-markdown" id="markdown-toc-images-in-markdown">Images in Markdown</a></li>
+<li><a href="index.html#how-to-insert-images-in-typora" id="markdown-toc-how-to-insert-images-in-typora">How to insert images in Typora</a> <ul>
+<li><a href="index.html#write-the-markdown" id="markdown-toc-write-the-markdown">Write the Markdown</a></li>
+<li><a href="index.html#drag--drop" id="markdown-toc-drag--drop">Drag &amp; Drop</a></li>
+<li><a href="index.html#select-from-local-files" id="markdown-toc-select-from-local-files">Select from local files</a></li>
+<li><a href="index.html#paste-images-from-clipboard" id="markdown-toc-paste-images-from-clipboard">Paste images from clipboard</a></li>
+</ul>
+</li>
+<li><a href="index.html#when-insert-images" id="markdown-toc-when-insert-images">When insert images…</a> <ul>
+<li><a href="index.html#default-behaviors" id="markdown-toc-default-behaviors">Default behaviors</a></li>
+<li><a href="index.html#use-relative-path" id="markdown-toc-use-relative-path">Use Relative Path</a></li>
+<li><a href="index.html#use-escaped-path" id="markdown-toc-use-escaped-path">Use Escaped Path</a></li>
+<li><a href="index.html#copy-image-files-to-target-folder-when-inserting-local-image" id="markdown-toc-copy-image-files-to-target-folder-when-inserting-local-image">Copy image files to target folder when inserting local image</a></li>
+<li><a href="index.html#upload-image-file-to-web-server" id="markdown-toc-upload-image-file-to-web-server">Upload image file to web server.</a></li>
+<li><a href="index.html#use-global-setting-for-image-insert-operations" id="markdown-toc-use-global-setting-for-image-insert-operations">Use global setting for image insert operations</a></li>
+</ul>
+</li>
+<li><a href="index.html#display-images-in-relative-path" id="markdown-toc-display-images-in-relative-path">Display images in relative path</a> <ul>
+<li><a href="index.html#relative-path-to-current-filefolder-default-behavior" id="markdown-toc-relative-path-to-current-filefolder-default-behavior">Relative path to current file/folder (default behavior)</a></li>
+<li><a href="index.html#relative-path-to-certain-folder" id="markdown-toc-relative-path-to-certain-folder">Relative path to certain folder</a></li>
+</ul>
+</li>
+<li><a href="index.html#upload-images-to-cloud-server" id="markdown-toc-upload-images-to-cloud-server">Upload images to cloud server</a> <ul>
+<li><a href="index.html#upload-all-local-images-to-cloud-server" id="markdown-toc-upload-all-local-images-to-cloud-server">Upload all local images to cloud server</a></li>
+<li><a href="index.html#upload-when-inserting-images" id="markdown-toc-upload-when-inserting-images">Upload when inserting images</a></li>
+</ul>
+</li>
+<li><a href="index.html#align-images" id="markdown-toc-align-images">Align images</a></li>
+<li><a href="index.html#resize-images" id="markdown-toc-resize-images">Resize images</a></li>
+</ul>
+<h2 id="images-in-markdown">Images in Markdown</h2>
+<p>Since a Markdown file is a plain text file, you cannot insert image data into Markdown file directly, but instead insert <em>references</em> to image files.</p>
+<p>In Markdown, images are written like <code class="language-plaintext highlighter-rouge">![alt](src)</code>. The <code class="language-plaintext highlighter-rouge">src</code> here can either be a URL like <code class="language-plaintext highlighter-rouge">https://octodex.github.com/images/yaktocat.png</code>, or an absolute/relative file path, like <code class="language-plaintext highlighter-rouge">../images/test.png</code>.</p>
+<h2 id="how-to-insert-images-in-typora">How to insert images in Typora</h2>
+<p>Typora supports a number of different ways of doing this.</p>
+<h3 id="write-the-markdown">Write the Markdown</h3>
+<p>You can simply write the markdown syntax to insert the image. Or click “image” from the menu bar, or press the shortcut key. If there is an image URL in clipboard, then the URL will be inserted into the <code class="language-plaintext highlighter-rouge">src</code> part directly.</p>
+<h3 id="drag--drop">Drag &amp; Drop</h3>
+<p>There’s also an easier way — drag and drop, like the screencast below.</p>
+<p><img src="http://support.typora.io/media/about-image/drag-img.gif" alt="drag-img" /></p>
+<p>You can also drag and drop multiple image files in one go.</p>
+<h3 id="select-from-local-files">Select from local files</h3>
+<p>If you select the menu item <code class="language-plaintext highlighter-rouge">Format</code> → <code class="language-plaintext highlighter-rouge">Image</code> → <code class="language-plaintext highlighter-rouge">Insert Local Images…</code> from menu bar to open a dialog to select and insert local image(s).</p>
+<p>If you use this menu item frequently, we suggest you re-assign the shortcut key for this “insert image” command following <a href="http://support.typora.io/Custom-Key-Binding/">Custom Key Binding</a>.</p>
+<h3 id="paste-images-from-clipboard">Paste images from clipboard</h3>
+<p>Typora supports paste image data from clipboard, <strong>after telling typora where to put those images</strong>. Typora would put image data into given folder or server, then insert images referring to that stored file or URL. Please refer to section <strong><a href="index.html#when-insert-local-image…">When insert local image…</a></strong> for more detail.</p>
+<blockquote>
+<p><strong>Tips</strong>: on macOS, users can copy image file from finder and then paste into typora. It has same behavior with drag and drop.</p>
+<p><strong>Tips</strong>: on macOS, you can also copy images from iPhone and then paste into Typora after setup the location to put image files.</p>
+</blockquote>
+<h2 id="when-insert-images">When insert images…</h2>
+<p>Typora supports using <a href="https://itunes.apple.com/app/id1101244278?ls=1&amp;mt=12">iPic</a> to copy image files into a given folder or web server when inserting local images using drag and drop, or from the menu. The instructions for how to set it up follows.</p>
+<h3 id="default-behaviors">Default behaviors</h3>
+<p>By default, when you insert or drag and drop an image file into Typora, we will use the path of image file for attribute <code class="language-plaintext highlighter-rouge">src</code>.</p>
+<h3 id="use-relative-path">Use Relative Path</h3>
+<p>If you enable <code class="language-plaintext highlighter-rouge">Editor</code> → <code class="language-plaintext highlighter-rouge">Image Insert</code> → <code class="language-plaintext highlighter-rouge">Use relative path if possible</code> in the preferences panel, and your work has been saved into a file, then when you drag and drop a local image, the <code class="language-plaintext highlighter-rouge">src</code> attribute will be set as a relative path to current file (folder).</p>
+<h3 id="use-escaped-path">Use Escaped Path</h3>
+<p>Both links and image sources (<code class="language-plaintext highlighter-rouge">src</code>) support original unescaped path for better readability, for example <code class="language-plaintext highlighter-rouge">![image](./Name 名字.png)</code> can be read by Typora successfully if image file exists in that path. However, some markdown engine or browser does not support unescaped path. By enabling <code class="language-plaintext highlighter-rouge">Editor</code> → <code class="language-plaintext highlighter-rouge">Image Insert</code> → <code class="language-plaintext highlighter-rouge">Auto escape image URL when insert</code> in preferences panel, the path will be converted into escaped ones: <code class="language-plaintext highlighter-rouge">![image](Name%20%u540D%u5B57.png)</code>.</p>
+<h3 id="copy-image-files-to-target-folder-when-inserting-local-image">Copy image files to target folder when inserting local image</h3>
+<p>To use this feature, you need to opt-in the option <code class="language-plaintext highlighter-rouge">Allow copy images to given folder</code> in the preferences panel.</p>
+<p>One common scenario is to use Typora to edit <code class="language-plaintext highlighter-rouge">*.md</code> posts for static websites (like Jekyll). For example, if the <code class="language-plaintext highlighter-rouge">.*md</code> file is put under <code class="language-plaintext highlighter-rouge">_posts</code> folder while the image files goes into <code class="language-plaintext highlighter-rouge">_media</code> folder, you may want to copy images files into the folder <code class="language-plaintext highlighter-rouge">_media</code> when you drag and drop or paste images into Markdown file automatically. Here’s how:</p>
+<ol>
+<li>
+<p>Save your file into a given folder.</p>
+</li>
+<li>
+<p>Enable <code class="language-plaintext highlighter-rouge">Editor</code> → <code class="language-plaintext highlighter-rouge">Image Insert</code> → <code class="language-plaintext highlighter-rouge">Allow copy images to given folder</code> in preferences panel.</p>
+<p><img src="http://support.typora.io/media/about-image/Snip20161117_2.png" alt="Snip20161117_2" /></p>
+</li>
+<li>
+<p>Select <code class="language-plaintext highlighter-rouge">Format</code> → <code class="language-plaintext highlighter-rouge">Image</code> → <code class="language-plaintext highlighter-rouge">When Insert Local Images</code> → <code class="language-plaintext highlighter-rouge">Copy Image File to Folder</code> from the menu bar, and pick the target folder.</p>
+<p><img src="http://support.typora.io/media/about-image/Snip20161117_6.png" alt="Snip20161117_6" /></p>
+</li>
+</ol>
+<p>In step 3, a new item <code class="language-plaintext highlighter-rouge">typora-copy-images-to: {relative path}</code> will be inserted into the <a href="http://yaml.org/">YAML Front Matter</a> block of the current document. So you can also manually add <strong>typora-copy-images-to</strong> property in YAML Front Matter to enable this behavior.</p>
+<p>After that, if you drag and drop <strong>local</strong> images or paste images into Typora, the image file will be copied into the target file and update the related <code class="language-plaintext highlighter-rouge">src</code>.</p>
+<h3 id="upload-image-file-to-web-server">Upload image file to web server.</h3>
+<p>Please refer <a href="http://support.typora.io/Upload-Image/#upload-automatically-when-insert-images">Upload Automatically When Insert Images</a>.</p>
+<h3 id="use-global-setting-for-image-insert-operations">Use global setting for image insert operations</h3>
+<p>You can tell Typora where to copy images or upload images when inserting images for all documents (global setting). You can find the images under “image” section in preferences panel.</p>
+<p><img src="http://support.typora.io/media/about-image/20190802.png" alt="20190802" /></p>
+<h2 id="display-images-in-relative-path">Display images in relative path</h2>
+<h3 id="relative-path-to-current-filefolder-default-behavior">Relative path to current file/folder (default behavior)</h3>
+<p>By default, users can refer to local image by relative path to the current <code class="language-plaintext highlighter-rouge">*.md</code> file. For example, if the <code class="language-plaintext highlighter-rouge">*.md</code> file is at <code class="language-plaintext highlighter-rouge">/User/typora/desktop/test.md</code>, then the <code class="language-plaintext highlighter-rouge">![img](image.png)</code> will display image from <code class="language-plaintext highlighter-rouge">/User/typora/desktop/image.png</code> just like the <code class="language-plaintext highlighter-rouge">&lt;img&gt;</code> tag in HTML. Also, for <code class="language-plaintext highlighter-rouge">../download/image.png</code>, image from <code class="language-plaintext highlighter-rouge">/User/typora/download/image.png</code> will be fetched.</p>
+<h3 id="relative-path-to-certain-folder">Relative path to certain folder</h3>
+<p>If you’re using markdown for building websites, you may specify a URL prefix for image preview on the local computer with property <code class="language-plaintext highlighter-rouge">typora-root-url</code> in the YAML Front Matter.</p>
+<p>For example, write <code class="language-plaintext highlighter-rouge">typora-root-url:/User/Abner/Website/typora.io/</code> in YAML Front Matters, and then <code class="language-plaintext highlighter-rouge">![alt](/blog/img/test.png)</code> will be treated as <code class="language-plaintext highlighter-rouge">![alt](file:///User/Abner/Website/typora.io/blog/img/test.png)</code> in typora.</p>
+<p>In more recent versions of Typora, instead of manually typing <code class="language-plaintext highlighter-rouge">typora-root-url</code> property, you can just click item from the menu bar <code class="language-plaintext highlighter-rouge">Format</code> → <code class="language-plaintext highlighter-rouge">Image</code> → <code class="language-plaintext highlighter-rouge">Use Image Root Path</code> to tell Typora to generate <code class="language-plaintext highlighter-rouge">typora-root-url</code> property automatically.</p>
+<h2 id="upload-images-to-cloud-server">Upload images to cloud server</h2>
+<p>Typora supports to upload image to a cloud image server.</p>
+<p><img src="http://support.typora.io/media/image-upload/upload.gif" style="zoom:50%;" /></p>
+<p>Please refer <a href="http://support.typora.io/Upload-Image">Upload Image</a>.</p>
+<blockquote>
+<p>Note: If a crash happens when uploading images via iPic, please <strong>re-download typora from typora.io</strong>.</p>
+</blockquote>
+<h3 id="upload-all-local-images-to-cloud-server">Upload all local images to cloud server</h3>
+<p>Please refer <a href="http://support.typora.io/Upload-Image/#upload-all-local-images">Upload All Local Images</a></p>
+<h3 id="upload-when-inserting-images">Upload when inserting images</h3>
+<p>How-tos for this part can be found in section <a href="index.html#when-insert-local-image…">When insert local image…</a> → Upload image file to web server.</p>
+<h2 id="align-images">Align images</h2>
+<p>Currently Typora does not support image alignment. But you can use HTML code like <code class="language-plaintext highlighter-rouge">&lt;center&gt;![img](src)&lt;/center&gt;</code> to align images in exported HTML or PDF.</p>
+<p>Also, by default, if a paragraph only contains one image, it will be center aligned. It uses following CSS:</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* for editing */</span>
+<span class="nt">p</span> <span class="nc">.md-image</span><span class="nd">:only-child</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">p</span> <span class="o">&gt;</span> <span class="nc">.md-image</span><span class="nd">:only-child:not</span><span class="o">(</span><span class="nc">.md-img-error</span><span class="o">)</span> <span class="nt">img</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* for exporting */</span>
+<span class="nt">p</span> <span class="o">&gt;</span> <span class="nt">img</span><span class="nd">:only-child</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>If you don’t want to center align images, you can <a href="http://support.typora.io/Add-Custom-CSS/">add following custom CSS</a>:</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">p</span> <span class="nc">.md-image</span><span class="nd">:only-child</span><span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+    <span class="nl">text-align</span><span class="p">:</span> <span class="nb">inherit</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h2 id="resize-images">Resize images</h2>
+<p>For details, please see <a href="http://support.typora.io/Resize-Image/">this link</a>.</p>
+</div>
+</div>
+<footer id="post-footer" style="
+        background-color: rgb(51, 51, 51);
+        padding-top: 50px;
+        padding-bottom: 50px;
+        text-align: center;
+        font-size: 13px;
+      ">
+<a data-has-mirror href="https://store.typora.io">Get Typora</a> /
+<a href="https://github.com/typora/wiki-website">Help Improve our documents</a
+      >
+</footer>
+<script>
+      var backBtn = document.querySelector("#title-bar-feature-btn");
+      if (backBtn) {
+        backBtn.onclick = function (event) {
+          if (
+            window.history.length > 1 &&
+            document.referrer.indexOf(window.location.host) !== -1
+          ) {
+            console.log(" window.history.back");
+            event.preventDefault();
+            window.history.back();
+          }
+        };
+      }
+      if (location.host == "support.typoraio.cn" || location.host == "support.typora.com.cn") {
+        document.querySelectorAll("[data-has-mirror]").forEach((a) => {
+          var href = a.href;
+          if (href.indexOf("store.typora.io") > 0)
+            href = "https://typoraio.cn/";
+          else if (href.indexOf("https://typora.io") > -1)
+            href = "https://typoraio.cn/";
+          else href = href.replace("typora.io", "typoraio.cn");
+          a.href = href;
+        });
+      }
+    </script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-56771470-2", "auto");
+      ga("set", "page", "/support");
+      ga("send", "pageview");
+    </script>
+
+<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ed23a5bcf8c017f"></script>
+
+</body>
+</html>

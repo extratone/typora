@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Launch Arguments (Windows / Linux) - Typora Support</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@typora" />
+<meta name="twitter:title" content="Launch Arguments (Windows / Linux)" />
+<meta name="twitter:url" content="/Launch-Arguments/" />
+<meta name="twitter:description" content="Note: This is wiki is only for Windows / Linux version, requires Typora ≥ 0.9.92 You can launch Typora.exe with extra arguments, for example: " C:\Program Files\Typora typora.exe" --disable-gpu Basic --new : launch Typora with new untitled document, ignores the launch options in preferences panel. (http: support.typora.io File-Management #set-default-folder) --reopen-file: launch Typora and reopen last close files, ignores the launch options in preferences panel. Chrome-based Launch Arguments --disable-gpu: disable GPU (hardware acceleration) when launch Typora. You can use this if you’re on Linux, may meet rendering issues like window black, etc. --client-certificate="path" : Use certificate file at path. --proxy-server=address:port: Use a specified proxy server, which overrides..." />
+<meta name="twitter:image:src" content="http://typora.io/img/twitter-sum.png" />
+<meta name="twitter:image" content="http://typora.io/img/twitter-sum.png" />
+<meta property="og:url" content="/Launch-Arguments/" />
+<meta property="og:title" content="Launch Arguments (Windows / Linux)" />
+<meta property="og:description" content="Note: This is wiki is only for Windows / Linux version, requires Typora ≥ 0.9.92 You can launch Typora.exe with extra arguments, for example: " C:\Program Files\Typora typora.exe" --disable-gpu Basic --new : launch Typora with new untitled document, ignores the launch options in preferences panel. (http: support.typora.io File-Management #set-default-folder) --reopen-file: launch Typora and reopen last close files, ignores the launch options in preferences panel. Chrome-based Launch Arguments --disable-gpu: disable GPU (hardware acceleration) when launch Typora. You can use this if you’re on Linux, may meet rendering issues like window black, etc. --client-certificate="path" : Use certificate file at path. --proxy-server=address:port: Use a specified proxy server, which overrides..." />
+<meta name="og:image" content="http://typora.io/img/twitter-sum.png" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+
+<link href="../assets/css/pure-min.css" rel="stylesheet" />
+
+<link href="../assets/css/syntax.css" rel="stylesheet" />
+<link href="../assets/css/typora-wiki.css" rel="stylesheet" />
+<link rel="icon" href="../assets/img/favicon-16.png" sizes="16x16" />
+<link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32" />
+<link rel="icon" href="https://support.typora.io/assets/img/favicon-64.png" sizes="64x64" />
+<link rel="icon" href="../assets/img/favicon-128.png" sizes="128x128" />
+<script>
+      if (
+        window.location.host.indexOf("typora.io") > -1 &&
+        window.location.protocol != "https:"
+      ) {
+        window.location.protocol = "https";
+      }
+      if (location.host == "support.typora.com.cn") {
+        location = `https://support.typoraio.cn${location.pathname}${location.hash}`;
+      }
+    </script>
+</head>
+<body>
+<style type="text/css">
+      body {
+        
+          font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman",
+          "STSong", Serif;
+		    
+        font-weight: 300;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #2e2e2e;
+        line-height: 1.15em;
+        font-family: "Open Sans", "Hiragino Sans GB", "Microsoft YaHei",
+          "WenQuanYi Micro Hei", sans-serif;
+        text-rendering: geometricPrecision;
+      }
+
+      #pagecontainer {
+        background-color: #fff;
+        min-height: calc(100vh - 510px);
+        flex: 2;
+      }
+
+      #post-content {
+        padding-top: 36px;
+        border-top: 1px dashed #999999;
+        line-height: 1.6rem;
+        padding-bottom: 100px;
+      }
+
+      #post-content > blockquote:first-child {
+        padding-top: 0.4em;
+        padding-bottom: 0.4em;
+        margin-bottom: 2em;
+        margin-left: 0;
+      }
+
+      .nav {
+        border-bottom: none;
+        height: auto;
+      }
+
+      .inner-page {
+        width: 90%;
+        max-width: 800px;
+        margin: auto;
+      }
+
+      h1 {
+        border-bottom: 0;
+      }
+
+      #header {
+        padding-bottom: 32px;
+      }
+
+      #header h1 {
+        text-align: center;
+        white-space: pre-wrap;
+        width: 90%;
+        margin: 81px auto 48px auto;
+      }
+
+      h1 {
+        font-size: 3.6rem;
+        letter-spacing: -2px;
+        text-indent: -3px;
+      }
+
+      h2 {
+        margin-top: 2em;
+      }
+
+      .pure-menu-active > .pure-menu-link,
+      .pure-menu-link:hover,
+      .pure-menu-link:focus {
+        background-color: initial;
+        border: #777 solid 1px;
+      }
+
+      .post-meta {
+        font-style: italic;
+        text-align: center;
+        color: #7a7a7a;
+      }
+
+      div.highlighter-rouge {
+        padding: 8px;
+        border: 1px #777 solid;
+        line-height: 1.2rem;
+        font-family: Menlo, Monaco, "Courier New", monospace;
+      }
+
+      div.highlighter-rouge pre {
+        font-size: 0.95em;
+        overflow: hidden;
+        word-break: break-word;
+        white-space: pre-wrap;
+      }
+
+      a {
+        color: #463f5c;
+        text-decoration: underline;
+      }
+    </style>
+<header class="pure-menu pure-menu-horizontal nav post-title" id="header">
+<div class="gallery">
+<ul class="pure-menu-list" style="float: left; margin-left: 1em; position: absolute">
+<li class="pure-menu-item pure-menu-active">
+<a href="../index.html" class="pure-menu-link" id="title-bar-feature-btn">Back</a
+            >
+</li>
+</ul>
+</div>
+<h1>Launch Arguments (Windows / Linux)</h1>
+<section class="post-meta">
+<time>July 18, 2020</time>
+by
+<span>typora.io</span>
+</section>
+</header>
+<div id="pagecontainer" class="container">
+<div id="post-content" class="inner-page"><blockquote>
+<p>Note: This is wiki is only for Windows / Linux version, requires Typora ≥ 0.9.92</p>
+</blockquote>
+<p>You can launch Typora.exe with extra arguments, for example:</p>
+<pre><code class="language-cmd">"C:\Program Files\Typora/typora.exe" --disable-gpu
+</code></pre>
+<h2 id="basic">Basic</h2>
+<ul>
+<li><code class="language-plaintext highlighter-rouge">--new</code> : launch Typora with new untitled document, ignores the launch options in preferences panel. (http://support.typora.io/File-Management/#set-default-folder)</li>
+<li><code class="language-plaintext highlighter-rouge">--reopen-file</code>: launch Typora and reopen last close files, ignores the launch options in preferences panel.</li>
+</ul>
+<h2 id="chrome-based-launch-arguments">Chrome-based Launch Arguments</h2>
+<ul>
+<li><code class="language-plaintext highlighter-rouge">--disable-gpu</code>: disable GPU (hardware acceleration) when launch Typora. You can use this if you’re on Linux, may meet rendering issues like window black, etc.</li>
+<li><code class="language-plaintext highlighter-rouge">--client-certificate="path"</code>: Use certificate file at path.</li>
+<li><code class="language-plaintext highlighter-rouge">--proxy-server=address:port</code>: Use a specified proxy server, which overrides the system setting. This switch only affects requests with HTTP protocol, including HTTPS and WebSocket requests. It is also noteworthy that not all proxy servers support HTTPS and WebSocket requests. The proxy URL does not support username and password authentication <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=615947">per Chromium issue</a>.</li>
+<li><code class="language-plaintext highlighter-rouge">--proxy-pac-url=url</code> Use pac proxy.</li>
+<li><code class="language-plaintext highlighter-rouge">--host-rules=rules</code>: A comma-separated list of <code class="language-plaintext highlighter-rouge">rules</code> that control how hostnames are mapped.</li>
+<li><code class="language-plaintext highlighter-rouge">--no-sandbox</code>: Disables Chromium sandbox.</li>
+<li>…</li>
+</ul>
+<p>You can find more details here → https://www.electronjs.org/docs/api/command-line-switches</p>
+<h2 id="luanch-typora-with-proxy-windows--linux">Luanch Typora with proxy (Windows / Linux)</h2>
+<p>Run <code class="language-plaintext highlighter-rouge">C:\Program Files\Typora/typora.exe --proxy-server=address:port</code>, for example <code class="language-plaintext highlighter-rouge">C:\Program Files\Typora/typora.exe --proxy-server=socks5://127.0.0.1:1080</code></p>
+<p>Or you can click Preferences panel -&gt; General -&gt; Advanced Settings -&gt; Open Advanced Settings, open <code class="language-plaintext highlighter-rouge">config.user.json</code>, find the line starts with “flags” then replace it with following content:</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"flags"</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="s2">"proxy-server"</span><span class="p">,</span><span class="w"> </span><span class="s2">"address:port"</span><span class="p">]]</span><span class="w">
+</span></code></pre></div></div>
+<hr />
+<h2 id="flags-in-advanced-configs">Flags in Advanced Configs</h2>
+<p>You can also config “flags” field in Preferences Panel → Open Advanced Settings to use chrome-based launch arguments. This also supports Typora &lt; 0.9.92.</p>
+</div>
+</div>
+<footer id="post-footer" style="
+        background-color: rgb(51, 51, 51);
+        padding-top: 50px;
+        padding-bottom: 50px;
+        text-align: center;
+        font-size: 13px;
+      ">
+<a data-has-mirror href="https://store.typora.io">Get Typora</a> /
+<a href="https://github.com/typora/wiki-website">Help Improve our documents</a
+      >
+</footer>
+<script>
+      var backBtn = document.querySelector("#title-bar-feature-btn");
+      if (backBtn) {
+        backBtn.onclick = function (event) {
+          if (
+            window.history.length > 1 &&
+            document.referrer.indexOf(window.location.host) !== -1
+          ) {
+            console.log(" window.history.back");
+            event.preventDefault();
+            window.history.back();
+          }
+        };
+      }
+      if (location.host == "support.typoraio.cn" || location.host == "support.typora.com.cn") {
+        document.querySelectorAll("[data-has-mirror]").forEach((a) => {
+          var href = a.href;
+          if (href.indexOf("store.typora.io") > 0)
+            href = "https://typoraio.cn/";
+          else if (href.indexOf("https://typora.io") > -1)
+            href = "https://typoraio.cn/";
+          else href = href.replace("typora.io", "typoraio.cn");
+          a.href = href;
+        });
+      }
+    </script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-56771470-2", "auto");
+      ga("set", "page", "/support");
+      ga("send", "pageview");
+    </script>
+
+<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ed23a5bcf8c017f"></script>
+
+</body>
+</html>
