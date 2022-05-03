@@ -15,26 +15,42 @@ I have found my perfect word processing solution. I have much to say about it, e
    `conf.default.json`. You should have basically zero reservations about fucking with these considering the software has a restore button right next to the one that got us here. That said - if you'd like to replicate my custom keybinds precisely, either open `conf.user.json` and copy and paste the snippet below where appropriate or just [**download the whole file**](https://github.com/extratone/typora/blob/main/config/conf.user.json) and replace. (I can't promise anything else will be kept as up-to-date.)
 
 ```json
-"keyBinding": {
+ "keyBinding": {
     "Highlight": "Ctrl+Shift+H"
     "Quote": "Alt+Q"
     "PrintDialog:": "Alt+P"
     "Always on Top": "Ctrl+Shift+P"
     "Task List": "Ctrl+Shift+T"
     "Strike": "Alt+S"
-},
+    "Comment": "Alt+/"
+    "Open Link": "Alt+O"
+    "Insert Local Images...": "Ctrl+Shift+U"
+    "Footnotes": "Ctrl+Alt+F"
+    "Copy Image Content": "Ctrl+Shift+Alt+I"
+    "Copy as HTML Code": "Ctrl+Shift+Alt+C"
+    "Copy as Plain Text": "Alt+C"
+    "Code": "Shift+Alt+."
+  }
 ```
 
 ### My Custom Keybinds
 
-| Action                                                  |      Input       |
-| ------------------------------------------------------- | :--------------: |
-| Highlight selected text `====`                          | Ctrl + Shift + H |
-| Transform selected text into Markdown pullquote `>`     |     Alt + Q      |
-| Show/hide legacy menu items                             |     Alt + P      |
-| ~~Always on Top~~                                       | Ctrl + Shift + P |
-| Transform selected text into Markdown task list `- [ ]` | Ctrl + Shift + T |
-| Transform selected text into Strikethrough text `~~~~`  |     Alt + S      |
+| Action                                                  |         Input          |
+| ------------------------------------------------------- | :--------------------: |
+| Highlight selected text `====`                          |    Ctrl + Shift + H    |
+| Transform selected text into Markdown pullquote `>`     |        Alt + Q         |
+| Print Dialog                                            |        Alt + P         |
+| Always on Top                                           |    Ctrl + Shift + P    |
+| Transform selected text into Markdown task list `- [ ]` |    Ctrl + Shift + T    |
+| Transform selected text into Strikethrough text `~~~~`  |        Alt + S         |
+| Transform selected text into `<!--Comment-->`           |        Alt + /         |
+| Open Link                                               |        Alt + O         |
+| Insert Local Images...                                  |    Ctrl + Shift + U    |
+| Footnotes                                               |     Ctrl + Alt + F     |
+| Copy Image Content                                      | Ctrl + Shift + Alt + I |
+| Copy as HTML Code                                       | Ctrl + Shift + Alt + C |
+| Copy as Plain Text                                      |        Alt + C         |
+| Transform selected text into ``code``                   |    Shift + Alt + .     |
 
 
 
