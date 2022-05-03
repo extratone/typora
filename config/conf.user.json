@@ -13,7 +13,12 @@
       "Search with Google",
       "https://google.com/search?q=%s"
     ]
+    [
+      "Search GitHub",
+      "https://github.com/search?q=%s"
+    ]
   ],
+  
   // Custom key binding, which will override the default ones.
   "keyBinding": {
     "Highlight": "Ctrl+Shift+H"
@@ -24,12 +29,16 @@
     "Strike": "Alt+S"
     "Comment": "Alt+/"
     "Open Link": "Alt+O"
-    "Insert Local Images...": "Ctrl+Shift+U"
+    "Insert Local Images...": "Ctrl+Shift+U" 
     "Footnotes": "Ctrl+Alt+F"
     "Copy Image Content": "Ctrl+Shift+Alt+I"
     "Copy as HTML Code": "Ctrl+Shift+Alt+C"
     "Copy as Plain Text": "Alt+C"
     "Code": "Shift+Alt+."
+    "Unordered List": "Ctrl+L"
+    "Ordered List": "Ctrl+Alt+L"
+    "Chaff": "Ctrl+Shift+E"
+    "HTML": "Ctrl+Alt+H"
     //"Export": "Ctrl+Shift+E"
     //"PrintDialog": ""
     // for example: 
